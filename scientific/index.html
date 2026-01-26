@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free online scientific calculator with trigonometric, logarithmic, and exponential functions.">
+    <title>Scientific Calculator - CalcHub</title>
+    <link rel="stylesheet" href="/../css/style.css">
+    <link rel="stylesheet" href="/../css/calculator.css">
+    <link rel="stylesheet" href="/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-calculator"></i>
+                <h1>CalcHub</h1>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/basic/"><i class="fas fa-calculator"></i> Basic</a></li>
+                <li><a href="/scientific/" class="active"><i class="fas fa-flask"></i> Scientific</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-square-root-alt"></i> Mathematics <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/algebra/">Algebra</a>
+                        <a href="/geometry/">Geometry</a>
+                        <a href="/matrix/">Matrix</a>
+                        <a href="/graphing/">Graphing</a>
+                        <a href="/percentage/">Percentage</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-chart-bar"></i> Statistics <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/descriptive-stats/">Descriptive Statistics</a>
+                        <a href="/probability/">Probability</a>
+                        <a href="/data-analysis/">Data Analysis</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-exchange-alt"></i> Converter <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/length/">Length</a>
+                        <a href="/weight/">Weight/Mass</a>
+                        <a href="/temperature/">Temperature</a>
+                        <a href="/area/">Area</a>
+                        <a href="/volume/">Volume</a>
+                        <a href="/speed/">Speed</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-atom"></i> Physics <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/kinematics/">Kinematics</a>
+                        <a href="/dynamics/">Dynamics</a>
+                        <a href="/electricity/">Electricity</a>
+                        <a href="/waves/">Waves & Optics</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-vial"></i> Chemistry <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/molarity/">Molarity</a>
+                        <a href="/molecular-weight/">Molecular Weight</a>
+                        <a href="/ph/">pH Calculator</a>
+                        <a href="/gas-laws/">Gas Laws</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-dollar-sign"></i> Finance <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/simple-interest/">Simple Interest</a>
+                        <a href="/compound-interest/">Compound Interest</a>
+                        <a href="/loan/">Loan Calculator</a>
+                        <a href="/investment/">Investment</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-laptop-code"></i> Computer Science <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/number-system/">Number System</a>
+                        <a href="/boolean/">Boolean Logic</a>
+                        <a href="/bitwise/">Bitwise Operations</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-clock"></i> Date & Time <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/age/">Age Calculator</a>
+                        <a href="/date-diff/">Date Difference</a>
+                        <a href="/timezone/">Time Zone</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Left Sidebar for Ads -->
+                <aside class="ad-sidebar">
+                    <div class="ad-placeholder">
+                        <p>Google AdSense</p>
+                        <p>Advertisement Space</p>
+                        <p>300x600</p>
+                    </div>
+                    <div class="ad-placeholder">
+                        <p>Google AdSense</p>
+                        <p>Advertisement Space</p>
+                        <p>300x250</p>
+                    </div>
+                </aside>
+
+                <!-- Calculator Section -->
+                <section class="calculator-section">
+                    <div class="calculator-container">
+                        <div class="calc-header">
+                            <h2><i class="fas fa-flask"></i> Scientific Calculator</h2>
+                            <p>Advanced mathematical operations including trigonometry, logarithms, and more</p>
+                        </div>
+
+                        <div class="angle-mode">
+                            <label>
+                                <input type="radio" name="angleMode" value="deg" checked onchange="switchAngleMode()">
+                                Degrees
+                            </label>
+                            <label>
+                                <input type="radio" name="angleMode" value="rad" onchange="switchAngleMode()"> Radians
+                            </label>
+                        </div>
+
+                        <div class="scientific-calculator">
+                            <div class="calc-display">
+                                <div class="calc-history" id="calcHistory"></div>
+                                <input type="text" id="display" readonly value="0">
+                            </div>
+
+                            <div class="calc-buttons">
+                                <!-- Row 1: Functions -->
+                                <button class="calc-btn func-btn" onclick="scientificCalc('sin')">sin</button>
+                                <button class="calc-btn func-btn" onclick="scientificCalc('cos')">cos</button>
+                                <button class="calc-btn func-btn" onclick="scientificCalc('tan')">tan</button>
+                                <button class="calc-btn func-btn" onclick="scientificCalc('log')">log</button>
+                                <button class="calc-btn func-btn" onclick="scientificCalc('ln')">ln</button>
+
+                                <!-- Row 2: More Functions -->
+                                <button class="calc-btn func-btn" onclick="scientificCalc('sqrt')">√</button>
+                                <button class="calc-btn func-btn" onclick="scientificCalc('square')">x²</button>
+                                <button class="calc-btn func-btn" onclick="scientificCalc('cube')">x³</button>
+                                <button class="calc-btn func-btn" onclick="scientificCalc('pow')">xʸ</button>
+                                <button class="calc-btn func-btn" onclick="scientificCalc('exp')">eˣ</button>
+
+                                <!-- Row 3: Numbers and Operations -->
+                                <button class="calc-btn num-btn" onclick="appendNumber('7')">7</button>
+                                <button class="calc-btn num-btn" onclick="appendNumber('8')">8</button>
+                                <button class="calc-btn num-btn" onclick="appendNumber('9')">9</button>
+                                <button class="calc-btn operator-btn" onclick="appendOperator('/')">÷</button>
+                                <button class="calc-btn func-btn" onclick="clearDisplay()">C</button>
+
+                                <!-- Row 4 -->
+                                <button class="calc-btn num-btn" onclick="appendNumber('4')">4</button>
+                                <button class="calc-btn num-btn" onclick="appendNumber('5')">5</button>
+                                <button class="calc-btn num-btn" onclick="appendNumber('6')">6</button>
+                                <button class="calc-btn operator-btn" onclick="appendOperator('*')">×</button>
+                                <button class="calc-btn func-btn" onclick="deleteLast()">←</button>
+
+                                <!-- Row 5 -->
+                                <button class="calc-btn num-btn" onclick="appendNumber('1')">1</button>
+                                <button class="calc-btn num-btn" onclick="appendNumber('2')">2</button>
+                                <button class="calc-btn num-btn" onclick="appendNumber('3')">3</button>
+                                <button class="calc-btn operator-btn" onclick="appendOperator('-')">−</button>
+                                <button class="calc-btn func-btn" onclick="insertConstant('pi')">π</button>
+
+                                <!-- Row 6 -->
+                                <button class="calc-btn num-btn" onclick="appendNumber('0')">0</button>
+                                <button class="calc-btn num-btn" onclick="appendNumber('.')">.</button>
+                                <button class="calc-btn func-btn" onclick="negate()">±</button>
+                                <button class="calc-btn operator-btn" onclick="appendOperator('+')">+</button>
+                                <button class="calc-btn func-btn" onclick="insertConstant('e')">e</button>
+
+                                <!-- Row 7 -->
+                                <button class="calc-btn func-btn" onclick="scientificCalc('factorial')">n!</button>
+                                <button class="calc-btn func-btn" onclick="scientificCalc('percent')">%</button>
+                                <button class="calc-btn func-btn" onclick="appendBracket('(')">(</button>
+                                <button class="calc-btn func-btn" onclick="appendBracket(')')">)</button>
+                                <button class="calc-btn equals-btn" onclick="calculate()">=</button>
+                            </div>
+                        </div>
+
+                        <div class="calculator-info">
+                            <h3>Scientific Functions</h3>
+                            <ul>
+                                <li><strong>Trigonometric:</strong> sin, cos, tan (supports degrees and radians)</li>
+                                <li><strong>Logarithms:</strong> log (base 10), ln (natural log)</li>
+                                <li><strong>Powers:</strong> x², x³, xʸ (any power)</li>
+                                <li><strong>Roots:</strong> √ (square root)</li>
+                                <li><strong>Exponential:</strong> eˣ (e to the power of x)</li>
+                                <li><strong>Factorial:</strong> n! (factorial function)</li>
+                                <li><strong>Constants:</strong> π (pi), e (Euler's number)</li>
+                                <li><strong>Brackets:</strong> Use ( ) for complex expressions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CalcHub. All rights reserved.</p>
+            <p>Built for students, researchers, and professionals</p>
+        </div>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/scientific-calculator.js"></script>
+</body>
+
+</html>

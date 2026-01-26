@@ -1,0 +1,230 @@
+/* ========================================
+   Advanced Calculator Specific Styles
+======================================== */
+
+/* Mode Toggle Container */
+.mode-toggle-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.mode-toggle-container h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--text-primary);
+}
+
+.mode-toggle {
+    display: flex;
+    gap: 0.5rem;
+    background-color: var(--surface-color);
+    padding: 0.5rem;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+}
+
+.mode-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background-color: transparent;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mode-btn:hover {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+}
+
+.mode-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.mode-btn i {
+    font-size: 1.1rem;
+}
+
+/* Unified Calculator */
+.unified-calculator {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-lg);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+/* Simple Mode Buttons - 5 column grid */
+.calc-buttons-simple {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.75rem;
+}
+
+.calc-buttons-simple .calc-btn {
+    padding: 1.25rem;
+    font-size: 1.25rem;
+}
+
+.calc-buttons-simple .span-4 {
+    grid-column: span 4;
+}
+
+/* Advanced Buttons Grid */
+.calc-buttons-advanced {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--border-color);
+}
+
+.calc-buttons-advanced .calc-btn {
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+/* Guide Columns */
+.guide-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.calculator-info h4 {
+    color: var(--primary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.calculator-info h5 {
+    color: var(--text-primary);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Animation for mode switching */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.calc-buttons-advanced.show {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Responsive Design for Advanced Calculator */
+@media (max-width: 768px) {
+    .mode-toggle-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .mode-toggle {
+        width: 100%;
+    }
+
+    .mode-btn {
+        flex: 1;
+        justify-content: center;
+        padding: 0.875rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .unified-calculator {
+        padding: 1rem;
+    }
+
+    .calc-buttons-simple {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.5rem;
+    }
+
+    .calc-buttons-simple .calc-btn {
+        padding: 0.875rem;
+        font-size: 1rem;
+    }
+
+    .calc-buttons-advanced {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+
+    .calc-buttons-advanced .calc-btn {
+        padding: 0.875rem;
+        font-size: 0.9rem;
+    }
+
+    .guide-columns {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mode-toggle-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .mode-btn {
+        font-size: 0.85rem;
+        padding: 0.75rem 0.75rem;
+    }
+
+    .calc-buttons-simple {
+        gap: 0.4rem;
+    }
+
+    .calc-buttons-simple .calc-btn {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .calc-buttons-advanced {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .calc-buttons-advanced .calc-btn {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Special styling for function buttons in advanced mode */
+.calc-buttons-advanced .func-btn {
+    background-color: #8b5cf6;
+    color: white;
+}
+
+.calc-buttons-advanced .func-btn:hover {
+    background-color: #7c3aed;
+}
+
+/* Highlight active mode indicator */
+.angle-mode {
+    animation: fadeIn 0.3s ease;
+}

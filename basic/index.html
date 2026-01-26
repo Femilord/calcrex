@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Comprehensive scientific calculator website for students, researchers, and professionals. Includes basic, scientific, statistics, physics, chemistry, and finance calculators.">
+    <meta name="keywords"
+        content="scientific calculator, online calculator, math calculator, physics calculator, statistics calculator, unit converter">
+    <title>CalcHub - Your Complete Scientific Calculator</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-calculator"></i>
+                <h1>CalcHub</h1>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="/" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/calculators/basic/"><i class="fas fa-calculator"></i> Basic</a></li>
+                <li><a href="/calculators/scientific/"><i class="fas fa-flask"></i> Scientific</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-square-root-alt"></i> Mathematics <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/calculators/algebra/">Algebra</a>
+                        <a href="/calculators/geometry/">Geometry</a>
+                        <a href="/calculators/matrix/">Matrix</a>
+                        <a href="/calculators/graphing/">Graphing</a>
+                        <a href="/calculators/percentage/">Percentage</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-chart-bar"></i> Statistics <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/calculators/descriptive-stats/">Descriptive Statistics</a>
+                        <a href="/calculators/probability/">Probability</a>
+                        <a href="/calculators/data-analysis/">Data Analysis</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-exchange-alt"></i> Converter <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/calculators/length/">Length</a>
+                        <a href="/calculators/weight/">Weight/Mass</a>
+                        <a href="/calculators/temperature/">Temperature</a>
+                        <a href="/calculators/area/">Area</a>
+                        <a href="/calculators/volume/">Volume</a>
+                        <a href="/calculators/speed/">Speed</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-atom"></i> Physics <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/calculators/kinematics/">Kinematics</a>
+                        <a href="/calculators/dynamics/">Dynamics</a>
+                        <a href="/calculators/electricity/">Electricity</a>
+                        <a href="/calculators/waves/">Waves & Optics</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-vial"></i> Chemistry <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/calculators/molarity/">Molarity</a>
+                        <a href="/calculators/molecular-weight/">Molecular Weight</a>
+                        <a href="/calculators/ph/">pH Calculator</a>
+                        <a href="/calculators/gas-laws/">Gas Laws</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-dollar-sign"></i> Finance <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/calculators/simple-interest/">Simple Interest</a>
+                        <a href="/calculators/compound-interest/">Compound Interest</a>
+                        <a href="/calculators/loan/">Loan Calculator</a>
+                        <a href="/calculators/investment/">Investment</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-laptop-code"></i> Computer Science <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/calculators/number-system/">Number System</a>
+                        <a href="/calculators/boolean/">Boolean Logic</a>
+                        <a href="/calculators/bitwise/">Bitwise Operations</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-clock"></i> Date & Time <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/calculators/age/">Age Calculator</a>
+                        <a href="/calculators/date-diff/">Date Difference</a>
+                        <a href="/calculators/timezone/">Time Zone</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Left Sidebar for Ads -->
+                <aside class="ad-sidebar">
+                    <div class="ad-placeholder">
+                        <p>Google AdSense</p>
+                        <p>Advertisement Space</p>
+                        <p>300x600</p>
+                    </div>
+                    <div class="ad-placeholder">
+                        <p>Google AdSense</p>
+                        <p>Advertisement Space</p>
+                        <p>300x250</p>
+                    </div>
+                </aside>
+
+                <!-- Main Calculator Area -->
+                <section class="calculator-section">
+                    <div class="welcome-card">
+                        <h2>Welcome to CalcHub</h2>
+                        <p>Your comprehensive scientific calculator for all your calculation needs</p>
+                    </div>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-calculator"></i>
+                            <h3>Basic & Scientific</h3>
+                            <p>Perform everyday arithmetic and advanced scientific calculations</p>
+                            <a href="/calculators/basic/" class="btn">Get Started</a>
+                        </div>
+
+                        <div class="feature-card">
+                            <i class="fas fa-square-root-alt"></i>
+                            <h3>Mathematics</h3>
+                            <p>Algebra, geometry, matrix operations, and graphing tools</p>
+                            <a href="/calculators/algebra/" class="btn">Explore</a>
+                        </div>
+
+                        <div class="feature-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Statistics</h3>
+                            <p>Descriptive statistics, probability, and data analysis</p>
+                            <a href="/calculators/descriptive-stats/" class="btn">Analyze</a>
+                        </div>
+
+                        <div class="feature-card">
+                            <i class="fas fa-exchange-alt"></i>
+                            <h3>Unit Converter</h3>
+                            <p>Convert between different units of measurement</p>
+                            <a href="/calculators/length/" class="btn">Convert</a>
+                        </div>
+
+                        <div class="feature-card">
+                            <i class="fas fa-atom"></i>
+                            <h3>Physics</h3>
+                            <p>Kinematics, dynamics, electricity, and wave calculations</p>
+                            <a href="/calculators/kinematics/" class="btn">Calculate</a>
+                        </div>
+
+                        <div class="feature-card">
+                            <i class="fas fa-vial"></i>
+                            <h3>Chemistry</h3>
+                            <p>Molarity, pH, molecular weight, and gas law calculations</p>
+                            <a href="/calculators/molarity/" class="btn">Compute</a>
+                        </div>
+
+                        <div class="feature-card">
+                            <i class="fas fa-dollar-sign"></i>
+                            <h3>Finance</h3>
+                            <p>Interest, loan, and investment calculators</p>
+                            <a href="/calculators/simple-interest/" class="btn">Plan</a>
+                        </div>
+
+                        <div class="feature-card">
+                            <i class="fas fa-laptop-code"></i>
+                            <h3>Computer Science</h3>
+                            <p>Number systems, boolean logic, and bitwise operations</p>
+                            <a href="/calculators/number-system/" class="btn">Process</a>
+                        </div>
+
+                        <div class="feature-card">
+                            <i class="fas fa-clock"></i>
+                            <h3>Date & Time</h3>
+                            <p>Age, date difference, and timezone calculators</p>
+                            <a href="/calculators/age/" class="btn">Check</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CalcHub. All rights reserved.</p>
+            <p>Built for students, researchers, and professionals</p>
+        </div>
+    </footer>
+
+    <script src="js/theme.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Calcurex - Advanced online calculator with basic and scientific modes. Free calculator for students, professionals, and researchers.">
+    <meta name="keywords"
+        content="calculator, scientific calculator, online calculator, math calculator, free calculator">
+    <title>Calcurex - Advanced Online Calculator</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/calculator.css">
+    <link rel="stylesheet" href="../css/homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-calculator"></i>
+                <h1>Calcurex</h1>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="/" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/advanced/"><i class="fas fa-calculator"></i> Calculator</a></li>
+
+                <li class="dropdown">
+                    <a href="/converter/" class="dropbtn"><i class="fas fa-exchange-alt"></i> Converters <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/length/">Length</a>
+                        <a href="/weight/">Weight/Mass</a>
+                        <a href="/temperature/">Temperature</a>
+                        <a href="/area/">Area</a>
+                        <a href="/volume/">Volume</a>
+                        <a href="/speed/">Speed</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-atom"></i> Physics <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/kinematics/">Kinematics</a>
+                        <a href="/dynamics/">Dynamics</a>
+                        <a href="/electricity/">Electricity</a>
+                        <a href="/waves/">Waves & Optics</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-vial"></i> Chemistry <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/molarity/">Molarity</a>
+                        <a href="/molecular-weight/">Molecular Weight</a>
+                        <a href="/ph/">pH Calculator</a>
+                        <a href="/gas-laws/">Gas Laws</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-dollar-sign"></i> Finance <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/simple-interest/">Simple Interest</a>
+                        <a href="/compound-interest/">Compound Interest</a>
+                        <a href="/loan/">Loan Calculator</a>
+                        <a href="/investment/">Investment</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-laptop-code"></i> Computer Science <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/number-system/">Number System</a>
+                        <a href="/boolean/">Boolean Logic</a>
+                        <a href="/bitwise/">Bitwise Operations</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-clock"></i> Date & Time <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/age/">Age Calculator</a>
+                        <a href="/date-diff/">Date Difference</a>
+                        <a href="/timezone/">Time Zone</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Left Sidebar for Ads -->
+                <aside class="ad-sidebar">
+                    <div class="ad-placeholder">
+                        <p>Google AdSense</p>
+                        <p>Advertisement Space</p>
+                        <p>300x600</p>
+                    </div>
+                    <div class="ad-placeholder">
+                        <p>Google AdSense</p>
+                        <p>Advertisement Space</p>
+                        <p>300x250</p>
+                    </div>
+                </aside>
+
+                <!-- Main Calculator Area -->
+                <section class="calculator-section">
+                    <!-- Hero Section -->
+                    <div class="hero-section">
+                        <h1>Advanced Online Calculator</h1>
+                        <p class="hero-subtitle">One powerful calculator with two modes - Simple for everyday math,
+                            Advanced for scientific calculations</p>
+                        <a href="/advanced/" class="cta-button">
+                            <i class="fas fa-calculator"></i> Open Calculator
+                        </a>
+                    </div>
+
+                    <!-- Calculator Modes Preview -->
+                    <div class="modes-preview">
+                        <h2>Two Modes, Unlimited Possibilities</h2>
+
+                        <div class="modes-grid">
+                            <div class="mode-card">
+                                <div class="mode-icon">
+                                    <i class="fas fa-calculator"></i>
+                                </div>
+                                <h3>Simple Mode</h3>
+                                <p class="mode-description">Perfect for everyday calculations</p>
+                                <ul class="mode-features">
+                                    <li><i class="fas fa-check"></i> Basic arithmetic (+, -, ×, ÷)</li>
+                                    <li><i class="fas fa-check"></i> Powers & roots (x², √)</li>
+                                    <li><i class="fas fa-check"></i> Parentheses for complex expressions</li>
+                                    <li><i class="fas fa-check"></i> Fractions (1/x)</li>
+                                    <li><i class="fas fa-check"></i> Percentages & sign changes</li>
+                                    <li><i class="fas fa-check"></i> Quick entry (00, 000)</li>
+                                </ul>
+                            </div>
+
+                            <div class="mode-card featured">
+                                <div class="mode-badge">Most Popular</div>
+                                <div class="mode-icon">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <h3>Advanced Mode</h3>
+                                <p class="mode-description">Everything from Simple Mode plus scientific functions</p>
+                                <ul class="mode-features">
+                                    <li><i class="fas fa-check"></i> All Simple Mode features</li>
+                                    <li><i class="fas fa-check"></i> Trigonometry (sin, cos, tan)</li>
+                                    <li><i class="fas fa-check"></i> Logarithms (log, ln, e^x)</li>
+                                    <li><i class="fas fa-check"></i> Advanced powers (x³, x^y, ∛)</li>
+                                    <li><i class="fas fa-check"></i> Constants (π, e)</li>
+                                    <li><i class="fas fa-check"></i> Special functions (n!, |x|, mod)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Features Section -->
+                    <div class="features-section">
+                        <h2>Why Choose Calcurex?</h2>
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <i class="fas fa-toggle-on"></i>
+                                <h3>Easy Mode Toggle</h3>
+                                <p>Switch between Simple and Advanced modes instantly - no page reload needed</p>
+                            </div>
+
+                            <div class="feature-card">
+                                <i class="fas fa-keyboard"></i>
+                                <h3>Keyboard Support</h3>
+                                <p>Full keyboard shortcuts for faster calculations - type naturally like a desktop app
+                                </p>
+                            </div>
+
+                            <div class="feature-card">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h3>Mobile Friendly</h3>
+                                <p>Perfectly optimized for phones and tablets - calculate anywhere, anytime</p>
+                            </div>
+
+                            <div class="feature-card">
+                                <i class="fas fa-moon"></i>
+                                <h3>Dark Mode</h3>
+                                <p>Easy on the eyes with beautiful dark theme - switch themes with one click</p>
+                            </div>
+
+                            <div class="feature-card">
+                                <i class="fas fa-history"></i>
+                                <h3>Calculation History</h3>
+                                <p>View your recent calculations - never lose track of your work</p>
+                            </div>
+
+                            <div class="feature-card">
+                                <i class="fas fa-shield-alt"></i>
+                                <h3>100% Free</h3>
+                                <p>No signup, no limits, no hidden fees - completely free forever</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Tools Section -->
+                    <div class="tools-section">
+                        <h2>More Specialized Calculators</h2>
+                        <p class="section-subtitle">Beyond our main calculator, we offer specialized tools for specific
+                            needs</p>
+
+                        <div class="tools-grid">
+                            <a href="/length/" class="tool-card">
+                                <i class="fas fa-ruler"></i>
+                                <h4>Unit Converters</h4>
+                                <p>Length, weight, temperature, and more</p>
+                            </a>
+
+                            <a href="/kinematics/" class="tool-card">
+                                <i class="fas fa-atom"></i>
+                                <h4>Physics</h4>
+                                <p>Kinematics, dynamics, electricity</p>
+                            </a>
+
+                            <a href="/molarity/" class="tool-card">
+                                <i class="fas fa-vial"></i>
+                                <h4>Chemistry</h4>
+                                <p>Molarity, pH, gas laws</p>
+                            </a>
+
+                            <a href="/simple-interest/" class="tool-card">
+                                <i class="fas fa-dollar-sign"></i>
+                                <h4>Finance</h4>
+                                <p>Interest, loans, investments</p>
+                            </a>
+
+                            <a href="/number-system/" class="tool-card">
+                                <i class="fas fa-laptop-code"></i>
+                                <h4>Computer Science</h4>
+                                <p>Binary, hex, boolean logic</p>
+                            </a>
+
+                            <a href="/age/" class="tool-card">
+                                <i class="fas fa-clock"></i>
+                                <h4>Date & Time</h4>
+                                <p>Age, date difference, time zones</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CTA Section -->
+                    <div class="cta-section">
+                        <h2>Ready to Calculate?</h2>
+                        <p>Start using our advanced calculator now - no signup required!</p>
+                        <a href="/advanced/" class="cta-button large">
+                            <i class="fas fa-calculator"></i> Launch Calculator
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Calcurex. All rights reserved.</p>
+            <p>Advanced Scientific Calculator for Students, Professionals, and Researchers</p>
+        </div>
+    </footer>
+
+    <script src="js/theme.js"></script>
+</body>
+
+</html>

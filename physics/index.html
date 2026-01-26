@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free physics calculators - Kinematics, Dynamics, Electricity, Waves & Optics. Calculate velocity, force, resistance, wavelength and more.">
+    <meta name="keywords"
+        content="physics calculator, kinematics, dynamics, electricity calculator, waves calculator, optics calculator">
+    <title>Physics Calculators - Calcurex</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/calculator.css">
+    <link rel="stylesheet" href="/css/physics.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-calculator"></i>
+                <h1>Calcurex</h1>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/physics/"><i class="fas fa-calculator"></i> Calculator</a></li>
+
+                <li class="dropdown">
+                    <a href="/converter/" class="dropbtn"><i class="fas fa-exchange-alt"></i> Converters <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/physics/#length">Length</a>
+                        <a href="/physics/#weight">Weight/Mass</a>
+                        <a href="/physics/#temperature">Temperature</a>
+                        <a href="/physics/#area">Area</a>
+                        <a href="/physics/#volume">Volume</a>
+                        <a href="/physics/#speed">Speed</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="/" class="dropbtn active"><i class="fas fa-atom"></i> Physics <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#kinematics">Kinematics</a>
+                        <a href="#dynamics">Dynamics</a>
+                        <a href="#electricity">Electricity</a>
+                        <a href="#waves">Waves & Optics</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-vial"></i> Chemistry <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/chemistry/#molarity">Molarity</a>
+                        <a href="/chemistry/#molecular-weight">Molecular Weight</a>
+                        <a href="/chemistry/#ph">pH Calculator</a>
+                        <a href="/chemistry/#gas-laws">Gas Laws</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-dollar-sign"></i> Finance <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/finance/#simple-interest">Simple Interest</a>
+                        <a href="/finance/#compound-interest">Compound Interest</a>
+                        <a href="/finance/#loan">Loan Calculator</a>
+                        <a href="/finance/#investment">Investment</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-laptop-code"></i> Computer Science <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/cs/#number-system">Number System</a>
+                        <a href="/cs/#boolean">Boolean Logic</a>
+                        <a href="/cs/#bitwise">Bitwise Operations</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-clock"></i> Date & Time <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/datetime/#age">Age Calculator</a>
+                        <a href="/datetime/#date-diff">Date Difference</a>
+                        <a href="/datetime/#timezone">Time Zone</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Left Sidebar for Ads -->
+                <aside class="ad-sidebar">
+                    <div class="ad-placeholder">
+                        <p>Google AdSense</p>
+                        <p>Advertisement Space</p>
+                        <p>300x600</p>
+                    </div>
+                    <div class="ad-placeholder">
+                        <p>Google AdSense</p>
+                        <p>Advertisement Space</p>
+                        <p>300x250</p>
+                    </div>
+                </aside>
+
+                <!-- Physics Section -->
+                <section class="calculator-section">
+                    <!-- Header -->
+                    <div class="physics-header">
+                        <h1><i class="fas fa-atom"></i> Physics Calculators</h1>
+                        <p class="physics-subtitle">Solve physics problems with precision - From motion to electricity
+                        </p>
+                    </div>
+
+                    <!-- Physics Category Tabs -->
+                    <div class="physics-tabs">
+                        <button class="physics-tab active" onclick="showPhysicsCategory('kinematics')"
+                            data-category="kinematics">
+                            <i class="fas fa-running"></i>
+                            <span>Kinematics</span>
+                        </button>
+                        <button class="physics-tab" onclick="showPhysicsCategory('dynamics')" data-category="dynamics">
+                            <i class="fas fa-weight-hanging"></i>
+                            <span>Dynamics</span>
+                        </button>
+                        <button class="physics-tab" onclick="showPhysicsCategory('electricity')"
+                            data-category="electricity">
+                            <i class="fas fa-bolt"></i>
+                            <span>Electricity</span>
+                        </button>
+                        <button class="physics-tab" onclick="showPhysicsCategory('waves')" data-category="waves">
+                            <i class="fas fa-water"></i>
+                            <span>Waves & Optics</span>
+                        </button>
+                    </div>
+
+                    <!-- KINEMATICS SECTION -->
+                    <div id="kinematics" class="physics-category active">
+                        <div class="category-intro">
+                            <h2><i class="fas fa-running"></i> Kinematics - Study of Motion</h2>
+                            <p>Calculate velocity, acceleration, displacement, and time for objects in motion.</p>
+                        </div>
+
+                        <!-- Velocity Calculator -->
+                        <div class="physics-calculator">
+                            <h3>Velocity Calculator</h3>
+                            <p class="calc-description">Calculate velocity using distance and time (v = d/t)</p>
+
+                            <div class="calc-form">
+                                <div class="form-row">
+                                    <div class="input-group">
+                                        <label for="vel_distance">Distance (d)</label>
+                                        <div class="input-with-unit">
+                                            <input type="number" id="vel_distance" placeholder="Enter distance">
+                                            <select id="vel_distance_unit">
+                                                <option value="m">meters (m)</option>
+                                                <option value="km">kilometers (km)</option>
+                                                <option value="mi">miles (mi)</option>
+                                                <option value="ft">feet (ft)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="vel_time">Time (t)</label>
+                                        <div class="input-with-unit">
+                                            <input type="number" id="vel_time" placeholder="Enter time">
+                                            <select id="vel_time_unit">
+                                                <option value="s">seconds (s)</option>
+                                                <option value="min">minutes (min)</option>
+                                                <option value="h">hours (h)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="btn-calculate" onclick="calculateVelocity()">
+                                    <i class="fas fa-calculator"></i> Calculate Velocity
+                                </button>
+
+                                <div id="vel_result" class="result-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Acceleration Calculator -->
+                        <div class="physics-calculator">
+                            <h3>Acceleration Calculator</h3>
+                            <p class="calc-description">Calculate acceleration using velocity change and time (a = Δv/t)
+                            </p>
+
+                            <div class="calc-form">
+                                <div class="form-row">
+                                    <div class="input-group">
+                                        <label for="acc_initial_vel">Initial Velocity (v₀)</label>
+                                        <input type="number" id="acc_initial_vel"
+                                            placeholder="Enter initial velocity (m/s)">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="acc_final_vel">Final Velocity (v)</label>
+                                        <input type="number" id="acc_final_vel"
+                                            placeholder="Enter final velocity (m/s)">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="acc_time">Time (t)</label>
+                                        <input type="number" id="acc_time" placeholder="Enter time (s)">
+                                    </div>
+                                </div>
+
+                                <button class="btn-calculate" onclick="calculateAcceleration()">
+                                    <i class="fas fa-calculator"></i> Calculate Acceleration
+                                </button>
+
+                                <div id="acc_result" class="result-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Displacement Calculator -->
+                        <div class="physics-calculator">
+                            <h3>Displacement Calculator</h3>
+                            <p class="calc-description">Calculate displacement using initial velocity, time, and
+                                acceleration (s = v₀t + ½at²)</p>
+
+                            <div class="calc-form">
+                                <div class="form-row">
+                                    <div class="input-group">
+                                        <label for="disp_initial_vel">Initial Velocity (v₀)</label>
+                                        <input type="number" id="disp_initial_vel"
+                                            placeholder="Enter initial velocity (m/s)">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="disp_time">Time (t)</label>
+                                        <input type="number" id="disp_time" placeholder="Enter time (s)">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="disp_acceleration">Acceleration (a)</label>
+                                        <input type="number" id="disp_acceleration"
+                                            placeholder="Enter acceleration (m/s²)">
+                                    </div>
+                                </div>
+
+                                <button class="btn-calculate" onclick="calculateDisplacement()">
+                                    <i class="fas fa-calculator"></i> Calculate Displacement
+                                </button>
+
+                                <div id="disp_result" class="result-container"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DYNAMICS SECTION -->
+                    <div id="dynamics" class="physics-category">
+                        <div class="category-intro">
+                            <h2><i class="fas fa-weight-hanging"></i> Dynamics - Study of Forces</h2>
+                            <p>Calculate force, work, energy, power, and momentum in physical systems.</p>
+                        </div>
+
+                        <!-- Force Calculator (F = ma) -->
+                        <div class="physics-calculator">
+                            <h3>Force Calculator (Newton's 2nd Law)</h3>
+                            <p class="calc-description">Calculate force using mass and acceleration (F = ma)</p>
+
+                            <div class="calc-form">
+                                <div class="form-row">
+                                    <div class="input-group">
+                                        <label for="force_mass">Mass (m)</label>
+                                        <input type="number" id="force_mass" placeholder="Enter mass (kg)">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="force_acceleration">Acceleration (a)</label>
+                                        <input type="number" id="force_acceleration"
+                                            placeholder="Enter acceleration (m/s²)">
+                                    </div>
+                                </div>
+
+                                <button class="btn-calculate" onclick="calculateForce()">
+                                    <i class="fas fa-calculator"></i> Calculate Force
+                                </button>
+
+                                <div id="force_result" class="result-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Work Calculator -->
+                        <div class="physics-calculator">
+                            <h3>Work Calculator</h3>
+                            <p class="calc-description">Calculate work done by force over distance (W = F × d × cos θ)
+                            </p>
+
+                            <div class="calc-form">
+                                <div class="form-row">
+                                    <div class="input-group">
+                                        <label for="work_force">Force (F)</label>
+                                        <input type="number" id="work_force" placeholder="Enter force (N)">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="work_distance">Distance (d)</label>
+                                        <input type="number" id="work_distance" placeholder="Enter distance (m)">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="work_angle">Angle (θ)</label>
+                                        <input type="number" id="work_angle" placeholder="Enter angle (degrees)"
+                                            value="0">
+                                    </div>
+                                </div>
+
+                                <button class="btn-calculate" onclick="calculateWork()">
+                                    <i class="fas fa-calculator"></i> Calculate Work
+                                </button>
+
+                                <div id="work_result" class="result-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Power Calculator -->
+                        <div class="physics-calculator">
+                            <h3>Power Calculator</h3>
+                            <p class="calc-description">Calculate power using work and time (P = W/t)</p>
+
+                            <div class="calc-form">
+                                <div class="form-row">
+                                    <div class="input-group">
+                                        <label for="power_work">Work (W)</label>
+                                        <input type="number" id="power_work" placeholder="Enter work (J)">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="power_time">Time (t)</label>
+                                        <input type="number" id="power_time" placeholder="Enter time (s)">
+                                    </div>
+                                </div>
+
+                                <button class="btn-calculate" onclick="calculatePower()">
+                                    <i class="fas fa-calculator"></i> Calculate Power
+                                </button>
+
+                                <div id="power_result" class="result-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Kinetic Energy Calculator -->
+                        <div class="physics-calculator">
+                            <h3>Kinetic Energy Calculator</h3>
+                            <p class="calc-description">Calculate kinetic energy (KE = ½mv²)</p>
+
+                            <div class="calc-form">
+                                <div class="form-row">
+                                    <div class="input-group">
+                                        <label for="ke_mass">Mass (m)</label>
+                                        <input type="number" id="ke_mass" placeholder="Enter mass (kg)">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="ke_velocity">Velocity (v)</label>
+                                        <input type="number" id="ke_velocity" placeholder="Enter velocity (m/s)">
+                                    </div>
+                                </div>
+
+                                <button class="btn-calculate" onclick="calculateKineticEnergy()">
+                                    <i class="fas fa-calculator"></i> Calculate Kinetic Energy
+                                </button>
+
+                                <div id="ke_result" class="result-container"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ELECTRICITY SECTION -->
+                    <div id="electricity" class="physics-category">
+                        <div class="category-intro">
+                            <h2><i class="fas fa-bolt"></i> Electricity - Electric Circuits & Current</h2>
+                            <p>Calculate voltage, current, resistance, and power in electrical circuits.</p>
+                        </div>
+
+                        <!-- Ohm's Law Calculator -->
+                        <div class="physics-calculator">
+                            <h3>Ohm's Law Calculator</h3>
+                            <p class="calc-description">Calculate voltage, current, or resistance (V = IR)</p>
+
+                            <div class="calc-form">
+                                <div class="ohms-selector">
+                                    <label>Calculate:</label>
+                                    <select id="ohms_calculate" onchange="updateOhmsFields()">
+                                        <option value="voltage">Voltage (V)</option>
+                                        <option value="current">Current (I)</option>
+                                        <option value="resistance">Resistance (R)</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-row" id="ohms_inputs">
+                                    <div class="input-group">
+                                        <label for="ohms_current">Current (I)</label>
+                                        <input type="number" id="ohms_current" placeholder="Enter current (A)">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="ohms_resistance">Resistance (R)</label>
+                                        <input type="number" id="ohms_resistance" placeholder="Enter resistance (Ω)">
+                                    </div>
+                                </div>
+
+                                <button class="btn-calculate" onclick="calculateOhmsLaw()">
+                                    <i class="fas fa-calculator"></i> Calculate
+                                </button>
+
+                                <div id="ohms_result" class="result-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Electric Power Calculator -->
+                        <div class="physics-calculator">
+                            <h3>Electric Power Calculator</h3>
+                            <p class="calc-description">Calculate electrical power (P = VI = I²R = V²/R)</p>
+
+                            <div class="calc-form">
+                                <div class="form-row">
+                                    <div class="input-group">
+                                        <label for="epower_voltage">Voltage (V)</label>
+                                        <input type="number" id="epower_voltage" placeholder="Enter voltage (V)">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="epower_current">Current (I)</label>
+                                        <input type="number" id="epower_current" placeholder="Enter current (A)">
+                                    </div>
+                                </div>
+
+                                <button class="btn-calculate" onclick="calculateElectricPower()">
+                                    <i class="fas fa-calculator"></i> Calculate Power
+                                </button>
+
+                                <div id="epower_result" class="result-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Resistors in Series/Parallel Calculator -->
+                        <div class="physics-calculator">
+                            <h3>Resistors Calculator</h3>
+                            <p class="calc-description">Calculate total resistance for resistors in series or parallel
+                            </p>
+
+                            <div class="calc-form">
+                                <div class="form-row">
+                                    <div class="input-group">
+                                        <label>Configuration</label>
+                                        <select id="resistor_config">
+                                            <option value="series">Series (R_total = R₁ + R₂ + ...)</option>
+                                            <option value="parallel">Parallel (1/R_total = 1/R₁ + 1/R₂ + ...)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="input-group">
+                                        <label for="resistor_values">Resistor Values (Ω)</label>
+                                        <input type="text" id="resistor_values"
+                                            placeholder="Enter values separated by commas (e.g., 100, 220, 330)">
+                                        <small>Enter resistor values in Ohms, separated by commas</small>
+                                    </div>
+                                </div>
+
+                                <button class="btn-calculate" onclick="calculateResistors()">
+                                    <i class="fas fa-calculator"></i> Calculate Total Resistance
+                                </button>
+
+                                <div id="resistor_result" class="result-container"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WAVES & OPTICS SECTION -->
+                    <div id="waves" class="physics-category">
+                        <div class="category-intro">
+                            <h2><i class="fas fa-water"></i> Waves & Optics - Light and Wave Phenomena</h2>
+                            <p>Calculate wavelength, frequency, wave speed, and optical properties.</p>
+                        </div>
+
+                        <!-- Wave Speed Calculator -->
+                        <div class="physics-calculator">
+                            <h3>Wave Speed Calculator</h3>
+                            <p class="calc-description">Calculate wave speed using wavelength and frequency (v = fλ)</p>
+
+                            <div class="calc-form">
+                                <div class="form-row">
+                                    <div class="input-group">
+                                        <label for="wave_frequency">Frequency (f)</label>
+                                        <input type="number" id="wave_frequency" placeholder="Enter frequency (Hz)">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="wave_wavelength">Wavelength (λ)</label>
+                                        <input type="number" id="wave_wavelength" placeholder="Enter wavelength (m)">
+                                    </div>
+                                </div>
+
+                                <button class="btn-calculate" onclick="calculateWaveSpeed()">
+                                    <i class="fas fa-calculator"></i> Calculate Wave Speed
+                                </button>
+
+                                <div id="wave_result" class="result-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Snell's Law Calculator -->
+                        <div class="physics-calculator">
+                            <h3>Snell's Law Calculator (Refraction)</h3>
+                            <p class="calc-description">Calculate refraction angle (n₁ sin θ₁ = n₂ sin θ₂)</p>
+
+                            <div class="calc-form">
+                                <div class="form-row">
+                                    <div class="input-group">
+                                        <label for="snell_n1">Refractive Index 1 (n₁)</label>
+                                        <input type="number" id="snell_n1" placeholder="Enter n₁" value="1.0"
+                                            step="0.01">
+                                        <small>Air = 1.0, Water = 1.33, Glass = 1.5</small>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="snell_angle1">Incident Angle (θ₁)</label>
+                                        <input type="number" id="snell_angle1" placeholder="Enter angle (degrees)">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="snell_n2">Refractive Index 2 (n₂)</label>
+                                        <input type="number" id="snell_n2" placeholder="Enter n₂" value="1.33"
+                                            step="0.01">
+                                    </div>
+                                </div>
+
+                                <button class="btn-calculate" onclick="calculateSnellsLaw()">
+                                    <i class="fas fa-calculator"></i> Calculate Refraction Angle
+                                </button>
+
+                                <div id="snell_result" class="result-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Lens/Mirror Formula Calculator -->
+                        <div class="physics-calculator">
+                            <h3>Lens/Mirror Formula Calculator</h3>
+                            <p class="calc-description">Calculate image distance and magnification (1/f = 1/u + 1/v)</p>
+
+                            <div class="calc-form">
+                                <div class="form-row">
+                                    <div class="input-group">
+                                        <label for="lens_focal">Focal Length (f)</label>
+                                        <input type="number" id="lens_focal" placeholder="Enter focal length (cm)">
+                                        <small>Positive for converging, negative for diverging</small>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="lens_object">Object Distance (u)</label>
+                                        <input type="number" id="lens_object" placeholder="Enter object distance (cm)">
+                                        <small>Distance from lens/mirror to object</small>
+                                    </div>
+                                </div>
+
+                                <button class="btn-calculate" onclick="calculateLensFormula()">
+                                    <i class="fas fa-calculator"></i> Calculate Image Properties
+                                </button>
+
+                                <div id="lens_result" class="result-container"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Physics Formulas Reference -->
+                    <div class="physics-info">
+                        <h3>Common Physics Formulas</h3>
+                        <div class="formulas-grid">
+                            <div class="formula-column">
+                                <h4>Kinematics</h4>
+                                <ul>
+                                    <li><strong>v = d/t</strong> - Velocity</li>
+                                    <li><strong>a = Δv/t</strong> - Acceleration</li>
+                                    <li><strong>s = v₀t + ½at²</strong> - Displacement</li>
+                                    <li><strong>v² = v₀² + 2as</strong> - Final velocity</li>
+                                </ul>
+                            </div>
+                            <div class="formula-column">
+                                <h4>Dynamics</h4>
+                                <ul>
+                                    <li><strong>F = ma</strong> - Newton's 2nd Law</li>
+                                    <li><strong>W = Fd cos θ</strong> - Work</li>
+                                    <li><strong>P = W/t</strong> - Power</li>
+                                    <li><strong>KE = ½mv²</strong> - Kinetic Energy</li>
+                                </ul>
+                            </div>
+                            <div class="formula-column">
+                                <h4>Electricity</h4>
+                                <ul>
+                                    <li><strong>V = IR</strong> - Ohm's Law</li>
+                                    <li><strong>P = VI</strong> - Electric Power</li>
+                                    <li><strong>R_s = R₁ + R₂</strong> - Series</li>
+                                    <li><strong>1/R_p = 1/R₁ + 1/R₂</strong> - Parallel</li>
+                                </ul>
+                            </div>
+                            <div class="formula-column">
+                                <h4>Waves & Optics</h4>
+                                <ul>
+                                    <li><strong>v = fλ</strong> - Wave speed</li>
+                                    <li><strong>n₁ sin θ₁ = n₂ sin θ₂</strong> - Snell's Law</li>
+                                    <li><strong>1/f = 1/u + 1/v</strong> - Lens formula</li>
+                                    <li><strong>m = v/u</strong> - Magnification</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Calcurex. All rights reserved.</p>
+            <p>Physics Calculators - Accurate & Easy to Use</p>
+        </div>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/physics.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free online percentage calculator - calculate percentages, percentage increase, decrease, and more.">
+    <title>Percentage Calculator - CalcHub</title>
+    <link rel="stylesheet" href="/../css/style.css">
+    <link rel="stylesheet" href="/../css/calculator.css">
+    <link rel="stylesheet" href="/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-calculator"></i>
+                <h1>CalcHub</h1>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/basic/"><i class="fas fa-calculator"></i> Basic</a></li>
+                <li><a href="/scientific/"><i class="fas fa-flask"></i> Scientific</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-square-root-alt"></i> Mathematics <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/algebra/">Algebra</a>
+                        <a href="/geometry/">Geometry</a>
+                        <a href="/matrix/">Matrix</a>
+                        <a href="/graphing/">Graphing</a>
+                        <a href="/percentage/" class="active">Percentage</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-chart-bar"></i> Statistics <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/descriptive-stats/">Descriptive Statistics</a>
+                        <a href="/probability/">Probability</a>
+                        <a href="/data-analysis/">Data Analysis</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-exchange-alt"></i> Converter <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/length/">Length</a>
+                        <a href="/weight/">Weight/Mass</a>
+                        <a href="/temperature/">Temperature</a>
+                        <a href="/area/">Area</a>
+                        <a href="/volume/">Volume</a>
+                        <a href="/speed/">Speed</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-atom"></i> Physics <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/kinematics/">Kinematics</a>
+                        <a href="/dynamics/">Dynamics</a>
+                        <a href="/electricity/">Electricity</a>
+                        <a href="/waves/">Waves & Optics</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-vial"></i> Chemistry <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/molarity/">Molarity</a>
+                        <a href="/molecular-weight/">Molecular Weight</a>
+                        <a href="/ph/">pH Calculator</a>
+                        <a href="/gas-laws/">Gas Laws</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-dollar-sign"></i> Finance <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/simple-interest/">Simple Interest</a>
+                        <a href="/compound-interest/">Compound Interest</a>
+                        <a href="/loan/">Loan Calculator</a>
+                        <a href="/investment/">Investment</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-laptop-code"></i> Computer Science <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/number-system/">Number System</a>
+                        <a href="/boolean/">Boolean Logic</a>
+                        <a href="/bitwise/">Bitwise Operations</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-clock"></i> Date & Time <i
+                            class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/age/">Age Calculator</a>
+                        <a href="/date-diff/">Date Difference</a>
+                        <a href="/timezone/">Time Zone</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Left Sidebar for Ads -->
+                <aside class="ad-sidebar">
+                    <div class="ad-placeholder">
+                        <p>Google AdSense</p>
+                        <p>Advertisement Space</p>
+                        <p>300x600</p>
+                    </div>
+                    <div class="ad-placeholder">
+                        <p>Google AdSense</p>
+                        <p>Advertisement Space</p>
+                        <p>300x250</p>
+                    </div>
+                </aside>
+
+                <!-- Calculator Section -->
+                <section class="calculator-section">
+                    <div class="calculator-container">
+                        <div class="calc-header">
+                            <h2><i class="fas fa-percent"></i> Percentage Calculator</h2>
+                            <p>Calculate percentages, percentage increase/decrease, and more</p>
+                        </div>
+
+                        <!-- Calculator Type Selection -->
+                        <div class="calculator-form">
+                            <div class="form-group">
+                                <label for="calcType">Select Calculation Type:</label>
+                                <select id="calcType" onchange="switchCalculator()">
+                                    <option value="whatIs">What is X% of Y?</option>
+                                    <option value="isWhat">X is what % of Y?</option>
+                                    <option value="percentOf">X is Y% of what?</option>
+                                    <option value="increase">Percentage Increase</option>
+                                    <option value="decrease">Percentage Decrease</option>
+                                    <option value="change">Percentage Change</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- What is X% of Y Calculator -->
+                        <div id="whatIsCalc" class="calculator-form">
+                            <h3>What is X% of Y?</h3>
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="percent1">Percentage (%):</label>
+                                    <input type="number" id="percent1" placeholder="e.g., 25" step="0.01">
+                                    <small>Enter the percentage value</small>
+                                </div>
+                                <div class="input-group">
+                                    <label for="number1">Number:</label>
+                                    <input type="number" id="number1" placeholder="e.g., 200" step="0.01">
+                                    <small>Enter the total number</small>
+                                </div>
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn-calculate" onclick="calculateWhatIs()">
+                                    <i class="fas fa-calculator"></i> Calculate
+                                </button>
+                                <button class="btn-reset" onclick="resetForm('whatIsCalc')">
+                                    <i class="fas fa-redo"></i> Reset
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- X is what % of Y Calculator -->
+                        <div id="isWhatCalc" class="calculator-form" style="display: none;">
+                            <h3>X is what % of Y?</h3>
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="part">Part (X):</label>
+                                    <input type="number" id="part" placeholder="e.g., 50" step="0.01">
+                                    <small>Enter the part value</small>
+                                </div>
+                                <div class="input-group">
+                                    <label for="whole">Whole (Y):</label>
+                                    <input type="number" id="whole" placeholder="e.g., 200" step="0.01">
+                                    <small>Enter the whole value</small>
+                                </div>
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn-calculate" onclick="calculateIsWhat()">
+                                    <i class="fas fa-calculator"></i> Calculate
+                                </button>
+                                <button class="btn-reset" onclick="resetForm('isWhatCalc')">
+                                    <i class="fas fa-redo"></i> Reset
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- X is Y% of what Calculator -->
+                        <div id="percentOfCalc" class="calculator-form" style="display: none;">
+                            <h3>X is Y% of what?</h3>
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="partValue">Part (X):</label>
+                                    <input type="number" id="partValue" placeholder="e.g., 50" step="0.01">
+                                    <small>Enter the part value</small>
+                                </div>
+                                <div class="input-group">
+                                    <label for="percentValue">Percentage (Y%):</label>
+                                    <input type="number" id="percentValue" placeholder="e.g., 25" step="0.01">
+                                    <small>Enter the percentage</small>
+                                </div>
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn-calculate" onclick="calculatePercentOf()">
+                                    <i class="fas fa-calculator"></i> Calculate
+                                </button>
+                                <button class="btn-reset" onclick="resetForm('percentOfCalc')">
+                                    <i class="fas fa-redo"></i> Reset
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Percentage Increase Calculator -->
+                        <div id="increaseCalc" class="calculator-form" style="display: none;">
+                            <h3>Percentage Increase</h3>
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="originalInc">Original Value:</label>
+                                    <input type="number" id="originalInc" placeholder="e.g., 100" step="0.01">
+                                    <small>Enter the original value</small>
+                                </div>
+                                <div class="input-group">
+                                    <label for="percentInc">Percentage Increase (%):</label>
+                                    <input type="number" id="percentInc" placeholder="e.g., 20" step="0.01">
+                                    <small>Enter the percentage increase</small>
+                                </div>
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn-calculate" onclick="calculateIncrease()">
+                                    <i class="fas fa-calculator"></i> Calculate
+                                </button>
+                                <button class="btn-reset" onclick="resetForm('increaseCalc')">
+                                    <i class="fas fa-redo"></i> Reset
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Percentage Decrease Calculator -->
+                        <div id="decreaseCalc" class="calculator-form" style="display: none;">
+                            <h3>Percentage Decrease</h3>
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="originalDec">Original Value:</label>
+                                    <input type="number" id="originalDec" placeholder="e.g., 100" step="0.01">
+                                    <small>Enter the original value</small>
+                                </div>
+                                <div class="input-group">
+                                    <label for="percentDec">Percentage Decrease (%):</label>
+                                    <input type="number" id="percentDec" placeholder="e.g., 20" step="0.01">
+                                    <small>Enter the percentage decrease</small>
+                                </div>
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn-calculate" onclick="calculateDecrease()">
+                                    <i class="fas fa-calculator"></i> Calculate
+                                </button>
+                                <button class="btn-reset" onclick="resetForm('decreaseCalc')">
+                                    <i class="fas fa-redo"></i> Reset
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Percentage Change Calculator -->
+                        <div id="changeCalc" class="calculator-form" style="display: none;">
+                            <h3>Percentage Change</h3>
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="oldValue">Old Value:</label>
+                                    <input type="number" id="oldValue" placeholder="e.g., 100" step="0.01">
+                                    <small>Enter the old value</small>
+                                </div>
+                                <div class="input-group">
+                                    <label for="newValue">New Value:</label>
+                                    <input type="number" id="newValue" placeholder="e.g., 120" step="0.01">
+                                    <small>Enter the new value</small>
+                                </div>
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn-calculate" onclick="calculateChange()">
+                                    <i class="fas fa-calculator"></i> Calculate
+                                </button>
+                                <button class="btn-reset" onclick="resetForm('changeCalc')">
+                                    <i class="fas fa-redo"></i> Reset
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Results Display -->
+                        <div id="result" class="result-container">
+                            <div class="result-header">
+                                <i class="fas fa-check-circle"></i>
+                                <h3>Result</h3>
+                            </div>
+                            <div class="result-value" id="resultValue">0</div>
+                            <div class="result-details" id="resultDetails"></div>
+                            <button class="copy-btn" onclick="copyResult()">
+                                <i class="fas fa-copy"></i> Copy Result
+                            </button>
+                        </div>
+
+                        <div class="calculator-info">
+                            <h3>Percentage Formulas</h3>
+                            <ul>
+                                <li><strong>What is X% of Y?</strong> Result = (X / 100) × Y</li>
+                                <li><strong>X is what % of Y?</strong> Percentage = (X / Y) × 100</li>
+                                <li><strong>X is Y% of what?</strong> Whole = (X × 100) / Y</li>
+                                <li><strong>Percentage Increase:</strong> New Value = Original + (Original × Increase% /
+                                    100)</li>
+                                <li><strong>Percentage Decrease:</strong> New Value = Original - (Original × Decrease% /
+                                    100)</li>
+                                <li><strong>Percentage Change:</strong> Change% = ((New - Old) / Old) × 100</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CalcHub. All rights reserved.</p>
+            <p>Built for students, researchers, and professionals</p>
+        </div>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/percentage-calculator.js"></script>
+</body>
+
+</html>
