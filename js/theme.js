@@ -1,49 +1,50 @@
-// Theme Toggle Functionality
+// ========================================
+// THEME.JS - Theme Toggle & Navigation
+// ========================================
 
-console.log("JavaScript is connected!");
-
-document.addEventListener('DOMContentLoaded', function () {
+// Theme Toggle
+document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('themeToggle');
-    const html = document.documentElement;
+    const body = document.body;
 
-    // Check for saved theme preference or default to light mode
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', currentTheme);
-    updateThemeIcon(currentTheme);
-
-    // Theme toggle click handler
+    // Default to dark mode
+    body.classList.remove('light-mode');
     if (themeToggle) {
-        themeToggle.addEventListener('click', function () {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
-        });
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     }
 
-    // Update theme icon
-    function updateThemeIcon(theme) {
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') {
+        body.classList.add('light-mode');
         if (themeToggle) {
-            const icon = themeToggle.querySelector('i');
-            if (theme === 'dark') {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
         }
     }
 
-    // Mobile menu toggle for dropdown
-    const dropdowns = document.querySelectorAll('.dropdown');
-    dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('click', function (e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                this.classList.toggle('active');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            const isLight = body.classList.contains('light-mode');
+            themeToggle.innerHTML = isLight ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
+    }
+
+    // Smooth Scroll Navigation with Active State
+    document.querySelectorAll('.nav-menu a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Remove active class from all
+            document.querySelectorAll('.nav-menu a').forEach(a => a.classList.remove('active'));
+
+            // Add active class to clicked
+            this.classList.add('active');
+
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });

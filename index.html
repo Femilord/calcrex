@@ -5,19 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Calcurex - Advanced online calculator with basic and scientific modes. Free calculator for students, professionals, and researchers.">
+        content="Calcurex - Complete calculator suite with calculators, converters, physics, chemistry, finance, computer science, and date & time tools.">
     <meta name="keywords"
-        content="calculator, scientific calculator, online calculator, math calculator, free calculator">
-    <title>Calcurex - Advanced Online Calculator</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/calculator.css">
-    <link rel="stylesheet" href="../css/homepage.css">
+        content="calculator, converter, physics calculator, chemistry calculator, finance calculator, computer science calculator, date calculator">
+    <title>Calcurex - All Calculators in One Place</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/unified.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
     <!-- Header -->
-    <header>
+    <header class="site-header">
         <div class="container">
             <div class="logo">
                 <i class="fas fa-calculator"></i>
@@ -29,262 +28,401 @@
         </div>
     </header>
 
-    <!-- Navigation -->
-    <nav class="main-nav">
+    <!-- Sticky Navigation -->
+    <nav class="calc-nav">
         <div class="container">
             <ul class="nav-menu">
-                <li><a href="/" class="active"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="/advanced/"><i class="fas fa-calculator"></i> Calculator</a></li>
-
-                <li class="dropdown">
-                    <a href="/converter/" class="dropbtn"><i class="fas fa-exchange-alt"></i> Converters <i
-                            class="fas fa-caret-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="/length/">Length</a>
-                        <a href="/weight/">Weight/Mass</a>
-                        <a href="/temperature/">Temperature</a>
-                        <a href="/area/">Area</a>
-                        <a href="/volume/">Volume</a>
-                        <a href="/speed/">Speed</a>
-                    </div>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#" class="dropbtn"><i class="fas fa-atom"></i> Physics <i
-                            class="fas fa-caret-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="/kinematics/">Kinematics</a>
-                        <a href="/dynamics/">Dynamics</a>
-                        <a href="/electricity/">Electricity</a>
-                        <a href="/waves/">Waves & Optics</a>
-                    </div>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#" class="dropbtn"><i class="fas fa-vial"></i> Chemistry <i
-                            class="fas fa-caret-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="/molarity/">Molarity</a>
-                        <a href="/molecular-weight/">Molecular Weight</a>
-                        <a href="/ph/">pH Calculator</a>
-                        <a href="/gas-laws/">Gas Laws</a>
-                    </div>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#" class="dropbtn"><i class="fas fa-dollar-sign"></i> Finance <i
-                            class="fas fa-caret-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="/simple-interest/">Simple Interest</a>
-                        <a href="/compound-interest/">Compound Interest</a>
-                        <a href="/loan/">Loan Calculator</a>
-                        <a href="/investment/">Investment</a>
-                    </div>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#" class="dropbtn"><i class="fas fa-laptop-code"></i> Computer Science <i
-                            class="fas fa-caret-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="/number-system/">Number System</a>
-                        <a href="/boolean/">Boolean Logic</a>
-                        <a href="/bitwise/">Bitwise Operations</a>
-                    </div>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#" class="dropbtn"><i class="fas fa-clock"></i> Date & Time <i
-                            class="fas fa-caret-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="/age/">Age Calculator</a>
-                        <a href="/date-diff/">Date Difference</a>
-                        <a href="/timezone/">Time Zone</a>
-                    </div>
-                </li>
+                <li><a href="#calculator"><i class="fas fa-calculator"></i> Calculator</a></li>
+                <li><a href="#converters"><i class="fas fa-exchange-alt"></i> Converters</a></li>
+                <li><a href="#physics"><i class="fas fa-atom"></i> Physics</a></li>
+                <li><a href="#chemistry"><i class="fas fa-vial"></i> Chemistry</a></li>
+                <li><a href="#electricity"><i class="fas fa-bolt"></i> Electricity</a></li>
+                <li><a href="#computer-science"><i class="fas fa-laptop-code"></i> Computer Science</a></li>
+                <li><a href="#finance"><i class="fas fa-dollar-sign"></i> Finance</a></li>
+                <li><a href="#date-time"><i class="fas fa-clock"></i> Date & Time</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Main Content Area -->
+    <!-- Main Content -->
     <main class="main-content">
         <div class="container">
-            <div class="content-grid">
-                <!-- Left Sidebar for Ads -->
-                <aside class="ad-sidebar">
-                    <div class="ad-placeholder">
-                        <p>Google AdSense</p>
-                        <p>Advertisement Space</p>
-                        <p>300x600</p>
-                    </div>
-                    <div class="ad-placeholder">
-                        <p>Google AdSense</p>
-                        <p>Advertisement Space</p>
-                        <p>300x250</p>
+            <div class="content-grid-with-ads">
+
+                <!-- Left AdSense Sidebar -->
+                <aside class="ad-sidebar ad-sidebar-left">
+                    <div class="ad-sticky">
+                        <div class="ad-unit">
+                            <p class="ad-label">Advertisement</p>
+                            <div class="ad-placeholder ad-300x600">
+                                <!-- Google AdSense Code Here -->
+                                <p>300x600</p>
+                            </div>
+                        </div>
+                        <div class="ad-unit">
+                            <p class="ad-label">Advertisement</p>
+                            <div class="ad-placeholder ad-300x250">
+                                <!-- Google AdSense Code Here -->
+                                <p>300x250</p>
+                            </div>
+                        </div>
                     </div>
                 </aside>
 
-                <!-- Main Calculator Area -->
-                <section class="calculator-section">
-                    <!-- Hero Section -->
-                    <div class="hero-section">
-                        <h1>Advanced Online Calculator</h1>
-                        <p class="hero-subtitle">One powerful calculator with two modes - Simple for everyday math,
-                            Advanced for scientific calculations</p>
-                        <a href="/advanced/" class="cta-button">
-                            <i class="fas fa-calculator"></i> Open Calculator
-                        </a>
-                    </div>
+                <!-- Main Calculator Content -->
+                <div class="main-calculator-content">
 
-                    <!-- Calculator Modes Preview -->
-                    <div class="modes-preview">
-                        <h2>Two Modes, Unlimited Possibilities</h2>
+                    <!-- 1. CALCULATOR SECTION -->
+                    <section id="calculator" class="calculator-section">
+                        <h2 class="section-title"><i class="fas fa-calculator"></i> Calculator</h2>
 
-                        <div class="modes-grid">
-                            <div class="mode-card">
-                                <div class="mode-icon">
-                                    <i class="fas fa-calculator"></i>
+                        <!-- Mode Toggle -->
+                        <div class="mode-selector">
+                            <button class="mode-btn active" onclick="switchCalcMode('basic')">Basic</button>
+                            <button class="mode-btn" onclick="switchCalcMode('scientific')">Scientific</button>
+                            <button class="mode-btn" onclick="switchCalcMode('advanced')">Advanced</button>
+                        </div>
+
+                        <div class="keyboard-hint">
+                            <i class="fas fa-keyboard"></i> Keyboard shortcuts: Numbers, +, -, *, /, Enter, Backspace,
+                            Esc
+                        </div>
+
+                        <div class="calculator-container" id="calc-container">
+                            <!-- Angle Mode (Hidden for Basic) -->
+                            <div class="angle-mode" id="calc-angle-mode" style="display: none;">
+                                <label><input type="radio" name="calc-angle" value="deg" checked> Degrees</label>
+                                <label><input type="radio" name="calc-angle" value="rad"> Radians</label>
+                            </div>
+
+                            <div class="calc-display">
+                                <div class="calc-history" id="calc-history"></div>
+                                <input type="text" id="calc-display" class="display-field" value="0" readonly>
+                            </div>
+
+                            <div class="calc-buttons" id="calc-buttons"></div>
+                        </div>
+                    </section>
+
+                    <!-- 2. CONVERTERS SECTION -->
+                    <section id="converters" class="calculator-section">
+                        <h2 class="section-title"><i class="fas fa-exchange-alt"></i> Unit Converters</h2>
+
+                        <div class="converter-container">
+                            <div class="converter-type-select">
+                                <label for="conv-type">Conversion Type:</label>
+                                <select id="conv-type" onchange="ConverterApp.changeType()">
+                                    <option value="length">Length</option>
+                                    <option value="weight">Weight/Mass</option>
+                                    <option value="temperature">Temperature</option>
+                                    <option value="area">Area</option>
+                                    <option value="volume">Volume</option>
+                                    <option value="speed">Speed</option>
+                                    <option value="time">Time</option>
+                                    <option value="data">Data Storage</option>
+                                    <option value="energy">Energy</option>
+                                    <option value="pressure">Pressure</option>
+                                </select>
+                            </div>
+
+                            <div class="converter-inputs">
+                                <div class="input-group">
+                                    <label for="conv-from-unit">From:</label>
+                                    <select id="conv-from-unit" onchange="ConverterApp.convert()"></select>
+                                    <input type="text" id="conv-from-value" class="number-input"
+                                        placeholder="Enter value">
                                 </div>
-                                <h3>Simple Mode</h3>
-                                <p class="mode-description">Perfect for everyday calculations</p>
-                                <ul class="mode-features">
-                                    <li><i class="fas fa-check"></i> Basic arithmetic (+, -, ×, ÷)</li>
-                                    <li><i class="fas fa-check"></i> Powers & roots (x², √)</li>
-                                    <li><i class="fas fa-check"></i> Parentheses for complex expressions</li>
-                                    <li><i class="fas fa-check"></i> Fractions (1/x)</li>
-                                    <li><i class="fas fa-check"></i> Percentages & sign changes</li>
-                                    <li><i class="fas fa-check"></i> Quick entry (00, 000)</li>
-                                </ul>
-                            </div>
 
-                            <div class="mode-card featured">
-                                <div class="mode-badge">Most Popular</div>
-                                <div class="mode-icon">
-                                    <i class="fas fa-flask"></i>
+                                <div class="swap-btn">
+                                    <button onclick="ConverterApp.swap()"><i class="fas fa-exchange-alt"></i></button>
                                 </div>
-                                <h3>Advanced Mode</h3>
-                                <p class="mode-description">Everything from Simple Mode plus scientific functions</p>
-                                <ul class="mode-features">
-                                    <li><i class="fas fa-check"></i> All Simple Mode features</li>
-                                    <li><i class="fas fa-check"></i> Trigonometry (sin, cos, tan)</li>
-                                    <li><i class="fas fa-check"></i> Logarithms (log, ln, e^x)</li>
-                                    <li><i class="fas fa-check"></i> Advanced powers (x³, x^y, ∛)</li>
-                                    <li><i class="fas fa-check"></i> Constants (π, e)</li>
-                                    <li><i class="fas fa-check"></i> Special functions (n!, |x|, mod)</li>
-                                </ul>
+
+                                <div class="input-group">
+                                    <label for="conv-to-unit">To:</label>
+                                    <select id="conv-to-unit" onchange="ConverterApp.convert()"></select>
+                                    <input type="text" id="conv-to-value" class="number-input" placeholder="Result"
+                                        readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 3. PHYSICS SECTION -->
+                    <section id="physics" class="calculator-section">
+                        <h2 class="section-title"><i class="fas fa-atom"></i> Physics Calculators</h2>
+
+                        <div class="physics-container">
+                            <div class="physics-type-select">
+                                <label for="physics-type">Physics Formula:</label>
+                                <select id="physics-type" onchange="PhysicsApp.changeFormula()">
+                                    <optgroup label="Kinematics">
+                                        <option value="velocity">Velocity (v = u + at)</option>
+                                        <option value="displacement">Displacement (s = ut + ½at²)</option>
+                                        <option value="velocity-squared">Velocity Squared (v² = u² + 2as)</option>
+                                    </optgroup>
+                                    <optgroup label="Dynamics">
+                                        <option value="force">Force (F = ma)</option>
+                                        <option value="momentum">Momentum (p = mv)</option>
+                                        <option value="impulse">Impulse (J = FΔt)</option>
+                                    </optgroup>
+                                    <optgroup label="Energy & Work">
+                                        <option value="work">Work (W = Fd)</option>
+                                        <option value="power">Power (P = W/t)</option>
+                                        <option value="kinetic">Kinetic Energy (KE = ½mv²)</option>
+                                        <option value="potential">Potential Energy (PE = mgh)</option>
+                                    </optgroup>
+                                    <optgroup label="Thermodynamics">
+                                        <option value="heat-energy">Heat Energy (Q = mcΔT)</option>
+                                    </optgroup>
+                                    <optgroup label="Gravity">
+                                        <option value="gravitational-force">Gravitational Force (F = GMm/r²)</option>
+                                    </optgroup>
+                                    <optgroup label="Circular Motion">
+                                        <option value="centripetal-force">Centripetal Force (F = mv²/r)</option>
+                                        <option value="angular-velocity">Angular Velocity (ω = v/r)</option>
+                                    </optgroup>
+                                    <optgroup label="Waves & Optics">
+                                        <option value="wave-speed">Wave Speed (v = fλ)</option>
+                                        <option value="lens">Lens Formula (1/f = 1/v + 1/u)</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+
+                            <div id="physics-inputs" class="physics-inputs"></div>
+
+                            <button class="calc-button" onclick="PhysicsApp.calculate()">Calculate</button>
+
+                            <div id="physics-result" class="physics-result"></div>
+                        </div>
+                    </section>
+
+                    <!-- 4. CHEMISTRY SECTION -->
+                    <section id="chemistry" class="calculator-section">
+                        <h2 class="section-title"><i class="fas fa-vial"></i> Chemistry Calculators</h2>
+
+                        <div class="chemistry-container">
+                            <div class="chemistry-type-select">
+                                <label for="chem-type">Chemistry Calculator:</label>
+                                <select id="chem-type" onchange="ChemistryApp.changeType()">
+                                    <option value="molarity">Molarity (M = n/V)</option>
+                                    <option value="dilution">Dilution (M₁V₁ = M₂V₂)</option>
+                                    <option value="molecular-weight">Molecular Weight</option>
+                                    <option value="percent-composition">Percent Composition</option>
+                                    <option value="ideal-gas">Ideal Gas Law (PV = nRT)</option>
+                                    <option value="ph">pH Calculator</option>
+                                    <option value="density">Density (ρ = m/V)</option>
+                                    <option value="percent-yield">Percent Yield</option>
+                                </select>
+                            </div>
+
+                            <div id="chem-inputs" class="chem-inputs"></div>
+
+                            <button class="calc-button" onclick="ChemistryApp.calculate()">Calculate</button>
+
+                            <div id="chem-result" class="chem-result"></div>
+                        </div>
+                    </section>
+
+                    <!-- 5. ELECTRICITY SECTION -->
+                    <section id="electricity" class="calculator-section">
+                        <h2 class="section-title"><i class="fas fa-bolt"></i> Electricity</h2>
+
+                        <div class="electricity-container">
+                            <div class="electricity-type-select">
+                                <label for="electricity-type">Electrical Formula:</label>
+                                <select id="electricity-type" onchange="ElectricityApp.changeFormula()">
+                                    <optgroup label="Ohm's Law">
+                                        <option value="ohms-law-voltage">Calculate Voltage (V = IR)</option>
+                                        <option value="ohms-law-current">Calculate Current (I = V/R)</option>
+                                        <option value="ohms-law-resistance">Calculate Resistance (R = V/I)</option>
+                                    </optgroup>
+                                    <optgroup label="Power">
+                                        <option value="power-vi">Power from V & I (P = VI)</option>
+                                        <option value="power-ir">Power from I & R (P = I²R)</option>
+                                        <option value="power-vr">Power from V & R (P = V²/R)</option>
+                                    </optgroup>
+                                    <optgroup label="Energy & Cost">
+                                        <option value="energy">Energy in Wh (E = Pt)</option>
+                                        <option value="energy-kwh">Energy in kWh</option>
+                                        <option value="electricity-cost">Electricity Cost</option>
+                                    </optgroup>
+                                    <optgroup label="Resistors">
+                                        <option value="resistors-series">Resistors in Series</option>
+                                        <option value="resistors-parallel-2">Resistors in Parallel (2)</option>
+                                        <option value="resistors-parallel-3">Resistors in Parallel (3)</option>
+                                        <option value="wire-resistance">Wire Resistance</option>
+                                    </optgroup>
+                                    <optgroup label="Capacitors">
+                                        <option value="capacitors-series">Capacitors in Series</option>
+                                        <option value="capacitors-parallel">Capacitors in Parallel</option>
+                                        <option value="capacitive-reactance">Capacitive Reactance</option>
+                                        <option value="capacitor-energy">Capacitor Energy</option>
+                                    </optgroup>
+                                    <optgroup label="Inductors">
+                                        <option value="inductive-reactance">Inductive Reactance</option>
+                                        <option value="inductor-energy">Inductor Energy</option>
+                                    </optgroup>
+                                    <optgroup label="AC Circuits">
+                                        <option value="impedance-rc">RC Circuit Impedance</option>
+                                        <option value="impedance-rl">RL Circuit Impedance</option>
+                                        <option value="power-factor">Power Factor</option>
+                                        <option value="resonance-frequency">Resonance Frequency</option>
+                                        <option value="three-phase-power">3-Phase Power</option>
+                                    </optgroup>
+                                    <optgroup label="Time Constants">
+                                        <option value="time-constant-rc">RC Time Constant</option>
+                                        <option value="time-constant-rl">RL Time Constant</option>
+                                    </optgroup>
+                                    <optgroup label="Circuit Analysis">
+                                        <option value="voltage-divider">Voltage Divider</option>
+                                        <option value="current-divider">Current Divider</option>
+                                        <option value="transformer-ratio">Transformer Ratio</option>
+                                    </optgroup>
+                                    <optgroup label="Other">
+                                        <option value="charge">Electric Charge (Q = It)</option>
+                                        <option value="efficiency">Efficiency</option>
+                                        <option value="current-density">Current Density</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+
+                            <div class="electricity-description" id="electricity-description"></div>
+
+                            <div class="electricity-inputs" id="electricity-inputs"></div>
+
+                            <button class="calc-button" onclick="ElectricityApp.calculate()">Calculate</button>
+
+                            <div id="electricity-result" class="electricity-result"></div>
+                        </div>
+                    </section>
+
+                    <!-- 6. COMPUTER SCIENCE SECTION -->
+                    <section id="computer-science" class="calculator-section">
+                        <h2 class="section-title"><i class="fas fa-laptop-code"></i> Computer Science</h2>
+
+                        <div class="cs-container">
+                            <div class="cs-type-select">
+                                <label for="cs-type">CS Calculator:</label>
+                                <select id="cs-type" onchange="ComputerScienceApp.changeType()">
+                                    <option value="number-system">Number System Converter</option>
+                                    <option value="binary-operations">Binary Operations</option>
+                                    <option value="boolean">Boolean Logic</option>
+                                    <option value="bitwise">Bitwise Operations</option>
+                                    <option value="subnet">Subnet Calculator</option>
+                                    <option value="color">Color Converter</option>
+                                    <option value="ascii">ASCII Converter</option>
+                                </select>
+                            </div>
+
+                            <div id="cs-inputs" class="cs-inputs"></div>
+
+                            <button class="calc-button" onclick="ComputerScienceApp.calculate()">Calculate</button>
+
+                            <div id="cs-result" class="cs-result"></div>
+                        </div>
+                    </section>
+
+                    <!-- 7. FINANCE SECTION -->
+                    <section id="finance" class="calculator-section">
+                        <h2 class="section-title"><i class="fas fa-dollar-sign"></i> Finance Calculators</h2>
+
+                        <div class="finance-container">
+                            <div class="finance-type-select">
+                                <label for="finance-type">Finance Calculator:</label>
+                                <select id="finance-type" onchange="FinanceApp.changeType()">
+                                    <option value="simple-interest">Simple Interest</option>
+                                    <option value="compound-interest">Compound Interest</option>
+                                    <option value="loan">Loan Calculator</option>
+                                    <option value="mortgage">Mortgage Calculator</option>
+                                    <option value="investment">Investment Return</option>
+                                    <option value="roi">ROI (Return on Investment)</option>
+                                    <option value="savings">Savings Calculator</option>
+                                    <option value="discount">Discount Calculator</option>
+                                    <option value="tip">Tip Calculator</option>
+                                    <option value="percentage">Percentage Calculator</option>
+                                </select>
+                            </div>
+
+                            <div id="finance-inputs" class="finance-inputs"></div>
+
+                            <button class="calc-button" onclick="FinanceApp.calculate()">Calculate</button>
+
+                            <div id="finance-result" class="finance-result"></div>
+                        </div>
+                    </section>
+
+                    <!-- 8. DATE & TIME SECTION -->
+                    <section id="date-time" class="calculator-section">
+                        <h2 class="section-title"><i class="fas fa-clock"></i> Date & Time</h2>
+
+                        <div class="datetime-container">
+                            <div class="datetime-type-select">
+                                <label for="datetime-type">Date & Time Calculator:</label>
+                                <select id="datetime-type" onchange="DateTimeApp.changeType()">
+                                    <option value="age">Age Calculator</option>
+                                    <option value="date-diff">Date Difference</option>
+                                    <option value="date-add">Add/Subtract Days</option>
+                                    <option value="business-days">Business Days Calculator</option>
+                                    <option value="time-diff">Time Difference</option>
+                                    <option value="timezone">Time Zone Converter</option>
+                                    <option value="unix">Unix Timestamp</option>
+                                    <option value="week-number">Week Number</option>
+                                </select>
+                            </div>
+
+                            <div id="datetime-inputs" class="datetime-inputs"></div>
+
+                            <button class="calc-button" onclick="DateTimeApp.calculate()">Calculate</button>
+
+                            <div id="datetime-result" class="datetime-result"></div>
+                        </div>
+                    </section>
+
+                </div>
+                <!-- End Main Calculator Content -->
+
+                <!-- Right AdSense Sidebar -->
+                <aside class="ad-sidebar ad-sidebar-right">
+                    <div class="ad-sticky">
+                        <div class="ad-unit">
+                            <p class="ad-label">Advertisement</p>
+                            <div class="ad-placeholder ad-300x600">
+                                <!-- Google AdSense Code Here -->
+                                <p>300x600</p>
+                            </div>
+                        </div>
+                        <div class="ad-unit">
+                            <p class="ad-label">Advertisement</p>
+                            <div class="ad-placeholder ad-300x250">
+                                <!-- Google AdSense Code Here -->
+                                <p>300x250</p>
                             </div>
                         </div>
                     </div>
+                </aside>
 
-                    <!-- Features Section -->
-                    <div class="features-section">
-                        <h2>Why Choose Calcurex?</h2>
-                        <div class="features-grid">
-                            <div class="feature-card">
-                                <i class="fas fa-toggle-on"></i>
-                                <h3>Easy Mode Toggle</h3>
-                                <p>Switch between Simple and Advanced modes instantly - no page reload needed</p>
-                            </div>
-
-                            <div class="feature-card">
-                                <i class="fas fa-keyboard"></i>
-                                <h3>Keyboard Support</h3>
-                                <p>Full keyboard shortcuts for faster calculations - type naturally like a desktop app
-                                </p>
-                            </div>
-
-                            <div class="feature-card">
-                                <i class="fas fa-mobile-alt"></i>
-                                <h3>Mobile Friendly</h3>
-                                <p>Perfectly optimized for phones and tablets - calculate anywhere, anytime</p>
-                            </div>
-
-                            <div class="feature-card">
-                                <i class="fas fa-moon"></i>
-                                <h3>Dark Mode</h3>
-                                <p>Easy on the eyes with beautiful dark theme - switch themes with one click</p>
-                            </div>
-
-                            <div class="feature-card">
-                                <i class="fas fa-history"></i>
-                                <h3>Calculation History</h3>
-                                <p>View your recent calculations - never lose track of your work</p>
-                            </div>
-
-                            <div class="feature-card">
-                                <i class="fas fa-shield-alt"></i>
-                                <h3>100% Free</h3>
-                                <p>No signup, no limits, no hidden fees - completely free forever</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Additional Tools Section -->
-                    <div class="tools-section">
-                        <h2>More Specialized Calculators</h2>
-                        <p class="section-subtitle">Beyond our main calculator, we offer specialized tools for specific
-                            needs</p>
-
-                        <div class="tools-grid">
-                            <a href="/length/" class="tool-card">
-                                <i class="fas fa-ruler"></i>
-                                <h4>Unit Converters</h4>
-                                <p>Length, weight, temperature, and more</p>
-                            </a>
-
-                            <a href="/kinematics/" class="tool-card">
-                                <i class="fas fa-atom"></i>
-                                <h4>Physics</h4>
-                                <p>Kinematics, dynamics, electricity</p>
-                            </a>
-
-                            <a href="/molarity/" class="tool-card">
-                                <i class="fas fa-vial"></i>
-                                <h4>Chemistry</h4>
-                                <p>Molarity, pH, gas laws</p>
-                            </a>
-
-                            <a href="/simple-interest/" class="tool-card">
-                                <i class="fas fa-dollar-sign"></i>
-                                <h4>Finance</h4>
-                                <p>Interest, loans, investments</p>
-                            </a>
-
-                            <a href="/number-system/" class="tool-card">
-                                <i class="fas fa-laptop-code"></i>
-                                <h4>Computer Science</h4>
-                                <p>Binary, hex, boolean logic</p>
-                            </a>
-
-                            <a href="/age/" class="tool-card">
-                                <i class="fas fa-clock"></i>
-                                <h4>Date & Time</h4>
-                                <p>Age, date difference, time zones</p>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- CTA Section -->
-                    <div class="cta-section">
-                        <h2>Ready to Calculate?</h2>
-                        <p>Start using our advanced calculator now - no signup required!</p>
-                        <a href="/advanced/" class="cta-button large">
-                            <i class="fas fa-calculator"></i> Launch Calculator
-                        </a>
-                    </div>
-                </section>
             </div>
-        </div>
+            <!-- End content-grid-with-ads -->
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="site-footer">
         <div class="container">
             <p>&copy; 2025 Calcurex. All rights reserved.</p>
-            <p>Advanced Scientific Calculator for Students, Professionals, and Researchers</p>
+            <p>Complete Calculator Suite - Free Forever</p>
         </div>
     </footer>
 
     <script src="js/theme.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/converter.js"></script>
+    <script src="js/physics.js"></script>
+    <script src="js/electricity.js"></script>
+    <script src="js/chemistry.js"></script>
+    <script src="js/finance.js"></script>
+    <script src="js/computerscience.js"></script>
+    <script src="js/datetime.js"></script>
 </body>
 
 </html>
