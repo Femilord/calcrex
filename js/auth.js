@@ -104,7 +104,7 @@ const AuthSystem = {
                 if (sectionTitle && !sectionTitle.querySelector('.pro-tag')) {
                     const proTag = document.createElement('span');
                     proTag.className = 'pro-tag';
-                    proTag.innerHTML = '<i class="fas fa-crown"></i> PRO - $5/month';
+                    proTag.innerHTML = '<i class="fas fa-crown"></i> PRO';
                     proTag.onclick = () => this.showUpgradeModal();
                     sectionTitle.appendChild(proTag);
                 }
@@ -117,9 +117,11 @@ const AuthSystem = {
                     notice.innerHTML = `
                         <div class="pro-notice-content">
                             <i class="fas fa-star"></i>
-                            <span>This is a <strong>PRO feature</strong>. Enter your values below and click Calculate to see results.</span>
+                            <div class="pro-notice-text">
+                                <strong>PRO Feature:</strong> Try it out by entering values and clicking Calculate.
+                            </div>
                             <button class="btn-pro-small" onclick="AuthSystem.showUpgradeModal()">
-                                Upgrade to PRO - $5/month
+                                $5/month
                             </button>
                         </div>
                     `;
