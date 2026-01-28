@@ -104,7 +104,7 @@ const AuthSystem = {
                 if (sectionTitle && !sectionTitle.querySelector('.pro-tag')) {
                     const proTag = document.createElement('span');
                     proTag.className = 'pro-tag';
-                    proTag.innerHTML = '<i class="fas fa-crown"></i> PRO';
+                    proTag.textContent = 'PRO';
                     proTag.onclick = () => this.showUpgradeModal();
                     sectionTitle.appendChild(proTag);
                 }

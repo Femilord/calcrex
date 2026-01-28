@@ -1452,22 +1452,28 @@ option {
 .pro-tag {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
+    justify-content: center;
     background: linear-gradient(135deg, #f59e0b, #d97706);
-    color: white;
-    padding: 0.35rem 0.85rem;
+    color: white !important;
+    padding: 0.4rem 1rem;
     border-radius: var(--radius-full);
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 700;
     margin-left: 0.75rem;
     cursor: pointer;
     transition: var(--transition);
-    animation: pulse-glow 2s infinite;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    min-width: 60px;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: white;
+    background-clip: initial;
 }
 
 .pro-tag:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(245, 158, 11, 0.6);
+    background: linear-gradient(135deg, #d97706, #f59e0b);
 }
 
 @keyframes pulse-glow {
