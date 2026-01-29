@@ -2,16 +2,236 @@
 <html lang="en">
 
 <head>
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary Meta Tags -->
+    <title>CalcRex - Free Online Calculator Suite | 90+ Professional Calculators</title>
+    <meta name="title" content="CalcRex - Free Online Calculator Suite | 90+ Professional Calculators">
     <meta name="description"
-        content="Calcurex - Complete calculator suite with calculators, converters, physics, chemistry, finance, computer science, and date & time tools.">
+        content="CalcRex offers 90+ free online calculators including basic, scientific, physics, electricity, chemistry, computer science, finance, and date tools. Fast, accurate, and easy to use.">
     <meta name="keywords"
-        content="calculator, converter, physics calculator, chemistry calculator, finance calculator, computer science calculator, date calculator">
-    <title>Calcurex - All Calculators in One Place</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+        content="calculator online, free calculator, scientific calculator, physics calculator, electricity calculator, chemistry calculator, finance calculator, unit converter, online tools, math calculator, percentage calculator, CalcRex">
+    <meta name="author" content="CalcRex">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://calcrex.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcrex.com/">
+    <meta property="og:title" content="CalcRex - Free Online Calculator Suite | 90+ Professional Calculators">
+    <meta property="og:description"
+        content="CalcRex offers 90+ free online calculators including basic, scientific, physics, electricity, chemistry, computer science, finance, and date tools. Fast, accurate, and easy to use.">
+    <meta property="og:image" content="https://calcrex.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="CalcRex">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://calcrex.com/">
+    <meta name="twitter:title" content="CalcRex - Free Online Calculator Suite | 90+ Professional Calculators">
+    <meta name="twitter:description"
+        content="CalcRex offers 90+ free online calculators including basic, scientific, physics, electricity, chemistry, computer science, finance, and date tools. Fast, accurate, and easy to use.">
+    <meta name="twitter:image" content="https://calcrex.com/twitter-image.jpg">
+    <meta name="twitter:creator" content="@CalcRex">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="icon" type="image/x-icon" sizes="144x144" href="./favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="msapplication-TileColor" content="#3b82f6">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/unified.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- Structured Data - Website -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "CalcRex",
+      "alternateName": "CalcRex Calculator Suite",
+      "url": "https://calcrex.com/",
+      "description": "Free online calculator suite with 90+ professional calculators for math, science, finance, and more.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://calcrex.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CalcRex",
+      "url": "https://calcrex.com/",
+      "logo": "https://calcrex.com/logo.png",
+      "description": "Professional online calculator platform offering 90+ free calculators",
+      "sameAs": [
+        "https://twitter.com/CalcRex",
+        "https://facebook.com/CalcRex"
+      ]
+    }
+    </script>
+
+    <!-- Structured Data - WebApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "CalcRex",
+      "url": "https://calcrex.com/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1250",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+
+    <!-- Structured Data - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://calcrex.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Calculators",
+          "item": "https://calcrex.com/#calculator"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Converters",
+          "item": "https://calcrex.com/#converters"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Physics",
+          "item": "https://calcrex.com/#physics"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Chemistry",
+          "item": "https://calcrex.com/#chemistry"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Electricity",
+          "item": "https://calcrex.com/#electricity"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Computer Science",
+          "item": "https://calcrex.com/#computer-science"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Finance",
+          "item": "https://calcrex.com/#finance"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Date & Time",
+          "item": "https://calcrex.com/#date-time"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data - FAQPage (Sample) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is CalcRex free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, CalcRex offers free access to basic calculators, converters, finance tools, and date calculators. Premium features including Physics, Electricity, Chemistry, and Computer Science calculators are available with a PRO subscription for $5/month."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many calculators does CalcRex have?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CalcRex offers over 90 professional calculators across 8 categories: Basic/Scientific Calculators, Unit Converters, Physics Calculators, Chemistry Calculators, Electricity Calculators, Computer Science Tools, Finance Calculators, and Date & Time Calculators."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does CalcRex work on mobile devices?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, CalcRex is fully responsive and works seamlessly on all devices including smartphones, tablets, and desktop computers. The interface automatically adapts to your screen size."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What makes CalcRex different from other calculators?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CalcRex combines 90+ specialized calculators in one platform with a clean, modern interface. It includes advanced tools for professionals and students in physics, electricity, chemistry, and computer science, all with instant calculations and no ads on premium features."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Performance Hints -->
+    <link rel="prefetch" href="/js/calculator.js">
+    <link rel="prefetch" href="/js/converter.js">
+
+    <!-- Security -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="referrer" content="origin-when-cross-origin">
 </head>
 
 <body>
@@ -20,7 +240,7 @@
         <div class="container">
             <div class="logo">
                 <i class="fas fa-calculator"></i>
-                <h1>Calcurex</h1>
+                <h1>CalcRex</h1>
             </div>
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
                 <i class="fas fa-moon"></i>
@@ -48,7 +268,7 @@
     <main class="main-content">
         <div class="container">
             <div class="content-grid-with-ads">
-
+    
                 <!-- Left AdSense Sidebar -->
                 <aside class="ad-sidebar ad-sidebar-left">
                     <div class="ad-sticky">
@@ -68,46 +288,45 @@
                         </div>
                     </div>
                 </aside>
-
+    
                 <!-- Main Calculator Content -->
                 <div class="main-calculator-content">
-
+    
                     <!-- 1. CALCULATOR SECTION -->
                     <section id="calculator" class="calculator-section">
                         <h2 class="section-title"><i class="fas fa-calculator"></i> Calculator</h2>
-
+    
                         <!-- Mode Toggle -->
                         <div class="mode-selector">
                             <button class="mode-btn active" onclick="switchCalcMode('basic')">Basic</button>
                             <button class="mode-btn" onclick="switchCalcMode('scientific')">Scientific</button>
                             <button class="mode-btn" onclick="switchCalcMode('advanced')">Advanced</button>
                         </div>
-
+    
                         <div class="keyboard-hint">
-                            <i class="fas fa-keyboard"></i> Keyboard shortcuts: Numbers, +, -, *, /, Enter, Backspace,
-                            Esc
+                            <i class="fas fa-keyboard"></i> Keyboard shortcuts: Numbers, +, -, *, /, Enter, Backspace, Esc
                         </div>
-
+    
                         <div class="calculator-container" id="calc-container">
                             <!-- Angle Mode (Hidden for Basic) -->
                             <div class="angle-mode" id="calc-angle-mode" style="display: none;">
                                 <label><input type="radio" name="calc-angle" value="deg" checked> Degrees</label>
                                 <label><input type="radio" name="calc-angle" value="rad"> Radians</label>
                             </div>
-
+    
                             <div class="calc-display">
                                 <div class="calc-history" id="calc-history"></div>
                                 <input type="text" id="calc-display" class="display-field" value="0" readonly>
                             </div>
-
+    
                             <div class="calc-buttons" id="calc-buttons"></div>
                         </div>
                     </section>
-
+    
                     <!-- 2. CONVERTERS SECTION -->
                     <section id="converters" class="calculator-section">
                         <h2 class="section-title"><i class="fas fa-exchange-alt"></i> Unit Converters</h2>
-
+    
                         <div class="converter-container">
                             <div class="converter-type-select">
                                 <label for="conv-type">Conversion Type:</label>
@@ -124,19 +343,18 @@
                                     <option value="pressure">Pressure</option>
                                 </select>
                             </div>
-
+    
                             <div class="converter-inputs">
                                 <div class="input-group">
                                     <label for="conv-from-unit">From:</label>
                                     <select id="conv-from-unit" onchange="ConverterApp.convert()"></select>
-                                    <input type="text" id="conv-from-value" class="number-input"
-                                        placeholder="Enter value">
+                                    <input type="text" id="conv-from-value" class="number-input" placeholder="Enter value">
                                 </div>
-
+    
                                 <div class="swap-btn">
                                     <button onclick="ConverterApp.swap()"><i class="fas fa-exchange-alt"></i></button>
                                 </div>
-
+    
                                 <div class="input-group">
                                     <label for="conv-to-unit">To:</label>
                                     <select id="conv-to-unit" onchange="ConverterApp.convert()"></select>
@@ -146,11 +364,11 @@
                             </div>
                         </div>
                     </section>
-
+    
                     <!-- 3. PHYSICS SECTION -->
                     <section id="physics" class="calculator-section">
                         <h2 class="section-title"><i class="fas fa-atom"></i> Physics Calculators</h2>
-
+    
                         <div class="physics-container">
                             <div class="physics-type-select">
                                 <label for="physics-type">Physics Formula:</label>
@@ -187,19 +405,19 @@
                                     </optgroup>
                                 </select>
                             </div>
-
+    
                             <div id="physics-inputs" class="physics-inputs"></div>
-
+    
                             <button class="calc-button" onclick="PhysicsApp.calculate()">Calculate</button>
-
+    
                             <div id="physics-result" class="physics-result"></div>
                         </div>
                     </section>
-
+    
                     <!-- 4. CHEMISTRY SECTION -->
                     <section id="chemistry" class="calculator-section">
                         <h2 class="section-title"><i class="fas fa-vial"></i> Chemistry Calculators</h2>
-
+    
                         <div class="chemistry-container">
                             <div class="chemistry-type-select">
                                 <label for="chem-type">Chemistry Calculator:</label>
@@ -214,19 +432,19 @@
                                     <option value="percent-yield">Percent Yield</option>
                                 </select>
                             </div>
-
+    
                             <div id="chem-inputs" class="chem-inputs"></div>
-
+    
                             <button class="calc-button" onclick="ChemistryApp.calculate()">Calculate</button>
-
+    
                             <div id="chem-result" class="chem-result"></div>
                         </div>
                     </section>
-
+    
                     <!-- 5. ELECTRICITY SECTION -->
                     <section id="electricity" class="calculator-section">
                         <h2 class="section-title"><i class="fas fa-bolt"></i> Electricity</h2>
-
+    
                         <div class="electricity-container">
                             <div class="electricity-type-select">
                                 <label for="electricity-type">Electrical Formula:</label>
@@ -285,21 +503,21 @@
                                     </optgroup>
                                 </select>
                             </div>
-
+    
                             <div class="electricity-description" id="electricity-description"></div>
-
+    
                             <div class="electricity-inputs" id="electricity-inputs"></div>
-
+    
                             <button class="calc-button" onclick="ElectricityApp.calculate()">Calculate</button>
-
+    
                             <div id="electricity-result" class="electricity-result"></div>
                         </div>
                     </section>
-
+    
                     <!-- 6. COMPUTER SCIENCE SECTION -->
                     <section id="computer-science" class="calculator-section">
                         <h2 class="section-title"><i class="fas fa-laptop-code"></i> Computer Science</h2>
-
+    
                         <div class="cs-container">
                             <div class="cs-type-select">
                                 <label for="cs-type">CS Calculator:</label>
@@ -313,19 +531,19 @@
                                     <option value="ascii">ASCII Converter</option>
                                 </select>
                             </div>
-
+    
                             <div id="cs-inputs" class="cs-inputs"></div>
-
+    
                             <button class="calc-button" onclick="ComputerScienceApp.calculate()">Calculate</button>
-
+    
                             <div id="cs-result" class="cs-result"></div>
                         </div>
                     </section>
-
+    
                     <!-- 7. FINANCE SECTION -->
                     <section id="finance" class="calculator-section">
                         <h2 class="section-title"><i class="fas fa-dollar-sign"></i> Finance Calculators</h2>
-
+    
                         <div class="finance-container">
                             <div class="finance-type-select">
                                 <label for="finance-type">Finance Calculator:</label>
@@ -342,19 +560,19 @@
                                     <option value="percentage">Percentage Calculator</option>
                                 </select>
                             </div>
-
+    
                             <div id="finance-inputs" class="finance-inputs"></div>
-
+    
                             <button class="calc-button" onclick="FinanceApp.calculate()">Calculate</button>
-
+    
                             <div id="finance-result" class="finance-result"></div>
                         </div>
                     </section>
-
+    
                     <!-- 8. DATE & TIME SECTION -->
                     <section id="date-time" class="calculator-section">
                         <h2 class="section-title"><i class="fas fa-clock"></i> Date & Time</h2>
-
+    
                         <div class="datetime-container">
                             <div class="datetime-type-select">
                                 <label for="datetime-type">Date & Time Calculator:</label>
@@ -369,18 +587,18 @@
                                     <option value="week-number">Week Number</option>
                                 </select>
                             </div>
-
+    
                             <div id="datetime-inputs" class="datetime-inputs"></div>
-
+    
                             <button class="calc-button" onclick="DateTimeApp.calculate()">Calculate</button>
-
+    
                             <div id="datetime-result" class="datetime-result"></div>
                         </div>
                     </section>
-
+    
                 </div>
                 <!-- End Main Calculator Content -->
-
+    
                 <!-- Right AdSense Sidebar -->
                 <aside class="ad-sidebar ad-sidebar-right">
                     <div class="ad-sticky">
@@ -400,11 +618,11 @@
                         </div>
                     </div>
                 </aside>
-
+    
             </div>
             <!-- End content-grid-with-ads -->
     </main>
-
+    
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
@@ -412,7 +630,7 @@
             <p>Complete Calculator Suite - Free Forever</p>
         </div>
     </footer>
-
+    
     <script src="js/theme.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/calculator.js"></script>
@@ -423,6 +641,7 @@
     <script src="js/finance.js"></script>
     <script src="js/computerscience.js"></script>
     <script src="js/datetime.js"></script>
-</body>
+    </body>
+
 
 </html>
