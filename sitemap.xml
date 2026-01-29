@@ -1,79 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-    
-    <!-- Homepage -->
-    <url>
-        <loc>https://calcrex.com/</loc>
-        <lastmod>2025-01-28</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    
-    <!-- Calculator Section -->
-    <url>
-        <loc>https://calcrex.com/#calculator</loc>
-        <lastmod>2025-01-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <!-- Converters Section -->
-    <url>
-        <loc>https://calcrex.com/#converters</loc>
-        <lastmod>2025-01-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <!-- Physics Section -->
-    <url>
-        <loc>https://calcrex.com/#physics</loc>
-        <lastmod>2025-01-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- Chemistry Section -->
-    <url>
-        <loc>https://calcrex.com/#chemistry</loc>
-        <lastmod>2025-01-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- Electricity Section -->
-    <url>
-        <loc>https://calcrex.com/#electricity</loc>
-        <lastmod>2025-01-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- Computer Science Section -->
-    <url>
-        <loc>https://calcrex.com/#computer-science</loc>
-        <lastmod>2025-01-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- Finance Section -->
-    <url>
-        <loc>https://calcrex.com/#finance</loc>
-        <lastmod>2025-01-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <!-- Date & Time Section -->
-    <url>
-        <loc>https://calcrex.com/#date-time</loc>
-        <lastmod>2025-01-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://calcrex.com/</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Main Pages -->
+  <url>
+    <loc>https://calcrex.com/about</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://calcrex.com/contact</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://calcrex.com/policy-document</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>
