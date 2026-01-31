@@ -118,20 +118,22 @@
 </head>
 
 <!-- Breadcrumb Navigation (Add to body after header) -->
-<nav class="breadcrumb" aria-label="Breadcrumb">
-    <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a itemprop="item" href="https://calcrex.com/">
-                <span itemprop="name">Home</span>
-            </a>
-            <meta itemprop="position" content="1" />
-        </li>
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <span itemprop="name">Electricity Calculators</span>
-            <meta itemprop="position" content="2" />
-        </li>
-    </ol>
-</nav>
+<div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a itemprop="item" href="https://calcrex.com/">
+                    <span itemprop="name">Home</span>
+                </a>
+                <meta itemprop="position" content="1" />
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span itemprop="name">Electricity Calculators</span>
+                <meta itemprop="position" content="2" />
+            </li>
+        </ol>
+    </nav>
+</div>
 
 <body>
     <!-- Header -->
@@ -203,10 +205,11 @@
                 <div class="collapsible-content">
                     <div class="description-content">
                         <p>Solve <strong>electrical engineering</strong> problems with our comprehensive collection of
-                    calculators for <strong>Ohm's Law</strong>, <strong>power calculations</strong>, <strong>circuit
-                        analysis</strong>, <strong>AC circuits</strong>, and <strong>component design</strong>.
-                    Essential tools for electrical engineers, electronics hobbyists, students, and technicians
-                    working with electrical circuits and systems.</p>
+                            calculators for <strong>Ohm's Law</strong>, <strong>power calculations</strong>,
+                            <strong>circuit
+                                analysis</strong>, <strong>AC circuits</strong>, and <strong>component design</strong>.
+                            Essential tools for electrical engineers, electronics hobbyists, students, and technicians
+                            working with electrical circuits and systems.</p>
                     </div>
                 </div>
             </section>
@@ -222,39 +225,41 @@
                     <div class="calculator-list-content">
                         <ul class="calculator-feature-list">
                             <li><strong>Ohm's Law Calculator (Voltage)</strong> - Calculate V = IR</li>
-                    <li><strong>Ohm's Law Calculator (Current)</strong> - Calculate I = V/R</li>
-                    <li><strong>Ohm's Law Calculator (Resistance)</strong> - Calculate R = V/I</li>
-                    <li><strong>Power Calculator (V & I)</strong> - Find power P = VI</li>
-                    <li><strong>Power Calculator (I & R)</strong> - Calculate P = I²R</li>
-                    <li><strong>Power Calculator (V & R)</strong> - Compute P = V²/R</li>
-                    <li><strong>Energy Calculator (Wh)</strong> - Calculate E = Pt in watt-hours</li>
-                    <li><strong>Energy Calculator (kWh)</strong> - Compute energy in kilowatt-hours</li>
-                    <li><strong>Electricity Cost Calculator</strong> - Calculate power consumption costs</li>
-                    <li><strong>Series Resistors Calculator</strong> - Find total resistance in series</li>
-                    <li><strong>Parallel Resistors Calculator (2)</strong> - Calculate parallel resistance for 2
-                        resistors</li>
-                    <li><strong>Parallel Resistors Calculator (3)</strong> - Calculate parallel resistance for 3
-                        resistors</li>
-                    <li><strong>Wire Resistance Calculator</strong> - Find resistance based on wire properties</li>
-                    <li><strong>Series Capacitors Calculator</strong> - Calculate capacitance in series</li>
-                    <li><strong>Parallel Capacitors Calculator</strong> - Find total capacitance in parallel</li>
-                    <li><strong>Capacitive Reactance Calculator</strong> - Calculate Xc = 1/(2πfC)</li>
-                    <li><strong>Capacitor Energy Calculator</strong> - Find stored energy E = ½CV²</li>
-                    <li><strong>Inductive Reactance Calculator</strong> - Calculate XL = 2πfL</li>
-                    <li><strong>Inductor Energy Calculator</strong> - Compute E = ½LI²</li>
-                    <li><strong>RC Circuit Impedance Calculator</strong> - Find impedance in RC circuits</li>
-                    <li><strong>RL Circuit Impedance Calculator</strong> - Calculate RL circuit impedance</li>
-                    <li><strong>Power Factor Calculator</strong> - Determine power factor in AC circuits</li>
-                    <li><strong>Resonance Frequency Calculator</strong> - Find resonance frequency</li>
-                    <li><strong>3-Phase Power Calculator</strong> - Calculate three-phase power systems</li>
-                    <li><strong>RC Time Constant Calculator</strong> - Calculate τ = RC</li>
-                    <li><strong>RL Time Constant Calculator</strong> - Find τ = L/R</li>
-                    <li><strong>Voltage Divider Calculator</strong> - Calculate voltage division</li>
-                    <li><strong>Current Divider Calculator</strong> - Determine current division</li>
-                    <li><strong>Transformer Ratio Calculator</strong> - Find transformer turns ratio</li>
-                    <li><strong>Electric Charge Calculator</strong> - Calculate Q = It</li>
-                    <li><strong>Efficiency Calculator</strong> - Determine electrical efficiency</li>
-                    <li><strong>Current Density Calculator</strong> - Calculate current per unit area</li>
+                            <li><strong>Ohm's Law Calculator (Current)</strong> - Calculate I = V/R</li>
+                            <li><strong>Ohm's Law Calculator (Resistance)</strong> - Calculate R = V/I</li>
+                            <li><strong>Power Calculator (V & I)</strong> - Find power P = VI</li>
+                            <li><strong>Power Calculator (I & R)</strong> - Calculate P = I²R</li>
+                            <li><strong>Power Calculator (V & R)</strong> - Compute P = V²/R</li>
+                            <li><strong>Energy Calculator (Wh)</strong> - Calculate E = Pt in watt-hours</li>
+                            <li><strong>Energy Calculator (kWh)</strong> - Compute energy in kilowatt-hours</li>
+                            <li><strong>Electricity Cost Calculator</strong> - Calculate power consumption costs</li>
+                            <li><strong>Series Resistors Calculator</strong> - Find total resistance in series</li>
+                            <li><strong>Parallel Resistors Calculator (2)</strong> - Calculate parallel resistance for 2
+                                resistors</li>
+                            <li><strong>Parallel Resistors Calculator (3)</strong> - Calculate parallel resistance for 3
+                                resistors</li>
+                            <li><strong>Wire Resistance Calculator</strong> - Find resistance based on wire properties
+                            </li>
+                            <li><strong>Series Capacitors Calculator</strong> - Calculate capacitance in series</li>
+                            <li><strong>Parallel Capacitors Calculator</strong> - Find total capacitance in parallel
+                            </li>
+                            <li><strong>Capacitive Reactance Calculator</strong> - Calculate Xc = 1/(2πfC)</li>
+                            <li><strong>Capacitor Energy Calculator</strong> - Find stored energy E = ½CV²</li>
+                            <li><strong>Inductive Reactance Calculator</strong> - Calculate XL = 2πfL</li>
+                            <li><strong>Inductor Energy Calculator</strong> - Compute E = ½LI²</li>
+                            <li><strong>RC Circuit Impedance Calculator</strong> - Find impedance in RC circuits</li>
+                            <li><strong>RL Circuit Impedance Calculator</strong> - Calculate RL circuit impedance</li>
+                            <li><strong>Power Factor Calculator</strong> - Determine power factor in AC circuits</li>
+                            <li><strong>Resonance Frequency Calculator</strong> - Find resonance frequency</li>
+                            <li><strong>3-Phase Power Calculator</strong> - Calculate three-phase power systems</li>
+                            <li><strong>RC Time Constant Calculator</strong> - Calculate τ = RC</li>
+                            <li><strong>RL Time Constant Calculator</strong> - Find τ = L/R</li>
+                            <li><strong>Voltage Divider Calculator</strong> - Calculate voltage division</li>
+                            <li><strong>Current Divider Calculator</strong> - Determine current division</li>
+                            <li><strong>Transformer Ratio Calculator</strong> - Find transformer turns ratio</li>
+                            <li><strong>Electric Charge Calculator</strong> - Calculate Q = It</li>
+                            <li><strong>Efficiency Calculator</strong> - Determine electrical efficiency</li>
+                            <li><strong>Current Density Calculator</strong> - Calculate current per unit area</li>
                         </ul>
                     </div>
                 </div>
