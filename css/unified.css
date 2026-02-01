@@ -2515,3 +2515,60 @@ option {
     height: 3px;
     background: var(--primary-color, #3b82f6);
 }
+
+/* ========================================
+   BREADCRUMB NAVIGATION
+======================================== */
+.breadcrumb {
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+}
+
+.breadcrumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+    color: var(--text-muted);
+}
+
+/* The separator using your border color */
+.breadcrumb li:not(:last-child)::after {
+    content: "/";
+    margin: 0 0.75rem;
+    color: var(--border-color);
+    font-weight: 300;
+}
+
+/* Link styling using your primary blue */
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* Current page text styling */
+.breadcrumb li:last-child span {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .breadcrumb {
+        padding: 0.75rem 0;
+        font-size: 0.8rem;
+    }
+}

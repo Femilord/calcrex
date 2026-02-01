@@ -7,10 +7,16 @@ const DateTimeApp = {
         this.changeType();
     },
 
+    // Helper function to get day of the week in uppercase
+    getDayOfWeek(date) {
+        const days = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
+        return days[date.getDay()];
+    },
+
     // Helper function to calculate comprehensive time breakdown
     getTimeBreakdown(startDate, endDate) {
         const diffMs = Math.abs(endDate - startDate);
-        
+
         // Calculate all time units
         const totalSeconds = Math.floor(diffMs / 1000);
         const totalMinutes = Math.floor(totalSeconds / 60);
@@ -20,12 +26,12 @@ const DateTimeApp = {
         const totalMonths = Math.floor(totalDays / 30.44); // Average month length
         const totalYears = Math.floor(totalDays / 365.25); // Account for leap years
         const totalDecades = Math.floor(totalYears / 10);
-        
+
         // Calculate exact breakdown
         let years = endDate.getFullYear() - startDate.getFullYear();
         let months = endDate.getMonth() - startDate.getMonth();
         let days = endDate.getDate() - startDate.getDate();
-        
+
         // Adjust for negative values
         if (days < 0) {
             months--;
@@ -36,13 +42,13 @@ const DateTimeApp = {
             years--;
             months += 12;
         }
-        
+
         // Calculate remaining time units
         const remainingDays = totalDays % 7;
         const hours = totalHours % 24;
         const minutes = totalMinutes % 60;
         const seconds = totalSeconds % 60;
-        
+
         return {
             // Exact breakdown
             exact: {
@@ -70,29 +76,38 @@ const DateTimeApp = {
         };
     },
 
-    formatTimeBreakdown(breakdown) {
+    formatTimeBreakdown(breakdown, startDate, endDate) {
         const { exact, totals, remaining } = breakdown;
-        
+
         let html = '<div class="time-breakdown">';
-        
+
+        // Add day of the week information
+        const startDay = this.getDayOfWeek(startDate);
+        const endDay = this.getDayOfWeek(endDate);
+
+        html += `<div class="breakdown-days-info" style="margin-bottom: 15px; padding: 10px; background: var(--card-bg); border-radius: 8px;">
+            <p style="margin: 5px 0;"><strong>Start Date:</strong> ${startDate.toDateString()} - ${startDay}</p>
+            <p style="margin: 5px 0;"><strong>End Date:</strong> ${endDate.toDateString()} - ${endDay}</p>
+        </div>`;
+
         // Primary result
         html += `<div class="breakdown-primary">
             <h3>Exact Age/Duration:</h3>
             <p class="large-result">${exact.years} years, ${exact.months} months, ${exact.days} days</p>
         </div>`;
-        
+
         // Detailed breakdown
         html += `<div class="breakdown-detailed">
             <h4>Complete Breakdown:</h4>
             <div class="breakdown-grid">`;
-        
+
         if (totals.decades > 0) {
             html += `<div class="breakdown-item">
                 <span class="breakdown-label">Decades:</span>
                 <span class="breakdown-value">${totals.decades.toLocaleString()}</span>
             </div>`;
         }
-        
+
         html += `
             <div class="breakdown-item">
                 <span class="breakdown-label">Years:</span>
@@ -123,9 +138,9 @@ const DateTimeApp = {
                 <span class="breakdown-value">${totals.seconds.toLocaleString()}</span>
             </div>
         `;
-        
+
         html += `</div></div></div>`;
-        
+
         return html;
     },
 
@@ -177,7 +192,7 @@ const DateTimeApp = {
                     const birthDate = new Date(document.getElementById('datetime-input-0').value);
                     const today = new Date();
                     const breakdown = this.getTimeBreakdown(birthDate, today);
-                    resultContainer.innerHTML = this.formatTimeBreakdown(breakdown);
+                    resultContainer.innerHTML = this.formatTimeBreakdown(breakdown, birthDate, today);
                     resultContainer.style.color = '#3b82f6';
                     return;
 
@@ -185,7 +200,7 @@ const DateTimeApp = {
                     const start = new Date(document.getElementById('datetime-input-0').value);
                     const end = new Date(document.getElementById('datetime-input-1').value);
                     const diffBreakdown = this.getTimeBreakdown(start, end);
-                    resultContainer.innerHTML = this.formatTimeBreakdown(diffBreakdown);
+                    resultContainer.innerHTML = this.formatTimeBreakdown(diffBreakdown, start, end);
                     resultContainer.style.color = '#3b82f6';
                     return;
 
@@ -194,7 +209,8 @@ const DateTimeApp = {
                     const daysToAdd = parseInt(document.getElementById('datetime-input-1').value);
                     const newDate = new Date(baseDate);
                     newDate.setDate(newDate.getDate() + daysToAdd);
-                    result = `New Date: ${newDate.toDateString()}`;
+                    const dayName = this.getDayOfWeek(newDate);
+                    result = `New Date: ${newDate.toDateString()} - This day is a ${dayName}`;
                     break;
 
                 case 'business-days':
@@ -210,7 +226,10 @@ const DateTimeApp = {
                         }
                         currentDate.setDate(currentDate.getDate() + 1);
                     }
-                    result = `Business Days: ${businessDays}`;
+
+                    const startDayBusiness = this.getDayOfWeek(startDate);
+                    const endDayBusiness = this.getDayOfWeek(endDate);
+                    result = `Business Days: ${businessDays}\n\nStart: ${startDate.toDateString()} - ${startDayBusiness}\nEnd: ${endDate.toDateString()} - ${endDayBusiness}`;
                     break;
 
                 case 'time-diff':
@@ -244,7 +263,8 @@ const DateTimeApp = {
                         result = `Unix Timestamp: ${timestamp}`;
                     } else {
                         const date = new Date(parseInt(unixInput) * 1000);
-                        result = `Date: ${date.toString()}`;
+                        const unixDayName = this.getDayOfWeek(date);
+                        result = `Date: ${date.toString()} - This day is a ${unixDayName}`;
                     }
                     break;
 
@@ -253,7 +273,8 @@ const DateTimeApp = {
                     const firstDay = new Date(weekDate.getFullYear(), 0, 1);
                     const pastDays = (weekDate - firstDay) / (1000 * 60 * 60 * 24);
                     const weekNum = Math.ceil((pastDays + firstDay.getDay() + 1) / 7);
-                    result = `Week Number: ${weekNum} of ${weekDate.getFullYear()}`;
+                    const weekDayName = this.getDayOfWeek(weekDate);
+                    result = `Week Number: ${weekNum} of ${weekDate.getFullYear()} - This day is a ${weekDayName}`;
                     break;
             }
 
