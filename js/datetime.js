@@ -7,6 +7,128 @@ const DateTimeApp = {
         this.changeType();
     },
 
+    // Helper function to calculate comprehensive time breakdown
+    getTimeBreakdown(startDate, endDate) {
+        const diffMs = Math.abs(endDate - startDate);
+        
+        // Calculate all time units
+        const totalSeconds = Math.floor(diffMs / 1000);
+        const totalMinutes = Math.floor(totalSeconds / 60);
+        const totalHours = Math.floor(totalMinutes / 60);
+        const totalDays = Math.floor(totalHours / 24);
+        const totalWeeks = Math.floor(totalDays / 7);
+        const totalMonths = Math.floor(totalDays / 30.44); // Average month length
+        const totalYears = Math.floor(totalDays / 365.25); // Account for leap years
+        const totalDecades = Math.floor(totalYears / 10);
+        
+        // Calculate exact breakdown
+        let years = endDate.getFullYear() - startDate.getFullYear();
+        let months = endDate.getMonth() - startDate.getMonth();
+        let days = endDate.getDate() - startDate.getDate();
+        
+        // Adjust for negative values
+        if (days < 0) {
+            months--;
+            const prevMonth = new Date(endDate.getFullYear(), endDate.getMonth(), 0);
+            days += prevMonth.getDate();
+        }
+        if (months < 0) {
+            years--;
+            months += 12;
+        }
+        
+        // Calculate remaining time units
+        const remainingDays = totalDays % 7;
+        const hours = totalHours % 24;
+        const minutes = totalMinutes % 60;
+        const seconds = totalSeconds % 60;
+        
+        return {
+            // Exact breakdown
+            exact: {
+                years: years,
+                months: months,
+                days: days
+            },
+            // Total counts
+            totals: {
+                decades: totalDecades,
+                years: totalYears,
+                months: totalMonths,
+                weeks: totalWeeks,
+                days: totalDays,
+                hours: totalHours,
+                minutes: totalMinutes,
+                seconds: totalSeconds
+            },
+            // Remaining units
+            remaining: {
+                hours: hours,
+                minutes: minutes,
+                seconds: seconds
+            }
+        };
+    },
+
+    formatTimeBreakdown(breakdown) {
+        const { exact, totals, remaining } = breakdown;
+        
+        let html = '<div class="time-breakdown">';
+        
+        // Primary result
+        html += `<div class="breakdown-primary">
+            <h3>Exact Age/Duration:</h3>
+            <p class="large-result">${exact.years} years, ${exact.months} months, ${exact.days} days</p>
+        </div>`;
+        
+        // Detailed breakdown
+        html += `<div class="breakdown-detailed">
+            <h4>Complete Breakdown:</h4>
+            <div class="breakdown-grid">`;
+        
+        if (totals.decades > 0) {
+            html += `<div class="breakdown-item">
+                <span class="breakdown-label">Decades:</span>
+                <span class="breakdown-value">${totals.decades.toLocaleString()}</span>
+            </div>`;
+        }
+        
+        html += `
+            <div class="breakdown-item">
+                <span class="breakdown-label">Years:</span>
+                <span class="breakdown-value">${totals.years.toLocaleString()}</span>
+            </div>
+            <div class="breakdown-item">
+                <span class="breakdown-label">Months:</span>
+                <span class="breakdown-value">${totals.months.toLocaleString()}</span>
+            </div>
+            <div class="breakdown-item">
+                <span class="breakdown-label">Weeks:</span>
+                <span class="breakdown-value">${totals.weeks.toLocaleString()}</span>
+            </div>
+            <div class="breakdown-item">
+                <span class="breakdown-label">Days:</span>
+                <span class="breakdown-value">${totals.days.toLocaleString()}</span>
+            </div>
+            <div class="breakdown-item">
+                <span class="breakdown-label">Hours:</span>
+                <span class="breakdown-value">${totals.hours.toLocaleString()}</span>
+            </div>
+            <div class="breakdown-item">
+                <span class="breakdown-label">Minutes:</span>
+                <span class="breakdown-value">${totals.minutes.toLocaleString()}</span>
+            </div>
+            <div class="breakdown-item">
+                <span class="breakdown-label">Seconds:</span>
+                <span class="breakdown-value">${totals.seconds.toLocaleString()}</span>
+            </div>
+        `;
+        
+        html += `</div></div></div>`;
+        
+        return html;
+    },
+
     changeType() {
         const type = document.getElementById('datetime-type').value;
         const inputsContainer = document.getElementById('datetime-inputs');
@@ -54,27 +176,18 @@ const DateTimeApp = {
                 case 'age':
                     const birthDate = new Date(document.getElementById('datetime-input-0').value);
                     const today = new Date();
-                    let age = today.getFullYear() - birthDate.getFullYear();
-                    const monthDiff = today.getMonth() - birthDate.getMonth();
-                    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-                        age--;
-                    }
-                    const ageMonths = monthDiff < 0 ? 12 + monthDiff : monthDiff;
-                    const ageDays = Math.floor((today - birthDate) / (1000 * 60 * 60 * 24));
-                    result = `Age: ${age} years, ${ageMonths} months (${ageDays} total days)`;
-                    break;
+                    const breakdown = this.getTimeBreakdown(birthDate, today);
+                    resultContainer.innerHTML = this.formatTimeBreakdown(breakdown);
+                    resultContainer.style.color = '#3b82f6';
+                    return;
 
                 case 'date-diff':
                     const start = new Date(document.getElementById('datetime-input-0').value);
                     const end = new Date(document.getElementById('datetime-input-1').value);
-                    const diffTime = Math.abs(end - start);
-                    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-                    const diffYears = Math.floor(diffDays / 365);
-                    const remDays = diffDays % 365;
-                    const diffMonths = Math.floor(remDays / 30);
-                    const diffDaysRem = remDays % 30;
-                    result = `Difference: ${diffYears} years, ${diffMonths} months, ${diffDaysRem} days (${diffDays} total days)`;
-                    break;
+                    const diffBreakdown = this.getTimeBreakdown(start, end);
+                    resultContainer.innerHTML = this.formatTimeBreakdown(diffBreakdown);
+                    resultContainer.style.color = '#3b82f6';
+                    return;
 
                 case 'date-add':
                     const baseDate = new Date(document.getElementById('datetime-input-0').value);

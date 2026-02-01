@@ -51,6 +51,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/css/unified.css">
     <link rel="stylesheet" href="/css/collapsible.css">
+    <link rel="stylesheet" href="/css/time-breakdown.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -97,22 +98,20 @@
 </head>
 
 <!-- Breadcrumb Navigation (Add to body after header) -->
-<div class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-        <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <a itemprop="item" href="https://calcrex.com/">
-                    <span itemprop="name">Home</span>
-                </a>
-                <meta itemprop="position" content="1" />
-            </li>
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span itemprop="name">Date & Time Calculators</span>
-                <meta itemprop="position" content="2" />
-            </li>
-        </ol>
-    </nav>
-</div>
+<nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemprop="item" href="https://calcrex.com/">
+                <span itemprop="name">Home</span>
+            </a>
+            <meta itemprop="position" content="1" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name">Date & Time Calculators</span>
+            <meta itemprop="position" content="2" />
+        </li>
+    </ol>
+</nav>
 
 <body>
     <!-- Header -->
@@ -155,7 +154,7 @@
         <div class="container">
             <ul class="nav-menu">
                 <li><a href="/"><i class="fas fa-calculator" aria-hidden="true"></i> Calculator</a></li>
-                <li><a href="/converters"><i class="fas fa-exchange-alt" aria-hidden="true"></i> Converters</a></li>
+                <li><a href="/converter"><i class="fas fa-exchange-alt" aria-hidden="true"></i> Converter</a></li>
                 <li><a href="/physics"><i class="fas fa-atom" aria-hidden="true"></i> Physics</a></li>
                 <li><a href="/chemistry"><i class="fas fa-vial" aria-hidden="true"></i> Chemistry</a></li>
                 <li><a href="/electricity"><i class="fas fa-bolt" aria-hidden="true"></i> Electricity</a></li>
@@ -186,10 +185,8 @@
                     <div class="description-content">
                         <p>
                             Calculate <strong>date differences</strong>, <strong>age</strong>, <strong>business
-                                days</strong>, and <strong>time zones</strong> with our comprehensive <strong>date and
-                                time
-                                calculators</strong>. Perfect for project planning, age calculations, scheduling across
-                            time
+                                days</strong>, and <strong>time zones</strong> with our comprehensive <strong>date and time
+                                calculators</strong>. Perfect for project planning, age calculations, scheduling across time
                             zones, and calendar calculations.
                         </p>
                     </div>
@@ -208,14 +205,12 @@
                     <div class="calculator-list-content">
                         <ul class="calculator-feature-list">
                             <li><strong>Age Calculator</strong> - Calculate exact age in years, months, and days</li>
-                            <li><strong>Date Difference Calculator</strong> - Find days, weeks, months between dates
-                            </li>
+                            <li><strong>Date Difference Calculator</strong> - Find days, weeks, months between dates</li>
                             <li><strong>Add/Subtract Days Calculator</strong> - Calculate future or past dates</li>
-                            <li><strong>Business Days Calculator</strong> - Calculate working days excluding weekends
-                            </li>
+                            <li><strong>Business Days Calculator</strong> - Calculate working days excluding weekends</li>
                             <li><strong>Time Difference Calculator</strong> - Find duration between times</li>
-                            <li><strong>Time Zone Converters</strong> - Convert times across different time zones</li>
-                            <li><strong>Unix Timestamp Converters</strong> - Convert Unix time to readable dates</li>
+                            <li><strong>Time Zone Converter</strong> - Convert times across different time zones</li>
+                            <li><strong>Unix Timestamp Converter</strong> - Convert Unix time to readable dates</li>
                             <li><strong>Week Number Calculator</strong> - Find ISO week number for any date</li>
                         </ul>
                     </div>
@@ -258,7 +253,7 @@
                                     <option value="date-add">Add/Subtract Days</option>
                                     <option value="business-days">Business Days Calculator</option>
                                     <option value="time-diff">Time Difference</option>
-                                    <option value="timezone">Time Zone Converters</option>
+                                    <option value="timezone">Time Zone Converter</option>
                                     <option value="unix">Unix Timestamp</option>
                                     <option value="week-number">Week Number</option>
                                 </select>
