@@ -77,6 +77,7 @@ body {
     top: 0;
     z-index: 1000;
     border-bottom: 2px solid #e2e8f0;
+    overflow: visible; /* Allow mobile menu to slide out */
 }
 
 .header-container {
@@ -86,6 +87,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 /* Logo Styles */
@@ -244,7 +246,7 @@ body {
     color: #475569;
     border: 1px solid var(--primary-color);
     border-radius: 20px;
-  /*  background: var(--primary-color); */
+  /*  background: var(--primary-color);
     
     padding: 0.375rem 0.875rem;
     border-radius: var(--radius-sm);
@@ -256,7 +258,7 @@ body {
     align-items: center;
     gap: 0.375rem;
     box-shadow: var(--shadow-sm);
-    margin-top: var(--gap-xs); 
+    margin-top: var(--gap-xs); */
 }
 
 .read-more-btn:hover {
@@ -391,6 +393,7 @@ body {
     cursor: pointer;
     transition: all var(--transition-fast);
     box-shadow: var(--shadow-sm);
+    touch-action: manipulation; /* Prevents double-tap zoom */
 }
 
 .mode-btn:hover {
@@ -568,6 +571,7 @@ body {
     box-shadow: var(--shadow-sm);
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation; /* Prevents double-tap zoom */
 }
 
 .btn:hover {
@@ -735,6 +739,7 @@ body {
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
         transition: right 0.3s ease;
         padding-top: 80px;
+        z-index: 999;
     }
 
     .main-nav.active {
@@ -758,6 +763,18 @@ body {
         color: white;
         border-bottom: none;
         box-shadow: none;
+    }
+}
+
+/* Tablet size - reduce nav link padding to prevent overflow */
+@media (min-width: 768px) and (max-width: 991px) {
+    .nav-link {
+        padding: 0.625rem 0.5rem;
+        font-size: 0.75rem;
+    }
+    
+    .nav-list {
+        gap: 0.125rem;
     }
 }
 

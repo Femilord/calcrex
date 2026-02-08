@@ -41,6 +41,7 @@
     transition: all var(--transition-fast);
     box-shadow: var(--shadow-sm);
     white-space: nowrap;
+    touch-action: manipulation; /* Prevents double-tap zoom */
 }
 
 .category-btn:hover {
@@ -90,6 +91,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    touch-action: manipulation; /* Prevents double-tap zoom */
 }
 
 .swap-btn:hover {
@@ -264,6 +266,54 @@
 /* ========================================
    RESPONSIVE BREAKPOINTS
 ======================================== */
+
+/* Mobile phones (up to 575px) */
+@media (max-width: 575px) {
+    .converter-container {
+        max-width: 100%;
+    }
+
+    .conversion-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.375rem;
+    }
+
+    .conversion-input {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.875rem;
+        min-width: 0; /* Allow shrinking */
+    }
+
+    .unit-select {
+        padding: 0.75rem 0.375rem;
+        font-size: 0.75rem;
+        min-width: 0; /* Allow shrinking */
+        max-width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .category-selector {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.375rem;
+    }
+
+    .category-btn {
+        padding: 0.5rem 0.25rem;
+        font-size: 0.6875rem;
+    }
+
+    .converter-header h2 {
+        font-size: 1rem;
+    }
+
+    .swap-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.125rem;
+    }
+}
 
 /* Small tablets and larger phones (576px+) */
 @media (min-width: 576px) {

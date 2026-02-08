@@ -41,6 +41,7 @@
     transition: all var(--transition-fast);
     box-shadow: var(--shadow-sm);
     white-space: nowrap;
+    touch-action: manipulation; /* Prevents double-tap zoom */
     position: relative;
     overflow: hidden;
 }
