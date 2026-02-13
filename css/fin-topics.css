@@ -1,0 +1,501 @@
+/* ========================================
+   FINANCE TOPICS - EDUCATIONAL CONTENT
+   Gold/Emerald theme matching finance.css
+======================================== */
+
+.fin-topics-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 var(--gap-md);
+}
+
+.fin-topics-container {
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+}
+
+.fin-topics-header {
+    padding: 2rem var(--gap-lg);
+    background: linear-gradient(135deg, #78350f 0%, #d97706 100%);
+    color: white;
+    text-align: center;
+}
+
+.fin-topics-header h2 {
+    font-size: 1.375rem;
+    font-weight: 800;
+    margin: 0 0 0.75rem 0;
+}
+
+.fin-topics-header p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #fde68a;
+    margin: 0;
+    max-width: 700px;
+    margin-inline: auto;
+}
+
+/* Tabs */
+.fin-topic-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    background: #fffbeb;
+    border-bottom: 2px solid #fbbf24;
+}
+
+.fin-topic-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.85rem 0.5rem;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-size: 0.65rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    touch-action: manipulation;
+}
+
+.fin-topic-tab i {
+    font-size: 1rem;
+}
+
+.fin-topic-tab:hover {
+    color: #92400e;
+    background: #fef3c7;
+}
+
+.fin-topic-tab.active {
+    color: #d97706;
+    border-bottom-color: #f59e0b;
+    background: white;
+}
+
+/* Content */
+.fin-topic-content {
+    display: none;
+    padding: 1.5rem var(--gap-md);
+}
+
+.fin-topic-content.active {
+    display: block;
+}
+
+/* Hero */
+.fin-topic-hero {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 2px solid #fffbeb;
+}
+
+.fin-topic-hero h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
+}
+
+.fin-topic-subtitle {
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Concept Block */
+.fin-concept-block {
+    margin-bottom: 2rem;
+}
+
+.fin-concept-block h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 0.75rem 0;
+}
+
+.fin-concept-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    background: #f59e0b;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.fin-concept-block>p {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0 0 1rem 0;
+}
+
+/* Insight */
+.fin-insight {
+    display: flex;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    border: 2px solid #fbbf24;
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    margin: 0.75rem 0;
+}
+
+.fin-insight i {
+    color: #d97706;
+    font-size: 1rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.fin-insight span {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: #78350f;
+}
+
+/* Formula Box */
+.fin-formula-box {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    border: 2px solid #fbbf24;
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.fin-formula-main {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #92400e;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 0.75rem;
+}
+
+.fin-formula-break {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.fin-formula-break span {
+    font-size: 0.75rem;
+    color: #78350f;
+    font-family: 'Courier New', monospace;
+}
+
+/* Equations Table */
+.fin-eq-table {
+    border: 2px solid #e2e8f0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.fin-eq-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.fin-eq-row:last-child {
+    border-bottom: none;
+}
+
+.fin-eq-row:nth-child(even) {
+    background: #fffbeb;
+}
+
+.fin-eq-cell {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.fin-eq-note {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+/* Two Column */
+.fin-two-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.fin-info-col {
+    background: #fffbeb;
+    border: 2px solid #fcd34d;
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+}
+
+.fin-info-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #d97706;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+}
+
+.fin-info-col p {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0 0 0.5rem 0;
+}
+
+/* Comparison Table */
+.fin-compare {
+    border: 2px solid #e2e8f0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin: 1rem 0;
+    font-size: 0.75rem;
+}
+
+.fin-compare-head {
+    display: grid;
+    grid-template-columns: 1.2fr repeat(2, 1fr);
+    background: #78350f;
+}
+
+.fin-compare-head .fin-compare-cell {
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 0.65rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.fin-compare-row {
+    display: grid;
+    grid-template-columns: 1.2fr repeat(2, 1fr);
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.fin-compare-row:last-child {
+    border-bottom: none;
+}
+
+.fin-compare-row:nth-child(even) {
+    background: #fffbeb;
+}
+
+.fin-compare-cell {
+    padding: 0.6rem 0.5rem;
+    color: #475569;
+    font-size: 0.7rem;
+    line-height: 1.4;
+}
+
+.fin-label-cell {
+    font-weight: 700;
+    color: #1e293b;
+}
+
+/* Worked Examples */
+.fin-example {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: var(--radius-xl);
+    margin-bottom: 1.75rem;
+    overflow: hidden;
+}
+
+.fin-ex-header {
+    background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
+    padding: 1rem 1.25rem;
+}
+
+.fin-ex-badge {
+    display: inline-block;
+    background: #fbbf24;
+    color: #1e293b;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+}
+
+.fin-ex-header h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+.fin-ex-problem {
+    padding: 1.25rem;
+    background: #fef2f2;
+    border-bottom: 2px solid #fecaca;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #7f1d1d;
+}
+
+.fin-ex-solution {
+    padding: 1.25rem;
+}
+
+.fin-sol-step {
+    margin-bottom: 1.25rem;
+}
+
+.fin-sol-step:last-child {
+    margin-bottom: 0;
+}
+
+.fin-sol-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #d97706;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.fin-sol-content {
+    padding-left: 0.5rem;
+}
+
+.fin-sol-content p {
+    font-size: 0.825rem;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0 0 0.5rem 0;
+}
+
+.fin-math {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: #1e293b;
+    padding: 0.3rem 0;
+    line-height: 1.5;
+}
+
+.fin-result {
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+    border: 1px solid #6ee7b7;
+    border-radius: var(--radius-sm);
+    padding: 0.4rem 0.75rem;
+    font-weight: 700;
+    color: #065f46;
+    display: inline-block;
+    margin: 0.25rem 0;
+}
+
+.fin-ex-answer {
+    padding: 1rem 1.25rem;
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    border-top: 2px solid #fbbf24;
+    font-size: 0.825rem;
+    line-height: 1.6;
+    color: #78350f;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (min-width: 576px) {
+    .fin-topic-tabs {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .fin-topic-tab {
+        font-size: 0.6rem;
+        padding: 0.75rem 0.25rem;
+    }
+
+    .fin-two-col {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .fin-topic-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .fin-topic-hero h3 {
+        font-size: 1.375rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .fin-topics-section {
+        max-width: 800px;
+    }
+
+    .fin-topics-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .fin-topic-tab {
+        font-size: 0.65rem;
+        padding: 1rem 0.5rem;
+    }
+
+    .fin-topic-tab i {
+        font-size: 1.1rem;
+    }
+
+    .fin-formula-main {
+        font-size: 1.375rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .fin-topics-section {
+        max-width: 900px;
+    }
+
+    .fin-topic-content {
+        padding: 2rem;
+    }
+}
+
+@media print {
+    .fin-topic-tabs {
+        display: none;
+    }
+
+    .fin-topic-content {
+        display: block !important;
+        break-inside: avoid;
+    }
+
+    .fin-example {
+        break-inside: avoid;
+    }
+}

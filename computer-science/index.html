@@ -55,6 +55,7 @@
     <link rel="stylesheet" href="/css/computer-science.css">
     <link rel="stylesheet" href="/css/pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/cs-topics.css">
 
     <!-- Structured Data - Breadcrumbs -->
     <script type="application/ld+json">
@@ -117,6 +118,20 @@
       }
     }
     </script>
+
+    <!-- Structured Data - FAQPage (CS Topics) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How do you convert binary to decimal?", "acceptedAnswer": { "@type": "Answer", "text": "Multiply each bit by its positional power of 2 (rightmost = 2^0) and sum. Example: 10110101 = 128+32+16+4+1 = 181." } },
+        { "@type": "Question", "name": "What is Big O notation in computer science?", "acceptedAnswer": { "@type": "Answer", "text": "Big O describes algorithm efficiency as input grows. O(1) is constant, O(log n) logarithmic, O(n) linear, O(n²) quadratic. It measures worst-case time or space complexity." } },
+        { "@type": "Question", "name": "How do you calculate subnets from a CIDR notation?", "acceptedAnswer": { "@type": "Answer", "text": "For IP/n: usable hosts = 2^(32-n) - 2. Block size = 256 - last octet of mask. Network address is the nearest lower multiple of block size." } },
+        { "@type": "Question", "name": "What is the difference between a stack and a queue?", "acceptedAnswer": { "@type": "Answer", "text": "A stack is LIFO (Last In First Out) like a plate stack. A queue is FIFO (First In First Out) like a line. Both have O(1) push/pop and enqueue/dequeue." } }
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -138,16 +153,23 @@
             </button>
 
             <!-- Navigation Menu -->
-            <nav class="main-nav" id="mainNav">
+                        <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="/" class="nav-link">Calculator</a></li>
                     <li><a href="/converters" class="nav-link">Unit Converter</a></li>
-                    <li><a href="/physics" class="nav-link">Physics</a></li>
-                    <li><a href="/chemistry" class="nav-link">Chemistry</a></li>
-                    <li><a href="/electricity" class="nav-link">Electronics</a></li>
+                    <li class="nav-dropdown">
+                        <button class="nav-link nav-dropdown-toggle">Sciences <i class="fas fa-chevron-down nav-arrow"></i></button>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a></li>
+                            <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i> Chemistry</a></li>
+                            <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i> Electronics</a></li>
+                            <li><a href="/thermodynamics" class="nav-dropdown-link"><i class="fas fa-fire"></i> Thermodynamics</a></li>
+                            <li><a href="/aerodynamics" class="nav-dropdown-link"><i class="fas fa-plane"></i> Aerodynamics</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/computer-science" class="nav-link active">Computer Science</a></li>
                     <li><a href="/finance" class="nav-link">Finance</a></li>
-                    <li><a href="/date-time" class="nav-link">Date & Time</a></li>
+                    <li><a href="/date-time" class="nav-link">Date &amp; Time</a></li>
                 </ul>
             </nav>
         </div>
@@ -167,10 +189,10 @@
                     tool includes examples, explanations, and practical applications.
                 </p>
                 <p class="intro-text intro-text-extra">
-                    Our computer science calculators handle everything from basic number system conversions to complex 
-                    algorithm analysis, network subnetting, and encryption computations. Perfect for coding interviews, 
-                    system design, performance optimization, or learning fundamental CS concepts. Whether you're a 
-                    student, developer, or IT professional, CalcREX provides the tools you need. All calculators are 
+                    Our computer science calculators handle everything from basic number system conversions to complex
+                    algorithm analysis, network subnetting, and encryption computations. Perfect for coding interviews,
+                    system design, performance optimization, or learning fundamental CS concepts. Whether you're a
+                    student, developer, or IT professional, CalcREX provides the tools you need. All calculators are
                     mobile-friendly and completely free without any registration.
                 </p>
             </div>
@@ -312,6 +334,1005 @@
         </div>
     </main>
 
+    <!-- ============================================================
+         COMPUTER SCIENCE TOPICS - IN-DEPTH EDUCATIONAL CONTENT
+    ============================================================ -->
+    <section class="cs-topics-section" id="csTopics">
+        <div class="cs-topics-container">
+
+            <div class="cs-topics-header">
+                <h2>Computer Science — In-Depth Guides with Worked Examples</h2>
+                <p>Master the core CS concepts every student and programmer needs — from binary math to algorithms,
+                    networking, and data structures.</p>
+            </div>
+
+            <div class="cs-topic-tabs" id="csTopicTabs">
+                <button class="cs-topic-tab active" data-cstopic="number-systems"><i
+                        class="fas fa-hashtag"></i><span>Number Systems</span></button>
+                <button class="cs-topic-tab" data-cstopic="boolean-logic"><i class="fas fa-toggle-on"></i><span>Boolean
+                        Logic</span></button>
+                <button class="cs-topic-tab" data-cstopic="data-representation"><i
+                        class="fas fa-database"></i><span>Data &amp; Storage</span></button>
+                <button class="cs-topic-tab" data-cstopic="algorithms"><i
+                        class="fas fa-sitemap"></i><span>Algorithms</span></button>
+                <button class="cs-topic-tab" data-cstopic="networking"><i
+                        class="fas fa-network-wired"></i><span>Networking</span></button>
+                <button class="cs-topic-tab" data-cstopic="data-structures"><i class="fas fa-layer-group"></i><span>Data
+                        Structures</span></button>
+            </div>
+
+            <!-- TOPIC 1: NUMBER SYSTEMS -->
+            <article class="cs-topic-content active" id="cstopic-number-systems">
+                <div class="cs-topic-hero">
+                    <h3>Number Systems — Binary, Octal, Decimal &amp; Hexadecimal</h3>
+                    <p class="cs-topic-subtitle">How computers represent numbers — and how to convert between the bases
+                        that matter in CS.</p>
+                </div>
+
+                <div class="cs-concept-block">
+                    <h4><span class="cs-concept-num">1</span> The Four Number Systems</h4>
+                    <div class="cs-eq-table">
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">Binary (Base 2)</div>
+                            <div class="cs-eq-note">Digits: 0, 1 — used by hardware</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">Octal (Base 8)</div>
+                            <div class="cs-eq-note">Digits: 0–7 — Unix permissions</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">Decimal (Base 10)</div>
+                            <div class="cs-eq-note">Digits: 0–9 — human default</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">Hexadecimal (Base 16)</div>
+                            <div class="cs-eq-note">Digits: 0–9, A–F — colors, memory</div>
+                        </div>
+                    </div>
+                    <div class="cs-insight"><i class="fas fa-lightbulb"></i><span><strong>Why hex?</strong> Each hex
+                            digit represents exactly 4 binary bits. So 1 byte (8 bits) = 2 hex digits. It's a compact
+                            way to write binary: <code>11111111₂ = FF₁₆ = 255₁₀</code>.</span></div>
+                </div>
+
+                <div class="cs-concept-block">
+                    <h4><span class="cs-concept-num">2</span> Positional Value — How Bases Work</h4>
+                    <p>In any base, each digit's value = digit × base^position (counting from 0 on the right).</p>
+                    <div class="cs-formula-box">
+                        <div class="cs-formula-main">Value = Σ (dᵢ × baseⁱ)</div>
+                        <div class="cs-formula-break"><span>Position 0 = rightmost digit (ones)</span><span>Position 1 =
+                                next digit (base¹)</span><span>Position 2 = next (base²), and so on</span></div>
+                    </div>
+                </div>
+
+                <div class="cs-example">
+                    <div class="cs-ex-header"><span class="cs-ex-badge">Worked Example 1</span>
+                        <h5>Binary to Decimal Conversion</h5>
+                    </div>
+                    <div class="cs-ex-problem"><strong>Problem:</strong> Convert 10110101₂ to decimal.</div>
+                    <div class="cs-ex-solution">
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 1: Write out place values (powers of 2)</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-code-box">
+                                    <pre>Bit:      1    0    1    1    0    1    0    1
+Position: 7    6    5    4    3    2    1    0
+Value:    128  64   32   16   8    4    2    1</pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 2: Add positions where bit = 1</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">128 + 0 + 32 + 16 + 0 + 4 + 0 + 1</div>
+                                <div class="cs-math cs-result">10110101₂ = 181₁₀</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cs-ex-answer"><strong>Answer:</strong> 181 in decimal. Tip: memorize the powers of 2 up
+                        to 2⁸ = 256 — you'll use them constantly in CS.</div>
+                </div>
+
+                <div class="cs-example">
+                    <div class="cs-ex-header"><span class="cs-ex-badge">Worked Example 2</span>
+                        <h5>Decimal to Binary Conversion</h5>
+                    </div>
+                    <div class="cs-ex-problem"><strong>Problem:</strong> Convert 200₁₀ to binary.</div>
+                    <div class="cs-ex-solution">
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 1: Repeated division by 2 (track remainders)</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-code-box">
+                                    <pre>200 ÷ 2 = 100  remainder 0
+100 ÷ 2 = 50   remainder 0
+ 50 ÷ 2 = 25   remainder 0
+ 25 ÷ 2 = 12   remainder 1
+ 12 ÷ 2 = 6    remainder 0
+  6 ÷ 2 = 3    remainder 0
+  3 ÷ 2 = 1    remainder 1
+  1 ÷ 2 = 0    remainder 1</pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 2: Read remainders bottom → top</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math cs-result">200₁₀ = 11001000₂</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cs-ex-answer"><strong>Answer:</strong> 11001000₂. Verify: 128 + 64 + 8 = 200 ✓.
+                        Alternative method: subtract largest powers of 2 → 200 − 128 = 72, 72 − 64 = 8, 8 − 8 = 0.</div>
+                </div>
+
+                <div class="cs-example">
+                    <div class="cs-ex-header"><span class="cs-ex-badge">Worked Example 3</span>
+                        <h5>Hexadecimal Conversions</h5>
+                    </div>
+                    <div class="cs-ex-problem"><strong>Problem:</strong> Convert (a) 0xB7 to decimal and binary, (b) the
+                        color code #FF6B35 — what are its RGB values?</div>
+                    <div class="cs-ex-solution">
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">(a) 0xB7 to decimal</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">B = 11, 7 = 7</div>
+                                <div class="cs-math">11 × 16¹ + 7 × 16⁰ = 176 + 7</div>
+                                <div class="cs-math cs-result">0xB7 = 183₁₀</div>
+                                <p>To binary: split each hex digit into 4 bits:</p>
+                                <div class="cs-math">B = 1011, 7 = 0111</div>
+                                <div class="cs-math cs-result">0xB7 = 10110111₂</div>
+                            </div>
+                        </div>
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">(b) #FF6B35 RGB values</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">R = FF = 255, G = 6B = 107, B = 35 = 53</div>
+                                <div class="cs-math cs-result">RGB(255, 107, 53) — a vivid orange</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cs-ex-answer"><strong>Answer:</strong> (a) 183₁₀ = 10110111₂. (b) RGB(255, 107, 53).
+                        Every CSS color is 3 hex byte pairs — knowing hex makes web development much faster.</div>
+                </div>
+
+                <div class="cs-concept-block">
+                    <h4><span class="cs-concept-num">3</span> Two's Complement — Signed Integers</h4>
+                    <p>Computers represent negative numbers using <strong>two's complement</strong>. The leftmost bit is
+                        the sign bit (0 = positive, 1 = negative).</p>
+                    <div class="cs-formula-box">
+                        <div class="cs-formula-main">To negate: Flip all bits, then add 1</div>
+                        <div class="cs-formula-break"><span>8-bit range: −128 to +127</span><span>16-bit range: −32,768
+                                to +32,767</span><span>n-bit range: −2ⁿ⁻¹ to 2ⁿ⁻¹ − 1</span></div>
+                    </div>
+                    <div class="cs-code-box">
+                        <pre><span class="cs-code-comment">// Example: −42 in 8-bit two's complement</span>
+ 42₁₀ = 00101010₂
+Flip:    11010101
+Add 1:   11010110
+<span class="cs-code-comment">// −42₁₀ = 11010110₂</span></pre>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 2: BOOLEAN LOGIC -->
+            <article class="cs-topic-content" id="cstopic-boolean-logic">
+                <div class="cs-topic-hero">
+                    <h3>Boolean Logic — Gates, Truth Tables &amp; Expressions</h3>
+                    <p class="cs-topic-subtitle">The mathematical foundation of all digital circuits and programming
+                        conditionals.</p>
+                </div>
+
+                <div class="cs-concept-block">
+                    <h4><span class="cs-concept-num">1</span> The Basic Logic Gates</h4>
+                    <div class="cs-eq-table">
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">AND (A ∧ B)</div>
+                            <div class="cs-eq-note">Output 1 only if BOTH inputs are 1</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">OR (A ∨ B)</div>
+                            <div class="cs-eq-note">Output 1 if EITHER input is 1</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">NOT (¬A)</div>
+                            <div class="cs-eq-note">Inverts: 0→1, 1→0</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">XOR (A ⊕ B)</div>
+                            <div class="cs-eq-note">Output 1 if inputs are DIFFERENT</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">NAND (¬(A ∧ B))</div>
+                            <div class="cs-eq-note">NOT-AND — universal gate</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">NOR (¬(A ∨ B))</div>
+                            <div class="cs-eq-note">NOT-OR — universal gate</div>
+                        </div>
+                    </div>
+                    <div class="cs-insight"><i class="fas fa-lightbulb"></i><span><strong>NAND is universal:</strong>
+                            You can build AND, OR, NOT, and every other gate using only NAND gates. This is why NAND
+                            flash memory is named after it — all its logic uses NAND gates.</span></div>
+                </div>
+
+                <div class="cs-concept-block">
+                    <h4><span class="cs-concept-num">2</span> Truth Tables</h4>
+                    <p>A truth table lists all possible input combinations and their outputs — the definitive way to
+                        describe any logic function.</p>
+                    <div class="cs-code-box">
+                        <pre><span class="cs-code-comment">// AND, OR, XOR truth tables for 2 inputs</span>
+A  B │ AND  OR  XOR  NAND  NOR
+─────┼─────────────────────────
+0  0 │  0    0   0    1     1
+0  1 │  0    1   1    1     0
+1  0 │  0    1   1    1     0
+1  1 │  1    1   0    0     0</pre>
+                    </div>
+                </div>
+
+                <div class="cs-example">
+                    <div class="cs-ex-header"><span class="cs-ex-badge">Worked Example 1</span>
+                        <h5>Evaluating a Boolean Expression</h5>
+                    </div>
+                    <div class="cs-ex-problem"><strong>Problem:</strong> Evaluate F = (A AND B) OR (NOT C) when A=1,
+                        B=0, C=0.</div>
+                    <div class="cs-ex-solution">
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 1: Evaluate inner expressions first</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">A AND B = 1 AND 0 = 0</div>
+                                <div class="cs-math">NOT C = NOT 0 = 1</div>
+                            </div>
+                        </div>
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 2: Combine with OR</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">F = 0 OR 1</div>
+                                <div class="cs-math cs-result">F = 1 (TRUE)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cs-ex-answer"><strong>Answer:</strong> F = 1. Order of operations: NOT first, then AND,
+                        then OR (like × before + in math). Parentheses override this order.</div>
+                </div>
+
+                <div class="cs-concept-block">
+                    <h4><span class="cs-concept-num">3</span> De Morgan's Laws</h4>
+                    <p>These laws let you simplify NOT expressions applied to AND/OR combinations — essential for
+                        circuit optimization and programming.</p>
+                    <div class="cs-formula-box">
+                        <div class="cs-formula-main">¬(A ∧ B) = ¬A ∨ ¬B</div>
+                        <div class="cs-formula-break"><span>NOT (A AND B) = (NOT A) OR (NOT B)</span></div>
+                    </div>
+                    <div class="cs-formula-box">
+                        <div class="cs-formula-main">¬(A ∨ B) = ¬A ∧ ¬B</div>
+                        <div class="cs-formula-break"><span>NOT (A OR B) = (NOT A) AND (NOT B)</span></div>
+                    </div>
+                    <div class="cs-code-box">
+                        <pre><span class="cs-code-comment">// In programming (De Morgan's in action):</span>
+<span class="cs-code-keyword">if</span> (!(x > 5 && y < 10))    <span class="cs-code-comment">// original</span>
+<span class="cs-code-keyword">if</span> (x <= 5 || y >= 10)      <span class="cs-code-comment">// De Morgan's equivalent</span></pre>
+                    </div>
+                </div>
+
+                <div class="cs-example">
+                    <div class="cs-ex-header"><span class="cs-ex-badge">Worked Example 2</span>
+                        <h5>Simplifying with De Morgan's Law</h5>
+                    </div>
+                    <div class="cs-ex-problem"><strong>Problem:</strong> Simplify the expression: NOT(A AND (NOT B OR
+                        C))</div>
+                    <div class="cs-ex-solution">
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 1: Apply De Morgan's to outer NOT-AND</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">¬(A ∧ (¬B ∨ C)) = ¬A ∨ ¬(¬B ∨ C)</div>
+                            </div>
+                        </div>
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 2: Apply De Morgan's to inner NOT-OR</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">¬(¬B ∨ C) = B ∧ ¬C</div>
+                                <p>(Double negation: ¬¬B = B)</p>
+                            </div>
+                        </div>
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 3: Final result</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math cs-result">F = ¬A ∨ (B ∧ ¬C)</div>
+                                <p>In code: <code>!A || (B && !C)</code></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cs-ex-answer"><strong>Answer:</strong> ¬A ∨ (B ∧ ¬C). De Morgan's turns AND↔OR and flips
+                        each variable. Apply it layer by layer from the outside in.</div>
+                </div>
+
+                <div class="cs-example">
+                    <div class="cs-ex-header"><span class="cs-ex-badge">Worked Example 3</span>
+                        <h5>Building a Truth Table from an Expression</h5>
+                    </div>
+                    <div class="cs-ex-problem"><strong>Problem:</strong> Build the complete truth table for F = (A XOR
+                        B) AND C.</div>
+                    <div class="cs-ex-solution">
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 1: List all input combinations (2³ = 8 rows)</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-code-box">
+                                    <pre>A  B  C │ A⊕B │ (A⊕B)∧C = F
+────────┼─────┼────────────
+0  0  0 │  0  │    0
+0  0  1 │  0  │    0
+0  1  0 │  1  │    0
+0  1  1 │  1  │    1
+1  0  0 │  1  │    0
+1  0  1 │  1  │    1
+1  1  0 │  0  │    0
+1  1  1 │  0  │    0</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cs-ex-answer"><strong>Answer:</strong> F = 1 only when exactly one of A,B is 1 AND C is
+                        also 1. This is equivalent to a "controlled XOR" — C acts as an enable signal. It's used in ALU
+                        circuits.</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 3: DATA REPRESENTATION & STORAGE -->
+            <article class="cs-topic-content" id="cstopic-data-representation">
+                <div class="cs-topic-hero">
+                    <h3>Data Representation &amp; Storage — Bits, Bytes, ASCII &amp; Floating Point</h3>
+                    <p class="cs-topic-subtitle">How computers store text, images, and numbers — and how to calculate
+                        storage requirements.</p>
+                </div>
+
+                <div class="cs-concept-block">
+                    <h4><span class="cs-concept-num">1</span> Storage Units</h4>
+                    <div class="cs-eq-table">
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">1 Bit</div>
+                            <div class="cs-eq-note">Single 0 or 1</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">1 Nibble = 4 bits</div>
+                            <div class="cs-eq-note">One hex digit</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">1 Byte = 8 bits</div>
+                            <div class="cs-eq-note">One ASCII character</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">1 KB = 1024 bytes</div>
+                            <div class="cs-eq-note">2¹⁰ bytes</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">1 MB = 1024 KB</div>
+                            <div class="cs-eq-note">2²⁰ bytes = 1,048,576 bytes</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">1 GB = 1024 MB</div>
+                            <div class="cs-eq-note">2³⁰ bytes ≈ 1.07 billion bytes</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">1 TB = 1024 GB</div>
+                            <div class="cs-eq-note">2⁴⁰ bytes ≈ 1.1 trillion bytes</div>
+                        </div>
+                    </div>
+                    <div class="cs-insight"><i class="fas fa-lightbulb"></i><span><strong>KB vs kB:</strong> In CS, 1 KB
+                            (kibibyte) = 1024 bytes (powers of 2). Manufacturers use 1 kB = 1000 bytes (SI). That's why
+                            a "500 GB" drive shows ~465 GB in your OS.</span></div>
+                </div>
+
+                <div class="cs-concept-block">
+                    <h4><span class="cs-concept-num">2</span> Character Encoding</h4>
+                    <div class="cs-two-col">
+                        <div class="cs-info-col">
+                            <div class="cs-info-title">ASCII (7-bit, 128 chars)</div>
+                            <p>'A' = 65 = 0x41, 'a' = 97 = 0x61, '0' = 48 = 0x30. Uses 1 byte per character.
+                                English-only.</p>
+                        </div>
+                        <div class="cs-info-col">
+                            <div class="cs-info-title">Unicode / UTF-8 (variable)</div>
+                            <p>ASCII chars = 1 byte. Extended chars = 2-4 bytes. Covers all languages, emoji. Web
+                                standard.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cs-example">
+                    <div class="cs-ex-header"><span class="cs-ex-badge">Worked Example 1</span>
+                        <h5>Image Storage Calculation</h5>
+                    </div>
+                    <div class="cs-ex-problem"><strong>Problem:</strong> An uncompressed image is 1920 × 1080 pixels
+                        with 24-bit color depth. (a) How many bytes is it? (b) How many megabytes?</div>
+                    <div class="cs-ex-solution">
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 1: Total pixels</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">Pixels = 1920 × 1080 = 2,073,600</div>
+                            </div>
+                        </div>
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 2: Bytes per pixel</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">24 bits ÷ 8 = 3 bytes/pixel (one each for R, G, B)</div>
+                            </div>
+                        </div>
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 3: Total size</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">Size = 2,073,600 × 3 = 6,220,800 bytes</div>
+                                <div class="cs-math">= 6,220,800 / 1,048,576</div>
+                                <div class="cs-math cs-result">≈ 5.93 MB uncompressed</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cs-ex-answer"><strong>Answer:</strong> ~5.93 MB. JPEG compression typically reduces this
+                        to 300–800 KB (90%+ reduction). PNG would be ~2–4 MB. This is why compression algorithms are
+                        essential.</div>
+                </div>
+
+                <div class="cs-concept-block">
+                    <h4><span class="cs-concept-num">3</span> Floating Point (IEEE 754)</h4>
+                    <p>Computers store decimals using the <strong>IEEE 754</strong> standard. A 32-bit float has: 1 sign
+                        bit, 8 exponent bits, 23 mantissa bits.</p>
+                    <div class="cs-formula-box">
+                        <div class="cs-formula-main">Value = (-1)ˢ × 1.mantissa × 2^(exp - 127)</div>
+                        <div class="cs-formula-break"><span>32-bit float: ~7 decimal digits precision</span><span>64-bit
+                                double: ~15 decimal digits precision</span></div>
+                    </div>
+                    <div class="cs-insight"><i class="fas fa-lightbulb"></i><span><strong>Why 0.1 + 0.2 ≠ 0.3:</strong>
+                            0.1 in binary is repeating (like 1/3 in decimal). The finite mantissa truncates it, causing
+                            tiny rounding errors. This affects ALL languages — JavaScript, Python, C, Java.</span></div>
+                </div>
+
+                <div class="cs-example">
+                    <div class="cs-ex-header"><span class="cs-ex-badge">Worked Example 2</span>
+                        <h5>File Transfer Time</h5>
+                    </div>
+                    <div class="cs-ex-problem"><strong>Problem:</strong> How long does it take to download a 4.7 GB file
+                        on a 100 Mbps connection? (Note: Mbps = megabits per second)</div>
+                    <div class="cs-ex-solution">
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 1: Convert file to bits</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">4.7 GB = 4.7 × 1024 × 1024 × 1024 × 8 bits</div>
+                                <div class="cs-math">= 40,371,527,680 bits ≈ 40.37 Gbits</div>
+                            </div>
+                        </div>
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 2: Divide by speed</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">Time = 40,371,527,680 / 100,000,000</div>
+                                <div class="cs-math cs-result">≈ 403.7 seconds ≈ 6 min 44 sec</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cs-ex-answer"><strong>Answer:</strong> ~6 minutes 44 seconds. Key trap: network speeds
+                        are in <strong>bits</strong>, file sizes in <strong>bytes</strong>. Always multiply bytes by 8
+                        (or divide Mbps by 8 to get MB/s). 100 Mbps = 12.5 MB/s.</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 4: ALGORITHMS & COMPLEXITY -->
+            <article class="cs-topic-content" id="cstopic-algorithms">
+                <div class="cs-topic-hero">
+                    <h3>Algorithms &amp; Complexity — Big O, Sorting &amp; Searching</h3>
+                    <p class="cs-topic-subtitle">Measuring efficiency — how to analyze, compare, and choose the right
+                        algorithm for the job.</p>
+                </div>
+
+                <div class="cs-concept-block">
+                    <h4><span class="cs-concept-num">1</span> Big O Notation — Measuring Efficiency</h4>
+                    <p>Big O describes how an algorithm's time or space grows as the input size (n) increases. It
+                        captures the <strong>worst-case</strong> upper bound.</p>
+                    <div class="cs-eq-table">
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">O(1)</div>
+                            <div class="cs-eq-note">Constant — array index lookup</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">O(log n)</div>
+                            <div class="cs-eq-note">Logarithmic — binary search</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">O(n)</div>
+                            <div class="cs-eq-note">Linear — single loop through data</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">O(n log n)</div>
+                            <div class="cs-eq-note">Linearithmic — merge sort, quicksort avg</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">O(n²)</div>
+                            <div class="cs-eq-note">Quadratic — nested loops, bubble sort</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">O(2ⁿ)</div>
+                            <div class="cs-eq-note">Exponential — brute force subsets</div>
+                        </div>
+                    </div>
+                    <div class="cs-insight"><i class="fas fa-lightbulb"></i><span><strong>Why it matters:</strong> For n
+                            = 1,000,000: O(n) does ~1M operations (milliseconds). O(n²) does ~1 trillion (hours). O(n
+                            log n) does ~20M (still fast). Choosing the right algorithm can mean seconds vs.
+                            days.</span></div>
+                </div>
+
+                <div class="cs-example">
+                    <div class="cs-ex-header"><span class="cs-ex-badge">Worked Example 1</span>
+                        <h5>Binary Search — O(log n)</h5>
+                    </div>
+                    <div class="cs-ex-problem"><strong>Problem:</strong> A sorted array has 1,000,000 elements. (a) How
+                        many comparisons does binary search need at most? (b) How many does linear search need?</div>
+                    <div class="cs-ex-solution">
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 1: Binary search — max comparisons</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">Max steps = ⌈log₂(n)⌉ = ⌈log₂(1,000,000)⌉</div>
+                                <div class="cs-math cs-result">= 20 comparisons</div>
+                            </div>
+                        </div>
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 2: Linear search — worst case</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math cs-result">= 1,000,000 comparisons</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cs-ex-answer"><strong>Answer:</strong> Binary search: 20 steps. Linear search: 1,000,000
+                        steps. That's a 50,000× improvement — but binary search requires the data to be sorted first.
+                    </div>
+                </div>
+
+                <div class="cs-concept-block">
+                    <h4><span class="cs-concept-num">2</span> Sorting Algorithm Comparison</h4>
+                    <div class="cs-compare">
+                        <div class="cs-compare-head">
+                            <div class="cs-compare-cell cs-label-cell">Algorithm</div>
+                            <div class="cs-compare-cell">Average Case</div>
+                            <div class="cs-compare-cell">Space</div>
+                        </div>
+                        <div class="cs-compare-row">
+                            <div class="cs-compare-cell cs-label-cell">Bubble Sort</div>
+                            <div class="cs-compare-cell">O(n²)</div>
+                            <div class="cs-compare-cell">O(1)</div>
+                        </div>
+                        <div class="cs-compare-row">
+                            <div class="cs-compare-cell cs-label-cell">Selection Sort</div>
+                            <div class="cs-compare-cell">O(n²)</div>
+                            <div class="cs-compare-cell">O(1)</div>
+                        </div>
+                        <div class="cs-compare-row">
+                            <div class="cs-compare-cell cs-label-cell">Insertion Sort</div>
+                            <div class="cs-compare-cell">O(n²)</div>
+                            <div class="cs-compare-cell">O(1)</div>
+                        </div>
+                        <div class="cs-compare-row">
+                            <div class="cs-compare-cell cs-label-cell">Merge Sort</div>
+                            <div class="cs-compare-cell">O(n log n)</div>
+                            <div class="cs-compare-cell">O(n)</div>
+                        </div>
+                        <div class="cs-compare-row">
+                            <div class="cs-compare-cell cs-label-cell">Quick Sort</div>
+                            <div class="cs-compare-cell">O(n log n)</div>
+                            <div class="cs-compare-cell">O(log n)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cs-example">
+                    <div class="cs-ex-header"><span class="cs-ex-badge">Worked Example 2</span>
+                        <h5>Analyzing Code Complexity</h5>
+                    </div>
+                    <div class="cs-ex-problem"><strong>Problem:</strong> What is the Big O time complexity of this code?
+                        <br><code>for i in range(n): for j in range(n): for k in range(10): print(i, j, k)</code>
+                    </div>
+                    <div class="cs-ex-solution">
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 1: Count the loops</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">Outer loop: runs n times</div>
+                                <div class="cs-math">Middle loop: runs n times (for each i)</div>
+                                <div class="cs-math">Inner loop: runs 10 times (constant!)</div>
+                            </div>
+                        </div>
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 2: Multiply</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">Total operations = n × n × 10 = 10n²</div>
+                                <p>Big O drops constants:</p>
+                                <div class="cs-math cs-result">O(n²)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cs-ex-answer"><strong>Answer:</strong> O(n²). The inner loop of 10 is constant and
+                        doesn't affect Big O classification. Only loops that depend on n count. Two nested n-loops =
+                        O(n²).</div>
+                </div>
+
+                <div class="cs-example">
+                    <div class="cs-ex-header"><span class="cs-ex-badge">Worked Example 3</span>
+                        <h5>Comparing Algorithm Run Times</h5>
+                    </div>
+                    <div class="cs-ex-problem"><strong>Problem:</strong> Algorithm A is O(n²) and takes 1 second for n =
+                        1000. Algorithm B is O(n log n). If both process n = 100,000, estimate the time for each.</div>
+                    <div class="cs-ex-solution">
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 1: Algorithm A — O(n²)</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">n increases 100×: (100,000/1,000)² = 10,000× slower</div>
+                                <div class="cs-math cs-result">Time A ≈ 10,000 seconds ≈ 2.8 hours</div>
+                            </div>
+                        </div>
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 2: Algorithm B — O(n log n)</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">Ratio = (100000 × log₂(100000)) / (1000 × log₂(1000))</div>
+                                <div class="cs-math">= (100000 × 16.6) / (1000 × 10) = 1660000/10000</div>
+                                <div class="cs-math cs-result">Time B ≈ 166 × (1 sec base) ≈ 166 seconds ≈ 2.8 min</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cs-ex-answer"><strong>Answer:</strong> A ≈ 2.8 hours, B ≈ 2.8 minutes. At scale, O(n log
+                        n) vs O(n²) is the difference between usable and unusable software. This is why merge/quick sort
+                        replaced bubble sort.</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 5: NETWORKING -->
+            <article class="cs-topic-content" id="cstopic-networking">
+                <div class="cs-topic-hero">
+                    <h3>Networking — IP Addressing, Subnetting &amp; Protocols</h3>
+                    <p class="cs-topic-subtitle">How computers communicate — IP addresses, subnet masks, and the
+                        protocols that power the internet.</p>
+                </div>
+
+                <div class="cs-concept-block">
+                    <h4><span class="cs-concept-num">1</span> IPv4 Addresses</h4>
+                    <p>An IPv4 address is a 32-bit number written as 4 octets (bytes) in dotted decimal notation. Each
+                        octet ranges from 0–255.</p>
+                    <div class="cs-formula-box">
+                        <div class="cs-formula-main">192.168.1.100</div>
+                        <div class="cs-formula-break"><span>= 11000000.10101000.00000001.01100100 (binary)</span><span>=
+                                32 bits = 4 bytes = 4 octets</span></div>
+                    </div>
+                    <div class="cs-eq-table">
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">Class A: 1.0.0.0 – 126.x.x.x</div>
+                            <div class="cs-eq-note">/8 — 16M hosts</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">Class B: 128.0.0.0 – 191.255.x.x</div>
+                            <div class="cs-eq-note">/16 — 65K hosts</div>
+                        </div>
+                        <div class="cs-eq-row">
+                            <div class="cs-eq-cell">Class C: 192.0.0.0 – 223.255.255.x</div>
+                            <div class="cs-eq-note">/24 — 254 hosts</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cs-concept-block">
+                    <h4><span class="cs-concept-num">2</span> Subnet Masks &amp; CIDR</h4>
+                    <p>A subnet mask separates the <strong>network</strong> portion from the <strong>host</strong>
+                        portion of an IP address. CIDR notation (/n) indicates how many bits are the network part.</p>
+                    <div class="cs-formula-box">
+                        <div class="cs-formula-main">Number of hosts = 2^(32−n) − 2</div>
+                        <div class="cs-formula-break"><span>n = CIDR prefix length (network bits)</span><span>Subtract
+                                2: network address + broadcast</span></div>
+                    </div>
+                    <div class="cs-code-box">
+                        <pre><span class="cs-code-comment">// Common subnet masks</span>
+/24 = 255.255.255.0   → 254 usable hosts
+/25 = 255.255.255.128 → 126 usable hosts
+/26 = 255.255.255.192 → 62 usable hosts
+/27 = 255.255.255.224 → 30 usable hosts
+/28 = 255.255.255.240 → 14 usable hosts
+/30 = 255.255.255.252 → 2 usable hosts (point-to-point)</pre>
+                    </div>
+                </div>
+
+                <div class="cs-example">
+                    <div class="cs-ex-header"><span class="cs-ex-badge">Worked Example 1</span>
+                        <h5>Subnetting — Finding Network Details</h5>
+                    </div>
+                    <div class="cs-ex-problem"><strong>Problem:</strong> Given IP 192.168.10.75/26, find the (a) subnet
+                        mask, (b) network address, (c) broadcast address, (d) usable host range, (e) number of usable
+                        hosts.</div>
+                    <div class="cs-ex-solution">
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 1: Subnet mask from /26</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">26 network bits = 11111111.11111111.11111111.11000000</div>
+                                <div class="cs-math cs-result">Mask = 255.255.255.192</div>
+                            </div>
+                        </div>
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 2: Block size &amp; network address</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">Block size = 256 − 192 = 64</div>
+                                <div class="cs-math">Subnets: .0, .64, .128, .192</div>
+                                <div class="cs-math">75 falls in the .64 block</div>
+                                <div class="cs-math cs-result">Network: 192.168.10.64</div>
+                            </div>
+                        </div>
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 3: Broadcast = next network − 1</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math cs-result">Broadcast: 192.168.10.127</div>
+                            </div>
+                        </div>
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 4: Usable range &amp; host count</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math cs-result">Range: 192.168.10.65 – 192.168.10.126</div>
+                                <div class="cs-math">Hosts = 2^(32−26) − 2 = 64 − 2</div>
+                                <div class="cs-math cs-result">= 62 usable hosts</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cs-ex-answer"><strong>Answer:</strong> Mask: 255.255.255.192, Network: .64, Broadcast:
+                        .127, Range: .65–.126, 62 hosts. The block size method (256 − last octet of mask) is the fastest
+                        way to subnet.</div>
+                </div>
+
+                <div class="cs-concept-block">
+                    <h4><span class="cs-concept-num">3</span> The TCP/IP & OSI Models</h4>
+                    <div class="cs-compare">
+                        <div class="cs-compare-head">
+                            <div class="cs-compare-cell cs-label-cell">OSI Layer</div>
+                            <div class="cs-compare-cell">TCP/IP Equivalent</div>
+                            <div class="cs-compare-cell">Example</div>
+                        </div>
+                        <div class="cs-compare-row">
+                            <div class="cs-compare-cell cs-label-cell">7. Application</div>
+                            <div class="cs-compare-cell">Application</div>
+                            <div class="cs-compare-cell">HTTP, FTP, DNS, SMTP</div>
+                        </div>
+                        <div class="cs-compare-row">
+                            <div class="cs-compare-cell cs-label-cell">4. Transport</div>
+                            <div class="cs-compare-cell">Transport</div>
+                            <div class="cs-compare-cell">TCP (reliable), UDP (fast)</div>
+                        </div>
+                        <div class="cs-compare-row">
+                            <div class="cs-compare-cell cs-label-cell">3. Network</div>
+                            <div class="cs-compare-cell">Internet</div>
+                            <div class="cs-compare-cell">IP, ICMP, routing</div>
+                        </div>
+                        <div class="cs-compare-row">
+                            <div class="cs-compare-cell cs-label-cell">2. Data Link</div>
+                            <div class="cs-compare-cell">Network Access</div>
+                            <div class="cs-compare-cell">Ethernet, Wi-Fi, MAC</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cs-example">
+                    <div class="cs-ex-header"><span class="cs-ex-badge">Worked Example 2</span>
+                        <h5>How Many Subnets Can You Create?</h5>
+                    </div>
+                    <div class="cs-ex-problem"><strong>Problem:</strong> You have the network 10.0.0.0/8 and need
+                        subnets with at least 500 hosts each. What subnet mask should you use? How many subnets can you
+                        create?</div>
+                    <div class="cs-ex-solution">
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 1: Host bits needed</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">Need 500 hosts → 2ⁿ − 2 ≥ 500</div>
+                                <div class="cs-math">2⁹ = 512, 512 − 2 = 510 ≥ 500 ✓</div>
+                                <div class="cs-math cs-result">Need 9 host bits → /23 mask</div>
+                            </div>
+                        </div>
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 2: Subnet count</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">Original: /8 (8 network bits)</div>
+                                <div class="cs-math">New: /23 (23 network bits)</div>
+                                <div class="cs-math">Subnet bits borrowed: 23 − 8 = 15</div>
+                                <div class="cs-math cs-result">Subnets = 2¹⁵ = 32,768 subnets of 510 hosts each</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cs-ex-answer"><strong>Answer:</strong> Use /23 (255.255.254.0), giving 32,768 subnets ×
+                        510 hosts. This is how large organizations like universities subnet their Class A allocations.
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 6: DATA STRUCTURES -->
+            <article class="cs-topic-content" id="cstopic-data-structures">
+                <div class="cs-topic-hero">
+                    <h3>Data Structures — Arrays, Stacks, Queues, Trees &amp; Hash Tables</h3>
+                    <p class="cs-topic-subtitle">How data is organized in memory — choosing the right structure for fast
+                        access, insertion, and search.</p>
+                </div>
+
+                <div class="cs-concept-block">
+                    <h4><span class="cs-concept-num">1</span> Core Data Structures Comparison</h4>
+                    <div class="cs-compare">
+                        <div class="cs-compare-head">
+                            <div class="cs-compare-cell cs-label-cell">Structure</div>
+                            <div class="cs-compare-cell">Access/Search</div>
+                            <div class="cs-compare-cell">Insert/Delete</div>
+                        </div>
+                        <div class="cs-compare-row">
+                            <div class="cs-compare-cell cs-label-cell">Array</div>
+                            <div class="cs-compare-cell">O(1) index / O(n) search</div>
+                            <div class="cs-compare-cell">O(n)</div>
+                        </div>
+                        <div class="cs-compare-row">
+                            <div class="cs-compare-cell cs-label-cell">Linked List</div>
+                            <div class="cs-compare-cell">O(n)</div>
+                            <div class="cs-compare-cell">O(1) at head</div>
+                        </div>
+                        <div class="cs-compare-row">
+                            <div class="cs-compare-cell cs-label-cell">Stack (LIFO)</div>
+                            <div class="cs-compare-cell">O(n) / O(1) top</div>
+                            <div class="cs-compare-cell">O(1) push/pop</div>
+                        </div>
+                        <div class="cs-compare-row">
+                            <div class="cs-compare-cell cs-label-cell">Queue (FIFO)</div>
+                            <div class="cs-compare-cell">O(n) / O(1) front</div>
+                            <div class="cs-compare-cell">O(1) enqueue/dequeue</div>
+                        </div>
+                        <div class="cs-compare-row">
+                            <div class="cs-compare-cell cs-label-cell">Hash Table</div>
+                            <div class="cs-compare-cell">O(1) average</div>
+                            <div class="cs-compare-cell">O(1) average</div>
+                        </div>
+                        <div class="cs-compare-row">
+                            <div class="cs-compare-cell cs-label-cell">Binary Search Tree</div>
+                            <div class="cs-compare-cell">O(log n) avg</div>
+                            <div class="cs-compare-cell">O(log n) avg</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cs-concept-block">
+                    <h4><span class="cs-concept-num">2</span> Stacks &amp; Queues</h4>
+                    <div class="cs-two-col">
+                        <div class="cs-info-col">
+                            <div class="cs-info-title">Stack — LIFO (Last In, First Out)</div>
+                            <p>Like a stack of plates. Last item added is first removed. Operations:
+                                <strong>push</strong> (add), <strong>pop</strong> (remove), <strong>peek</strong> (view
+                                top).</p>
+                            <p>Uses: undo history, function call stack, bracket matching, back button.</p>
+                        </div>
+                        <div class="cs-info-col">
+                            <div class="cs-info-title">Queue — FIFO (First In, First Out)</div>
+                            <p>Like a line at a shop. First item added is first removed. Operations:
+                                <strong>enqueue</strong> (add to back), <strong>dequeue</strong> (remove from front).
+                            </p>
+                            <p>Uses: print queue, BFS algorithm, task scheduling, message buffers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cs-example">
+                    <div class="cs-ex-header"><span class="cs-ex-badge">Worked Example 1</span>
+                        <h5>Stack Operations — Bracket Matching</h5>
+                    </div>
+                    <div class="cs-ex-problem"><strong>Problem:</strong> Use a stack to verify if the brackets in
+                        <code>{[()()]}</code> are balanced.</div>
+                    <div class="cs-ex-solution">
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 1: Process each character</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-code-box">
+                                    <pre>Char  Action       Stack after
+ {    push {       [  {  ]
+ [    push [       [  {  [  ]
+ (    push (       [  {  [  (  ]
+ )    pop ( ✓      [  {  [  ]
+ (    push (       [  {  [  (  ]
+ )    pop ( ✓      [  {  [  ]
+ ]    pop [ ✓      [  {  ]
+ }    pop { ✓      [  ]  ← empty!</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cs-ex-answer"><strong>Answer:</strong> Stack is empty at end → brackets are
+                        <strong>balanced</strong> ✓. If the stack isn't empty, or if a closing bracket doesn't match the
+                        top, it's unbalanced. This is how IDEs check your code syntax.</div>
+                </div>
+
+                <div class="cs-concept-block">
+                    <h4><span class="cs-concept-num">3</span> Hash Tables</h4>
+                    <p>A hash table maps <strong>keys</strong> to <strong>values</strong> using a hash function that
+                        converts the key to an array index. Average-case O(1) for lookup, insert, and delete.</p>
+                    <div class="cs-formula-box">
+                        <div class="cs-formula-main">index = hash(key) % table_size</div>
+                        <div class="cs-formula-break"><span>Load factor = entries / table_size</span><span>Keep load
+                                factor &lt; 0.75 for performance</span></div>
+                    </div>
+                    <div class="cs-insight"><i class="fas fa-lightbulb"></i><span><strong>Collisions:</strong> When two
+                            keys hash to the same index. Handled by <em>chaining</em> (linked list at each slot) or
+                            <em>open addressing</em> (probe for next empty slot). Good hash functions minimize
+                            collisions.</span></div>
+                </div>
+
+                <div class="cs-example">
+                    <div class="cs-ex-header"><span class="cs-ex-badge">Worked Example 2</span>
+                        <h5>Hash Table — Insert and Lookup</h5>
+                    </div>
+                    <div class="cs-ex-problem"><strong>Problem:</strong> A hash table has size 7. Hash function: h(key)
+                        = key % 7. Insert keys: 14, 21, 8, 15. Show where each goes and identify any collisions.</div>
+                    <div class="cs-ex-solution">
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 1: Hash each key</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-code-box">
+                                    <pre>h(14) = 14 % 7 = 0  → slot 0
+h(21) = 21 % 7 = 0  → slot 0 ← COLLISION with 14!
+h(8)  = 8  % 7 = 1  → slot 1
+h(15) = 15 % 7 = 1  → slot 1 ← COLLISION with 8!</pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 2: Resolve with linear probing</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-code-box">
+                                    <pre>Slot:  [0]  [1]  [2]  [3]  [4]  [5]  [6]
+       14    8   21   15    -    -    -
+       ↑         ↑    ↑
+      direct    probed probed</pre>
+                                </div>
+                                <div class="cs-math cs-result">Load factor = 4/7 = 0.57 (healthy)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cs-ex-answer"><strong>Answer:</strong> 2 collisions occurred. 21 probed to slot 2, 15
+                        probed to slot 3. Python dicts, JavaScript objects, and Java HashMaps all use hash tables
+                        internally — understanding them is key to writing efficient code.</div>
+                </div>
+
+                <div class="cs-example">
+                    <div class="cs-ex-header"><span class="cs-ex-badge">Worked Example 3</span>
+                        <h5>Binary Search Tree — Insertion Order Matters</h5>
+                    </div>
+                    <div class="cs-ex-problem"><strong>Problem:</strong> Insert the values [50, 30, 70, 20, 40, 60, 80]
+                        into an empty BST in order. Then search for 40 — how many comparisons?</div>
+                    <div class="cs-ex-solution">
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 1: Build the tree</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-code-box">
+                                    <pre>         50
+        /  \
+      30    70
+     / \   / \
+   20  40 60  80</pre>
+                                </div>
+                                <p>Balanced! Each level doubles the nodes.</p>
+                            </div>
+                        </div>
+                        <div class="cs-sol-step">
+                            <div class="cs-sol-label">Step 2: Search for 40</div>
+                            <div class="cs-sol-content">
+                                <div class="cs-math">50 → 40 < 50 → go left</div>
+                                        <div class="cs-math">30 → 40 > 30 → go right</div>
+                                        <div class="cs-math">40 → FOUND!</div>
+                                        <div class="cs-math cs-result">3 comparisons (= log₂(7) ≈ 2.8)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cs-ex-answer"><strong>Answer:</strong> 3 comparisons to find 40 in a 7-node tree. A
+                            balanced BST gives O(log n) search. But if you inserted [20,30,40,50,60,70,80] in sorted
+                            order, the tree degenerates into a linked list → O(n). That's why self-balancing trees (AVL,
+                            Red-Black) exist.</div>
+                    </div>
+            </article>
+
+        </div><!-- end cs-topics-container -->
+    </section><!-- end cs-topics-section -->
+
+
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
@@ -350,6 +1371,7 @@
     <script src="/js/nav.js"></script>
     <script src="/js/script.js"></script>
     <script src="/js/computer-science.js"></script>
+    <script src="/js/cs-topics.js"></script>
 
     <!-- Google AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"

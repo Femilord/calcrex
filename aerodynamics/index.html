@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerodynamics Calculators - CalcRex | 8+ Free Flight & Flow Tools</title>
+    <meta name="description"
+        content="Free aerodynamics calculators: lift, drag, Reynolds number, Mach number, Bernoulli equation, stall speed, and wind load. With in-depth guides, SVG diagrams, and worked examples.">
+    <meta name="keywords"
+        content="aerodynamics calculator, lift calculator, drag calculator, Reynolds number, Mach number, Bernoulli equation, stall speed, wind load, CalcRex">
+    <meta name="author" content="CalcRex">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcrex.com/aerodynamics/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcrex.com/aerodynamics/">
+    <meta property="og:title" content="Aerodynamics Calculators - CalcRex | Free Flight & Flow Tools">
+    <meta property="og:description"
+        content="Free aerodynamics calculators with worked examples: lift, drag, Reynolds number, Mach number, and more.">
+    <meta property="og:image" content="https://calcrex.com/img/calcrex-banner.webp">
+    <meta property="og:site_name" content="CalcRex">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aerodynamics Calculators - CalcRex">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/aerodynamics.css">
+    <link rel="stylesheet" href="/css/aero-topics.css">
+    <link rel="stylesheet" href="/css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcrex.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Aerodynamics Calculators", "item": "https://calcrex.com/aerodynamics/" }
+    ]}
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        { "@type": "Question", "name": "How do you calculate lift force?", "acceptedAnswer": { "@type": "Answer", "text": "Lift L = ½ρv²SC_L, where ρ is air density, v is airspeed, S is wing area, and C_L is the lift coefficient. C_L depends on the airfoil shape and angle of attack." } },
+        { "@type": "Question", "name": "What is the Reynolds number?", "acceptedAnswer": { "@type": "Answer", "text": "Reynolds number Re = ρvL/μ predicts whether flow is laminar or turbulent. Below ~500,000 flow is typically laminar; above ~1,000,000 it is turbulent. It is dimensionless." } },
+        { "@type": "Question", "name": "What is Bernoulli principle?", "acceptedAnswer": { "@type": "Answer", "text": "Bernoulli principle states that as fluid velocity increases, pressure decreases. The equation P + ½ρv² + ρgh = constant along a streamline. This explains how wings generate lift." } },
+        { "@type": "Question", "name": "What is Mach number?", "acceptedAnswer": { "@type": "Answer", "text": "Mach number M = v/a is the ratio of airspeed to the local speed of sound. M < 1 is subsonic, M = 1 is sonic, M > 1 is supersonic, and M > 5 is hypersonic." } }
+    ]}
+    </script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo"><a href="/"><span class="logo-text">Calc<span class="logo-highlight">REX</span></span></a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span>
+            </button>
+                        <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="/" class="nav-link">Calculator</a></li>
+                    <li><a href="/converters" class="nav-link">Unit Converter</a></li>
+                    <li class="nav-dropdown">
+                        <button class="nav-link nav-dropdown-toggle active">Sciences <i class="fas fa-chevron-down nav-arrow"></i></button>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a></li>
+                            <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i> Chemistry</a></li>
+                            <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i> Electronics</a></li>
+                            <li><a href="/thermodynamics" class="nav-dropdown-link"><i class="fas fa-fire"></i> Thermodynamics</a></li>
+                            <li><a href="/aerodynamics" class="nav-dropdown-link active"><i class="fas fa-plane"></i> Aerodynamics</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/computer-science" class="nav-link">Computer Science</a></li>
+                    <li><a href="/finance" class="nav-link">Finance</a></li>
+                    <li><a href="/date-time" class="nav-link">Date &amp; Time</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="intro-section">
+        <div class="intro-container">
+            <h1 class="intro-title">Aerodynamics Calculators</h1>
+            <div class="intro-content" id="introContent">
+                <p class="intro-text">Calculate lift, drag, Reynolds number, Mach number, stall speed, and wind loads
+                    with CalcREX's aerodynamics toolkit. 8 calculators covering the core equations of fluid dynamics and
+                    flight mechanics — each with step-by-step explanations.</p>
+                <p class="intro-text intro-text-extra">From aircraft design to structural wind analysis, these
+                    calculators handle the fundamental aerodynamic equations. Scroll down for in-depth topic guides with
+                    worked examples, airfoil diagrams, and links to calculators.</p>
+            </div>
+            <button class="read-more-btn" id="readMoreBtn"><span class="btn-text">Read More</span><span
+                    class="btn-icon">▼</span></button>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <div class="ad-container ad-left">
+            <div class="ad-placeholder"><span class="ad-label">AdSense</span></div>
+        </div>
+        <div class="aero-container">
+            <div class="category-selector">
+                <button class="category-btn active" data-category="forces">Forces</button>
+                <button class="category-btn" data-category="flow">Flow & Pressure</button>
+                <button class="category-btn" data-category="flight">Flight</button>
+            </div>
+            <div class="calculator-selection">
+                <label class="selection-label">Select Calculator</label>
+                <select class="calculator-select" id="calculatorSelect"></select>
+            </div>
+            <div class="calculator-interface">
+                <div class="calculator-header">
+                    <h2 id="calculatorTitle">Select a Calculator</h2>
+                </div>
+                <div class="formula-display">
+                    <div class="formula-label">Formula:</div>
+                    <div class="formula-equation" id="formulaEquation">-</div>
+                </div>
+                <div class="input-fields" id="inputFields"></div>
+                <button class="calculate-btn" id="calculateBtn"><span>Calculate</span><svg width="20" height="20"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M8 12h8M12 8v8" />
+                    </svg></button>
+                <div class="result-display">
+                    <div class="result-label">Result:</div>
+                    <div class="result-value" id="resultValue">-</div>
+                    <div class="result-unit" id="resultUnit"></div>
+                </div>
+                <div class="explanation-section">
+                    <h3>How it works</h3>
+                    <p id="explanationText"></p>
+                </div>
+                <div class="quick-reference">
+                    <h3>Aerodynamic Constants</h3>
+                    <div class="reference-grid">
+                        <div class="reference-item"><span class="ref-name">ρ sea level</span><span
+                                class="ref-value">1.225 kg/m³</span></div>
+                        <div class="reference-item"><span class="ref-name">μ air (15°C)</span><span
+                                class="ref-value">1.81×10⁻⁵ Pa·s</span></div>
+                        <div class="reference-item"><span class="ref-name">γ air</span><span
+                                class="ref-value">1.4</span></div>
+                        <div class="reference-item"><span class="ref-name">R air</span><span class="ref-value">287
+                                J/(kg·K)</span></div>
+                        <div class="reference-item"><span class="ref-name">Speed of sound (15°C)</span><span
+                                class="ref-value">340.3 m/s</span></div>
+                        <div class="reference-item"><span class="ref-name">1 knot</span><span class="ref-value">0.5144
+                                m/s</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ad-container ad-right">
+            <div class="ad-placeholder"><span class="ad-label">AdSense</span></div>
+        </div>
+    </main>
+
+    <section class="ae-topics-section" id="aeroTopics">
+        <div class="ae-topics-container">
+            <div class="ae-topics-header">
+                <h2>Aerodynamics — In-Depth Guides with Worked Examples</h2>
+                <p>Master lift, drag, fluid flow, and flight mechanics — the physics of objects moving through air.</p>
+            </div>
+            <div class="ae-topic-tabs" id="aeTopicTabs">
+                <button class="ae-topic-tab active" data-aetopic="lift-drag"><i class="fas fa-plane"></i><span>Lift &
+                        Drag</span></button>
+                <button class="ae-topic-tab" data-aetopic="bernoulli"><i
+                        class="fas fa-water"></i><span>Bernoulli</span></button>
+                <button class="ae-topic-tab" data-aetopic="reynolds"><i
+                        class="fas fa-wave-square"></i><span>Reynolds</span></button>
+                <button class="ae-topic-tab" data-aetopic="compressible"><i class="fas fa-jet-fighter"></i><span>Mach &
+                        Shock</span></button>
+                <button class="ae-topic-tab" data-aetopic="airfoils"><i
+                        class="fas fa-wind"></i><span>Airfoils</span></button>
+                <button class="ae-topic-tab" data-aetopic="wind-engineering"><i class="fas fa-building"></i><span>Wind
+                        Loads</span></button>
+            </div>
+
+            <!-- TOPIC 1: LIFT & DRAG -->
+            <article class="ae-topic-content active" id="aetopic-lift-drag">
+                <div class="ae-topic-hero">
+                    <h3>Lift &amp; Drag — The Two Fundamental Aerodynamic Forces</h3>
+                    <p class="ae-topic-subtitle">How air flowing over a body creates forces perpendicular (lift) and
+                        parallel (drag) to the flow direction.</p>
+                </div>
+                <div class="ae-concept-block">
+                    <h4><span class="ae-concept-num">1</span> The Lift Equation</h4>
+                    <div class="ae-formula-box">
+                        <div class="ae-formula-main">L = ½ρv²SC_L</div>
+                        <div class="ae-formula-break"><span>ρ = air density (kg/m³), v = airspeed (m/s)</span><span>S =
+                                wing planform area (m²)</span><span>C_L = lift coefficient (depends on shape & angle of
+                                attack)</span></div>
+                    </div>
+                    <div class="ae-diagram">
+                        <div class="ae-svg-wrap">
+                            <svg class="ae-svg" viewBox="0 0 440 220" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <marker id="aero-arr" markerWidth="8" markerHeight="8" refX="8" refY="4"
+                                        orient="auto">
+                                        <path d="M0,0 L8,4 L0,8" fill="#2563eb" />
+                                    </marker>
+                                    <marker id="lift-arr" markerWidth="8" markerHeight="8" refX="8" refY="4"
+                                        orient="auto">
+                                        <path d="M0,0 L8,4 L0,8" fill="#16a34a" />
+                                    </marker>
+                                    <marker id="drag-arr" markerWidth="8" markerHeight="8" refX="8" refY="4"
+                                        orient="auto">
+                                        <path d="M0,0 L8,4 L0,8" fill="#dc2626" />
+                                    </marker>
+                                    <marker id="wind-arr" markerWidth="6" markerHeight="6" refX="6" refY="3"
+                                        orient="auto">
+                                        <path d="M0,0 L6,3 L0,6" fill="#94a3b8" />
+                                    </marker>
+                                </defs>
+                                <!-- Airfoil -->
+                                <path d="M80,120 Q120,70 220,85 Q320,95 360,120 Q320,130 220,135 Q120,140 80,120 Z"
+                                    fill="#dbeafe" stroke="#2563eb" stroke-width="2.5" />
+                                <circle cx="95" cy="120" r="3" fill="#2563eb" />
+                                <!-- Chord line -->
+                                <line x1="80" y1="120" x2="360" y2="120" stroke="#94a3b8" stroke-width="1"
+                                    stroke-dasharray="6,4" />
+                                <text x="220" y="115" text-anchor="middle" font-size="9" fill="#94a3b8">chord
+                                    line</text>
+                                <!-- Angle of attack -->
+                                <line x1="80" y1="120" x2="30" y2="120" stroke="#94a3b8" stroke-width="1.5"
+                                    marker-end="url(#wind-arr)" />
+                                <line x1="80" y1="120" x2="30" y2="135" stroke="#94a3b8" stroke-width="1.5"
+                                    marker-end="url(#wind-arr)" />
+                                <path d="M55,120 Q55,125 52,128" fill="none" stroke="#f97316" stroke-width="1.5" />
+                                <text x="40" y="132" font-size="10" fill="#f97316" font-weight="bold">α</text>
+                                <!-- Wind arrows -->
+                                <line x1="10" y1="80" x2="60" y2="80" stroke="#94a3b8" stroke-width="1.5"
+                                    marker-end="url(#wind-arr)" />
+                                <line x1="10" y1="100" x2="60" y2="100" stroke="#94a3b8" stroke-width="1.5"
+                                    marker-end="url(#wind-arr)" />
+                                <line x1="10" y1="140" x2="60" y2="140" stroke="#94a3b8" stroke-width="1.5"
+                                    marker-end="url(#wind-arr)" />
+                                <line x1="10" y1="160" x2="60" y2="160" stroke="#94a3b8" stroke-width="1.5"
+                                    marker-end="url(#wind-arr)" />
+                                <text x="15" y="180" font-size="10" fill="#64748b">Airflow v</text>
+                                <!-- LIFT arrow -->
+                                <line x1="220" y1="80" x2="220" y2="25" stroke="#16a34a" stroke-width="3"
+                                    marker-end="url(#lift-arr)" />
+                                <text x="235" y="40" font-size="14" font-weight="bold" fill="#16a34a">LIFT</text>
+                                <!-- DRAG arrow -->
+                                <line x1="365" y1="120" x2="425" y2="120" stroke="#dc2626" stroke-width="3"
+                                    marker-end="url(#drag-arr)" />
+                                <text x="375" y="110" font-size="14" font-weight="bold" fill="#dc2626">DRAG</text>
+                                <!-- Flow arrows over top -->
+                                <path d="M100,90 Q180,55 300,78" fill="none" stroke="#2563eb" stroke-width="1.5"
+                                    marker-end="url(#aero-arr)" />
+                                <text x="195" y="65" font-size="9" fill="#2563eb">faster (lower P)</text>
+                                <!-- Flow arrows under -->
+                                <path d="M100,145 Q180,160 300,140" fill="none" stroke="#2563eb" stroke-width="1.5"
+                                    marker-end="url(#aero-arr)" />
+                                <text x="195" y="170" font-size="9" fill="#2563eb">slower (higher P)</text>
+                            </svg>
+                        </div>
+                        <div class="ae-diagram-caption"><strong>Airfoil cross-section:</strong> The curved upper surface
+                            forces air to travel faster (lower pressure), while slower flow beneath maintains higher
+                            pressure. The pressure difference creates an upward lift force. The angle of attack (α)
+                            amplifies this effect.</div>
+                    </div>
+                </div>
+                <div class="ae-concept-block">
+                    <h4><span class="ae-concept-num">2</span> The Drag Equation</h4>
+                    <div class="ae-formula-box">
+                        <div class="ae-formula-main">D = ½ρv²SC_D</div>
+                        <div class="ae-formula-break"><span>C_D = drag coefficient</span><span>Total drag = parasite
+                                drag + induced drag</span><span>Induced drag ∝ 1/v² (decreases with speed)</span></div>
+                    </div>
+                    <div class="ae-eq-table">
+                        <div class="ae-eq-row">
+                            <div class="ae-eq-cell">Sphere</div>
+                            <div class="ae-eq-note">C_D ≈ 0.47</div>
+                        </div>
+                        <div class="ae-eq-row">
+                            <div class="ae-eq-cell">Flat plate (⊥)</div>
+                            <div class="ae-eq-note">C_D ≈ 1.28</div>
+                        </div>
+                        <div class="ae-eq-row">
+                            <div class="ae-eq-cell">Streamlined body</div>
+                            <div class="ae-eq-note">C_D ≈ 0.04</div>
+                        </div>
+                        <div class="ae-eq-row">
+                            <div class="ae-eq-cell">Car</div>
+                            <div class="ae-eq-note">C_D ≈ 0.25–0.35</div>
+                        </div>
+                        <div class="ae-eq-row">
+                            <div class="ae-eq-cell">Cyclist</div>
+                            <div class="ae-eq-note">C_D ≈ 0.88</div>
+                        </div>
+                        <div class="ae-eq-row">
+                            <div class="ae-eq-cell">Clean aircraft wing</div>
+                            <div class="ae-eq-note">C_D ≈ 0.02–0.04</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ae-example">
+                    <div class="ae-ex-header"><span class="ae-ex-badge">Worked Example 1</span>
+                        <h5>Calculating Lift for Level Flight</h5>
+                    </div>
+                    <div class="ae-ex-problem"><strong>Problem:</strong> A Cessna 172 weighs 10,900 N, has a wing area
+                        of 16.2 m², and flies at 55 m/s at sea level (ρ = 1.225 kg/m³). What C_L is required for level
+                        flight?</div>
+                    <div class="ae-ex-solution">
+                        <div class="ae-sol-step">
+                            <div class="ae-sol-label">Level flight: L = W</div>
+                            <div class="ae-sol-content">
+                                <div class="ae-math">10900 = ½ × 1.225 × 55² × 16.2 × C_L</div>
+                                <div class="ae-math">10900 = ½ × 1.225 × 3025 × 16.2 × C_L</div>
+                                <div class="ae-math">10900 = 30,024 × C_L</div>
+                                <div class="ae-math ae-result">C_L = 0.363</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ae-ex-answer"><strong>Answer:</strong> C_L = 0.363. A typical airfoil can produce C_L up
+                        to ~1.6, so 0.363 is comfortable cruise — plenty of margin before stall.
+                        <br><a href="/aerodynamics/" class="ae-calc-link"><i class="fas fa-calculator"></i> Try the Lift
+                            Force Calculator</a>
+                    </div>
+                </div>
+                <div class="ae-example">
+                    <div class="ae-ex-header"><span class="ae-ex-badge">Worked Example 2</span>
+                        <h5>Drag Force and Power at Highway Speed</h5>
+                    </div>
+                    <div class="ae-ex-problem"><strong>Problem:</strong> A car has frontal area 2.2 m², C_D = 0.30, at
+                        120 km/h (33.3 m/s). What is the aerodynamic drag force and power to overcome it?</div>
+                    <div class="ae-ex-solution">
+                        <div class="ae-sol-step">
+                            <div class="ae-sol-label">Drag and power</div>
+                            <div class="ae-sol-content">
+                                <div class="ae-math">D = ½ × 1.225 × 33.3² × 2.2 × 0.30</div>
+                                <div class="ae-math">= ½ × 1.225 × 1108.9 × 0.66</div>
+                                <div class="ae-math ae-result">D = 448.5 N</div>
+                                <div class="ae-math">P = D × v = 448.5 × 33.3</div>
+                                <div class="ae-math ae-result">P = 14,935 W ≈ 20 hp</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ae-ex-answer"><strong>Answer:</strong> 449 N drag, 20 hp to overcome it. At 160 km/h,
+                        drag nearly doubles to ~800 N and power triples to ~47 hp. Drag ∝ v² but power ∝ v³ — speed is
+                        expensive.
+                        <br><a href="/aerodynamics/" class="ae-calc-link"><i class="fas fa-calculator"></i> Try the Drag
+                            Force Calculator</a>
+                    </div>
+                </div>
+                <div class="ae-example">
+                    <div class="ae-ex-header"><span class="ae-ex-badge">Worked Example 3</span>
+                        <h5>Lift-to-Drag Ratio</h5>
+                    </div>
+                    <div class="ae-ex-problem"><strong>Problem:</strong> A glider has L/D = 40 at best glide speed. From
+                        1000 m altitude, how far can it glide (still air)?</div>
+                    <div class="ae-ex-solution">
+                        <div class="ae-sol-step">
+                            <div class="ae-sol-label">Glide distance = altitude × L/D</div>
+                            <div class="ae-sol-content">
+                                <div class="ae-math">Distance = 1000 × 40</div>
+                                <div class="ae-math ae-result">= 40,000 m = 40 km</div>
+                                <p>Every 1 m of altitude trades for 40 m of forward distance. Modern sailplanes achieve
+                                    L/D of 60+.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ae-ex-answer"><strong>Answer:</strong> 40 km. L/D is the single most important
+                        efficiency metric in aviation. A Boeing 737 has L/D ≈ 17; a Cessna ≈ 8; an F-16 ≈ 9. Higher is
+                        better for fuel economy and glide range.</div>
+                </div>
+            </article>
+
+            <!-- TOPIC 2: BERNOULLI -->
+            <article class="ae-topic-content" id="aetopic-bernoulli">
+                <div class="ae-topic-hero">
+                    <h3>Bernoulli's Principle — Pressure, Velocity &amp; the Origin of Lift</h3>
+                    <p class="ae-topic-subtitle">The foundational relationship between fluid speed and pressure — and
+                        why it's both powerful and commonly misunderstood.</p>
+                </div>
+                <div class="ae-concept-block">
+                    <h4><span class="ae-concept-num">1</span> Bernoulli's Equation</h4>
+                    <div class="ae-formula-box">
+                        <div class="ae-formula-main">P + ½ρv² + ρgh = constant</div>
+                        <div class="ae-formula-break"><span>P = static pressure (Pa)</span><span>½ρv² = dynamic pressure
+                                (kinetic energy/vol)</span><span>ρgh = hydrostatic pressure (for height changes)</span>
+                        </div>
+                    </div>
+                    <div class="ae-insight"><i class="fas fa-lightbulb"></i><span><strong>Key insight:</strong> Along a
+                            streamline, as velocity increases, pressure MUST decrease (and vice versa). This is
+                            conservation of energy applied to flowing fluids. Valid for incompressible, inviscid flow
+                            along a streamline.</span></div>
+                </div>
+                <div class="ae-example">
+                    <div class="ae-ex-header"><span class="ae-ex-badge">Worked Example 1</span>
+                        <h5>Pressure Drop Over a Wing</h5>
+                    </div>
+                    <div class="ae-ex-problem"><strong>Problem:</strong> Air approaches a wing at 60 m/s. Over the upper
+                        surface, it accelerates to 75 m/s. What is the pressure difference? (ρ = 1.225 kg/m³, neglect
+                        height changes)</div>
+                    <div class="ae-ex-solution">
+                        <div class="ae-sol-step">
+                            <div class="ae-sol-label">Bernoulli between two points</div>
+                            <div class="ae-sol-content">
+                                <div class="ae-math">P₁ + ½ρv₁² = P₂ + ½ρv₂²</div>
+                                <div class="ae-math">ΔP = P₁ − P₂ = ½ρ(v₂² − v₁²)</div>
+                                <div class="ae-math">= ½ × 1.225 × (75² − 60²)</div>
+                                <div class="ae-math">= 0.6125 × (5625 − 3600)</div>
+                                <div class="ae-math ae-result">ΔP = 1,240 Pa (≈ 1.2% of atmospheric)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ae-ex-answer"><strong>Answer:</strong> 1,240 Pa lower on the upper surface. Over a 16 m²
+                        wing, this creates 1240 × 16 = 19,840 N of lift — enough for a light aircraft. Even tiny
+                        pressure differences over large areas produce large forces.
+                        <br><a href="/aerodynamics/" class="ae-calc-link"><i class="fas fa-calculator"></i> Try the
+                            Bernoulli Calculator</a>
+                    </div>
+                </div>
+                <div class="ae-example">
+                    <div class="ae-ex-header"><span class="ae-ex-badge">Worked Example 2</span>
+                        <h5>Pitot Tube — Measuring Airspeed</h5>
+                    </div>
+                    <div class="ae-ex-problem"><strong>Problem:</strong> A pitot tube on an aircraft reads total
+                        pressure of 103,500 Pa. Static pressure is 101,325 Pa. Air density is 1.225 kg/m³. What is the
+                        indicated airspeed?</div>
+                    <div class="ae-ex-solution">
+                        <div class="ae-sol-step">
+                            <div class="ae-sol-label">Dynamic pressure → velocity</div>
+                            <div class="ae-sol-content">
+                                <div class="ae-math">q = P_total − P_static = 103,500 − 101,325 = 2,175 Pa</div>
+                                <div class="ae-math">q = ½ρv² → v = √(2q/ρ)</div>
+                                <div class="ae-math">v = √(2 × 2175 / 1.225)</div>
+                                <div class="ae-math ae-result">v = 59.6 m/s ≈ 116 knots</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ae-ex-answer"><strong>Answer:</strong> 59.6 m/s (116 knots). This is exactly how
+                        airspeed indicators work — they measure the pressure difference between a forward-facing tube
+                        (total pressure) and a side port (static pressure).
+                        <br><a href="/aerodynamics/" class="ae-calc-link"><i class="fas fa-calculator"></i> Try the
+                            Dynamic Pressure Calculator</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- TOPIC 3: REYNOLDS NUMBER -->
+            <article class="ae-topic-content" id="aetopic-reynolds">
+                <div class="ae-topic-hero">
+                    <h3>Reynolds Number — Laminar vs. Turbulent Flow</h3>
+                    <p class="ae-topic-subtitle">The dimensionless number that determines whether flow is smooth or
+                        chaotic — critical for all aerodynamic analysis.</p>
+                </div>
+                <div class="ae-concept-block">
+                    <h4><span class="ae-concept-num">1</span> Definition &amp; Physical Meaning</h4>
+                    <div class="ae-formula-box">
+                        <div class="ae-formula-main">Re = ρvL/μ = vL/ν</div>
+                        <div class="ae-formula-break"><span>Re = inertial forces / viscous forces</span><span>ν = μ/ρ =
+                                kinematic viscosity (m²/s)</span><span>L = characteristic length (chord, diameter,
+                                etc.)</span></div>
+                    </div>
+                    <div class="ae-two-col">
+                        <div class="ae-info-col">
+                            <div class="ae-info-title">Laminar (Re &lt; 5×10⁵)</div>
+                            <p>Smooth, layered flow. Low skin friction but susceptible to separation. Think: honey
+                                flowing, or a model aircraft wing.</p>
+                        </div>
+                        <div class="ae-info-col">
+                            <div class="ae-info-title">Turbulent (Re &gt; 10⁶)</div>
+                            <p>Chaotic, mixed flow. Higher friction but resists separation. Think: river rapids, or a
+                                full-size aircraft wing.</p>
+                        </div>
+                    </div>
+
+                    <div class="ae-diagram">
+                        <div class="ae-svg-wrap">
+                            <svg class="ae-svg" viewBox="0 0 440 180" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Flat plate -->
+                                <rect x="40" y="90" width="360" height="6" rx="2" fill="#64748b" />
+                                <!-- Laminar boundary layer -->
+                                <path d="M40,90 Q100,85 160,75 Q180,72 200,70" fill="none" stroke="#2563eb"
+                                    stroke-width="2.5" />
+                                <text x="100" y="65" font-size="11" fill="#2563eb" font-weight="bold">Laminar BL</text>
+                                <!-- Transition -->
+                                <line x1="200" y1="60" x2="200" y2="100" stroke="#f97316" stroke-width="1.5"
+                                    stroke-dasharray="4,3" />
+                                <text x="190" y="55" font-size="10" fill="#f97316" font-weight="bold">Transition</text>
+                                <!-- Turbulent boundary layer -->
+                                <path d="M200,70 Q240,55 280,45 Q340,30 400,20" fill="none" stroke="#dc2626"
+                                    stroke-width="2.5" />
+                                <text x="300" y="18" font-size="11" fill="#dc2626" font-weight="bold">Turbulent
+                                    BL</text>
+                                <!-- Streamlines laminar -->
+                                <line x1="40" y1="78" x2="190" y2="80" stroke="#93c5fd" stroke-width="1" />
+                                <line x1="40" y1="84" x2="190" y2="85" stroke="#93c5fd" stroke-width="1" />
+                                <!-- Streamlines turbulent (wavy) -->
+                                <path
+                                    d="M210,75 Q230,72 250,77 Q270,82 290,75 Q310,68 330,75 Q350,80 370,73 Q390,66 400,70"
+                                    fill="none" stroke="#fca5a5" stroke-width="1" />
+                                <path
+                                    d="M210,82 Q225,78 240,83 Q260,88 280,82 Q300,76 320,83 Q340,88 360,82 Q380,76 400,80"
+                                    fill="none" stroke="#fca5a5" stroke-width="1" />
+                                <!-- Flow direction -->
+                                <text x="10" y="80" font-size="11" fill="#64748b">v →</text>
+                                <!-- Labels -->
+                                <text x="80" y="145" font-size="10" fill="#2563eb">Smooth layers</text>
+                                <text x="80" y="158" font-size="10" fill="#2563eb">Low friction</text>
+                                <text x="280" y="145" font-size="10" fill="#dc2626">Chaotic mixing</text>
+                                <text x="280" y="158" font-size="10" fill="#dc2626">Thicker BL, more friction</text>
+                            </svg>
+                        </div>
+                        <div class="ae-diagram-caption"><strong>Boundary layer transition:</strong> Flow starts laminar
+                            near the leading edge and transitions to turbulent downstream. The turbulent boundary layer
+                            is thicker and has higher skin friction, but is more resistant to flow separation.</div>
+                    </div>
+                </div>
+                <div class="ae-example">
+                    <div class="ae-ex-header"><span class="ae-ex-badge">Worked Example 1</span>
+                        <h5>Reynolds Number for a Wing</h5>
+                    </div>
+                    <div class="ae-ex-problem"><strong>Problem:</strong> A wing has a chord of 1.5 m and flies at 70 m/s
+                        at sea level (ρ = 1.225, μ = 1.81 × 10⁻⁵). Is the flow laminar or turbulent?</div>
+                    <div class="ae-ex-solution">
+                        <div class="ae-sol-step">
+                            <div class="ae-sol-label">Calculate Re</div>
+                            <div class="ae-sol-content">
+                                <div class="ae-math">Re = ρvL/μ = 1.225 × 70 × 1.5 / 1.81×10⁻⁵</div>
+                                <div class="ae-math ae-result">Re = 7.1 × 10⁶ → Turbulent</div>
+                                <p>Well above the transition threshold. Virtually all full-scale aircraft operate in
+                                    turbulent flow regimes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ae-ex-answer"><strong>Answer:</strong> Re = 7.1 million (turbulent). Scale model testing
+                        must match Re for valid results — this is why wind tunnels use compressed air or special fluids.
+                        <br><a href="/aerodynamics/" class="ae-calc-link"><i class="fas fa-calculator"></i> Try the
+                            Reynolds Number Calculator</a>
+                    </div>
+                </div>
+                <div class="ae-example">
+                    <div class="ae-ex-header"><span class="ae-ex-badge">Worked Example 2</span>
+                        <h5>Scale Model Testing</h5>
+                    </div>
+                    <div class="ae-ex-problem"><strong>Problem:</strong> You want to test a 1/10 scale model of the wing
+                        above in a wind tunnel at the same air conditions. What speed would give matching Reynolds
+                        number?</div>
+                    <div class="ae-ex-solution">
+                        <div class="ae-sol-step">
+                            <div class="ae-sol-label">Match Re</div>
+                            <div class="ae-sol-content">
+                                <div class="ae-math">Re_model = Re_full → ρv_m × L_m/μ = ρv_f × L_f/μ</div>
+                                <div class="ae-math">v_m = v_f × (L_f/L_m) = 70 × 10</div>
+                                <div class="ae-math ae-result">v_m = 700 m/s ≈ Mach 2!</div>
+                                <p>Impractical — this is why wind tunnels use pressurized air (higher ρ) or accept Re
+                                    mismatch and apply corrections.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ae-ex-answer"><strong>Answer:</strong> 700 m/s — impossibly fast. This illustrates the
+                        "Reynolds number matching problem" in scale testing. Real solutions include cryogenic wind
+                        tunnels (dense cold air) or water tunnels (higher ρ and μ).</div>
+                </div>
+            </article>
+
+            <!-- TOPIC 4: COMPRESSIBLE FLOW -->
+            <article class="ae-topic-content" id="aetopic-compressible">
+                <div class="ae-topic-hero">
+                    <h3>Mach Number &amp; Compressible Flow — Supersonic &amp; Shock Waves</h3>
+                    <p class="ae-topic-subtitle">When air speed approaches and exceeds the speed of sound — the physics
+                        changes dramatically.</p>
+                </div>
+                <div class="ae-concept-block">
+                    <h4><span class="ae-concept-num">1</span> Mach Number &amp; Speed of Sound</h4>
+                    <div class="ae-formula-box">
+                        <div class="ae-formula-main">M = v/a, where a = √(γRT)</div>
+                        <div class="ae-formula-break"><span>γ = 1.4 (ratio of specific heats for air)</span><span>R =
+                                287 J/(kg·K), T in Kelvin</span><span>At 15°C: a = 340.3 m/s = 1,225 km/h</span></div>
+                    </div>
+                    <div class="ae-eq-table">
+                        <div class="ae-eq-row">
+                            <div class="ae-eq-cell">M &lt; 0.8</div>
+                            <div class="ae-eq-note">Subsonic (most prop aircraft)</div>
+                        </div>
+                        <div class="ae-eq-row">
+                            <div class="ae-eq-cell">0.8 &lt; M &lt; 1.2</div>
+                            <div class="ae-eq-note">Transonic (airliners: M ≈ 0.78–0.85)</div>
+                        </div>
+                        <div class="ae-eq-row">
+                            <div class="ae-eq-cell">1.2 &lt; M &lt; 5</div>
+                            <div class="ae-eq-note">Supersonic (fighter jets, Concorde: M 2.04)</div>
+                        </div>
+                        <div class="ae-eq-row">
+                            <div class="ae-eq-cell">M &gt; 5</div>
+                            <div class="ae-eq-note">Hypersonic (re-entry vehicles, scramjets)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ae-example">
+                    <div class="ae-ex-header"><span class="ae-ex-badge">Worked Example 1</span>
+                        <h5>Mach Number at Altitude</h5>
+                    </div>
+                    <div class="ae-ex-problem"><strong>Problem:</strong> A Boeing 787 cruises at 250 m/s at 11,000 m
+                        altitude where temperature is −56.5°C. What is its Mach number?</div>
+                    <div class="ae-ex-solution">
+                        <div class="ae-sol-step">
+                            <div class="ae-sol-label">Speed of sound at altitude</div>
+                            <div class="ae-sol-content">
+                                <div class="ae-math">T = −56.5 + 273.15 = 216.65 K</div>
+                                <div class="ae-math">a = √(1.4 × 287 × 216.65) = √(87,066)</div>
+                                <div class="ae-math ae-result">a = 295.1 m/s</div>
+                                <div class="ae-math">M = 250 / 295.1</div>
+                                <div class="ae-math ae-result">M = 0.847 (transonic)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ae-ex-answer"><strong>Answer:</strong> Mach 0.847. The speed of sound drops from 340 m/s
+                        at sea level to 295 m/s at cruise altitude because it's colder. Airlines quote "Mach 0.85"
+                        rather than km/h because Mach accounts for this.
+                        <br><a href="/aerodynamics/" class="ae-calc-link"><i class="fas fa-calculator"></i> Try the Mach
+                            Number Calculator</a>
+                    </div>
+                </div>
+                <div class="ae-example">
+                    <div class="ae-ex-header"><span class="ae-ex-badge">Worked Example 2</span>
+                        <h5>Shock Wave Mach Cone Angle</h5>
+                    </div>
+                    <div class="ae-ex-problem"><strong>Problem:</strong> A fighter jet flies at Mach 1.8. What is the
+                        half-angle of its Mach cone (shock wave angle)?</div>
+                    <div class="ae-ex-solution">
+                        <div class="ae-sol-step">
+                            <div class="ae-sol-label">Mach cone formula</div>
+                            <div class="ae-sol-content">
+                                <div class="ae-math">sin(μ) = 1/M = 1/1.8 = 0.5556</div>
+                                <div class="ae-math ae-result">μ = arcsin(0.5556) = 33.7°</div>
+                                <p>The Mach cone trailing behind the jet creates a sonic boom where it intersects the
+                                    ground.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ae-ex-answer"><strong>Answer:</strong> 33.7° half-angle. At Mach 1.0 the cone is 90°
+                        (flat — the shock is perpendicular). As speed increases, the cone narrows. At Mach 3, the angle
+                        is only 19.5°.</div>
+                </div>
+            </article>
+
+            <!-- TOPIC 5: AIRFOILS -->
+            <article class="ae-topic-content" id="aetopic-airfoils">
+                <div class="ae-topic-hero">
+                    <h3>Airfoil Design — Shape, Stall &amp; Performance</h3>
+                    <p class="ae-topic-subtitle">How wing cross-section geometry determines lift, drag, and stall
+                        characteristics.</p>
+                </div>
+                <div class="ae-concept-block">
+                    <h4><span class="ae-concept-num">1</span> Airfoil Geometry</h4>
+                    <div class="ae-eq-table">
+                        <div class="ae-eq-row">
+                            <div class="ae-eq-cell">Chord (c)</div>
+                            <div class="ae-eq-note">Leading edge to trailing edge</div>
+                        </div>
+                        <div class="ae-eq-row">
+                            <div class="ae-eq-cell">Camber</div>
+                            <div class="ae-eq-note">Curvature of the mean line (asymmetry)</div>
+                        </div>
+                        <div class="ae-eq-row">
+                            <div class="ae-eq-cell">Thickness (t/c)</div>
+                            <div class="ae-eq-note">Max thickness as % of chord (typically 12–18%)</div>
+                        </div>
+                        <div class="ae-eq-row">
+                            <div class="ae-eq-cell">Angle of attack (α)</div>
+                            <div class="ae-eq-note">Angle between chord line and freestream</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ae-concept-block">
+                    <h4><span class="ae-concept-num">2</span> Stall — The Lift Limit</h4>
+                    <div class="ae-formula-box">
+                        <div class="ae-formula-main">V_stall = √(2W / ρSC_Lmax)</div>
+                        <div class="ae-formula-break"><span>Stall occurs at critical angle of attack
+                                (~12–18°)</span><span>Flow separates from upper surface → lift drops
+                                sharply</span><span>C_Lmax typically 1.2–1.6 (clean wing), up to 3.0 with flaps</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ae-example">
+                    <div class="ae-ex-header"><span class="ae-ex-badge">Worked Example 1</span>
+                        <h5>Stall Speed Calculation</h5>
+                    </div>
+                    <div class="ae-ex-problem"><strong>Problem:</strong> An aircraft weighs 15,000 N with wing area 20
+                        m² and C_Lmax = 1.5. What is the stall speed at sea level?</div>
+                    <div class="ae-ex-solution">
+                        <div class="ae-sol-step">
+                            <div class="ae-sol-label">Stall speed formula</div>
+                            <div class="ae-sol-content">
+                                <div class="ae-math">V_s = √(2 × 15000 / (1.225 × 20 × 1.5))</div>
+                                <div class="ae-math">= √(30000 / 36.75)</div>
+                                <div class="ae-math ae-result">V_s = 28.6 m/s = 55.6 knots</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ae-ex-answer"><strong>Answer:</strong> 28.6 m/s (56 knots). With landing flaps (C_Lmax =
+                        2.5), stall speed drops to 22.1 m/s (43 knots). This is why flaps are deployed for landing —
+                        they lower the stall speed.
+                        <br><a href="/aerodynamics/" class="ae-calc-link"><i class="fas fa-calculator"></i> Try the
+                            Stall Speed Calculator</a>
+                    </div>
+                </div>
+                <div class="ae-example">
+                    <div class="ae-ex-header"><span class="ae-ex-badge">Worked Example 2</span>
+                        <h5>Effect of Altitude on Stall Speed</h5>
+                    </div>
+                    <div class="ae-ex-problem"><strong>Problem:</strong> The same aircraft flies at 6000 m altitude
+                        where ρ = 0.660 kg/m³. What is the new stall speed?</div>
+                    <div class="ae-ex-solution">
+                        <div class="ae-sol-step">
+                            <div class="ae-sol-label">Same formula, different ρ</div>
+                            <div class="ae-sol-content">
+                                <div class="ae-math">V_s = √(2 × 15000 / (0.660 × 20 × 1.5))</div>
+                                <div class="ae-math">= √(30000 / 19.8)</div>
+                                <div class="ae-math ae-result">V_s = 38.9 m/s = 75.6 knots (36% higher!)</div>
+                                <p>Stall speed ratio: √(1.225/0.660) = 1.362 — stall speed increases as √(1/ρ).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ae-ex-answer"><strong>Answer:</strong> 38.9 m/s (76 knots) — 36% higher than sea level.
+                        This is why aircraft must fly faster at altitude and why high-altitude airports have longer
+                        runways. Thin air = less lift at same speed.</div>
+                </div>
+            </article>
+
+            <!-- TOPIC 6: WIND ENGINEERING -->
+            <article class="ae-topic-content" id="aetopic-wind-engineering">
+                <div class="ae-topic-hero">
+                    <h3>Wind Engineering — Structural Loads, Buildings &amp; Design</h3>
+                    <p class="ae-topic-subtitle">How wind creates forces on buildings, bridges, and structures — and how
+                        engineers design for safety.</p>
+                </div>
+                <div class="ae-concept-block">
+                    <h4><span class="ae-concept-num">1</span> Wind Pressure on Structures</h4>
+                    <div class="ae-formula-box">
+                        <div class="ae-formula-main">F = ½ρv²C_DA</div>
+                        <div class="ae-formula-break"><span>Same drag equation, applied to buildings</span><span>C_D for
+                                buildings ≈ 1.0–2.0</span><span>Design codes use gust factors and exposure
+                                categories</span></div>
+                    </div>
+                    <div class="ae-insight"><i class="fas fa-lightbulb"></i><span><strong>v² means danger grows
+                                fast:</strong> Doubling wind speed from 50 km/h to 100 km/h quadruples the force. A
+                            Category 5 hurricane (250 km/h) exerts 25× more force than a 50 km/h breeze.</span></div>
+                </div>
+                <div class="ae-concept-block">
+                    <h4><span class="ae-concept-num">2</span> The Beaufort Scale (Selected)</h4>
+                    <div class="ae-eq-table">
+                        <div class="ae-eq-row">
+                            <div class="ae-eq-cell">Force 6: 39–49 km/h</div>
+                            <div class="ae-eq-note">Strong breeze — umbrellas difficult</div>
+                        </div>
+                        <div class="ae-eq-row">
+                            <div class="ae-eq-cell">Force 8: 62–74 km/h</div>
+                            <div class="ae-eq-note">Gale — twigs break, walking impeded</div>
+                        </div>
+                        <div class="ae-eq-row">
+                            <div class="ae-eq-cell">Force 10: 89–102 km/h</div>
+                            <div class="ae-eq-note">Storm — trees uprooted, structural damage</div>
+                        </div>
+                        <div class="ae-eq-row">
+                            <div class="ae-eq-cell">Force 12: >118 km/h</div>
+                            <div class="ae-eq-note">Hurricane — devastating damage</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ae-example">
+                    <div class="ae-ex-header"><span class="ae-ex-badge">Worked Example 1</span>
+                        <h5>Wind Force on a Building Face</h5>
+                    </div>
+                    <div class="ae-ex-problem"><strong>Problem:</strong> A building face is 15 m wide × 40 m tall. Wind
+                        speed is 130 km/h (36.1 m/s). C_D = 1.3, ρ = 1.225 kg/m³. What is the total wind force?</div>
+                    <div class="ae-ex-solution">
+                        <div class="ae-sol-step">
+                            <div class="ae-sol-label">Calculate force</div>
+                            <div class="ae-sol-content">
+                                <div class="ae-math">A = 15 × 40 = 600 m²</div>
+                                <div class="ae-math">F = ½ × 1.225 × 36.1² × 1.3 × 600</div>
+                                <div class="ae-math">= ½ × 1.225 × 1303.2 × 780</div>
+                                <div class="ae-math ae-result">F = 623,000 N = 623 kN ≈ 63.5 tonnes force</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ae-ex-answer"><strong>Answer:</strong> 623 kN (63.5 tonnes) pushing on one face. This
+                        creates an enormous overturning moment at the base. The structural foundation must resist this —
+                        which is why skyscrapers have massive concrete cores.
+                        <br><a href="/aerodynamics/" class="ae-calc-link"><i class="fas fa-calculator"></i> Try the Wind
+                            Load Calculator</a>
+                    </div>
+                </div>
+                <div class="ae-example">
+                    <div class="ae-ex-header"><span class="ae-ex-badge">Worked Example 2</span>
+                        <h5>Solar Panel Wind Loading</h5>
+                    </div>
+                    <div class="ae-ex-problem"><strong>Problem:</strong> A rooftop solar array has 20 panels, each 1.7 m
+                        × 1.0 m, tilted at 30°. Design wind speed is 90 km/h (25 m/s). C_D for tilted flat plate ≈ 1.2.
+                        Will the mounting bolts (rated 500 N each, 4 per panel) hold?</div>
+                    <div class="ae-ex-solution">
+                        <div class="ae-sol-step">
+                            <div class="ae-sol-label">Force per panel</div>
+                            <div class="ae-sol-content">
+                                <div class="ae-math">Projected area = 1.7 × 1.0 × sin(30°) = 0.85 m²</div>
+                                <div class="ae-math">F_panel = ½ × 1.225 × 25² × 1.2 × 0.85</div>
+                                <div class="ae-math">= 0.6125 × 625 × 1.02</div>
+                                <div class="ae-math ae-result">F_panel = 390 N per panel</div>
+                                <div class="ae-math">Bolt capacity: 4 × 500 = 2000 N</div>
+                                <div class="ae-math ae-result">Safety factor = 2000/390 = 5.1× ✓</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ae-ex-answer"><strong>Answer:</strong> 390 N per panel with safety factor 5.1× — the
+                        bolts hold. However, engineers apply gust factors (typically 1.5–2.5×), which reduces the
+                        effective margin. Always use local building codes for real designs.
+                        <br><a href="/aerodynamics/" class="ae-calc-link"><i class="fas fa-calculator"></i> Try the Wind
+                            Load Calculator</a>
+                    </div>
+                </div>
+                <div class="ae-example">
+                    <div class="ae-ex-header"><span class="ae-ex-badge">Worked Example 3</span>
+                        <h5>Hurricane vs. Normal Wind Comparison</h5>
+                    </div>
+                    <div class="ae-ex-problem"><strong>Problem:</strong> Compare the wind pressure at 50 km/h (normal),
+                        120 km/h (strong storm), and 250 km/h (Cat 5 hurricane).</div>
+                    <div class="ae-ex-solution">
+                        <div class="ae-sol-step">
+                            <div class="ae-sol-label">Dynamic pressure q = ½ρv²</div>
+                            <div class="ae-sol-content">
+                                <div class="ae-math">50 km/h (13.9 m/s): q = ½ × 1.225 × 13.9² = 118 Pa</div>
+                                <div class="ae-math">120 km/h (33.3 m/s): q = ½ × 1.225 × 33.3² = 680 Pa</div>
+                                <div class="ae-math">250 km/h (69.4 m/s): q = ½ × 1.225 × 69.4² = 2,953 Pa</div>
+                                <div class="ae-math ae-result">Ratio: 1× : 5.8× : 25×</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ae-ex-answer"><strong>Answer:</strong> Hurricane force is 25× stronger than a normal
+                        breeze. At 2,953 Pa over a 10 m² surface, that's 29,530 N (~3 tonnes). This is why hurricane
+                        building codes require impact-resistant windows and reinforced roofing.
+                        <br><a href="/aerodynamics/" class="ae-calc-link"><i class="fas fa-calculator"></i> Try the
+                            Dynamic Pressure Calculator</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CalcREX</h3>
+                    <p>Your complete online calculator suite for every calculation need.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Feature Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="/converters">Unit Converter</a></li>
+                        <li><a href="/physics">Physics</a></li>
+                        <li><a href="/chemistry">Chemistry</a></li>
+                        <li><a href="/electricity">Electronics</a></li>
+                        <li><a href="/computer-science">Computer Science</a></li>
+                        <li><a href="/finance">Finance</a></li>
+                        <li><a href="/date-time">Date & Time</a></li>
+                        <li><a href="/thermodynamics">Thermodynamics</a></li>
+                        <li><a href="/aerodynamics">Aerodynamics</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CalcREX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/nav.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/aerodynamics.js"></script>
+    <script src="/js/aero-topics.js"></script>
+</body>
+
+</html>

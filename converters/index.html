@@ -138,16 +138,23 @@
             </button>
 
             <!-- Navigation Menu -->
-            <nav class="main-nav" id="mainNav">
+                        <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="/" class="nav-link">Calculator</a></li>
                     <li><a href="/converters" class="nav-link active">Unit Converter</a></li>
-                    <li><a href="/physics" class="nav-link">Physics</a></li>
-                    <li><a href="/chemistry" class="nav-link">Chemistry</a></li>
-                    <li><a href="/electricity" class="nav-link">Electronics</a></li>
+                    <li class="nav-dropdown">
+                        <button class="nav-link nav-dropdown-toggle">Sciences <i class="fas fa-chevron-down nav-arrow"></i></button>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a></li>
+                            <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i> Chemistry</a></li>
+                            <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i> Electronics</a></li>
+                            <li><a href="/thermodynamics" class="nav-dropdown-link"><i class="fas fa-fire"></i> Thermodynamics</a></li>
+                            <li><a href="/aerodynamics" class="nav-dropdown-link"><i class="fas fa-plane"></i> Aerodynamics</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/computer-science" class="nav-link">Computer Science</a></li>
                     <li><a href="/finance" class="nav-link">Finance</a></li>
-                    <li><a href="/date-time" class="nav-link">Date & Time</a></li>
+                    <li><a href="/date-time" class="nav-link">Date &amp; Time</a></li>
                 </ul>
             </nav>
         </div>

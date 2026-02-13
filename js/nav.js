@@ -1,36 +1,34 @@
 // ========================================
 // UNIVERSAL NAVIGATION SCRIPT
-// Handles mobile menu on ALL pages
+// Handles mobile menu + dropdown on ALL pages
 // ========================================
 
-// ========================================
-// MOBILE MENU FUNCTIONALITY
-// ========================================
 function initializeMobileMenu() {
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const mainNav = document.getElementById('mainNav');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('.nav-link:not(.nav-dropdown-toggle)');
+    const dropdownLinks = document.querySelectorAll('.nav-dropdown-link');
 
-    if (!mobileMenuToggle || !mainNav) {
-        console.warn('Mobile menu elements not found');
-        return;
-    }
+    if (!mobileMenuToggle || !mainNav) return;
 
     // Toggle mobile menu
     mobileMenuToggle.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent document click from immediately closing
+        e.stopPropagation();
         mobileMenuToggle.classList.toggle('active');
         mainNav.classList.toggle('active');
     });
 
-    // Close menu when clicking a link
+    // Close menu when clicking a regular nav link
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            // Update active state
-            navLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
+            mobileMenuToggle.classList.remove('active');
+            mainNav.classList.remove('active');
+        });
+    });
 
-            // Close mobile menu
+    // Close menu when clicking a dropdown link
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', () => {
             mobileMenuToggle.classList.remove('active');
             mainNav.classList.remove('active');
         });
@@ -46,28 +44,61 @@ function initializeMobileMenu() {
 }
 
 // ========================================
+// DROPDOWN NAVIGATION
+// ========================================
+function initializeDropdowns() {
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+        if (!toggle) return;
+
+        // Click to toggle on mobile
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            // Close other dropdowns
+            dropdowns.forEach(d => {
+                if (d !== dropdown) d.classList.remove('open');
+            });
+
+            dropdown.classList.toggle('open');
+        });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-dropdown')) {
+            dropdowns.forEach(d => d.classList.remove('open'));
+        }
+    });
+
+    // Close dropdown on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            dropdowns.forEach(d => d.classList.remove('open'));
+        }
+    });
+}
+
+// ========================================
 // READ MORE FUNCTIONALITY
 // ========================================
 function initializeReadMore() {
     const readMoreBtn = document.getElementById('readMoreBtn');
     const introContent = document.getElementById('introContent');
 
-    if (!readMoreBtn || !introContent) {
-        return; // No read more functionality on this page
-    }
+    if (!readMoreBtn || !introContent) return;
 
-    // Check if there's actually hidden content to reveal
     const extraContent = introContent.querySelector('.intro-text-extra');
-    
     if (!extraContent) {
-        // No extra content, hide the button
         readMoreBtn.style.display = 'none';
         return;
     }
 
     readMoreBtn.addEventListener('click', () => {
         const isExpanded = introContent.classList.contains('expanded');
-
         if (isExpanded) {
             introContent.classList.remove('expanded');
             readMoreBtn.classList.remove('active');
@@ -85,5 +116,6 @@ function initializeReadMore() {
 // ========================================
 document.addEventListener('DOMContentLoaded', () => {
     initializeMobileMenu();
+    initializeDropdowns();
     initializeReadMore();
 });

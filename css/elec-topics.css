@@ -1,0 +1,570 @@
+/* ========================================
+   ELECTRICITY TOPICS - EDUCATIONAL CONTENT
+   In-depth guides with worked examples
+   Blue/electric theme to match electricity.css
+======================================== */
+
+.elec-topics-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 var(--gap-md);
+}
+
+.elec-topics-container {
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+}
+
+.elec-topics-header {
+    padding: 2rem var(--gap-lg);
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    color: white;
+    text-align: center;
+}
+
+.elec-topics-header h2 {
+    font-size: 1.375rem;
+    font-weight: 800;
+    margin: 0 0 0.75rem 0;
+}
+
+.elec-topics-header p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #bfdbfe;
+    margin: 0;
+    max-width: 700px;
+    margin-inline: auto;
+}
+
+/* Tabs */
+.elec-topic-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    background: #eff6ff;
+    border-bottom: 2px solid #93c5fd;
+}
+
+.elec-topic-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.85rem 0.5rem;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-size: 0.65rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    touch-action: manipulation;
+}
+
+.elec-topic-tab i {
+    font-size: 1rem;
+}
+
+.elec-topic-tab:hover {
+    color: #1e40af;
+    background: #dbeafe;
+}
+
+.elec-topic-tab.active {
+    color: #2563eb;
+    border-bottom-color: #3b82f6;
+    background: white;
+}
+
+/* Content */
+.elec-topic-content {
+    display: none;
+    padding: 1.5rem var(--gap-md);
+}
+
+.elec-topic-content.active {
+    display: block;
+}
+
+/* Hero */
+.elec-topic-hero {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 2px solid #eff6ff;
+}
+
+.elec-topic-hero h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
+}
+
+.elec-topic-subtitle {
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Concept Block */
+.elec-concept-block {
+    margin-bottom: 2rem;
+}
+
+.elec-concept-block h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 0.75rem 0;
+}
+
+.elec-concept-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    background: #3b82f6;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.elec-concept-block>p {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0 0 1rem 0;
+}
+
+/* Card */
+.elec-card {
+    background: #eff6ff;
+    border: 2px solid #93c5fd;
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.elec-card p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0 0 0.75rem 0;
+}
+
+.elec-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Insight */
+.elec-insight {
+    display: flex;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border: 2px solid #60a5fa;
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    margin: 0.75rem 0;
+}
+
+.elec-insight i {
+    color: #2563eb;
+    font-size: 1rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.elec-insight span {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: #1e3a5f;
+}
+
+/* Formula Box */
+.elec-formula-box {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border: 2px solid #60a5fa;
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.elec-formula-main {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #1e40af;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 0.75rem;
+}
+
+.elec-formula-break {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.elec-formula-break span {
+    font-size: 0.75rem;
+    color: #1e3a5f;
+    font-family: 'Courier New', monospace;
+}
+
+/* Diagram */
+.elec-diagram {
+    margin: 1.25rem 0;
+    border: 2px solid #e2e8f0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.elec-svg-wrap {
+    background: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.elec-svg {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.elec-diagram-caption {
+    background: #eff6ff;
+    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: #64748b;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Equations Table */
+.elec-eq-table {
+    border: 2px solid #e2e8f0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.elec-eq-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.elec-eq-row:last-child {
+    border-bottom: none;
+}
+
+.elec-eq-row:nth-child(even) {
+    background: #eff6ff;
+}
+
+.elec-eq-cell {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.elec-eq-note {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+/* Two Column */
+.elec-two-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.elec-info-col {
+    background: #eff6ff;
+    border: 2px solid #93c5fd;
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+}
+
+.elec-info-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #2563eb;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+}
+
+.elec-info-col p {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0 0 0.5rem 0;
+}
+
+/* Worked Examples */
+.elec-example {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: var(--radius-xl);
+    margin-bottom: 1.75rem;
+    overflow: hidden;
+}
+
+.elec-ex-header {
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    padding: 1rem 1.25rem;
+}
+
+.elec-ex-badge {
+    display: inline-block;
+    background: #fbbf24;
+    color: #1e293b;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+}
+
+.elec-ex-header h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+.elec-ex-problem {
+    padding: 1.25rem;
+    background: #fef2f2;
+    border-bottom: 2px solid #fecaca;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #7f1d1d;
+}
+
+.elec-ex-solution {
+    padding: 1.25rem;
+}
+
+.elec-sol-step {
+    margin-bottom: 1.25rem;
+}
+
+.elec-sol-step:last-child {
+    margin-bottom: 0;
+}
+
+.elec-sol-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #2563eb;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.elec-sol-content {
+    padding-left: 0.5rem;
+}
+
+.elec-sol-content p {
+    font-size: 0.825rem;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0 0 0.5rem 0;
+}
+
+.elec-math {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: #1e293b;
+    padding: 0.3rem 0;
+    line-height: 1.5;
+}
+
+.elec-result {
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    border: 1px solid #86efac;
+    border-radius: var(--radius-sm);
+    padding: 0.4rem 0.75rem;
+    font-weight: 700;
+    color: #166534;
+    display: inline-block;
+    margin: 0.25rem 0;
+}
+
+.elec-ex-answer {
+    padding: 1rem 1.25rem;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border-top: 2px solid #93c5fd;
+    font-size: 0.825rem;
+    line-height: 1.6;
+    color: #1e3a5f;
+}
+
+/* Circuit ASCII Box */
+.elec-circuit-box {
+    background: #1e293b;
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.elec-circuit-box pre {
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    color: #60a5fa;
+    line-height: 1.4;
+    margin: 0;
+    white-space: pre;
+}
+
+/* Comparison Table */
+.elec-compare {
+    border: 2px solid #e2e8f0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin: 1rem 0;
+    font-size: 0.75rem;
+}
+
+.elec-compare-head {
+    display: grid;
+    grid-template-columns: 1.2fr repeat(2, 1fr);
+    background: #1e40af;
+}
+
+.elec-compare-head .elec-compare-cell {
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 0.65rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.elec-compare-row {
+    display: grid;
+    grid-template-columns: 1.2fr repeat(2, 1fr);
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.elec-compare-row:last-child {
+    border-bottom: none;
+}
+
+.elec-compare-row:nth-child(even) {
+    background: #eff6ff;
+}
+
+.elec-compare-cell {
+    padding: 0.6rem 0.5rem;
+    color: #475569;
+    font-size: 0.7rem;
+    line-height: 1.4;
+}
+
+.elec-label-cell {
+    font-weight: 700;
+    color: #1e293b;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (min-width: 576px) {
+    .elec-topic-tabs {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .elec-topic-tab {
+        font-size: 0.6rem;
+        padding: 0.75rem 0.25rem;
+    }
+
+    .elec-two-col {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .elec-topic-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .elec-topic-hero h3 {
+        font-size: 1.375rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .elec-topics-section {
+        max-width: 800px;
+    }
+
+    .elec-topics-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .elec-topic-tab {
+        font-size: 0.65rem;
+        padding: 1rem 0.5rem;
+    }
+
+    .elec-topic-tab i {
+        font-size: 1.1rem;
+    }
+
+    .elec-formula-main {
+        font-size: 1.375rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .elec-topics-section {
+        max-width: 900px;
+    }
+
+    .elec-topic-content {
+        padding: 2rem;
+    }
+}
+
+@media print {
+    .elec-topic-tabs {
+        display: none;
+    }
+
+    .elec-topic-content {
+        display: block !important;
+        break-inside: avoid;
+    }
+
+    .elec-example {
+        break-inside: avoid;
+    }
+}

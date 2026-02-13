@@ -1,0 +1,573 @@
+/* ========================================
+   COMPUTER SCIENCE TOPICS - EDUCATIONAL CONTENT
+   Green/Matrix theme matching computer-science.css
+======================================== */
+
+.cs-topics-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 var(--gap-md);
+}
+
+.cs-topics-container {
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+}
+
+.cs-topics-header {
+    padding: 2rem var(--gap-lg);
+    background: linear-gradient(135deg, #064e3b 0%, #10b981 100%);
+    color: white;
+    text-align: center;
+}
+
+.cs-topics-header h2 {
+    font-size: 1.375rem;
+    font-weight: 800;
+    margin: 0 0 0.75rem 0;
+}
+
+.cs-topics-header p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #a7f3d0;
+    margin: 0;
+    max-width: 700px;
+    margin-inline: auto;
+}
+
+/* Tabs */
+.cs-topic-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    background: #ecfdf5;
+    border-bottom: 2px solid #6ee7b7;
+}
+
+.cs-topic-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.85rem 0.5rem;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-size: 0.65rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    touch-action: manipulation;
+}
+
+.cs-topic-tab i {
+    font-size: 1rem;
+}
+
+.cs-topic-tab:hover {
+    color: #065f46;
+    background: #d1fae5;
+}
+
+.cs-topic-tab.active {
+    color: #059669;
+    border-bottom-color: #10b981;
+    background: white;
+}
+
+/* Content */
+.cs-topic-content {
+    display: none;
+    padding: 1.5rem var(--gap-md);
+}
+
+.cs-topic-content.active {
+    display: block;
+}
+
+/* Hero */
+.cs-topic-hero {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 2px solid #ecfdf5;
+}
+
+.cs-topic-hero h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
+}
+
+.cs-topic-subtitle {
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Concept Block */
+.cs-concept-block {
+    margin-bottom: 2rem;
+}
+
+.cs-concept-block h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 0.75rem 0;
+}
+
+.cs-concept-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    background: #10b981;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.cs-concept-block>p {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0 0 1rem 0;
+}
+
+/* Insight */
+.cs-insight {
+    display: flex;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+    border: 2px solid #34d399;
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    margin: 0.75rem 0;
+}
+
+.cs-insight i {
+    color: #059669;
+    font-size: 1rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.cs-insight span {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: #064e3b;
+}
+
+/* Formula Box */
+.cs-formula-box {
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+    border: 2px solid #34d399;
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.cs-formula-main {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #065f46;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 0.75rem;
+}
+
+.cs-formula-break {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.cs-formula-break span {
+    font-size: 0.75rem;
+    color: #064e3b;
+    font-family: 'Courier New', monospace;
+}
+
+/* Code Block (terminal style) */
+.cs-code-box {
+    background: #1e293b;
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.cs-code-box pre {
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    color: #a7f3d0;
+    line-height: 1.5;
+    margin: 0;
+    white-space: pre;
+}
+
+.cs-code-comment {
+    color: #6b7280;
+}
+
+.cs-code-keyword {
+    color: #c084fc;
+}
+
+.cs-code-string {
+    color: #fbbf24;
+}
+
+.cs-code-number {
+    color: #60a5fa;
+}
+
+/* Equations Table */
+.cs-eq-table {
+    border: 2px solid #e2e8f0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.cs-eq-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.cs-eq-row:last-child {
+    border-bottom: none;
+}
+
+.cs-eq-row:nth-child(even) {
+    background: #ecfdf5;
+}
+
+.cs-eq-cell {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.cs-eq-note {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+/* Two Column */
+.cs-two-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.cs-info-col {
+    background: #ecfdf5;
+    border: 2px solid #6ee7b7;
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+}
+
+.cs-info-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #059669;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+}
+
+.cs-info-col p {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0 0 0.5rem 0;
+}
+
+/* Comparison Table */
+.cs-compare {
+    border: 2px solid #e2e8f0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin: 1rem 0;
+    font-size: 0.75rem;
+}
+
+.cs-compare-head {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, 1fr);
+    background: #064e3b;
+}
+
+.cs-compare-head .cs-compare-cell {
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 0.65rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.cs-compare-row {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, 1fr);
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.cs-compare-row:last-child {
+    border-bottom: none;
+}
+
+.cs-compare-row:nth-child(even) {
+    background: #ecfdf5;
+}
+
+.cs-compare-cell {
+    padding: 0.6rem 0.5rem;
+    color: #475569;
+    font-size: 0.7rem;
+    line-height: 1.4;
+}
+
+.cs-label-cell {
+    font-weight: 700;
+    color: #1e293b;
+}
+
+/* Diagram */
+.cs-diagram {
+    margin: 1.25rem 0;
+    border: 2px solid #e2e8f0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.cs-svg-wrap {
+    background: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.cs-svg {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.cs-diagram-caption {
+    background: #ecfdf5;
+    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: #64748b;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Worked Examples */
+.cs-example {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: var(--radius-xl);
+    margin-bottom: 1.75rem;
+    overflow: hidden;
+}
+
+.cs-ex-header {
+    background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+    padding: 1rem 1.25rem;
+}
+
+.cs-ex-badge {
+    display: inline-block;
+    background: #fbbf24;
+    color: #1e293b;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+}
+
+.cs-ex-header h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+.cs-ex-problem {
+    padding: 1.25rem;
+    background: #fef2f2;
+    border-bottom: 2px solid #fecaca;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #7f1d1d;
+}
+
+.cs-ex-solution {
+    padding: 1.25rem;
+}
+
+.cs-sol-step {
+    margin-bottom: 1.25rem;
+}
+
+.cs-sol-step:last-child {
+    margin-bottom: 0;
+}
+
+.cs-sol-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #059669;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.cs-sol-content {
+    padding-left: 0.5rem;
+}
+
+.cs-sol-content p {
+    font-size: 0.825rem;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0 0 0.5rem 0;
+}
+
+.cs-math {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: #1e293b;
+    padding: 0.3rem 0;
+    line-height: 1.5;
+}
+
+.cs-result {
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+    border: 1px solid #6ee7b7;
+    border-radius: var(--radius-sm);
+    padding: 0.4rem 0.75rem;
+    font-weight: 700;
+    color: #065f46;
+    display: inline-block;
+    margin: 0.25rem 0;
+}
+
+.cs-ex-answer {
+    padding: 1rem 1.25rem;
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+    border-top: 2px solid #6ee7b7;
+    font-size: 0.825rem;
+    line-height: 1.6;
+    color: #064e3b;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (min-width: 576px) {
+    .cs-topic-tabs {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .cs-topic-tab {
+        font-size: 0.6rem;
+        padding: 0.75rem 0.25rem;
+    }
+
+    .cs-two-col {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cs-topic-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .cs-topic-hero h3 {
+        font-size: 1.375rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .cs-topics-section {
+        max-width: 800px;
+    }
+
+    .cs-topics-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .cs-topic-tab {
+        font-size: 0.65rem;
+        padding: 1rem 0.5rem;
+    }
+
+    .cs-topic-tab i {
+        font-size: 1.1rem;
+    }
+
+    .cs-formula-main {
+        font-size: 1.375rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .cs-topics-section {
+        max-width: 900px;
+    }
+
+    .cs-topic-content {
+        padding: 2rem;
+    }
+}
+
+@media print {
+    .cs-topic-tabs {
+        display: none;
+    }
+
+    .cs-topic-content {
+        display: block !important;
+        break-inside: avoid;
+    }
+
+    .cs-example {
+        break-inside: avoid;
+    }
+
+    .cs-code-box {
+        background: #f1f5f9;
+    }
+
+    .cs-code-box pre {
+        color: #1e293b;
+    }
+}

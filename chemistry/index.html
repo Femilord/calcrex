@@ -58,6 +58,7 @@
     <link rel="stylesheet" href="/css/chemistry.css">
     <link rel="stylesheet" href="/css/pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/chemistry-topics.css">
 
     <!-- Structured Data - Breadcrumbs -->
     <script type="application/ld+json">
@@ -114,6 +115,20 @@
       }
     }
     </script>
+
+    <!-- Structured Data - FAQPage (Chemistry Topics) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is stoichiometry and how do you solve stoichiometry problems?", "acceptedAnswer": { "@type": "Answer", "text": "Stoichiometry uses balanced chemical equations and mole ratios to calculate amounts of reactants and products. Steps: (1) Balance the equation, (2) Convert given quantity to moles, (3) Use mole ratio, (4) Convert to desired units." } },
+        { "@type": "Question", "name": "How do you calculate pH from hydrogen ion concentration?", "acceptedAnswer": { "@type": "Answer", "text": "pH = -log[H+]. For strong acids, [H+] equals the acid concentration. For weak acids, use an ICE table with Ka to find [H+], then calculate pH." } },
+        { "@type": "Question", "name": "What is the ideal gas law and when do you use it?", "acceptedAnswer": { "@type": "Answer", "text": "PV = nRT relates pressure, volume, moles, and temperature of a gas. R = 0.0821 L·atm/(mol·K). Use it when dealing with gas quantities at known conditions. Always use Kelvin for temperature." } },
+        { "@type": "Question", "name": "How do you determine the limiting reagent?", "acceptedAnswer": { "@type": "Answer", "text": "Convert all reactants to moles, then divide each by its coefficient in the balanced equation. The reactant with the smallest ratio is the limiting reagent — it determines the maximum product yield." } }
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -135,16 +150,23 @@
             </button>
 
             <!-- Navigation Menu -->
-            <nav class="main-nav" id="mainNav">
+                        <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="/" class="nav-link">Calculator</a></li>
                     <li><a href="/converters" class="nav-link">Unit Converter</a></li>
-                    <li><a href="/physics" class="nav-link">Physics</a></li>
-                    <li><a href="/chemistry" class="nav-link active">Chemistry</a></li>
-                    <li><a href="/electricity" class="nav-link">Electronics</a></li>
+                    <li class="nav-dropdown">
+                        <button class="nav-link nav-dropdown-toggle active">Sciences <i class="fas fa-chevron-down nav-arrow"></i></button>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a></li>
+                            <li><a href="/chemistry" class="nav-dropdown-link active"><i class="fas fa-flask"></i> Chemistry</a></li>
+                            <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i> Electronics</a></li>
+                            <li><a href="/thermodynamics" class="nav-dropdown-link"><i class="fas fa-fire"></i> Thermodynamics</a></li>
+                            <li><a href="/aerodynamics" class="nav-dropdown-link"><i class="fas fa-plane"></i> Aerodynamics</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/computer-science" class="nav-link">Computer Science</a></li>
                     <li><a href="/finance" class="nav-link">Finance</a></li>
-                    <li><a href="/date-time" class="nav-link">Date & Time</a></li>
+                    <li><a href="/date-time" class="nav-link">Date &amp; Time</a></li>
                 </ul>
             </nav>
         </div>
@@ -163,10 +185,13 @@
                     Each calculator includes balanced equations, step-by-step explanations, and practical applications.
                 </p>
                 <p class="intro-text intro-text-extra">
-                    Our chemistry calculators handle everything from basic molar mass calculations to complex equilibrium 
-                    problems, titration analyses, and thermodynamic computations. Perfect for lab work, homework assignments, 
-                    research projects, or exam preparation, each tool provides reliable results with clear explanations of 
-                    the underlying chemistry. All calculators are mobile-friendly and completely free to use without any 
+                    Our chemistry calculators handle everything from basic molar mass calculations to complex
+                    equilibrium
+                    problems, titration analyses, and thermodynamic computations. Perfect for lab work, homework
+                    assignments,
+                    research projects, or exam preparation, each tool provides reliable results with clear explanations
+                    of
+                    the underlying chemistry. All calculators are mobile-friendly and completely free to use without any
                     registration required.
                 </p>
             </div>
@@ -322,6 +347,1145 @@
         </div>
     </main>
 
+    <!-- ============================================================
+         CHEMISTRY TOPICS - IN-DEPTH EDUCATIONAL CONTENT
+    ============================================================ -->
+    <section class="chemistry-topics-section" id="chemistryTopics">
+        <div class="chem-topics-container">
+
+            <div class="chem-topics-header">
+                <h2>Chemistry Topics — In-Depth Guides with Worked Examples</h2>
+                <p>Master the most important chemistry concepts with clear explanations, diagrams, step-by-step solved
+                    problems, and real-world applications.</p>
+            </div>
+
+            <!-- Topic Navigation Tabs -->
+            <div class="chem-topic-tabs" id="chemTopicTabs">
+                <button class="chem-topic-tab active" data-chemtopic="stoichiometry"><i
+                        class="fas fa-balance-scale-right"></i><span>Stoichiometry</span></button>
+                <button class="chem-topic-tab" data-chemtopic="solutions"><i
+                        class="fas fa-flask"></i><span>Solutions</span></button>
+                <button class="chem-topic-tab" data-chemtopic="acids-bases"><i class="fas fa-vial"></i><span>Acids &amp;
+                        Bases</span></button>
+                <button class="chem-topic-tab" data-chemtopic="gas-laws"><i class="fas fa-wind"></i><span>Gas
+                        Laws</span></button>
+                <button class="chem-topic-tab" data-chemtopic="thermochemistry"><i
+                        class="fas fa-fire-alt"></i><span>Thermochem</span></button>
+                <button class="chem-topic-tab" data-chemtopic="atomic-structure"><i class="fas fa-atom"></i><span>Atomic
+                        Structure</span></button>
+            </div>
+
+            <!-- TOPIC 1: STOICHIOMETRY -->
+            <article class="chem-topic-content active" id="chemtopic-stoichiometry">
+                <div class="chem-topic-hero">
+                    <h3>Stoichiometry — The Mole, Molar Mass &amp; Reaction Calculations</h3>
+                    <p class="chem-topic-subtitle">The quantitative heart of chemistry — connecting atoms, molecules,
+                        and grams through balanced equations.</p>
+                </div>
+
+                <div class="chem-concept-block">
+                    <h4><span class="chem-concept-num">1</span> The Mole Concept</h4>
+                    <p>The <strong>mole</strong> is chemistry's counting unit. One mole contains exactly <strong>6.022 ×
+                            10²³</strong> particles (Avogadro's number). It bridges the atomic world (atoms, molecules)
+                        to the macroscopic world (grams, liters).</p>
+                    <div class="chem-formula-box">
+                        <div class="chem-formula-main">1 mol = 6.022 × 10²³ particles</div>
+                        <div class="chem-formula-break"><span>1 mol of C atoms = 12.011 g</span><span>1 mol of H₂O
+                                molecules = 18.015 g</span><span>1 mol of NaCl formula units = 58.44 g</span></div>
+                    </div>
+                </div>
+
+                <div class="chem-concept-block">
+                    <h4><span class="chem-concept-num">2</span> Molar Mass — The Bridge Between Grams and Moles</h4>
+                    <p>Molar mass (M) is the mass of one mole of a substance in g/mol. For elements, it equals the
+                        atomic mass from the periodic table. For compounds, add up all atoms.</p>
+                    <div class="chem-formula-box">
+                        <div class="chem-formula-main">n = m / M</div>
+                        <div class="chem-formula-break"><span>n = moles (mol)</span><span>m = mass (g)</span><span>M =
+                                molar mass (g/mol)</span></div>
+                    </div>
+
+                    <div class="chem-diagram">
+                        <div class="chem-svg-wrap">
+                            <svg viewBox="0 0 460 200" class="chem-svg" aria-label="Mole conversion triangle">
+                                <rect x="160" y="10" width="140" height="50" rx="8" fill="#f0fdfa" stroke="#14b8a6"
+                                    stroke-width="2.5" />
+                                <text x="230" y="32" text-anchor="middle" font-size="11" font-weight="700"
+                                    fill="#0f766e">MASS (g)</text>
+                                <text x="230" y="48" text-anchor="middle" font-size="10" fill="#475569">grams</text>
+
+                                <rect x="10" y="140" width="140" height="50" rx="8" fill="#ede9fe" stroke="#8b5cf6"
+                                    stroke-width="2.5" />
+                                <text x="80" y="162" text-anchor="middle" font-size="11" font-weight="700"
+                                    fill="#6d28d9">MOLES (mol)</text>
+                                <text x="80" y="178" text-anchor="middle" font-size="10" fill="#475569">n</text>
+
+                                <rect x="310" y="140" width="140" height="50" rx="8" fill="#fef3c7" stroke="#f59e0b"
+                                    stroke-width="2.5" />
+                                <text x="380" y="162" text-anchor="middle" font-size="11" font-weight="700"
+                                    fill="#92400e">PARTICLES</text>
+                                <text x="380" y="178" text-anchor="middle" font-size="10"
+                                    fill="#475569">atoms/molecules</text>
+
+                                <line x1="175" y1="60" x2="95" y2="140" stroke="#475569" stroke-width="2"
+                                    marker-end="url(#arrowChem)" />
+                                <text x="110" y="95" font-size="10" font-weight="700" fill="#dc2626"
+                                    transform="rotate(-40,110,95)">÷ M</text>
+
+                                <line x1="95" y1="140" x2="175" y2="60" stroke="#475569" stroke-width="2"
+                                    stroke-dasharray="5,3" />
+                                <text x="155" y="115" font-size="10" font-weight="700" fill="#16a34a"
+                                    transform="rotate(-40,155,115)">× M</text>
+
+                                <line x1="150" y1="165" x2="310" y2="165" stroke="#475569" stroke-width="2"
+                                    marker-end="url(#arrowChem)" />
+                                <text x="230" y="158" text-anchor="middle" font-size="10" font-weight="700"
+                                    fill="#dc2626">× 6.022×10²³</text>
+
+                                <line x1="310" y1="175" x2="150" y2="175" stroke="#475569" stroke-width="2"
+                                    stroke-dasharray="5,3" />
+                                <text x="230" y="192" text-anchor="middle" font-size="10" font-weight="700"
+                                    fill="#16a34a">÷ 6.022×10²³</text>
+
+                                <defs>
+                                    <marker id="arrowChem" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6"
+                                        markerHeight="6" orient="auto-start-reverse">
+                                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569" />
+                                    </marker>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="chem-diagram-caption"><strong>Figure 1:</strong> The Mole Map — converting between
+                            mass, moles, and number of particles. Molar mass (M) connects grams ↔ moles. Avogadro's
+                            number connects moles ↔ particles.</div>
+                    </div>
+                </div>
+
+                <div class="chem-concept-block">
+                    <h4><span class="chem-concept-num">3</span> Balancing Chemical Equations</h4>
+                    <p>A balanced equation has equal numbers of each atom on both sides. Coefficients tell you the
+                        <strong>mole ratio</strong> — the key to all stoichiometric calculations.</p>
+                    <div class="chem-reaction-box">
+                        <div class="chem-reaction-eq">2 H₂ + O₂ → 2 H₂O</div>
+                    </div>
+                    <p>This tells us: 2 mol H₂ reacts with 1 mol O₂ to produce 2 mol H₂O. The mole ratio is 2:1:2.</p>
+                    <div class="chem-steps">
+                        <div class="chem-steps-title">Steps to Solve Stoichiometry Problems</div>
+                        <div class="chem-step-item"><span class="chem-step-num">1</span><span>Write and balance the
+                                chemical equation.</span></div>
+                        <div class="chem-step-item"><span class="chem-step-num">2</span><span>Convert given quantity to
+                                moles (using M or Avogadro's number).</span></div>
+                        <div class="chem-step-item"><span class="chem-step-num">3</span><span>Use the mole ratio from
+                                the balanced equation to find moles of desired substance.</span></div>
+                        <div class="chem-step-item"><span class="chem-step-num">4</span><span>Convert moles to requested
+                                units (grams, liters, particles).</span></div>
+                    </div>
+                </div>
+
+                <div class="chem-example">
+                    <div class="chem-ex-header"><span class="chem-ex-badge">Worked Example 1</span>
+                        <h5>Mass-to-Mass Stoichiometry</h5>
+                    </div>
+                    <div class="chem-ex-problem"><strong>Problem:</strong> How many grams of water are produced when
+                        10.0 g of hydrogen gas reacts with excess oxygen?<br><em>Reaction: 2 H₂ + O₂ → 2 H₂O</em></div>
+                    <div class="chem-ex-solution">
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 1: Convert grams H₂ to moles</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">M(H₂) = 2 × 1.008 = 2.016 g/mol</div>
+                                <div class="chem-math">n(H₂) = 10.0 / 2.016 = 4.960 mol</div>
+                            </div>
+                        </div>
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 2: Use mole ratio (2 mol H₂ → 2 mol H₂O)</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">n(H₂O) = 4.960 × (2/2) = 4.960 mol</div>
+                            </div>
+                        </div>
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 3: Convert moles H₂O to grams</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">M(H₂O) = 2(1.008) + 16.00 = 18.015 g/mol</div>
+                                <div class="chem-math">m = 4.960 × 18.015</div>
+                                <div class="chem-math chem-result">m(H₂O) = 89.36 g</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chem-ex-answer"><strong>Answer:</strong> 89.36 g of water is produced. Notice: the mass
+                        of products (89.36 g H₂O + O₂ consumed) equals the mass of reactants — conservation of mass.
+                    </div>
+                </div>
+
+                <div class="chem-concept-block">
+                    <h4><span class="chem-concept-num">4</span> Limiting Reagent &amp; Percent Yield</h4>
+                    <p>The <strong>limiting reagent</strong> is the reactant that runs out first, determining the
+                        maximum product. The other reactant is in "excess." <strong>Percent yield</strong> measures how
+                        successful a reaction was.</p>
+                    <div class="chem-formula-box">
+                        <div class="chem-formula-main">% Yield = (Actual Yield / Theoretical Yield) × 100</div>
+                    </div>
+                </div>
+
+                <div class="chem-example">
+                    <div class="chem-ex-header"><span class="chem-ex-badge">Worked Example 2</span>
+                        <h5>Limiting Reagent Problem</h5>
+                    </div>
+                    <div class="chem-ex-problem"><strong>Problem:</strong> 5.0 g of Fe reacts with 5.0 g of O₂. Which is
+                        the limiting reagent? How much Fe₂O₃ forms?<br><em>Reaction: 4 Fe + 3 O₂ → 2 Fe₂O₃</em></div>
+                    <div class="chem-ex-solution">
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 1: Convert both to moles</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">n(Fe) = 5.0 / 55.845 = 0.0895 mol</div>
+                                <div class="chem-math">n(O₂) = 5.0 / 32.00 = 0.1563 mol</div>
+                            </div>
+                        </div>
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 2: Compare to required ratio (4 Fe : 3 O₂)</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">Fe needs: 0.0895 × (3/4) = 0.0671 mol O₂ ← have 0.1563 ✓</div>
+                                <div class="chem-math">O₂ needs: 0.1563 × (4/3) = 0.2084 mol Fe ← have only 0.0895 ✗
+                                </div>
+                                <div class="chem-math chem-result">Fe is the limiting reagent</div>
+                            </div>
+                        </div>
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 3: Calculate product from limiting reagent</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">n(Fe₂O₃) = 0.0895 × (2/4) = 0.04475 mol</div>
+                                <div class="chem-math">m(Fe₂O₃) = 0.04475 × 159.69 = 7.15 g</div>
+                                <div class="chem-math chem-result">7.15 g of Fe₂O₃ is produced</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chem-ex-answer"><strong>Answer:</strong> Fe is limiting. Maximum Fe₂O₃ = 7.15 g. Excess
+                        O₂ remaining: 0.1563 − 0.0671 = 0.0892 mol = 2.85 g unused.</div>
+                </div>
+
+                <div class="chem-example">
+                    <div class="chem-ex-header"><span class="chem-ex-badge">Worked Example 3</span>
+                        <h5>Percent Yield</h5>
+                    </div>
+                    <div class="chem-ex-problem"><strong>Problem:</strong> A student runs the Fe₂O₃ reaction above
+                        (theoretical yield = 7.15 g) but only obtains 5.60 g. What is the percent yield?</div>
+                    <div class="chem-ex-solution">
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 1: Apply the formula</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">% Yield = (Actual / Theoretical) × 100</div>
+                                <div class="chem-math">% Yield = (5.60 / 7.15) × 100</div>
+                                <div class="chem-math chem-result">% Yield = 78.3%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chem-ex-answer"><strong>Answer:</strong> 78.3% yield. The remaining 21.7% was lost to
+                        side reactions, incomplete reaction, or transfer losses — common in real labs.</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 2: SOLUTIONS & CONCENTRATION -->
+            <article class="chem-topic-content" id="chemtopic-solutions">
+                <div class="chem-topic-hero">
+                    <h3>Solutions &amp; Concentration — Molarity, Dilution &amp; Solubility</h3>
+                    <p class="chem-topic-subtitle">How to express, calculate, and manipulate the concentration of
+                        solutions.</p>
+                </div>
+
+                <div class="chem-concept-block">
+                    <h4><span class="chem-concept-num">1</span> Types of Concentration</h4>
+                    <div class="chem-eq-table">
+                        <div class="chem-eq-row">
+                            <div class="chem-eq-cell">Molarity (M) = n / V</div>
+                            <div class="chem-eq-note">mol/L — most common</div>
+                        </div>
+                        <div class="chem-eq-row">
+                            <div class="chem-eq-cell">Molality (m) = n / kg</div>
+                            <div class="chem-eq-note">mol/kg solvent</div>
+                        </div>
+                        <div class="chem-eq-row">
+                            <div class="chem-eq-cell">Mass % = (m_solute/m_total)×100</div>
+                            <div class="chem-eq-note">g/g percentage</div>
+                        </div>
+                        <div class="chem-eq-row">
+                            <div class="chem-eq-cell">ppm = (mg solute / L solution)</div>
+                            <div class="chem-eq-note">parts per million</div>
+                        </div>
+                    </div>
+                    <div class="chem-insight"><i class="fas fa-lightbulb"></i><span><strong>Key difference:</strong>
+                            Molarity uses volume of <em>solution</em> (changes with temperature). Molality uses mass of
+                            <em>solvent</em> (doesn't change with temperature). Molality is preferred for colligative
+                            property calculations.</span></div>
+                </div>
+
+                <div class="chem-concept-block">
+                    <h4><span class="chem-concept-num">2</span> Molarity — The Most Used Unit</h4>
+                    <div class="chem-formula-box">
+                        <div class="chem-formula-main">M = n / V = (mass / molar mass) / V</div>
+                        <div class="chem-formula-break"><span>M = molarity (mol/L)</span><span>n = moles of
+                                solute</span><span>V = volume of solution in liters</span></div>
+                    </div>
+                </div>
+
+                <div class="chem-example">
+                    <div class="chem-ex-header"><span class="chem-ex-badge">Worked Example 1</span>
+                        <h5>Preparing a Solution of Known Molarity</h5>
+                    </div>
+                    <div class="chem-ex-problem"><strong>Problem:</strong> How many grams of NaOH (M = 40.00 g/mol) are
+                        needed to prepare 500 mL of a 0.25 M solution?</div>
+                    <div class="chem-ex-solution">
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 1: Find moles needed</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">n = M × V = 0.25 × 0.500 = 0.125 mol</div>
+                            </div>
+                        </div>
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 2: Convert to grams</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">m = n × molar mass = 0.125 × 40.00</div>
+                                <div class="chem-math chem-result">m = 5.00 g NaOH</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chem-ex-answer"><strong>Answer:</strong> Dissolve 5.00 g NaOH in water and dilute to a
+                        total volume of 500 mL. Note: always add solute to water, not the reverse (especially for
+                        acids).</div>
+                </div>
+
+                <div class="chem-concept-block">
+                    <h4><span class="chem-concept-num">3</span> Dilution — M₁V₁ = M₂V₂</h4>
+                    <p>When you add water to a solution, the number of moles stays the same — only the volume increases.
+                        Since n = MV:</p>
+                    <div class="chem-formula-box">
+                        <div class="chem-formula-main">M₁V₁ = M₂V₂</div>
+                        <div class="chem-formula-break"><span>M₁, V₁ = initial (concentrated) molarity and
+                                volume</span><span>M₂, V₂ = final (diluted) molarity and volume</span></div>
+                    </div>
+                    <div class="chem-insight"><i class="fas fa-lightbulb"></i><span>This equation works for <em>any</em>
+                            concentration unit (%, ppm, etc.) as long as you use the same unit on both sides. It only
+                            works for dilution — not for mixing two different solutions.</span></div>
+                </div>
+
+                <div class="chem-example">
+                    <div class="chem-ex-header"><span class="chem-ex-badge">Worked Example 2</span>
+                        <h5>Dilution Calculation</h5>
+                    </div>
+                    <div class="chem-ex-problem"><strong>Problem:</strong> How would you prepare 250 mL of 0.10 M HCl
+                        from a 12.0 M stock solution?</div>
+                    <div class="chem-ex-solution">
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 1: Apply M₁V₁ = M₂V₂</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">12.0 × V₁ = 0.10 × 250</div>
+                                <div class="chem-math">V₁ = 25 / 12.0</div>
+                                <div class="chem-math chem-result">V₁ = 2.08 mL of stock HCl</div>
+                            </div>
+                        </div>
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 2: Procedure</div>
+                            <div class="chem-sol-content">
+                                <p>Measure 2.08 mL of 12.0 M HCl and carefully add it to approximately 200 mL of
+                                    distilled water. Then add water to reach exactly 250 mL total volume.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chem-ex-answer"><strong>Answer:</strong> Use 2.08 mL of 12.0 M HCl diluted to 250 mL.
+                        Safety: always add acid to water ("do as you oughta — add acid to water"), never the reverse.
+                    </div>
+                </div>
+
+                <div class="chem-concept-block">
+                    <h4><span class="chem-concept-num">4</span> Solubility</h4>
+                    <p>Solubility is the maximum amount of solute that dissolves in a given amount of solvent at a
+                        specific temperature. Solutions can be <strong>unsaturated</strong> (can dissolve more),
+                        <strong>saturated</strong> (at limit), or <strong>supersaturated</strong> (beyond limit —
+                        unstable).</p>
+                    <div class="chem-two-col">
+                        <div class="chem-info-col">
+                            <div class="chem-info-title">Temperature Effect — Solids</div>
+                            <p>Most solid solutes become <strong>more</strong> soluble as temperature increases (e.g.,
+                                sugar dissolves faster in hot water).</p>
+                        </div>
+                        <div class="chem-info-col">
+                            <div class="chem-info-title">Temperature Effect — Gases</div>
+                            <p>Gases become <strong>less</strong> soluble as temperature increases (e.g., warm soda goes
+                                flat faster).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chem-example">
+                    <div class="chem-ex-header"><span class="chem-ex-badge">Worked Example 3</span>
+                        <h5>Concentration from Mass and Volume</h5>
+                    </div>
+                    <div class="chem-ex-problem"><strong>Problem:</strong> 11.7 g of NaCl (M = 58.44 g/mol) is dissolved
+                        to make 400 mL of solution. Find (a) the molarity and (b) the concentration in ppm.</div>
+                    <div class="chem-ex-solution">
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 1: Moles of NaCl</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">n = 11.7 / 58.44 = 0.2002 mol</div>
+                            </div>
+                        </div>
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 2: Molarity</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">M = n / V = 0.2002 / 0.400</div>
+                                <div class="chem-math chem-result">M = 0.500 M</div>
+                            </div>
+                        </div>
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 3: Parts per million (assuming density ≈ 1 g/mL)</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">ppm = (11.7 g / 400 mL) × 1000 mg/g × (1000 mL/L) / (1000 mg/L
+                                    per ppm)</div>
+                                <div class="chem-math">ppm = (11,700 mg) / (0.400 L)</div>
+                                <div class="chem-math chem-result">ppm = 29,250 ppm</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chem-ex-answer"><strong>Answer:</strong> (a) 0.500 M. (b) 29,250 ppm. For dilute aqueous
+                        solutions, 1 ppm ≈ 1 mg/L.</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 3: ACIDS, BASES & pH -->
+            <article class="chem-topic-content" id="chemtopic-acids-bases">
+                <div class="chem-topic-hero">
+                    <h3>Acids, Bases &amp; pH — Calculations, Titrations &amp; Buffers</h3>
+                    <p class="chem-topic-subtitle">Understanding the proton-transfer chemistry that governs biology,
+                        industry, and the environment.</p>
+                </div>
+
+                <div class="chem-concept-block">
+                    <h4><span class="chem-concept-num">1</span> pH and pOH</h4>
+                    <p>The pH scale measures how acidic or basic a solution is. It runs from 0 (very acidic) to 14 (very
+                        basic), with 7 being neutral.</p>
+                    <div class="chem-formula-box">
+                        <div class="chem-formula-main">pH = −log[H⁺] | pOH = −log[OH⁻]</div>
+                        <div class="chem-formula-break"><span>pH + pOH = 14.00 (at 25°C)</span><span>[H⁺] × [OH⁻] = 1.0
+                                × 10⁻¹⁴ (Kw)</span></div>
+                    </div>
+
+                    <div class="chem-ph-scale">
+                        <div class="chem-ph-bar"></div>
+                        <div class="chem-ph-labels">
+                            <span>0 — Strong Acid</span>
+                            <span>7 — Neutral</span>
+                            <span>14 — Strong Base</span>
+                        </div>
+                    </div>
+
+                    <div class="chem-insight"><i class="fas fa-lightbulb"></i><span>Each pH unit = 10× change in [H⁺].
+                            So pH 3 is 10 times more acidic than pH 4, and 100 times more acidic than pH 5.</span></div>
+                </div>
+
+                <div class="chem-concept-block">
+                    <h4><span class="chem-concept-num">2</span> Strong vs. Weak Acids &amp; Bases</h4>
+                    <div class="chem-two-col">
+                        <div class="chem-info-col">
+                            <div class="chem-info-title">Strong (100% dissociation)</div>
+                            <p><strong>Acids:</strong> HCl, HNO₃, H₂SO₄, HBr, HI, HClO₄</p>
+                            <p><strong>Bases:</strong> NaOH, KOH, Ca(OH)₂, Ba(OH)₂</p>
+                            <div class="chem-math">HCl → H⁺ + Cl⁻ (complete)</div>
+                        </div>
+                        <div class="chem-info-col">
+                            <div class="chem-info-title">Weak (partial dissociation)</div>
+                            <p><strong>Acids:</strong> CH₃COOH, HF, H₂CO₃, H₃PO₄</p>
+                            <p><strong>Bases:</strong> NH₃, CH₃NH₂, pyridine</p>
+                            <div class="chem-math">CH₃COOH ⇌ H⁺ + CH₃COO⁻</div>
+                        </div>
+                    </div>
+                    <div class="chem-formula-box">
+                        <div class="chem-formula-main">Weak Acid: Ka = [H⁺][A⁻] / [HA]</div>
+                        <div class="chem-formula-break"><span>Ka = acid dissociation constant</span><span>Larger Ka →
+                                stronger weak acid</span></div>
+                    </div>
+                </div>
+
+                <div class="chem-example">
+                    <div class="chem-ex-header"><span class="chem-ex-badge">Worked Example 1</span>
+                        <h5>pH of a Strong Acid</h5>
+                    </div>
+                    <div class="chem-ex-problem"><strong>Problem:</strong> Find the pH and pOH of a 0.0050 M HCl
+                        solution.</div>
+                    <div class="chem-ex-solution">
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 1: HCl is a strong acid (100% dissociation)</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">[H⁺] = 0.0050 M = 5.0 × 10⁻³ M</div>
+                            </div>
+                        </div>
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 2: Calculate pH</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">pH = −log(5.0 × 10⁻³) = −(−2.30)</div>
+                                <div class="chem-math chem-result">pH = 2.30</div>
+                            </div>
+                        </div>
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 3: Calculate pOH</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">pOH = 14.00 − 2.30</div>
+                                <div class="chem-math chem-result">pOH = 11.70</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chem-ex-answer"><strong>Answer:</strong> pH = 2.30, pOH = 11.70. The solution is acidic
+                        (pH < 7).</div>
+                    </div>
+
+                    <div class="chem-example">
+                        <div class="chem-ex-header"><span class="chem-ex-badge">Worked Example 2</span>
+                            <h5>pH of a Weak Acid (ICE Table)</h5>
+                        </div>
+                        <div class="chem-ex-problem"><strong>Problem:</strong> Find the pH of 0.10 M acetic acid
+                            (CH₃COOH). Ka = 1.8 × 10⁻⁵.</div>
+                        <div class="chem-ex-solution">
+                            <div class="chem-sol-step">
+                                <div class="chem-sol-label">Step 1: Set up ICE table</div>
+                                <div class="chem-sol-content">
+                                    <div class="chem-math">CH₃COOH ⇌ H⁺ + CH₃COO⁻</div>
+                                    <div class="chem-math">I: 0.10 0 0</div>
+                                    <div class="chem-math">C: −x +x +x</div>
+                                    <div class="chem-math">E: 0.10−x x x</div>
+                                </div>
+                            </div>
+                            <div class="chem-sol-step">
+                                <div class="chem-sol-label">Step 2: Write Ka expression</div>
+                                <div class="chem-sol-content">
+                                    <div class="chem-math">Ka = x² / (0.10 − x) = 1.8 × 10⁻⁵</div>
+                                    <p>Since Ka is small, assume x ≪ 0.10:</p>
+                                    <div class="chem-math">x² ≈ 1.8 × 10⁻⁵ × 0.10 = 1.8 × 10⁻⁶</div>
+                                    <div class="chem-math chem-result">x = [H⁺] = 1.34 × 10⁻³ M</div>
+                                </div>
+                            </div>
+                            <div class="chem-sol-step">
+                                <div class="chem-sol-label">Step 3: pH</div>
+                                <div class="chem-sol-content">
+                                    <div class="chem-math">pH = −log(1.34 × 10⁻³)</div>
+                                    <div class="chem-math chem-result">pH = 2.87</div>
+                                </div>
+                            </div>
+                            <div class="chem-sol-step">
+                                <div class="chem-sol-label">Step 4: Verify assumption</div>
+                                <div class="chem-sol-content">
+                                    <div class="chem-math">x / 0.10 = 1.34% < 5% ✓ (assumption valid)</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chem-ex-answer"><strong>Answer:</strong> pH = 2.87. Only 1.34% of acetic acid
+                                dissociates — that's why vinegar is a weak acid. Compare to HCl at the same
+                                concentration which would give pH = 1.00.</div>
+                        </div>
+
+                        <div class="chem-concept-block">
+                            <h4><span class="chem-concept-num">3</span> Titration &amp; Equivalence Point</h4>
+                            <p>A titration determines unknown concentration by reacting with a known solution. At the
+                                <strong>equivalence point</strong>, moles of acid = moles of base.</p>
+                            <div class="chem-formula-box">
+                                <div class="chem-formula-main">At equivalence: n(acid) = n(base)</div>
+                                <div class="chem-formula-break"><span>M<sub>a</sub>V<sub>a</sub> =
+                                        M<sub>b</sub>V<sub>b</sub> (for monoprotic acids/bases)</span></div>
+                            </div>
+                        </div>
+
+                        <div class="chem-example">
+                            <div class="chem-ex-header"><span class="chem-ex-badge">Worked Example 3</span>
+                                <h5>Acid-Base Titration</h5>
+                            </div>
+                            <div class="chem-ex-problem"><strong>Problem:</strong> 25.0 mL of unknown HCl is titrated
+                                with 0.150 M NaOH. The equivalence point is reached at 18.5 mL NaOH. Find the HCl
+                                concentration.</div>
+                            <div class="chem-ex-solution">
+                                <div class="chem-sol-step">
+                                    <div class="chem-sol-label">Step 1: Moles of NaOH at equivalence</div>
+                                    <div class="chem-sol-content">
+                                        <div class="chem-math">n(NaOH) = 0.150 × 0.0185 = 0.002775 mol</div>
+                                    </div>
+                                </div>
+                                <div class="chem-sol-step">
+                                    <div class="chem-sol-label">Step 2: HCl + NaOH → NaCl + H₂O (1:1 ratio)</div>
+                                    <div class="chem-sol-content">
+                                        <div class="chem-math">n(HCl) = n(NaOH) = 0.002775 mol</div>
+                                    </div>
+                                </div>
+                                <div class="chem-sol-step">
+                                    <div class="chem-sol-label">Step 3: Find concentration</div>
+                                    <div class="chem-sol-content">
+                                        <div class="chem-math">M(HCl) = 0.002775 / 0.0250</div>
+                                        <div class="chem-math chem-result">M(HCl) = 0.111 M</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chem-ex-answer"><strong>Answer:</strong> The HCl concentration is 0.111 M. For
+                                polyprotic acids (like H₂SO₄), you'd need to account for the number of protons donated.
+                            </div>
+                        </div>
+            </article>
+
+
+            <!-- TOPIC 4: GAS LAWS -->
+            <article class="chem-topic-content" id="chemtopic-gas-laws">
+                <div class="chem-topic-hero">
+                    <h3>Gas Laws — Ideal Gas Law, Boyle's, Charles's &amp; Dalton's</h3>
+                    <p class="chem-topic-subtitle">Predicting the behavior of gases using simple relationships between
+                        pressure, volume, temperature, and amount.</p>
+                </div>
+
+                <div class="chem-concept-block">
+                    <h4><span class="chem-concept-num">1</span> The Individual Gas Laws</h4>
+                    <div class="chem-eq-table">
+                        <div class="chem-eq-row">
+                            <div class="chem-eq-cell">Boyle's: P₁V₁ = P₂V₂</div>
+                            <div class="chem-eq-note">Constant T, n</div>
+                        </div>
+                        <div class="chem-eq-row">
+                            <div class="chem-eq-cell">Charles's: V₁/T₁ = V₂/T₂</div>
+                            <div class="chem-eq-note">Constant P, n</div>
+                        </div>
+                        <div class="chem-eq-row">
+                            <div class="chem-eq-cell">Gay-Lussac's: P₁/T₁ = P₂/T₂</div>
+                            <div class="chem-eq-note">Constant V, n</div>
+                        </div>
+                        <div class="chem-eq-row">
+                            <div class="chem-eq-cell">Avogadro's: V₁/n₁ = V₂/n₂</div>
+                            <div class="chem-eq-note">Constant T, P</div>
+                        </div>
+                        <div class="chem-eq-row">
+                            <div class="chem-eq-cell">Combined: P₁V₁/T₁ = P₂V₂/T₂</div>
+                            <div class="chem-eq-note">Constant n</div>
+                        </div>
+                    </div>
+                    <div class="chem-insight"><i class="fas fa-lightbulb"></i><span><strong>Always use Kelvin!</strong>
+                            T(K) = T(°C) + 273.15. Gas laws break down with Celsius because zero Celsius is not zero
+                            energy.</span></div>
+                </div>
+
+                <div class="chem-concept-block">
+                    <h4><span class="chem-concept-num">2</span> The Ideal Gas Law</h4>
+                    <p>The ideal gas law combines all the individual laws into one equation. It works well for most
+                        gases at moderate temperatures and pressures.</p>
+                    <div class="chem-formula-box">
+                        <div class="chem-formula-main">PV = nRT</div>
+                        <div class="chem-formula-break"><span>P = pressure (atm), V = volume (L)</span><span>n = moles,
+                                R = 0.0821 L⋅atm/(mol⋅K)</span><span>T = temperature (K)</span></div>
+                    </div>
+
+                    <div class="chem-diagram">
+                        <div class="chem-svg-wrap">
+                            <svg viewBox="0 0 460 180" class="chem-svg" aria-label="Gas law relationships">
+                                <rect x="170" y="10" width="120" height="45" rx="8" fill="#f0fdfa" stroke="#14b8a6"
+                                    stroke-width="2.5" />
+                                <text x="230" y="38" text-anchor="middle" font-size="14" font-weight="800"
+                                    fill="#0f766e">PV = nRT</text>
+
+                                <rect x="10" y="90" width="100" height="40" rx="6" fill="#dbeafe" stroke="#3b82f6"
+                                    stroke-width="2" />
+                                <text x="60" y="115" text-anchor="middle" font-size="10" font-weight="700"
+                                    fill="#1e40af">Boyle's</text>
+
+                                <rect x="130" y="90" width="100" height="40" rx="6" fill="#fef3c7" stroke="#f59e0b"
+                                    stroke-width="2" />
+                                <text x="180" y="115" text-anchor="middle" font-size="10" font-weight="700"
+                                    fill="#92400e">Charles's</text>
+
+                                <rect x="250" y="90" width="100" height="40" rx="6" fill="#fce7f3" stroke="#ec4899"
+                                    stroke-width="2" />
+                                <text x="300" y="115" text-anchor="middle" font-size="10" font-weight="700"
+                                    fill="#9d174d">Gay-Lussac's</text>
+
+                                <rect x="350" y="90" width="100" height="40" rx="6" fill="#ede9fe" stroke="#8b5cf6"
+                                    stroke-width="2" />
+                                <text x="400" y="115" text-anchor="middle" font-size="10" font-weight="700"
+                                    fill="#6d28d9">Avogadro's</text>
+
+                                <line x1="200" y1="55" x2="80" y2="90" stroke="#475569" stroke-width="1.5" />
+                                <line x1="220" y1="55" x2="180" y2="90" stroke="#475569" stroke-width="1.5" />
+                                <line x1="240" y1="55" x2="300" y2="90" stroke="#475569" stroke-width="1.5" />
+                                <line x1="260" y1="55" x2="400" y2="90" stroke="#475569" stroke-width="1.5" />
+
+                                <text x="60" y="148" text-anchor="middle" font-size="9" fill="#64748b">P ↑ V ↓</text>
+                                <text x="180" y="148" text-anchor="middle" font-size="9" fill="#64748b">T ↑ V ↑</text>
+                                <text x="300" y="148" text-anchor="middle" font-size="9" fill="#64748b">T ↑ P ↑</text>
+                                <text x="400" y="148" text-anchor="middle" font-size="9" fill="#64748b">n ↑ V ↑</text>
+
+                                <text x="60" y="165" text-anchor="middle" font-size="8" fill="#94a3b8">(const
+                                    T,n)</text>
+                                <text x="180" y="165" text-anchor="middle" font-size="8" fill="#94a3b8">(const
+                                    P,n)</text>
+                                <text x="300" y="165" text-anchor="middle" font-size="8" fill="#94a3b8">(const
+                                    V,n)</text>
+                                <text x="400" y="165" text-anchor="middle" font-size="8" fill="#94a3b8">(const
+                                    T,P)</text>
+                            </svg>
+                        </div>
+                        <div class="chem-diagram-caption"><strong>Figure 2:</strong> All individual gas laws derive from
+                            PV = nRT by holding different variables constant.</div>
+                    </div>
+                </div>
+
+                <div class="chem-example">
+                    <div class="chem-ex-header"><span class="chem-ex-badge">Worked Example 1</span>
+                        <h5>Ideal Gas Law — Finding Volume</h5>
+                    </div>
+                    <div class="chem-ex-problem"><strong>Problem:</strong> What volume does 0.500 mol of N₂ occupy at
+                        25°C and 1.20 atm?</div>
+                    <div class="chem-ex-solution">
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 1: Convert temperature</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">T = 25 + 273.15 = 298.15 K</div>
+                            </div>
+                        </div>
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 2: Solve PV = nRT for V</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">V = nRT / P = (0.500 × 0.0821 × 298.15) / 1.20</div>
+                                <div class="chem-math chem-result">V = 10.2 L</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chem-ex-answer"><strong>Answer:</strong> 10.2 L. At STP (0°C, 1 atm), 1 mol of any ideal
+                        gas occupies 22.4 L.</div>
+                </div>
+
+                <div class="chem-concept-block">
+                    <h4><span class="chem-concept-num">3</span> Dalton's Law of Partial Pressures</h4>
+                    <p>In a mixture of gases, each gas exerts its own pressure independently. The total pressure is the
+                        sum of all partial pressures.</p>
+                    <div class="chem-formula-box">
+                        <div class="chem-formula-main">P<sub>total</sub> = P₁ + P₂ + P₃ + ...</div>
+                        <div class="chem-formula-break"><span>Partial pressure: P<sub>i</sub> = χ<sub>i</sub> ×
+                                P<sub>total</sub></span><span>χ<sub>i</sub> = mole fraction = n<sub>i</sub> /
+                                n<sub>total</sub></span></div>
+                    </div>
+                </div>
+
+                <div class="chem-example">
+                    <div class="chem-ex-header"><span class="chem-ex-badge">Worked Example 2</span>
+                        <h5>Boyle's Law — Pressure Change</h5>
+                    </div>
+                    <div class="chem-ex-problem"><strong>Problem:</strong> A gas occupies 3.5 L at 1.0 atm. What
+                        pressure is needed to compress it to 1.2 L at constant temperature?</div>
+                    <div class="chem-ex-solution">
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 1: Apply Boyle's Law</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">P₁V₁ = P₂V₂</div>
+                                <div class="chem-math">P₂ = P₁V₁ / V₂ = (1.0 × 3.5) / 1.2</div>
+                                <div class="chem-math chem-result">P₂ = 2.92 atm</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chem-ex-answer"><strong>Answer:</strong> 2.92 atm. Reducing volume by ≈ 3× requires ≈ 3×
+                        the pressure — this is the inverse relationship of Boyle's Law.</div>
+                </div>
+
+                <div class="chem-example">
+                    <div class="chem-ex-header"><span class="chem-ex-badge">Worked Example 3</span>
+                        <h5>Gas Stoichiometry — Volume at STP</h5>
+                    </div>
+                    <div class="chem-ex-problem"><strong>Problem:</strong> How many liters of CO₂ at STP are produced by
+                        decomposing 25.0 g of CaCO₃?<br><em>CaCO₃ → CaO + CO₂</em></div>
+                    <div class="chem-ex-solution">
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 1: Moles of CaCO₃</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">M(CaCO₃) = 40.08 + 12.01 + 3(16.00) = 100.09 g/mol</div>
+                                <div class="chem-math">n = 25.0 / 100.09 = 0.2498 mol</div>
+                            </div>
+                        </div>
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 2: Mole ratio (1:1)</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">n(CO₂) = 0.2498 mol</div>
+                            </div>
+                        </div>
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 3: Volume at STP (1 mol = 22.4 L)</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">V = 0.2498 × 22.4</div>
+                                <div class="chem-math chem-result">V = 5.60 L of CO₂</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chem-ex-answer"><strong>Answer:</strong> 5.60 L of CO₂ at STP. Gas stoichiometry uses
+                        the 22.4 L/mol shortcut at STP, or PV = nRT at other conditions.</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 5: THERMOCHEMISTRY -->
+            <article class="chem-topic-content" id="chemtopic-thermochemistry">
+                <div class="chem-topic-hero">
+                    <h3>Thermochemistry — Enthalpy, Hess's Law &amp; Calorimetry</h3>
+                    <p class="chem-topic-subtitle">The study of heat changes in chemical reactions — why some reactions
+                        feel hot and others feel cold.</p>
+                </div>
+
+                <div class="chem-concept-block">
+                    <h4><span class="chem-concept-num">1</span> Enthalpy (ΔH) — Heat of Reaction</h4>
+                    <p>Enthalpy change (ΔH) is the heat absorbed or released during a reaction at constant pressure.
+                        It's the most practical measure of reaction energy.</p>
+                    <div class="chem-two-col">
+                        <div class="chem-info-col">
+                            <div class="chem-info-title">Exothermic (ΔH < 0)</div>
+                                    <p>Releases heat to surroundings. Products have <strong>lower</strong> energy than
+                                        reactants. Feels warm.</p>
+                                    <div class="chem-math">CH₄ + 2O₂ → CO₂ + 2H₂O</div>
+                                    <div class="chem-math">ΔH = −890 kJ/mol</div>
+                            </div>
+                            <div class="chem-info-col">
+                                <div class="chem-info-title">Endothermic (ΔH > 0)</div>
+                                <p>Absorbs heat from surroundings. Products have <strong>higher</strong> energy than
+                                    reactants. Feels cold.</p>
+                                <div class="chem-math">NH₄NO₃ → NH₄⁺ + NO₃⁻</div>
+                                <div class="chem-math">ΔH = +25.7 kJ/mol</div>
+                            </div>
+                        </div>
+                        <div class="chem-insight"><i class="fas fa-lightbulb"></i><span><strong>Sign
+                                    convention:</strong> Negative ΔH = exothermic (system loses heat). Positive ΔH =
+                                endothermic (system gains heat). Think: the sign tells you what happens to the
+                                <em>system</em>, not the surroundings.</span></div>
+                    </div>
+
+                    <div class="chem-concept-block">
+                        <h4><span class="chem-concept-num">2</span> Calorimetry — Measuring Heat</h4>
+                        <p>A calorimeter measures heat changes. The heat absorbed by water equals the heat released by
+                            the reaction (and vice versa).</p>
+                        <div class="chem-formula-box">
+                            <div class="chem-formula-main">q = mcΔT</div>
+                            <div class="chem-formula-break"><span>q = heat (J), m = mass (g)</span><span>c = specific
+                                    heat capacity (J/g⋅°C)</span><span>ΔT = temperature change (°C or
+                                    K)</span><span>c(water) = 4.184 J/g⋅°C</span></div>
+                        </div>
+                        <div class="chem-formula-box">
+                            <div class="chem-formula-main">q<sub>reaction</sub> = −q<sub>calorimeter</sub></div>
+                            <div class="chem-formula-break"><span>Heat lost by reaction = heat gained by water (and vice
+                                    versa)</span></div>
+                        </div>
+                    </div>
+
+                    <div class="chem-example">
+                        <div class="chem-ex-header"><span class="chem-ex-badge">Worked Example 1</span>
+                            <h5>Coffee Cup Calorimetry</h5>
+                        </div>
+                        <div class="chem-ex-problem"><strong>Problem:</strong> When 50.0 mL of 1.0 M HCl and 50.0 mL of
+                            1.0 M NaOH (both at 25.0°C) are mixed in a calorimeter, the temperature rises to 31.9°C.
+                            Find ΔH for the neutralization reaction (assume d = 1.00 g/mL, c = 4.184 J/g⋅°C).</div>
+                        <div class="chem-ex-solution">
+                            <div class="chem-sol-step">
+                                <div class="chem-sol-label">Step 1: Heat absorbed by solution</div>
+                                <div class="chem-sol-content">
+                                    <div class="chem-math">m = 50.0 + 50.0 = 100.0 g (total solution)</div>
+                                    <div class="chem-math">ΔT = 31.9 − 25.0 = 6.9°C</div>
+                                    <div class="chem-math">q = mcΔT = 100.0 × 4.184 × 6.9</div>
+                                    <div class="chem-math chem-result">q = 2887 J = 2.887 kJ</div>
+                                </div>
+                            </div>
+                            <div class="chem-sol-step">
+                                <div class="chem-sol-label">Step 2: Moles of reaction</div>
+                                <div class="chem-sol-content">
+                                    <div class="chem-math">n = M × V = 1.0 × 0.050 = 0.050 mol</div>
+                                </div>
+                            </div>
+                            <div class="chem-sol-step">
+                                <div class="chem-sol-label">Step 3: ΔH per mole</div>
+                                <div class="chem-sol-content">
+                                    <div class="chem-math">ΔH = −q / n = −2.887 / 0.050</div>
+                                    <div class="chem-math chem-result">ΔH = −57.7 kJ/mol</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chem-ex-answer"><strong>Answer:</strong> ΔH = −57.7 kJ/mol (exothermic). The
+                            accepted value for strong acid-strong base neutralization is −57.1 kJ/mol. Negative sign
+                            because temperature rose (heat was released).</div>
+                    </div>
+
+                    <div class="chem-concept-block">
+                        <h4><span class="chem-concept-num">3</span> Hess's Law</h4>
+                        <p>The total enthalpy change for a reaction is the <strong>same</strong> regardless of the
+                            pathway taken. This means you can add, subtract, or reverse known reactions to find unknown
+                            ΔH values.</p>
+                        <div class="chem-formula-box">
+                            <div class="chem-formula-main">ΔH<sub>rxn</sub> = ΣΔH<sub>f</sub>°(products) −
+                                ΣΔH<sub>f</sub>°(reactants)</div>
+                            <div class="chem-formula-break"><span>ΔH<sub>f</sub>° = standard enthalpy of
+                                    formation</span><span>ΔH<sub>f</sub>° of elements in standard state = 0</span></div>
+                        </div>
+                        <div class="chem-steps">
+                            <div class="chem-steps-title">Rules for Manipulating Equations</div>
+                            <div class="chem-step-item"><span class="chem-step-num">1</span><span>If you
+                                    <strong>reverse</strong> a reaction, change the sign of ΔH.</span></div>
+                            <div class="chem-step-item"><span class="chem-step-num">2</span><span>If you
+                                    <strong>multiply</strong> a reaction by a factor, multiply ΔH by the same
+                                    factor.</span></div>
+                            <div class="chem-step-item"><span class="chem-step-num">3</span><span><strong>Add</strong>
+                                    manipulated equations so intermediates cancel. Sum the ΔH values.</span></div>
+                        </div>
+                    </div>
+
+                    <div class="chem-example">
+                        <div class="chem-ex-header"><span class="chem-ex-badge">Worked Example 2</span>
+                            <h5>Hess's Law — Formation Enthalpies</h5>
+                        </div>
+                        <div class="chem-ex-problem"><strong>Problem:</strong> Find ΔH° for the combustion of methane:
+                            CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l).<br>Given: ΔH<sub>f</sub>°[CO₂(g)] = −393.5 kJ/mol,
+                            ΔH<sub>f</sub>°[H₂O(l)] = −285.8 kJ/mol, ΔH<sub>f</sub>°[CH₄(g)] = −74.8 kJ/mol.</div>
+                        <div class="chem-ex-solution">
+                            <div class="chem-sol-step">
+                                <div class="chem-sol-label">Step 1: Apply Hess's Law formula</div>
+                                <div class="chem-sol-content">
+                                    <div class="chem-math">ΔH° = ΣΔH<sub>f</sub>°(products) −
+                                        ΣΔH<sub>f</sub>°(reactants)</div>
+                                </div>
+                            </div>
+                            <div class="chem-sol-step">
+                                <div class="chem-sol-label">Step 2: Sum products</div>
+                                <div class="chem-sol-content">
+                                    <div class="chem-math">Products = [1(−393.5) + 2(−285.8)]</div>
+                                    <div class="chem-math">= −393.5 + (−571.6) = −965.1 kJ</div>
+                                </div>
+                            </div>
+                            <div class="chem-sol-step">
+                                <div class="chem-sol-label">Step 3: Sum reactants</div>
+                                <div class="chem-sol-content">
+                                    <div class="chem-math">Reactants = [1(−74.8) + 2(0)]</div>
+                                    <div class="chem-math">= −74.8 kJ (O₂ is element in std state → ΔH<sub>f</sub>° = 0)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chem-sol-step">
+                                <div class="chem-sol-label">Step 4: Calculate</div>
+                                <div class="chem-sol-content">
+                                    <div class="chem-math">ΔH° = −965.1 − (−74.8)</div>
+                                    <div class="chem-math chem-result">ΔH° = −890.3 kJ/mol</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chem-ex-answer"><strong>Answer:</strong> ΔH° = −890.3 kJ/mol. Burning 1 mole of
+                            methane (16 g, the main component of natural gas) releases 890.3 kJ — enough to heat about 2
+                            liters of water from 25°C to boiling.</div>
+                    </div>
+
+                    <div class="chem-example">
+                        <div class="chem-ex-header"><span class="chem-ex-badge">Worked Example 3</span>
+                            <h5>Bond Energy Calculation</h5>
+                        </div>
+                        <div class="chem-ex-problem"><strong>Problem:</strong> Estimate ΔH for H₂ + Cl₂ → 2HCl using
+                            bond energies:<br>H−H = 436 kJ/mol, Cl−Cl = 242 kJ/mol, H−Cl = 431 kJ/mol.</div>
+                        <div class="chem-ex-solution">
+                            <div class="chem-sol-step">
+                                <div class="chem-sol-label">Step 1: Energy to break bonds (endothermic, +)</div>
+                                <div class="chem-sol-content">
+                                    <div class="chem-math">Break: 1(H−H) + 1(Cl−Cl) = 436 + 242 = +678 kJ</div>
+                                </div>
+                            </div>
+                            <div class="chem-sol-step">
+                                <div class="chem-sol-label">Step 2: Energy to form bonds (exothermic, −)</div>
+                                <div class="chem-sol-content">
+                                    <div class="chem-math">Form: 2(H−Cl) = 2 × 431 = −862 kJ</div>
+                                </div>
+                            </div>
+                            <div class="chem-sol-step">
+                                <div class="chem-sol-label">Step 3: ΔH = bonds broken − bonds formed</div>
+                                <div class="chem-sol-content">
+                                    <div class="chem-math">ΔH = +678 + (−862)</div>
+                                    <div class="chem-math chem-result">ΔH = −184 kJ</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chem-ex-answer"><strong>Answer:</strong> ΔH ≈ −184 kJ. Exothermic because more
+                            energy is released forming H−Cl bonds than is needed to break H−H and Cl−Cl bonds. Bond
+                            energy estimates are approximate.</div>
+                    </div>
+            </article>
+
+
+            <!-- TOPIC 6: ATOMIC STRUCTURE & PERIODICITY -->
+            <article class="chem-topic-content" id="chemtopic-atomic-structure">
+                <div class="chem-topic-hero">
+                    <h3>Atomic Structure &amp; Periodicity — Electron Configuration &amp; Trends</h3>
+                    <p class="chem-topic-subtitle">How electrons are arranged in atoms — and why this arrangement
+                        determines all chemical behavior.</p>
+                </div>
+
+                <div class="chem-concept-block">
+                    <h4><span class="chem-concept-num">1</span> Quantum Numbers &amp; Orbitals</h4>
+                    <p>Each electron is described by four quantum numbers that specify its energy level, shape,
+                        orientation, and spin.</p>
+                    <div class="chem-eq-table">
+                        <div class="chem-eq-row">
+                            <div class="chem-eq-cell">n (principal)</div>
+                            <div class="chem-eq-note">Energy level: 1, 2, 3...</div>
+                        </div>
+                        <div class="chem-eq-row">
+                            <div class="chem-eq-cell">ℓ (angular momentum)</div>
+                            <div class="chem-eq-note">Shape: 0=s, 1=p, 2=d, 3=f</div>
+                        </div>
+                        <div class="chem-eq-row">
+                            <div class="chem-eq-cell">m<sub>ℓ</sub> (magnetic)</div>
+                            <div class="chem-eq-note">Orientation: −ℓ to +ℓ</div>
+                        </div>
+                        <div class="chem-eq-row">
+                            <div class="chem-eq-cell">m<sub>s</sub> (spin)</div>
+                            <div class="chem-eq-note">+½ or −½</div>
+                        </div>
+                    </div>
+                    <div class="chem-insight"><i class="fas fa-lightbulb"></i><span><strong>Pauli Exclusion
+                                Principle:</strong> No two electrons can share all four quantum numbers. Each orbital
+                            holds max 2 electrons with opposite spins.</span></div>
+                </div>
+
+                <div class="chem-concept-block">
+                    <h4><span class="chem-concept-num">2</span> Electron Configuration</h4>
+                    <p>Electrons fill orbitals in order of increasing energy following the <strong>Aufbau
+                            principle</strong>:</p>
+                    <div class="chem-formula-box">
+                        <div class="chem-formula-main">1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p → 5s → 4d ...</div>
+                        <div class="chem-formula-break"><span>s: max 2e⁻ | p: max 6e⁻ | d: max 10e⁻ | f: max 14e⁻</span>
+                        </div>
+                    </div>
+                    <div class="chem-insight"><i class="fas fa-lightbulb"></i><span><strong>Hund's Rule:</strong>
+                            Electrons fill orbitals of the same energy singly first (all with same spin) before pairing
+                            up. This minimizes repulsion.</span></div>
+                </div>
+
+                <div class="chem-example">
+                    <div class="chem-ex-header"><span class="chem-ex-badge">Worked Example 1</span>
+                        <h5>Writing Electron Configurations</h5>
+                    </div>
+                    <div class="chem-ex-problem"><strong>Problem:</strong> Write the full and noble gas shorthand
+                        electron configuration for Iron (Fe, Z = 26) and its Fe²⁺ ion.</div>
+                    <div class="chem-ex-solution">
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 1: Fe (26 electrons) — fill in order</div>
+                            <div class="chem-sol-content">
+                                <div class="chem-math">1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁶</div>
+                                <div class="chem-math">Check: 2+2+6+2+6+2+6 = 26 ✓</div>
+                                <div class="chem-math chem-result">Noble gas shorthand: [Ar] 4s² 3d⁶</div>
+                            </div>
+                        </div>
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 2: Fe²⁺ (remove 2 electrons)</div>
+                            <div class="chem-sol-content">
+                                <p>Important: electrons are removed from the <em>highest n</em> first (4s before 3d)!
+                                </p>
+                                <div class="chem-math chem-result">Fe²⁺: [Ar] 3d⁶ (remove the two 4s electrons)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chem-ex-answer"><strong>Answer:</strong> Fe: [Ar] 4s² 3d⁶. Fe²⁺: [Ar] 3d⁶. Common
+                        mistake: students remove 3d electrons instead of 4s. Always remove from highest principal
+                        quantum number first when forming cations.</div>
+                </div>
+
+                <div class="chem-concept-block">
+                    <h4><span class="chem-concept-num">3</span> Periodic Trends</h4>
+                    <p>The periodic table is organized by atomic number, and properties follow predictable trends based
+                        on electron configuration.</p>
+                    <div class="chem-eq-table">
+                        <div class="chem-eq-row">
+                            <div class="chem-eq-cell">Atomic Radius</div>
+                            <div class="chem-eq-note">↓ increases down, ← increases left</div>
+                        </div>
+                        <div class="chem-eq-row">
+                            <div class="chem-eq-cell">Ionization Energy</div>
+                            <div class="chem-eq-note">↑ increases up, → increases right</div>
+                        </div>
+                        <div class="chem-eq-row">
+                            <div class="chem-eq-cell">Electronegativity</div>
+                            <div class="chem-eq-note">↑ increases up, → increases right</div>
+                        </div>
+                        <div class="chem-eq-row">
+                            <div class="chem-eq-cell">Electron Affinity</div>
+                            <div class="chem-eq-note">Generally increases toward upper right</div>
+                        </div>
+                    </div>
+                    <div class="chem-two-col">
+                        <div class="chem-info-col">
+                            <div class="chem-info-title">Why trends go across →</div>
+                            <p>More protons = stronger nuclear pull on electrons = smaller radius, harder to remove
+                                electrons, higher electronegativity.</p>
+                        </div>
+                        <div class="chem-info-col">
+                            <div class="chem-info-title">Why trends go down ↓</div>
+                            <p>More electron shells = greater distance from nucleus = larger radius, easier to remove
+                                electrons, lower electronegativity.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chem-example">
+                    <div class="chem-ex-header"><span class="chem-ex-badge">Worked Example 2</span>
+                        <h5>Ranking Periodic Trends</h5>
+                    </div>
+                    <div class="chem-ex-problem"><strong>Problem:</strong> Rank the following in order of increasing
+                        atomic radius: Na, Mg, K, Ca.</div>
+                    <div class="chem-ex-solution">
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 1: Identify positions</div>
+                            <div class="chem-sol-content">
+                                <p>Na (Period 3, Group 1), Mg (Period 3, Group 2), K (Period 4, Group 1), Ca (Period 4,
+                                    Group 2)</p>
+                            </div>
+                        </div>
+                        <div class="chem-sol-step">
+                            <div class="chem-sol-label">Step 2: Apply trends</div>
+                            <div class="chem-sol-content">
+                                <p>Across a period (left → right): radius <strong>decreases</strong>. So Na > Mg and K >
+                                    Ca.</p>
+                                <p>Down a group (top → bottom): radius <strong>increases</strong>. So K > Na and Ca >
+                                    Mg.</p>
+                                <div class="chem-math chem-result">Smallest → Largest: Mg < Na < Ca < K</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chem-ex-answer"><strong>Answer:</strong> Mg < Na < Ca < K. Potassium is largest
+                                because it's in Period 4 and Group 1 (fewest protons in that period). Magnesium is
+                                smallest because it's in Period 3 with more nuclear charge than Na.</div>
+                        </div>
+
+                        <div class="chem-example">
+                            <div class="chem-ex-header"><span class="chem-ex-badge">Worked Example 3</span>
+                                <h5>Ionization Energy Comparison</h5>
+                            </div>
+                            <div class="chem-ex-problem"><strong>Problem:</strong> Which has the higher first ionization
+                                energy: (a) Li or Na? (b) N or O? Explain.</div>
+                            <div class="chem-ex-solution">
+                                <div class="chem-sol-step">
+                                    <div class="chem-sol-label">(a) Li vs Na</div>
+                                    <div class="chem-sol-content">
+                                        <p>Li and Na are in the same group (1). Going down the group, ionization energy
+                                            <strong>decreases</strong> because the outer electron is farther from the
+                                            nucleus.</p>
+                                        <div class="chem-math chem-result">Li has higher IE than Na</div>
+                                    </div>
+                                </div>
+                                <div class="chem-sol-step">
+                                    <div class="chem-sol-label">(b) N vs O</div>
+                                    <div class="chem-sol-content">
+                                        <p>N has a <strong>half-filled 2p³</strong> subshell (extra stability). O (2p⁴)
+                                            has one paired electron, making it slightly easier to remove. This is an
+                                            exception to the left-right trend.</p>
+                                        <div class="chem-math chem-result">N has slightly higher IE than O</div>
+                                        <div class="chem-math">IE: N = 1402 kJ/mol, O = 1314 kJ/mol</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chem-ex-answer"><strong>Answer:</strong> (a) Li > Na (same group, IE decreases
+                                going down). (b) N > O (half-filled subshell stability exception). These exceptions to
+                                the general trend are common exam questions.</div>
+                        </div>
+            </article>
+
+        </div><!-- end chem-topics-container -->
+    </section><!-- end chemistry-topics-section -->
+
+
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
@@ -360,6 +1524,7 @@
     <script src="/js/nav.js"></script>
     <script src="/js/script.js"></script>
     <script src="/js/chemistry.js"></script>
+    <script src="/js/chemistry-topics.js"></script>
 
     <!-- Google AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"

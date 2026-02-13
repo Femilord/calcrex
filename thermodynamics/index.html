@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Thermodynamics Calculators - CalcRex | 8+ Free Heat & Energy Tools</title>
+    <meta name="description"
+        content="Free thermodynamics calculators: heat transfer, ideal gas law, Carnot efficiency, entropy, thermal expansion, Stefan-Boltzmann radiation, and heat conduction. With in-depth guides and worked examples.">
+    <meta name="keywords"
+        content="thermodynamics calculator, heat transfer calculator, ideal gas law, Carnot efficiency, entropy calculator, thermal expansion, Stefan-Boltzmann, CalcRex">
+    <meta name="author" content="CalcRex">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcrex.com/thermodynamics/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcrex.com/thermodynamics/">
+    <meta property="og:title" content="Thermodynamics Calculators - CalcRex | Free Heat & Energy Tools">
+    <meta property="og:description"
+        content="Free thermodynamics calculators with worked examples: heat transfer, gas laws, Carnot efficiency, entropy, and more.">
+    <meta property="og:image" content="https://calcrex.com/img/calcrex-banner.webp">
+    <meta property="og:site_name" content="CalcRex">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Thermodynamics Calculators - CalcRex">
+    <meta name="twitter:description" content="Free thermodynamics calculators with worked examples.">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/thermodynamics.css">
+    <link rel="stylesheet" href="/css/thermo-topics.css">
+    <link rel="stylesheet" href="/css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcrex.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Thermodynamics Calculators", "item": "https://calcrex.com/thermodynamics/" }
+    ]}
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        { "@type": "Question", "name": "What is the formula for heat transfer?", "acceptedAnswer": { "@type": "Answer", "text": "Q = mcΔT where Q is heat energy in Joules, m is mass in kg, c is specific heat capacity in J/(kg·K), and ΔT is temperature change in Kelvin or Celsius." } },
+        { "@type": "Question", "name": "How do you calculate Carnot efficiency?", "acceptedAnswer": { "@type": "Answer", "text": "Carnot efficiency η = 1 − (T_cold/T_hot) where temperatures are in Kelvin. This gives the maximum possible efficiency for any heat engine between two temperature reservoirs." } },
+        { "@type": "Question", "name": "What are the laws of thermodynamics?", "acceptedAnswer": { "@type": "Answer", "text": "The four laws: 0th - thermal equilibrium is transitive; 1st - energy is conserved (ΔU = Q − W); 2nd - entropy of an isolated system never decreases; 3rd - entropy approaches zero as temperature approaches absolute zero." } },
+        { "@type": "Question", "name": "How does the ideal gas law work?", "acceptedAnswer": { "@type": "Answer", "text": "PV = nRT relates pressure (P), volume (V), moles (n), and temperature (T) of an ideal gas, where R = 8.314 J/(mol·K). Leave any one variable blank to solve for it." } }
+    ]}
+    </script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo"><a href="/"><span class="logo-text">Calc<span class="logo-highlight">REX</span></span></a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span>
+            </button>
+                        <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="/" class="nav-link">Calculator</a></li>
+                    <li><a href="/converters" class="nav-link">Unit Converter</a></li>
+                    <li class="nav-dropdown">
+                        <button class="nav-link nav-dropdown-toggle active">Sciences <i class="fas fa-chevron-down nav-arrow"></i></button>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a></li>
+                            <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i> Chemistry</a></li>
+                            <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i> Electronics</a></li>
+                            <li><a href="/thermodynamics" class="nav-dropdown-link active"><i class="fas fa-fire"></i> Thermodynamics</a></li>
+                            <li><a href="/aerodynamics" class="nav-dropdown-link"><i class="fas fa-plane"></i> Aerodynamics</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/computer-science" class="nav-link">Computer Science</a></li>
+                    <li><a href="/finance" class="nav-link">Finance</a></li>
+                    <li><a href="/date-time" class="nav-link">Date &amp; Time</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="intro-section">
+        <div class="intro-container">
+            <h1 class="intro-title">Thermodynamics Calculators</h1>
+            <div class="intro-content" id="introContent">
+                <p class="intro-text">Solve heat transfer, gas law, engine efficiency, and entropy problems with
+                    CalcREX's thermodynamics toolkit. 8 calculators covering Q = mcΔT, the ideal gas law, Carnot cycles,
+                    Fourier's heat conduction, Stefan-Boltzmann radiation, and more — each with step-by-step
+                    explanations.</p>
+                <p class="intro-text intro-text-extra">From engineering design to exam preparation, these calculators
+                    handle the core thermodynamic equations. Scroll down for in-depth topic guides with worked examples,
+                    SVG diagrams, and links to the relevant calculators above.</p>
+            </div>
+            <button class="read-more-btn" id="readMoreBtn"><span class="btn-text">Read More</span><span
+                    class="btn-icon">▼</span></button>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <div class="ad-container ad-left">
+            <div class="ad-placeholder"><span class="ad-label">AdSense</span></div>
+        </div>
+
+        <div class="thermo-container">
+            <div class="category-selector">
+                <button class="category-btn active" data-category="heat-transfer">Heat Transfer</button>
+                <button class="category-btn" data-category="gas-laws">Gas Laws</button>
+                <button class="category-btn" data-category="engines">Engines & Entropy</button>
+                <button class="category-btn" data-category="materials">Materials & Radiation</button>
+            </div>
+            <div class="calculator-selection">
+                <label class="selection-label">Select Calculator</label>
+                <select class="calculator-select" id="calculatorSelect"></select>
+            </div>
+            <div class="calculator-interface">
+                <div class="calculator-header">
+                    <h2 id="calculatorTitle">Select a Calculator</h2>
+                </div>
+                <div class="formula-display">
+                    <div class="formula-label">Formula:</div>
+                    <div class="formula-equation" id="formulaEquation">-</div>
+                </div>
+                <div class="input-fields" id="inputFields"></div>
+                <button class="calculate-btn" id="calculateBtn"><span>Calculate</span><svg width="20" height="20"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
+                        <path d="M8 12h8M12 8v8" />
+                    </svg></button>
+                <div class="result-display">
+                    <div class="result-label">Result:</div>
+                    <div class="result-value" id="resultValue">-</div>
+                    <div class="result-unit" id="resultUnit"></div>
+                </div>
+                <div class="explanation-section">
+                    <h3>How it works</h3>
+                    <p id="explanationText"></p>
+                </div>
+                <div class="quick-reference">
+                    <h3>Thermodynamic Constants</h3>
+                    <div class="reference-grid">
+                        <div class="reference-item"><span class="ref-name">R (gas constant)</span><span
+                                class="ref-value">8.314 J/(mol·K)</span></div>
+                        <div class="reference-item"><span class="ref-name">σ (Stefan-Boltzmann)</span><span
+                                class="ref-value">5.67×10⁻⁸ W/(m²·K⁴)</span></div>
+                        <div class="reference-item"><span class="ref-name">k_B (Boltzmann)</span><span
+                                class="ref-value">1.381×10⁻²³ J/K</span></div>
+                        <div class="reference-item"><span class="ref-name">c water</span><span class="ref-value">4186
+                                J/(kg·K)</span></div>
+                        <div class="reference-item"><span class="ref-name">0 °C</span><span class="ref-value">273.15
+                                K</span></div>
+                        <div class="reference-item"><span class="ref-name">1 atm</span><span class="ref-value">101,325
+                                Pa</span></div>
+                    </div>
+                </div>
+                <div class="constants-reference">
+                    <h3>Specific Heat Values</h3>
+                    <div class="constants-grid">
+                        <div class="constant-item"><span class="constant-name">Water</span><span
+                                class="constant-value">4,186 J/(kg·K)</span></div>
+                        <div class="constant-item"><span class="constant-name">Iron</span><span
+                                class="constant-value">449 J/(kg·K)</span></div>
+                        <div class="constant-item"><span class="constant-name">Aluminum</span><span
+                                class="constant-value">897 J/(kg·K)</span></div>
+                        <div class="constant-item"><span class="constant-name">Copper</span><span
+                                class="constant-value">385 J/(kg·K)</span></div>
+                        <div class="constant-item"><span class="constant-name">Air</span><span
+                                class="constant-value">1,005 J/(kg·K)</span></div>
+                        <div class="constant-item"><span class="constant-name">Glass</span><span
+                                class="constant-value">840 J/(kg·K)</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-container ad-right">
+            <div class="ad-placeholder"><span class="ad-label">AdSense</span></div>
+        </div>
+    </main>
+
+    <section class="th-topics-section" id="thermoTopics">
+        <div class="th-topics-container">
+            <div class="th-topics-header">
+                <h2>Thermodynamics — In-Depth Guides with Worked Examples</h2>
+                <p>Master heat transfer, gas behavior, engine cycles, and entropy — the physics of energy
+                    transformation.</p>
+            </div>
+            <div class="th-topic-tabs" id="thTopicTabs">
+                <button class="th-topic-tab active" data-thtopic="laws"><i
+                        class="fas fa-gavel"></i><span>Laws</span></button>
+                <button class="th-topic-tab" data-thtopic="heat-transfer"><i class="fas fa-fire"></i><span>Heat
+                        Transfer</span></button>
+                <button class="th-topic-tab" data-thtopic="gas-laws"><i class="fas fa-wind"></i><span>Gas
+                        Laws</span></button>
+                <button class="th-topic-tab" data-thtopic="cycles"><i class="fas fa-cogs"></i><span>Heat
+                        Engines</span></button>
+                <button class="th-topic-tab" data-thtopic="entropy"><i
+                        class="fas fa-random"></i><span>Entropy</span></button>
+                <button class="th-topic-tab" data-thtopic="phase-changes"><i class="fas fa-snowflake"></i><span>Phase
+                        Changes</span></button>
+            </div>
+
+            <!-- TOPIC 1: LAWS OF THERMODYNAMICS -->
+            <article class="th-topic-content active" id="thtopic-laws">
+                <div class="th-topic-hero">
+                    <h3>The Laws of Thermodynamics — The Rules Energy Must Obey</h3>
+                    <p class="th-topic-subtitle">Four fundamental laws that govern all energy transformations in the
+                        universe.</p>
+                </div>
+                <div class="th-concept-block">
+                    <h4><span class="th-concept-num">1</span> The Four Laws</h4>
+                    <div class="th-eq-table">
+                        <div class="th-eq-row">
+                            <div class="th-eq-cell">0th Law</div>
+                            <div class="th-eq-note">If A=B and B=C in thermal equilibrium, then A=C</div>
+                        </div>
+                        <div class="th-eq-row">
+                            <div class="th-eq-cell">1st Law: ΔU = Q − W</div>
+                            <div class="th-eq-note">Energy is conserved — heat in = work + internal energy</div>
+                        </div>
+                        <div class="th-eq-row">
+                            <div class="th-eq-cell">2nd Law: ΔS ≥ 0</div>
+                            <div class="th-eq-note">Entropy of an isolated system never decreases</div>
+                        </div>
+                        <div class="th-eq-row">
+                            <div class="th-eq-cell">3rd Law: S → 0 as T → 0 K</div>
+                            <div class="th-eq-note">Perfect crystal at absolute zero has zero entropy</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="th-concept-block">
+                    <h4><span class="th-concept-num">2</span> The First Law — Energy Conservation</h4>
+                    <div class="th-formula-box">
+                        <div class="th-formula-main">ΔU = Q − W</div>
+                        <div class="th-formula-break"><span>ΔU = change in internal energy (J)</span><span>Q = heat
+                                added to system (+ in)</span><span>W = work done BY system (+ out)</span></div>
+                    </div>
+                    <div class="th-insight"><i class="fas fa-lightbulb"></i><span><strong>Sign convention
+                                matters:</strong> Q is positive when heat flows INTO the system. W is positive when work
+                            is done BY the system. Some textbooks use ΔU = Q + W (work done ON system) — always
+                            check!</span></div>
+                </div>
+                <div class="th-example">
+                    <div class="th-ex-header"><span class="th-ex-badge">Worked Example 1</span>
+                        <h5>First Law — Internal Energy Change</h5>
+                    </div>
+                    <div class="th-ex-problem"><strong>Problem:</strong> A gas absorbs 500 J of heat and does 200 J of
+                        work expanding against a piston. What is the change in internal energy?</div>
+                    <div class="th-ex-solution">
+                        <div class="th-sol-step">
+                            <div class="th-sol-label">Apply the First Law</div>
+                            <div class="th-sol-content">
+                                <div class="th-math">ΔU = Q − W = 500 − 200</div>
+                                <div class="th-math th-result">ΔU = +300 J</div>
+                                <p>The gas gained 300 J of internal energy (temperature increases).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="th-ex-answer"><strong>Answer:</strong> ΔU = +300 J. Of the 500 J absorbed, 200 J went
+                        into mechanical work and 300 J raised the gas temperature.
+                        <br><a href="/thermodynamics/" class="th-calc-link"><i class="fas fa-calculator"></i> Try the
+                            Heat Transfer Calculator</a>
+                    </div>
+                </div>
+                <div class="th-example">
+                    <div class="th-ex-header"><span class="th-ex-badge">Worked Example 2</span>
+                        <h5>Adiabatic Process (Q = 0)</h5>
+                    </div>
+                    <div class="th-ex-problem"><strong>Problem:</strong> In a rapid compression, a gas has 800 J of work
+                        done ON it with no heat exchange. What happens to its internal energy and temperature?</div>
+                    <div class="th-ex-solution">
+                        <div class="th-sol-step">
+                            <div class="th-sol-label">Adiabatic: Q = 0, work done ON = −W</div>
+                            <div class="th-sol-content">
+                                <div class="th-math">ΔU = Q − W = 0 − (−800) = +800 J</div>
+                                <div class="th-math th-result">ΔU = +800 J → temperature increases</div>
+                                <p>This is how diesel engines ignite fuel — compression alone heats air above the
+                                    ignition point.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="th-ex-answer"><strong>Answer:</strong> Internal energy increases by 800 J, so
+                        temperature rises. Work done ON the gas is negative W (gas didn't do the work). This is
+                        adiabatic heating.</div>
+                </div>
+            </article>
+
+            <!-- TOPIC 2: HEAT TRANSFER -->
+            <article class="th-topic-content" id="thtopic-heat-transfer">
+                <div class="th-topic-hero">
+                    <h3>Heat Transfer — Conduction, Convection &amp; Radiation</h3>
+                    <p class="th-topic-subtitle">The three mechanisms by which thermal energy moves — and how to
+                        calculate heat flow for each.</p>
+                </div>
+                <div class="th-concept-block">
+                    <h4><span class="th-concept-num">1</span> Three Modes of Heat Transfer</h4>
+                    <div class="th-compare">
+                        <div class="th-compare-head">
+                            <div class="th-compare-cell th-label-cell">Mode</div>
+                            <div class="th-compare-cell">Mechanism</div>
+                            <div class="th-compare-cell">Formula</div>
+                        </div>
+                        <div class="th-compare-row">
+                            <div class="th-compare-cell th-label-cell">Conduction</div>
+                            <div class="th-compare-cell">Molecular vibrations through solid</div>
+                            <div class="th-compare-cell">Q̇ = kAΔT/d</div>
+                        </div>
+                        <div class="th-compare-row">
+                            <div class="th-compare-cell th-label-cell">Convection</div>
+                            <div class="th-compare-cell">Fluid circulation (natural or forced)</div>
+                            <div class="th-compare-cell">Q̇ = hAΔT</div>
+                        </div>
+                        <div class="th-compare-row">
+                            <div class="th-compare-cell th-label-cell">Radiation</div>
+                            <div class="th-compare-cell">Electromagnetic waves (no medium needed)</div>
+                            <div class="th-compare-cell">P = εσAT⁴</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="th-concept-block">
+                    <h4><span class="th-concept-num">2</span> Sensible Heat: Q = mcΔT</h4>
+                    <div class="th-formula-box">
+                        <div class="th-formula-main">Q = m × c × ΔT</div>
+                        <div class="th-formula-break"><span>Q = heat energy (J), m = mass (kg)</span><span>c = specific
+                                heat capacity (J/kg·K)</span><span>ΔT = temperature change (°C or K)</span></div>
+                    </div>
+                </div>
+                <div class="th-example">
+                    <div class="th-ex-header"><span class="th-ex-badge">Worked Example 1</span>
+                        <h5>Heating Water — Q = mcΔT</h5>
+                    </div>
+                    <div class="th-ex-problem"><strong>Problem:</strong> How much energy is needed to heat 2 kg of water
+                        from 20°C to 100°C? (c_water = 4186 J/kg·K)</div>
+                    <div class="th-ex-solution">
+                        <div class="th-sol-step">
+                            <div class="th-sol-label">Apply Q = mcΔT</div>
+                            <div class="th-sol-content">
+                                <div class="th-math">Q = 2 × 4186 × (100 − 20) = 2 × 4186 × 80</div>
+                                <div class="th-math th-result">Q = 669,760 J ≈ 670 kJ</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="th-ex-answer"><strong>Answer:</strong> 670 kJ. A standard 2000 W kettle would take
+                        670,000/2000 = 335 seconds ≈ 5.6 minutes. This matches real-world experience!
+                        <br><a href="/thermodynamics/" class="th-calc-link"><i class="fas fa-calculator"></i> Try the
+                            Heat Transfer Calculator</a>
+                    </div>
+                </div>
+                <div class="th-example">
+                    <div class="th-ex-header"><span class="th-ex-badge">Worked Example 2</span>
+                        <h5>Heat Conduction Through a Wall</h5>
+                    </div>
+                    <div class="th-ex-problem"><strong>Problem:</strong> A concrete wall is 20 cm thick, 10 m² area.
+                        Inside is 22°C, outside is −5°C. k_concrete = 1.7 W/(m·K). What is the heat loss rate?</div>
+                    <div class="th-ex-solution">
+                        <div class="th-sol-step">
+                            <div class="th-sol-label">Fourier's Law</div>
+                            <div class="th-sol-content">
+                                <div class="th-math">Q̇ = kAΔT/d = 1.7 × 10 × 27 / 0.20</div>
+                                <div class="th-math th-result">Q̇ = 2,295 W ≈ 2.3 kW</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="th-ex-answer"><strong>Answer:</strong> 2.3 kW of heat loss through the wall alone.
+                        Adding 10 cm of insulation (k = 0.04) would reduce this to ~100 W — a 95% reduction! This is why
+                        insulation matters.
+                        <br><a href="/thermodynamics/" class="th-calc-link"><i class="fas fa-calculator"></i> Try the
+                            Heat Conduction Calculator</a>
+                    </div>
+                </div>
+                <div class="th-example">
+                    <div class="th-ex-header"><span class="th-ex-badge">Worked Example 3</span>
+                        <h5>Stefan-Boltzmann Radiation</h5>
+                    </div>
+                    <div class="th-ex-problem"><strong>Problem:</strong> The Sun's surface is ~5778 K and has radius
+                        6.96 × 10⁸ m. What is its total radiated power? (ε = 1 for blackbody)</div>
+                    <div class="th-ex-solution">
+                        <div class="th-sol-step">
+                            <div class="th-sol-label">Surface area and radiation</div>
+                            <div class="th-sol-content">
+                                <div class="th-math">A = 4πr² = 4π(6.96×10⁸)² = 6.08 × 10¹⁸ m²</div>
+                                <div class="th-math">P = εσAT⁴ = 1 × 5.67×10⁻⁸ × 6.08×10¹⁸ × 5778⁴</div>
+                                <div class="th-math th-result">P ≈ 3.85 × 10²⁶ W (385 trillion trillion watts!)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="th-ex-answer"><strong>Answer:</strong> ~3.85 × 10²⁶ W — this is the Sun's luminosity.
+                        The T⁴ dependence is key: doubling temperature increases radiation 16×.
+                        <br><a href="/thermodynamics/" class="th-calc-link"><i class="fas fa-calculator"></i> Try the
+                            Stefan-Boltzmann Calculator</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- TOPIC 3: GAS LAWS -->
+            <article class="th-topic-content" id="thtopic-gas-laws">
+                <div class="th-topic-hero">
+                    <h3>Gas Laws — Ideal Gas, Boyle, Charles &amp; Combined</h3>
+                    <p class="th-topic-subtitle">How pressure, volume, temperature, and amount of gas relate — from
+                        individual laws to the universal equation.</p>
+                </div>
+                <div class="th-concept-block">
+                    <h4><span class="th-concept-num">1</span> The Individual Gas Laws</h4>
+                    <div class="th-eq-table">
+                        <div class="th-eq-row">
+                            <div class="th-eq-cell">Boyle: P₁V₁ = P₂V₂</div>
+                            <div class="th-eq-note">Constant T, n</div>
+                        </div>
+                        <div class="th-eq-row">
+                            <div class="th-eq-cell">Charles: V₁/T₁ = V₂/T₂</div>
+                            <div class="th-eq-note">Constant P, n</div>
+                        </div>
+                        <div class="th-eq-row">
+                            <div class="th-eq-cell">Gay-Lussac: P₁/T₁ = P₂/T₂</div>
+                            <div class="th-eq-note">Constant V, n</div>
+                        </div>
+                        <div class="th-eq-row">
+                            <div class="th-eq-cell">Avogadro: V₁/n₁ = V₂/n₂</div>
+                            <div class="th-eq-note">Constant T, P</div>
+                        </div>
+                        <div class="th-eq-row">
+                            <div class="th-eq-cell">Combined: P₁V₁/T₁ = P₂V₂/T₂</div>
+                            <div class="th-eq-note">Constant n</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="th-concept-block">
+                    <h4><span class="th-concept-num">2</span> The Ideal Gas Law</h4>
+                    <div class="th-formula-box">
+                        <div class="th-formula-main">PV = nRT</div>
+                        <div class="th-formula-break"><span>P = pressure (Pa), V = volume (m³)</span><span>n = moles, R
+                                = 8.314 J/(mol·K)</span><span>T = absolute temperature (K)</span></div>
+                    </div>
+                </div>
+                <div class="th-example">
+                    <div class="th-ex-header"><span class="th-ex-badge">Worked Example 1</span>
+                        <h5>Ideal Gas Law — Finding Volume</h5>
+                    </div>
+                    <div class="th-ex-problem"><strong>Problem:</strong> What volume does 2 moles of gas occupy at 25°C
+                        and 1 atm?</div>
+                    <div class="th-ex-solution">
+                        <div class="th-sol-step">
+                            <div class="th-sol-label">Convert and solve</div>
+                            <div class="th-sol-content">
+                                <div class="th-math">T = 25 + 273.15 = 298.15 K, P = 101325 Pa</div>
+                                <div class="th-math">V = nRT/P = 2 × 8.314 × 298.15 / 101325</div>
+                                <div class="th-math th-result">V = 0.0489 m³ = 48.9 L</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="th-ex-answer"><strong>Answer:</strong> 48.9 L (about 24.5 L per mole at 25°C, slightly
+                        more than the 22.4 L/mol at STP because it's warmer).
+                        <br><a href="/thermodynamics/" class="th-calc-link"><i class="fas fa-calculator"></i> Try the
+                            Ideal Gas Law Calculator</a>
+                    </div>
+                </div>
+                <div class="th-example">
+                    <div class="th-ex-header"><span class="th-ex-badge">Worked Example 2</span>
+                        <h5>Isothermal Expansion — Work Done</h5>
+                    </div>
+                    <div class="th-ex-problem"><strong>Problem:</strong> 1 mol of gas expands isothermally at 300 K from
+                        10 L to 20 L. Calculate the work done by the gas.</div>
+                    <div class="th-ex-solution">
+                        <div class="th-sol-step">
+                            <div class="th-sol-label">Isothermal work formula</div>
+                            <div class="th-sol-content">
+                                <div class="th-math">W = nRT × ln(V₂/V₁)</div>
+                                <div class="th-math">= 1 × 8.314 × 300 × ln(20/10)</div>
+                                <div class="th-math">= 2494.2 × 0.6931</div>
+                                <div class="th-math th-result">W = 1,729 J ≈ 1.73 kJ</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="th-ex-answer"><strong>Answer:</strong> 1.73 kJ done by the gas. Since it's isothermal
+                        (ΔU = 0), the gas must absorb exactly 1.73 kJ of heat — all absorbed energy goes into work.
+                        <br><a href="/thermodynamics/" class="th-calc-link"><i class="fas fa-calculator"></i> Try the
+                            Isothermal Work Calculator</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- TOPIC 4: HEAT ENGINES & CYCLES -->
+            <article class="th-topic-content" id="thtopic-cycles">
+                <div class="th-topic-hero">
+                    <h3>Heat Engines — Carnot Cycle, Efficiency &amp; Real Engines</h3>
+                    <p class="th-topic-subtitle">Converting heat into work — why 100% efficiency is impossible and how
+                        close real engines get.</p>
+                </div>
+                <div class="th-concept-block">
+                    <h4><span class="th-concept-num">1</span> Carnot Efficiency — The Theoretical Maximum</h4>
+                    <div class="th-formula-box">
+                        <div class="th-formula-main">η_Carnot = 1 − T_C / T_H</div>
+                        <div class="th-formula-break"><span>T_C = cold reservoir temperature (K)</span><span>T_H = hot
+                                reservoir temperature (K)</span><span>No real engine can exceed this efficiency</span>
+                        </div>
+                    </div>
+
+                    <div class="th-diagram">
+                        <div class="th-svg-wrap">
+                            <svg class="th-svg" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="120" y="10" width="160" height="40" rx="8" fill="#ef4444" stroke="#991b1b"
+                                    stroke-width="2" />
+                                <text x="200" y="35" text-anchor="middle" font-size="14" font-weight="bold"
+                                    fill="white">Hot Reservoir T_H</text>
+                                <rect x="145" y="90" width="110" height="60" rx="8" fill="#f97316" stroke="#c2410c"
+                                    stroke-width="2" />
+                                <text x="200" y="118" text-anchor="middle" font-size="13" font-weight="bold"
+                                    fill="white">ENGINE</text>
+                                <text x="200" y="138" text-anchor="middle" font-size="11" fill="#fff3cd">η =
+                                    W/Q_H</text>
+                                <rect x="120" y="200" width="160" height="40" rx="8" fill="#3b82f6" stroke="#1e40af"
+                                    stroke-width="2" />
+                                <text x="200" y="225" text-anchor="middle" font-size="14" font-weight="bold"
+                                    fill="white">Cold Reservoir T_C</text>
+                                <line x1="200" y1="50" x2="200" y2="90" stroke="#ef4444" stroke-width="3"
+                                    marker-end="url(#arrow-red)" />
+                                <text x="230" y="75" font-size="12" font-weight="bold" fill="#ef4444">Q_H</text>
+                                <line x1="200" y1="150" x2="200" y2="200" stroke="#3b82f6" stroke-width="3"
+                                    marker-end="url(#arrow-blue)" />
+                                <text x="230" y="180" font-size="12" font-weight="bold" fill="#3b82f6">Q_C</text>
+                                <line x1="255" y1="120" x2="340" y2="120" stroke="#16a34a" stroke-width="3"
+                                    marker-end="url(#arrow-green)" />
+                                <text x="310" y="110" font-size="13" font-weight="bold" fill="#16a34a">W = Q_H −
+                                    Q_C</text>
+                                <defs>
+                                    <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="8" refY="4"
+                                        orient="auto">
+                                        <path d="M0,0 L8,4 L0,8" fill="#ef4444" />
+                                    </marker>
+                                    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="8" refY="4"
+                                        orient="auto">
+                                        <path d="M0,0 L8,4 L0,8" fill="#3b82f6" />
+                                    </marker>
+                                    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="8" refY="4"
+                                        orient="auto">
+                                        <path d="M0,0 L8,4 L0,8" fill="#16a34a" />
+                                    </marker>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="th-diagram-caption"><strong>Heat engine energy flow:</strong> Heat Q_H flows from
+                            the hot reservoir, the engine converts part to useful work W, and waste heat Q_C is rejected
+                            to the cold reservoir. By the 1st law: Q_H = W + Q_C.</div>
+                    </div>
+                </div>
+                <div class="th-example">
+                    <div class="th-ex-header"><span class="th-ex-badge">Worked Example 1</span>
+                        <h5>Carnot Efficiency of a Power Plant</h5>
+                    </div>
+                    <div class="th-ex-problem"><strong>Problem:</strong> A steam power plant operates between a boiler
+                        at 550°C and a condenser at 30°C. (a) What is the Carnot efficiency? (b) If the plant actually
+                        achieves 38% efficiency, what fraction of Carnot is this?</div>
+                    <div class="th-ex-solution">
+                        <div class="th-sol-step">
+                            <div class="th-sol-label">Carnot efficiency</div>
+                            <div class="th-sol-content">
+                                <div class="th-math">T_H = 550 + 273 = 823 K, T_C = 30 + 273 = 303 K</div>
+                                <div class="th-math">η = 1 − 303/823 = 1 − 0.368</div>
+                                <div class="th-math th-result">η_Carnot = 63.2%</div>
+                            </div>
+                        </div>
+                        <div class="th-sol-step">
+                            <div class="th-sol-label">Fraction of Carnot</div>
+                            <div class="th-sol-content">
+                                <div class="th-math th-result">38/63.2 = 60.1% of theoretical maximum</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="th-ex-answer"><strong>Answer:</strong> Carnot: 63.2%, actual: 38% (60% of Carnot).
+                        Modern power plants typically achieve 35–45% efficiency. Raising T_H or lowering T_C improves
+                        efficiency.
+                        <br><a href="/thermodynamics/" class="th-calc-link"><i class="fas fa-calculator"></i> Try the
+                            Carnot Efficiency Calculator</a>
+                    </div>
+                </div>
+                <div class="th-example">
+                    <div class="th-ex-header"><span class="th-ex-badge">Worked Example 2</span>
+                        <h5>Engine Heat Rejection</h5>
+                    </div>
+                    <div class="th-ex-problem"><strong>Problem:</strong> A car engine absorbs 2500 J per cycle from fuel
+                        combustion and does 750 J of work. How much heat is rejected? What is the efficiency?</div>
+                    <div class="th-ex-solution">
+                        <div class="th-sol-step">
+                            <div class="th-sol-label">Apply energy conservation</div>
+                            <div class="th-sol-content">
+                                <div class="th-math">Q_C = Q_H − W = 2500 − 750</div>
+                                <div class="th-math th-result">Q_C = 1,750 J rejected as waste heat</div>
+                                <div class="th-math">η = W/Q_H = 750/2500</div>
+                                <div class="th-math th-result">η = 30%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="th-ex-answer"><strong>Answer:</strong> 1,750 J waste heat, 30% efficiency. Typical
+                        gasoline engines: 20–30%, diesel: 30–40%. The rejected heat goes into the cooling system and
+                        exhaust — it's why radiators exist.</div>
+                </div>
+            </article>
+
+            <!-- TOPIC 5: ENTROPY -->
+            <article class="th-topic-content" id="thtopic-entropy">
+                <div class="th-topic-hero">
+                    <h3>Entropy — Disorder, the Arrow of Time &amp; Irreversibility</h3>
+                    <p class="th-topic-subtitle">Why ice melts, heat flows from hot to cold, and broken eggs never
+                        unbreak — it's all about entropy.</p>
+                </div>
+                <div class="th-concept-block">
+                    <h4><span class="th-concept-num">1</span> What Is Entropy?</h4>
+                    <p>Entropy (S) measures the number of microscopic arrangements (microstates) consistent with a
+                        macroscopic state. More microstates = higher entropy = more "disorder."</p>
+                    <div class="th-formula-box">
+                        <div class="th-formula-main">ΔS = Q_rev / T</div>
+                        <div class="th-formula-break"><span>ΔS = entropy change (J/K)</span><span>Q_rev = heat for a
+                                reversible process</span><span>T = absolute temperature (K)</span></div>
+                    </div>
+                    <div class="th-insight"><i class="fas fa-lightbulb"></i><span><strong>2nd Law restated:</strong> For
+                            any spontaneous process, ΔS_universe ≥ 0. Heat flows from hot to cold because it increases
+                            total entropy. A refrigerator moves heat from cold to hot, but the work required increases
+                            entropy elsewhere by even more.</span></div>
+                </div>
+                <div class="th-example">
+                    <div class="th-ex-header"><span class="th-ex-badge">Worked Example 1</span>
+                        <h5>Entropy Change — Melting Ice</h5>
+                    </div>
+                    <div class="th-ex-problem"><strong>Problem:</strong> 500 g of ice melts at 0°C. The latent heat of
+                        fusion is 334 kJ/kg. What is the entropy change?</div>
+                    <div class="th-ex-solution">
+                        <div class="th-sol-step">
+                            <div class="th-sol-label">Calculate heat and entropy</div>
+                            <div class="th-sol-content">
+                                <div class="th-math">Q = mL = 0.5 × 334,000 = 167,000 J</div>
+                                <div class="th-math">T = 0°C = 273.15 K</div>
+                                <div class="th-math">ΔS = Q/T = 167,000/273.15</div>
+                                <div class="th-math th-result">ΔS = +611.3 J/K</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="th-ex-answer"><strong>Answer:</strong> +611.3 J/K. Positive because liquid water has
+                        more disorder than solid ice — molecules move freely instead of being locked in a crystal
+                        lattice.
+                        <br><a href="/thermodynamics/" class="th-calc-link"><i class="fas fa-calculator"></i> Try the
+                            Entropy Calculator</a>
+                    </div>
+                </div>
+                <div class="th-example">
+                    <div class="th-ex-header"><span class="th-ex-badge">Worked Example 2</span>
+                        <h5>Entropy of Heat Transfer Between Objects</h5>
+                    </div>
+                    <div class="th-ex-problem"><strong>Problem:</strong> 1000 J of heat flows from a hot object at 500 K
+                        to a cold object at 300 K. What is the total entropy change? Is this spontaneous?</div>
+                    <div class="th-ex-solution">
+                        <div class="th-sol-step">
+                            <div class="th-sol-label">Entropy change for each object</div>
+                            <div class="th-sol-content">
+                                <div class="th-math">ΔS_hot = −Q/T_H = −1000/500 = −2.0 J/K (loses heat)</div>
+                                <div class="th-math">ΔS_cold = +Q/T_C = +1000/300 = +3.33 J/K (gains heat)</div>
+                                <div class="th-math">ΔS_total = −2.0 + 3.33</div>
+                                <div class="th-math th-result">ΔS_total = +1.33 J/K > 0 → spontaneous ✓</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="th-ex-answer"><strong>Answer:</strong> +1.33 J/K. The cold object gains more entropy
+                        than the hot object loses — net entropy always increases for spontaneous heat flow. If heat
+                        tried to flow from cold to hot, ΔS would be negative → impossible without external work.</div>
+                </div>
+            </article>
+
+            <!-- TOPIC 6: PHASE CHANGES -->
+            <article class="th-topic-content" id="thtopic-phase-changes">
+                <div class="th-topic-hero">
+                    <h3>Phase Changes — Latent Heat, Heating Curves &amp; State Transitions</h3>
+                    <p class="th-topic-subtitle">What happens when matter changes state — and why temperature stays
+                        constant during melting and boiling.</p>
+                </div>
+                <div class="th-concept-block">
+                    <h4><span class="th-concept-num">1</span> Latent Heat</h4>
+                    <div class="th-formula-box">
+                        <div class="th-formula-main">Q = mL</div>
+                        <div class="th-formula-break"><span>L_f (fusion/melting): ice = 334 kJ/kg</span><span>L_v
+                                (vaporization): water = 2260 kJ/kg</span><span>Temperature stays CONSTANT during phase
+                                change</span></div>
+                    </div>
+                    <div class="th-insight"><i class="fas fa-lightbulb"></i><span><strong>Why L_v >> L_f:</strong>
+                            Vaporization requires breaking ALL intermolecular bonds (molecules fly apart), while melting
+                            only loosens the crystal structure. Boiling water needs ~6.8× more energy per kg than
+                            melting ice.</span></div>
+                </div>
+                <div class="th-concept-block">
+                    <h4><span class="th-concept-num">2</span> The Heating Curve</h4>
+                    <div class="th-code-box">
+                        <pre>Temperature (°C)
+  150 |                                    ___________
+  100 |                    _______________/  steam
+      |                   / boiling (100°C)
+   50 |          ________/  liquid water
+      |         /
+    0 |________/  melting (0°C)
+      |  ice
+ -20  |_________________________________________
+          Heat added (Q) →</pre>
+                    </div>
+                    <p style="font-size:0.8rem;color:#64748b;margin-top:0.5rem;">Flat sections = phase changes
+                        (temperature constant, all energy goes into breaking bonds). Sloped sections = temperature
+                        changes (Q = mcΔT with different c for each phase).</p>
+                </div>
+                <div class="th-example">
+                    <div class="th-ex-header"><span class="th-ex-badge">Worked Example 1</span>
+                        <h5>Total Energy: Ice at −20°C to Steam at 120°C</h5>
+                    </div>
+                    <div class="th-ex-problem"><strong>Problem:</strong> Calculate the total energy to convert 1 kg of
+                        ice at −20°C to steam at 120°C. (c_ice = 2090, c_water = 4186, c_steam = 2010 J/kg·K, L_f =
+                        334,000, L_v = 2,260,000 J/kg)</div>
+                    <div class="th-ex-solution">
+                        <div class="th-sol-step">
+                            <div class="th-sol-label">5 stages</div>
+                            <div class="th-sol-content">
+                                <div class="th-math">1. Heat ice −20→0°C: Q₁ = 1 × 2090 × 20 = 41,800 J</div>
+                                <div class="th-math">2. Melt ice at 0°C: Q₂ = 1 × 334,000 = 334,000 J</div>
+                                <div class="th-math">3. Heat water 0→100°C: Q₃ = 1 × 4186 × 100 = 418,600 J</div>
+                                <div class="th-math">4. Boil water at 100°C: Q₄ = 1 × 2,260,000 = 2,260,000 J</div>
+                                <div class="th-math">5. Heat steam 100→120°C: Q₅ = 1 × 2010 × 20 = 40,200 J</div>
+                                <div class="th-math th-result">Total = 3,094,600 J ≈ 3.09 MJ</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="th-ex-answer"><strong>Answer:</strong> 3.09 MJ. Vaporization alone accounts for 73% of
+                        the total energy! This is why steam burns are so much worse than boiling water burns — steam
+                        carries enormous latent heat.
+                        <br><a href="/thermodynamics/" class="th-calc-link"><i class="fas fa-calculator"></i> Try the
+                            Heat Transfer Calculator</a>
+                    </div>
+                </div>
+                <div class="th-example">
+                    <div class="th-ex-header"><span class="th-ex-badge">Worked Example 2</span>
+                        <h5>Thermal Equilibrium — Mixing Hot and Cold</h5>
+                    </div>
+                    <div class="th-ex-problem"><strong>Problem:</strong> 200 g of iron at 300°C is dropped into 500 g of
+                        water at 20°C in an insulated container. What is the final temperature? (c_iron = 449, c_water =
+                        4186 J/kg·K)</div>
+                    <div class="th-ex-solution">
+                        <div class="th-sol-step">
+                            <div class="th-sol-label">Heat lost = Heat gained</div>
+                            <div class="th-sol-content">
+                                <div class="th-math">m_iron × c_iron × (300 − T_f) = m_water × c_water × (T_f − 20)
+                                </div>
+                                <div class="th-math">0.2 × 449 × (300 − T_f) = 0.5 × 4186 × (T_f − 20)</div>
+                                <div class="th-math">89.8(300 − T_f) = 2093(T_f − 20)</div>
+                                <div class="th-math">26,940 − 89.8T_f = 2093T_f − 41,860</div>
+                                <div class="th-math">68,800 = 2182.8T_f</div>
+                                <div class="th-math th-result">T_f = 31.5°C</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="th-ex-answer"><strong>Answer:</strong> 31.5°C. Despite starting at 300°C, the iron
+                        barely raises the water temperature because water's specific heat (4186) is ~9× higher than
+                        iron's (449). Water is an exceptional heat absorber.
+                        <br><a href="/physics/" class="th-calc-link"><i class="fas fa-calculator"></i> Physics
+                            Calculators</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CalcREX</h3>
+                    <p>Your complete online calculator suite for every calculation need.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Feature Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="/converters">Unit Converter</a></li>
+                        <li><a href="/physics">Physics</a></li>
+                        <li><a href="/chemistry">Chemistry</a></li>
+                        <li><a href="/electricity">Electronics</a></li>
+                        <li><a href="/computer-science">Computer Science</a></li>
+                        <li><a href="/finance">Finance</a></li>
+                        <li><a href="/date-time">Date & Time</a></li>
+                        <li><a href="/thermodynamics">Thermodynamics</a></li>
+                        <li><a href="/aerodynamics">Aerodynamics</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CalcREX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/nav.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/thermodynamics.js"></script>
+    <script src="/js/thermo-topics.js"></script>
+</body>
+
+</html>

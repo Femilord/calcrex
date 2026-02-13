@@ -1,56 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
- <url>
-  <loc>https://calcrex.com/</loc>
-  <lastmod>2026-02-08T10:50:56+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://calcrex.com/converters/</loc>
-  <lastmod>2026-02-08T10:50:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://calcrex.com/physics/</loc>
-  <lastmod>2026-02-08T10:50:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://calcrex.com/chemistry/</loc>
-  <lastmod>2026-02-08T10:50:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://calcrex.com/electricity/</loc>
-  <lastmod>2026-02-08T10:50:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://calcrex.com/computer-science/</loc>
-  <lastmod>2026-02-08T10:50:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://calcrex.com/finance/</loc>
-  <lastmod>2026-02-08T10:50:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://calcrex.com/date-time/</loc>
-  <lastmod>2026-02-08T10:50:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://calcrex.com/about/</loc>
-  <lastmod>2026-02-08T10:50:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://calcrex.com/contact/</loc>
-  <lastmod>2026-02-08T10:50:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
 
+  <url>
+    <loc>https://calcrex.com/</loc>
+    <lastmod>2026-02-13T12:00:00+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://calcrex.com/converters/</loc>
+    <lastmod>2026-02-13T12:00:00+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://calcrex.com/physics/</loc>
+    <lastmod>2026-02-13T12:00:00+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://calcrex.com/chemistry/</loc>
+    <lastmod>2026-02-13T12:00:00+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://calcrex.com/electricity/</loc>
+    <lastmod>2026-02-13T12:00:00+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://calcrex.com/computer-science/</loc>
+    <lastmod>2026-02-13T12:00:00+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://calcrex.com/finance/</loc>
+    <lastmod>2026-02-13T12:00:00+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://calcrex.com/date-time/</loc>
+    <lastmod>2026-02-13T12:00:00+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://calcrex.com/thermodynamics/</loc>
+    <lastmod>2026-02-13T12:00:00+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://calcrex.com/aerodynamics/</loc>
+    <lastmod>2026-02-13T12:00:00+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://calcrex.com/about/</loc>
+    <lastmod>2026-02-13T12:00:00+00:00</lastmod>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://calcrex.com/contact/</loc>
+    <lastmod>2026-02-13T12:00:00+00:00</lastmod>
+    <priority>0.50</priority>
+  </url>
 
 </urlset>

@@ -55,6 +55,7 @@
     <link rel="stylesheet" href="/css/finance.css">
     <link rel="stylesheet" href="/css/pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/fin-topics.css">
 
     <!-- Structured Data - Breadcrumbs -->
     <script type="application/ld+json">
@@ -117,6 +118,20 @@
       }
     }
     </script>
+
+    <!-- Structured Data - FAQPage (Finance Topics) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How do you calculate compound interest?", "acceptedAnswer": { "@type": "Answer", "text": "A = P(1 + r/n)^(nt) where P is principal, r is annual rate (decimal), n is compounding frequency per year, and t is years. For example, $5,000 at 7% monthly for 10 years = $10,048." } },
+        { "@type": "Question", "name": "How do you calculate a mortgage payment?", "acceptedAnswer": { "@type": "Answer", "text": "M = P × [r(1+r)^n] / [(1+r)^n - 1] where P is loan amount, r is monthly rate (annual/12), n is total payments. A $300K loan at 6.5% for 30 years = $1,896/month." } },
+        { "@type": "Question", "name": "What is the Rule of 72?", "acceptedAnswer": { "@type": "Answer", "text": "Divide 72 by the interest rate to estimate doubling time. At 8% interest, money doubles in approximately 72/8 = 9 years." } },
+        { "@type": "Question", "name": "How much do I need to retire using the 4% rule?", "acceptedAnswer": { "@type": "Answer", "text": "Multiply your annual retirement expenses by 25. If you need $60,000/year, you need $1,500,000 saved. Adjust expenses for inflation before calculating." } }
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -138,16 +153,23 @@
             </button>
 
             <!-- Navigation Menu -->
-            <nav class="main-nav" id="mainNav">
+                        <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="/" class="nav-link">Calculator</a></li>
                     <li><a href="/converters" class="nav-link">Unit Converter</a></li>
-                    <li><a href="/physics" class="nav-link">Physics</a></li>
-                    <li><a href="/chemistry" class="nav-link">Chemistry</a></li>
-                    <li><a href="/electricity" class="nav-link">Electronics</a></li>
+                    <li class="nav-dropdown">
+                        <button class="nav-link nav-dropdown-toggle">Sciences <i class="fas fa-chevron-down nav-arrow"></i></button>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a></li>
+                            <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i> Chemistry</a></li>
+                            <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i> Electronics</a></li>
+                            <li><a href="/thermodynamics" class="nav-dropdown-link"><i class="fas fa-fire"></i> Thermodynamics</a></li>
+                            <li><a href="/aerodynamics" class="nav-dropdown-link"><i class="fas fa-plane"></i> Aerodynamics</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/computer-science" class="nav-link">Computer Science</a></li>
                     <li><a href="/finance" class="nav-link active">Finance</a></li>
-                    <li><a href="/date-time" class="nav-link">Date & Time</a></li>
+                    <li><a href="/date-time" class="nav-link">Date &amp; Time</a></li>
                 </ul>
             </nav>
         </div>
@@ -168,10 +190,10 @@
                     insights.
                 </p>
                 <p class="intro-text intro-text-extra">
-                    Our finance calculators cover everything from simple interest to complex investment portfolios, 
-                    tax planning, and business valuation. Whether you're planning for retirement, analyzing investments, 
-                    comparing loans, budgeting for a home, or managing business finances, CalcREX provides 
-                    professional-grade tools with clear explanations and actionable insights. All calculators are free 
+                    Our finance calculators cover everything from simple interest to complex investment portfolios,
+                    tax planning, and business valuation. Whether you're planning for retirement, analyzing investments,
+                    comparing loans, budgeting for a home, or managing business finances, CalcREX provides
+                    professional-grade tools with clear explanations and actionable insights. All calculators are free
                     to use on any device with no registration required.
                 </p>
             </div>
@@ -320,6 +342,870 @@
         </div>
     </main>
 
+    <!-- ============================================================
+         FINANCE TOPICS - IN-DEPTH EDUCATIONAL CONTENT
+    ============================================================ -->
+    <section class="fin-topics-section" id="financeTopics">
+        <div class="fin-topics-container">
+
+            <div class="fin-topics-header">
+                <h2>Finance &amp; Money — In-Depth Guides with Worked Examples</h2>
+                <p>Master the core financial formulas every student, investor, and professional needs — from compound
+                    interest to loan amortization, ROI, and retirement planning.</p>
+            </div>
+
+            <div class="fin-topic-tabs" id="finTopicTabs">
+                <button class="fin-topic-tab active" data-fintopic="compound-interest"><i
+                        class="fas fa-chart-line"></i><span>Compound Interest</span></button>
+                <button class="fin-topic-tab" data-fintopic="loans"><i
+                        class="fas fa-file-invoice-dollar"></i><span>Loans &amp; Mortgages</span></button>
+                <button class="fin-topic-tab" data-fintopic="investments"><i
+                        class="fas fa-piggy-bank"></i><span>Investments</span></button>
+                <button class="fin-topic-tab" data-fintopic="tvm"><i class="fas fa-clock"></i><span>Time Value of
+                        Money</span></button>
+                <button class="fin-topic-tab" data-fintopic="business"><i class="fas fa-briefcase"></i><span>Business
+                        Finance</span></button>
+                <button class="fin-topic-tab" data-fintopic="retirement"><i
+                        class="fas fa-umbrella-beach"></i><span>Retirement</span></button>
+            </div>
+
+            <!-- TOPIC 1: COMPOUND INTEREST -->
+            <article class="fin-topic-content active" id="fintopic-compound-interest">
+                <div class="fin-topic-hero">
+                    <h3>Compound Interest — The Most Powerful Force in Finance</h3>
+                    <p class="fin-topic-subtitle">How money grows when interest earns interest — and why starting early
+                        matters more than investing more.</p>
+                </div>
+
+                <div class="fin-concept-block">
+                    <h4><span class="fin-concept-num">1</span> Simple vs. Compound Interest</h4>
+                    <div class="fin-two-col">
+                        <div class="fin-info-col">
+                            <div class="fin-info-title">Simple Interest</div>
+                            <div class="fin-math">I = P × r × t</div>
+                            <p>Interest only on original principal. Linear growth. Used in short-term loans.</p>
+                        </div>
+                        <div class="fin-info-col">
+                            <div class="fin-info-title">Compound Interest</div>
+                            <div class="fin-math">A = P × (1 + r/n)^(nt)</div>
+                            <p>Interest on principal + accumulated interest. Exponential growth. Used in savings,
+                                investments.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fin-concept-block">
+                    <h4><span class="fin-concept-num">2</span> The Compound Interest Formula</h4>
+                    <div class="fin-formula-box">
+                        <div class="fin-formula-main">A = P(1 + r/n)^(nt)</div>
+                        <div class="fin-formula-break"><span>A = final amount</span><span>P = principal (initial
+                                investment)</span><span>r = annual interest rate (decimal)</span><span>n = compounding
+                                frequency per year</span><span>t = time in years</span></div>
+                    </div>
+                    <div class="fin-eq-table">
+                        <div class="fin-eq-row">
+                            <div class="fin-eq-cell">n = 1</div>
+                            <div class="fin-eq-note">Annually</div>
+                        </div>
+                        <div class="fin-eq-row">
+                            <div class="fin-eq-cell">n = 4</div>
+                            <div class="fin-eq-note">Quarterly</div>
+                        </div>
+                        <div class="fin-eq-row">
+                            <div class="fin-eq-cell">n = 12</div>
+                            <div class="fin-eq-note">Monthly</div>
+                        </div>
+                        <div class="fin-eq-row">
+                            <div class="fin-eq-cell">n = 365</div>
+                            <div class="fin-eq-note">Daily</div>
+                        </div>
+                        <div class="fin-eq-row">
+                            <div class="fin-eq-cell">n → ∞</div>
+                            <div class="fin-eq-note">Continuous: A = Pe^(rt)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fin-example">
+                    <div class="fin-ex-header"><span class="fin-ex-badge">Worked Example 1</span>
+                        <h5>Compound Interest — Monthly Compounding</h5>
+                    </div>
+                    <div class="fin-ex-problem"><strong>Problem:</strong> You invest $5,000 at 7% annual interest,
+                        compounded monthly, for 10 years. What is the final amount? How much is interest earned?</div>
+                    <div class="fin-ex-solution">
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 1: Identify variables</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">P = $5,000, r = 0.07, n = 12, t = 10</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 2: Apply formula</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">A = 5000 × (1 + 0.07/12)^(12 × 10)</div>
+                                <div class="fin-math">= 5000 × (1.005833)^120</div>
+                                <div class="fin-math">= 5000 × 2.00966</div>
+                                <div class="fin-math fin-result">A = $10,048.31</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 3: Interest earned</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">Interest = A − P = $10,048.31 − $5,000</div>
+                                <div class="fin-math fin-result">Interest = $5,048.31</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-ex-answer"><strong>Answer:</strong> $10,048.31 total, with $5,048.31 in interest —
+                        you've more than doubled your money. Simple interest would have yielded only $3,500 in interest
+                        ($8,500 total). That extra $1,548 is compound interest working on accumulated interest.</div>
+                </div>
+
+                <div class="fin-concept-block">
+                    <h4><span class="fin-concept-num">3</span> The Rule of 72</h4>
+                    <p>A quick mental math shortcut to estimate how long it takes to double your money.</p>
+                    <div class="fin-formula-box">
+                        <div class="fin-formula-main">Years to double ≈ 72 / interest rate (%)</div>
+                        <div class="fin-formula-break"><span>At 6%: 72/6 = 12 years</span><span>At 8%: 72/8 = 9
+                                years</span><span>At 12%: 72/12 = 6 years</span></div>
+                    </div>
+                    <div class="fin-insight"><i class="fas fa-lightbulb"></i><span><strong>Works in reverse
+                                too:</strong> If prices double in 10 years, inflation ≈ 72/10 = 7.2%. If your debt
+                            doubles in 6 years, you're paying ≈ 72/6 = 12% interest.</span></div>
+                </div>
+
+                <div class="fin-example">
+                    <div class="fin-ex-header"><span class="fin-ex-badge">Worked Example 2</span>
+                        <h5>The Power of Starting Early</h5>
+                    </div>
+                    <div class="fin-ex-problem"><strong>Problem:</strong> Alice invests $200/month from age 25 to 35 (10
+                        years), then stops. Bob invests $200/month from age 35 to 65 (30 years). Both earn 8% annually.
+                        Who has more at 65?</div>
+                    <div class="fin-ex-solution">
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Alice: 10 years of contributions, then 30 years of growth</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">FV after 10 yrs = 200 × [((1+0.08/12)^120 − 1)/(0.08/12)]</div>
+                                <div class="fin-math">= $36,589</div>
+                                <div class="fin-math">Then grows 30 more years: $36,589 × (1.00667)^360</div>
+                                <div class="fin-math fin-result">Alice at 65: $398,807</div>
+                                <p>Total contributed: $200 × 120 = $24,000</p>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Bob: 30 years of contributions</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">FV = 200 × [((1+0.08/12)^360 − 1)/(0.08/12)]</div>
+                                <div class="fin-math fin-result">Bob at 65: $298,072</div>
+                                <p>Total contributed: $200 × 360 = $72,000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-ex-answer"><strong>Answer:</strong> Alice: $398,807 (invested $24K). Bob: $298,072
+                        (invested $72K). Alice invested 3× less money but ends up with $100K more — because her money
+                        had 30 extra years of compounding. Start early.</div>
+                </div>
+
+                <div class="fin-example">
+                    <div class="fin-ex-header"><span class="fin-ex-badge">Worked Example 3</span>
+                        <h5>APR vs. APY — What You Actually Earn</h5>
+                    </div>
+                    <div class="fin-ex-problem"><strong>Problem:</strong> A savings account advertises 5% APR compounded
+                        daily. What is the actual APY (Annual Percentage Yield)?</div>
+                    <div class="fin-ex-solution">
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 1: APY formula</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">APY = (1 + r/n)^n − 1</div>
+                                <div class="fin-math">= (1 + 0.05/365)^365 − 1</div>
+                                <div class="fin-math">= (1.000137)^365 − 1</div>
+                                <div class="fin-math fin-result">APY = 5.127%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-ex-answer"><strong>Answer:</strong> 5.127% APY. The more frequently interest
+                        compounds, the higher the effective yield. APR is the nominal rate; APY is what you actually
+                        earn. Always compare APY when choosing savings accounts.</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 2: LOANS & MORTGAGES -->
+            <article class="fin-topic-content" id="fintopic-loans">
+                <div class="fin-topic-hero">
+                    <h3>Loans &amp; Mortgages — Monthly Payments, Amortization &amp; Total Cost</h3>
+                    <p class="fin-topic-subtitle">How to calculate what you'll actually pay — and strategies to save
+                        thousands in interest.</p>
+                </div>
+
+                <div class="fin-concept-block">
+                    <h4><span class="fin-concept-num">1</span> The Loan Payment Formula</h4>
+                    <p>The standard formula for fixed-rate loan payments (mortgages, car loans, personal loans).</p>
+                    <div class="fin-formula-box">
+                        <div class="fin-formula-main">M = P × [r(1+r)^n] / [(1+r)^n − 1]</div>
+                        <div class="fin-formula-break"><span>M = monthly payment</span><span>P = principal (loan
+                                amount)</span><span>r = monthly interest rate (annual rate / 12)</span><span>n = total
+                                number of payments (years × 12)</span></div>
+                    </div>
+                </div>
+
+                <div class="fin-example">
+                    <div class="fin-ex-header"><span class="fin-ex-badge">Worked Example 1</span>
+                        <h5>Mortgage Payment Calculation</h5>
+                    </div>
+                    <div class="fin-ex-problem"><strong>Problem:</strong> You take a $300,000 mortgage at 6.5% for 30
+                        years. What is the monthly payment? How much total interest will you pay?</div>
+                    <div class="fin-ex-solution">
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 1: Convert to monthly values</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">P = $300,000</div>
+                                <div class="fin-math">r = 0.065/12 = 0.005417</div>
+                                <div class="fin-math">n = 30 × 12 = 360 payments</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 2: Apply formula</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">M = 300000 × [0.005417(1.005417)^360] / [(1.005417)^360 − 1]</div>
+                                <div class="fin-math">= 300000 × [0.005417 × 6.9916] / [6.9916 − 1]</div>
+                                <div class="fin-math">= 300000 × 0.03788 / 5.9916</div>
+                                <div class="fin-math fin-result">M = $1,896.20/month</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 3: Total cost &amp; interest</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">Total paid = $1,896.20 × 360 = $682,632</div>
+                                <div class="fin-math fin-result">Total interest = $682,632 − $300,000 = $382,632</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-ex-answer"><strong>Answer:</strong> $1,896.20/month, with $382,632 in total interest
+                        — more than the original loan! This is why even small rate differences matter enormously over 30
+                        years.</div>
+                </div>
+
+                <div class="fin-concept-block">
+                    <h4><span class="fin-concept-num">2</span> Amortization — Where Your Payment Goes</h4>
+                    <p>Each payment is split between interest and principal. Early payments are mostly interest; later
+                        payments are mostly principal.</p>
+                    <div class="fin-insight"><i class="fas fa-lightbulb"></i><span><strong>First payment
+                                breakdown</strong> on our $300K mortgage: Interest = $300,000 × 0.005417 = $1,625.
+                            Principal = $1,896.20 − $1,625 = $271.20. Only $271 reduces your balance! By payment #300,
+                            it flips: ~$1,700 goes to principal.</span></div>
+                </div>
+
+                <div class="fin-example">
+                    <div class="fin-ex-header"><span class="fin-ex-badge">Worked Example 2</span>
+                        <h5>Extra Payments — How Much Do You Save?</h5>
+                    </div>
+                    <div class="fin-ex-problem"><strong>Problem:</strong> On the same $300,000 mortgage at 6.5%, you pay
+                        an extra $200/month. How many years do you save? How much interest?</div>
+                    <div class="fin-ex-solution">
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 1: New payment amount</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">New M = $1,896.20 + $200 = $2,096.20</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 2: Solve for new n</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">n = −ln(1 − P×r/M) / ln(1+r)</div>
+                                <div class="fin-math">= −ln(1 − 300000×0.005417/2096.20) / ln(1.005417)</div>
+                                <div class="fin-math">= −ln(0.2248) / 0.005402</div>
+                                <div class="fin-math fin-result">n ≈ 277 months = 23.1 years (saves ~7 years!)</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 3: Interest saved</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">New total = $2,096.20 × 277 = $580,647</div>
+                                <div class="fin-math">Old total = $682,632</div>
+                                <div class="fin-math fin-result">Interest saved = $101,985</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-ex-answer"><strong>Answer:</strong> 7 years off the mortgage and ~$102,000 saved in
+                        interest — by adding just $200/month. Extra payments go 100% to principal, which reduces future
+                        interest calculations.</div>
+                </div>
+
+                <div class="fin-example">
+                    <div class="fin-ex-header"><span class="fin-ex-badge">Worked Example 3</span>
+                        <h5>Car Loan — Total Cost Comparison</h5>
+                    </div>
+                    <div class="fin-ex-problem"><strong>Problem:</strong> A $25,000 car loan at 4.9% for 5 years vs.
+                        7.2% for 6 years. Compare monthly payments and total cost.</div>
+                    <div class="fin-ex-solution">
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Option A: 4.9%, 5 years</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">r = 0.049/12 = 0.004083, n = 60</div>
+                                <div class="fin-math">M = 25000 × 0.004083(1.004083)^60 / [(1.004083)^60 − 1]</div>
+                                <div class="fin-math fin-result">M = $471.78/month | Total = $28,307</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Option B: 7.2%, 6 years</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">r = 0.072/12 = 0.006, n = 72</div>
+                                <div class="fin-math">M = 25000 × 0.006(1.006)^72 / [(1.006)^72 − 1]</div>
+                                <div class="fin-math fin-result">M = $429.65/month | Total = $30,935</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-ex-answer"><strong>Answer:</strong> Option B has lower payments ($42 less/month) but
+                        costs $2,628 more overall. The "affordable" payment costs more. Always compare total cost, not
+                        just monthly payments.</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 3: INVESTMENTS -->
+            <article class="fin-topic-content" id="fintopic-investments">
+                <div class="fin-topic-hero">
+                    <h3>Investments — ROI, CAGR &amp; Portfolio Returns</h3>
+                    <p class="fin-topic-subtitle">How to measure investment performance — the formulas that separate
+                        real gains from misleading numbers.</p>
+                </div>
+
+                <div class="fin-concept-block">
+                    <h4><span class="fin-concept-num">1</span> Return on Investment (ROI)</h4>
+                    <div class="fin-formula-box">
+                        <div class="fin-formula-main">ROI = (Gain − Cost) / Cost × 100%</div>
+                        <div class="fin-formula-break"><span>Simple percentage return</span><span>Does NOT account for
+                                time</span></div>
+                    </div>
+                </div>
+
+                <div class="fin-concept-block">
+                    <h4><span class="fin-concept-num">2</span> CAGR — Compound Annual Growth Rate</h4>
+                    <p>CAGR is the smoothed annual rate of return, accounting for compounding. It's the best way to
+                        compare investments of different durations.</p>
+                    <div class="fin-formula-box">
+                        <div class="fin-formula-main">CAGR = (Ending/Beginning)^(1/years) − 1</div>
+                        <div class="fin-formula-break"><span>Annualized return — allows apples-to-apples
+                                comparison</span><span>Smooths out volatility over the period</span></div>
+                    </div>
+                </div>
+
+                <div class="fin-example">
+                    <div class="fin-ex-header"><span class="fin-ex-badge">Worked Example 1</span>
+                        <h5>ROI vs. CAGR — Which Is Better?</h5>
+                    </div>
+                    <div class="fin-ex-problem"><strong>Problem:</strong> Investment A: $10,000 → $18,000 in 5 years.
+                        Investment B: $10,000 → $15,000 in 3 years. Which performed better?</div>
+                    <div class="fin-ex-solution">
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 1: Simple ROI</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">ROI(A) = (18000 − 10000)/10000 = 80%</div>
+                                <div class="fin-math">ROI(B) = (15000 − 10000)/10000 = 50%</div>
+                                <p>ROI says A is better — but that's misleading!</p>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 2: CAGR (annualized)</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">CAGR(A) = (18000/10000)^(1/5) − 1 = 1.8^0.2 − 1</div>
+                                <div class="fin-math fin-result">CAGR(A) = 12.47% per year</div>
+                                <div class="fin-math">CAGR(B) = (15000/10000)^(1/3) − 1 = 1.5^0.333 − 1</div>
+                                <div class="fin-math fin-result">CAGR(B) = 14.47% per year</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-ex-answer"><strong>Answer:</strong> B is actually better (14.47% vs 12.47%
+                        annually). If you reinvested B's returns for 5 years at the same rate, you'd have $19,687 — more
+                        than A's $18,000. Always use CAGR to compare investments of different lengths.</div>
+                </div>
+
+                <div class="fin-concept-block">
+                    <h4><span class="fin-concept-num">3</span> Dollar-Cost Averaging (DCA)</h4>
+                    <p>Investing a fixed dollar amount at regular intervals, regardless of price. You buy more shares
+                        when prices are low and fewer when prices are high.</p>
+                    <div class="fin-insight"><i class="fas fa-lightbulb"></i><span><strong>Why DCA works:</strong> Your
+                            average cost per share is always lower than the average price per share (harmonic mean <
+                                arithmetic mean). It also removes the emotional temptation to time the market.</span>
+                    </div>
+                </div>
+
+                <div class="fin-example">
+                    <div class="fin-ex-header"><span class="fin-ex-badge">Worked Example 2</span>
+                        <h5>Dollar-Cost Averaging in Action</h5>
+                    </div>
+                    <div class="fin-ex-problem"><strong>Problem:</strong> You invest $500/month for 4 months. Share
+                        prices are: $50, $40, $25, $50. What is your average cost vs. average price?</div>
+                    <div class="fin-ex-solution">
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 1: Shares purchased each month</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">Month 1: $500/$50 = 10 shares</div>
+                                <div class="fin-math">Month 2: $500/$40 = 12.5 shares</div>
+                                <div class="fin-math">Month 3: $500/$25 = 20 shares</div>
+                                <div class="fin-math">Month 4: $500/$50 = 10 shares</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 2: Compare averages</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">Total shares = 52.5</div>
+                                <div class="fin-math">Total invested = $2,000</div>
+                                <div class="fin-math fin-result">Avg cost/share = $2000/52.5 = $38.10</div>
+                                <div class="fin-math">Avg price = ($50+$40+$25+$50)/4 = $41.25</div>
+                                <div class="fin-math">Current value = 52.5 × $50 = $2,625</div>
+                                <div class="fin-math fin-result">Gain = $625 (31.25% return)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-ex-answer"><strong>Answer:</strong> Average cost $38.10 vs average price $41.25 —
+                        DCA saved $3.15/share. Even though the price ended where it started ($50), you're up 31.25%
+                        because you bought heavily during the dip. DCA turns volatility into an advantage.</div>
+                </div>
+
+                <div class="fin-example">
+                    <div class="fin-ex-header"><span class="fin-ex-badge">Worked Example 3</span>
+                        <h5>Real Return After Inflation</h5>
+                    </div>
+                    <div class="fin-ex-problem"><strong>Problem:</strong> Your portfolio returned 9% this year.
+                        Inflation was 3.5%. What is your real (inflation-adjusted) return?</div>
+                    <div class="fin-ex-solution">
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 1: Fisher equation (precise method)</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">Real return = [(1 + nominal)/(1 + inflation)] − 1</div>
+                                <div class="fin-math">= (1.09/1.035) − 1</div>
+                                <div class="fin-math fin-result">Real return = 5.31%</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Quick approximation</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">Real ≈ Nominal − Inflation = 9% − 3.5%</div>
+                                <div class="fin-math fin-result">≈ 5.5% (close but slightly overestimates)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-ex-answer"><strong>Answer:</strong> 5.31% real return. Always adjust for inflation
+                        when evaluating long-term performance. A "12% return" during 8% inflation is only 3.7% real
+                        growth in purchasing power.</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 4: TIME VALUE OF MONEY -->
+            <article class="fin-topic-content" id="fintopic-tvm">
+                <div class="fin-topic-hero">
+                    <h3>Time Value of Money — Present Value, Future Value &amp; Annuities</h3>
+                    <p class="fin-topic-subtitle">The central principle of all finance — a dollar today is worth more
+                        than a dollar tomorrow.</p>
+                </div>
+
+                <div class="fin-concept-block">
+                    <h4><span class="fin-concept-num">1</span> Present Value &amp; Future Value</h4>
+                    <p>Money has a time dimension. Present value (PV) answers "what is a future sum worth today?" Future
+                        value (FV) answers "what will today's money be worth later?"</p>
+                    <div class="fin-two-col">
+                        <div class="fin-info-col">
+                            <div class="fin-info-title">Future Value</div>
+                            <div class="fin-math">FV = PV × (1 + r)^n</div>
+                            <p>Growing money forward. What will $X become?</p>
+                        </div>
+                        <div class="fin-info-col">
+                            <div class="fin-info-title">Present Value</div>
+                            <div class="fin-math">PV = FV / (1 + r)^n</div>
+                            <p>Discounting money back. What is future $X worth now?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fin-example">
+                    <div class="fin-ex-header"><span class="fin-ex-badge">Worked Example 1</span>
+                        <h5>Present Value — Is This Deal Worth It?</h5>
+                    </div>
+                    <div class="fin-ex-problem"><strong>Problem:</strong> Someone offers you $50,000 five years from
+                        now, or $38,000 cash today. If you can earn 6% annually on investments, which is better?</div>
+                    <div class="fin-ex-solution">
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 1: Find PV of the $50,000 offer</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">PV = FV / (1 + r)^n = 50000 / (1.06)^5</div>
+                                <div class="fin-math">= 50000 / 1.3382</div>
+                                <div class="fin-math fin-result">PV = $37,363</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 2: Compare</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">$38,000 today > $37,363 (PV of future $50K)</div>
+                                <div class="fin-math fin-result">Take the $38,000 cash today</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-ex-answer"><strong>Answer:</strong> Take $38,000 today. Invested at 6%, it grows to
+                        $50,853 in 5 years — $853 more than the future offer. The discount rate (your alternative
+                        return) is what makes TVM decisions possible.</div>
+                </div>
+
+                <div class="fin-concept-block">
+                    <h4><span class="fin-concept-num">2</span> Annuities — Streams of Equal Payments</h4>
+                    <p>An <strong>annuity</strong> is a series of equal payments at regular intervals — like loan
+                        payments, pension income, or systematic investments.</p>
+                    <div class="fin-formula-box">
+                        <div class="fin-formula-main">FV(annuity) = PMT × [(1+r)^n − 1] / r</div>
+                        <div class="fin-formula-break"><span>PMT = payment per period</span><span>r = interest rate per
+                                period</span><span>n = number of periods</span></div>
+                    </div>
+                    <div class="fin-formula-box">
+                        <div class="fin-formula-main">PV(annuity) = PMT × [1 − (1+r)^(−n)] / r</div>
+                        <div class="fin-formula-break"><span>Used to value loan streams, pensions, leases</span></div>
+                    </div>
+                </div>
+
+                <div class="fin-example">
+                    <div class="fin-ex-header"><span class="fin-ex-badge">Worked Example 2</span>
+                        <h5>Annuity — Saving for a Goal</h5>
+                    </div>
+                    <div class="fin-ex-problem"><strong>Problem:</strong> You want $100,000 in 15 years. You can earn 7%
+                        annually, compounded monthly. How much must you save each month?</div>
+                    <div class="fin-ex-solution">
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 1: Rearrange FV annuity for PMT</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">PMT = FV × r / [(1+r)^n − 1]</div>
+                                <div class="fin-math">r = 0.07/12 = 0.005833, n = 180</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 2: Calculate</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">PMT = 100000 × 0.005833 / [(1.005833)^180 − 1]</div>
+                                <div class="fin-math">= 583.33 / [2.8484 − 1]</div>
+                                <div class="fin-math">= 583.33 / 1.8484</div>
+                                <div class="fin-math fin-result">PMT = $315.58/month</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-ex-answer"><strong>Answer:</strong> $315.58/month. Total contributions: $56,804.
+                        Interest earned: $43,196. Almost half the goal comes from compound returns — the longer your
+                        timeline, the more compounding does the heavy lifting.</div>
+                </div>
+
+                <div class="fin-example">
+                    <div class="fin-ex-header"><span class="fin-ex-badge">Worked Example 3</span>
+                        <h5>PV of Annuity — What's a Pension Worth?</h5>
+                    </div>
+                    <div class="fin-ex-problem"><strong>Problem:</strong> A pension pays $2,000/month for 25 years. If
+                        the discount rate is 5%, what is the lump-sum present value?</div>
+                    <div class="fin-ex-solution">
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 1: Monthly rate and periods</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">r = 0.05/12 = 0.004167, n = 300</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 2: PV annuity formula</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">PV = 2000 × [1 − (1.004167)^(−300)] / 0.004167</div>
+                                <div class="fin-math">= 2000 × [1 − 0.2873] / 0.004167</div>
+                                <div class="fin-math">= 2000 × 170.95</div>
+                                <div class="fin-math fin-result">PV = $341,902</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-ex-answer"><strong>Answer:</strong> $341,902. The pension will pay $600,000 total,
+                        but discounted to today it's worth $342K. This is how insurance companies price annuity buyouts
+                        and how courts value future income in lawsuits.</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 5: BUSINESS FINANCE -->
+            <article class="fin-topic-content" id="fintopic-business">
+                <div class="fin-topic-hero">
+                    <h3>Business Finance — Break-Even, Profit Margin &amp; Cash Flow</h3>
+                    <p class="fin-topic-subtitle">The numbers every business owner and finance student needs — from
+                        pricing decisions to profitability analysis.</p>
+                </div>
+
+                <div class="fin-concept-block">
+                    <h4><span class="fin-concept-num">1</span> Break-Even Analysis</h4>
+                    <p>The break-even point is where total revenue equals total costs — no profit, no loss. Every unit
+                        sold beyond this point generates profit.</p>
+                    <div class="fin-formula-box">
+                        <div class="fin-formula-main">BEP (units) = Fixed Costs / (Price − Variable Cost)</div>
+                        <div class="fin-formula-break"><span>Price − Variable Cost = Contribution Margin per
+                                unit</span><span>BEP (revenue) = Fixed Costs / CM Ratio</span><span>CM Ratio =
+                                Contribution Margin / Price</span></div>
+                    </div>
+                </div>
+
+                <div class="fin-example">
+                    <div class="fin-ex-header"><span class="fin-ex-badge">Worked Example 1</span>
+                        <h5>Break-Even Point</h5>
+                    </div>
+                    <div class="fin-ex-problem"><strong>Problem:</strong> A bakery has fixed costs of $4,500/month. Each
+                        cake costs $8 to make and sells for $25. How many cakes must they sell to break even? What
+                        revenue is needed?</div>
+                    <div class="fin-ex-solution">
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 1: Contribution margin</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">CM = Price − Variable Cost = $25 − $8</div>
+                                <div class="fin-math fin-result">CM = $17 per cake</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 2: Break-even units</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">BEP = $4,500 / $17</div>
+                                <div class="fin-math fin-result">BEP = 265 cakes/month</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 3: Break-even revenue</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">Revenue = 265 × $25</div>
+                                <div class="fin-math fin-result">= $6,625/month</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-ex-answer"><strong>Answer:</strong> 265 cakes ($6,625 revenue). Every cake after
+                        #265 generates $17 profit. If they sell 350 cakes: profit = (350 − 265) × $17 = $1,445/month.
+                    </div>
+                </div>
+
+                <div class="fin-concept-block">
+                    <h4><span class="fin-concept-num">2</span> Profit Margins</h4>
+                    <div class="fin-eq-table">
+                        <div class="fin-eq-row">
+                            <div class="fin-eq-cell">Gross Margin</div>
+                            <div class="fin-eq-note">(Revenue − COGS) / Revenue × 100</div>
+                        </div>
+                        <div class="fin-eq-row">
+                            <div class="fin-eq-cell">Operating Margin</div>
+                            <div class="fin-eq-note">(Revenue − COGS − OpEx) / Revenue × 100</div>
+                        </div>
+                        <div class="fin-eq-row">
+                            <div class="fin-eq-cell">Net Margin</div>
+                            <div class="fin-eq-note">Net Income / Revenue × 100</div>
+                        </div>
+                        <div class="fin-eq-row">
+                            <div class="fin-eq-cell">Markup</div>
+                            <div class="fin-eq-note">(Price − Cost) / Cost × 100</div>
+                        </div>
+                    </div>
+                    <div class="fin-insight"><i class="fas fa-lightbulb"></i><span><strong>Margin ≠ Markup!</strong> A
+                            product bought for $60 and sold for $100 has 40% margin but 66.7% markup. Margin is based on
+                            selling price; markup is based on cost. Confusing them is a costly mistake in
+                            pricing.</span></div>
+                </div>
+
+                <div class="fin-example">
+                    <div class="fin-ex-header"><span class="fin-ex-badge">Worked Example 2</span>
+                        <h5>Margin vs. Markup</h5>
+                    </div>
+                    <div class="fin-ex-problem"><strong>Problem:</strong> A retailer wants a 40% profit margin on a
+                        product that costs $45 wholesale. What should the selling price be? What is the markup
+                        percentage?</div>
+                    <div class="fin-ex-solution">
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 1: Selling price from margin</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">Margin = (Price − Cost)/Price</div>
+                                <div class="fin-math">0.40 = (Price − 45)/Price</div>
+                                <div class="fin-math">Price − 0.40 × Price = 45</div>
+                                <div class="fin-math">0.60 × Price = 45</div>
+                                <div class="fin-math fin-result">Price = $75.00</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 2: Markup percentage</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">Markup = (75 − 45)/45 × 100</div>
+                                <div class="fin-math fin-result">Markup = 66.7%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-ex-answer"><strong>Answer:</strong> Sell at $75 for 40% margin (66.7% markup). Quick
+                        conversion: Margin = Markup/(1+Markup). Markup = Margin/(1−Margin). A 50% margin = 100% markup
+                        (doubling the cost).</div>
+                </div>
+
+                <div class="fin-example">
+                    <div class="fin-ex-header"><span class="fin-ex-badge">Worked Example 3</span>
+                        <h5>Net Present Value (NPV) — Should You Take the Project?</h5>
+                    </div>
+                    <div class="fin-ex-problem"><strong>Problem:</strong> A project costs $50,000 upfront and generates
+                        $15,000/year for 5 years. Required return is 10%. Should you invest?</div>
+                    <div class="fin-ex-solution">
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 1: PV of each year's cash flow</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">Year 1: $15,000/1.10 = $13,636</div>
+                                <div class="fin-math">Year 2: $15,000/1.21 = $12,397</div>
+                                <div class="fin-math">Year 3: $15,000/1.331 = $11,270</div>
+                                <div class="fin-math">Year 4: $15,000/1.4641 = $10,245</div>
+                                <div class="fin-math">Year 5: $15,000/1.6105 = $9,314</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 2: Calculate NPV</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">Sum of PVs = $56,862</div>
+                                <div class="fin-math">NPV = $56,862 − $50,000</div>
+                                <div class="fin-math fin-result">NPV = +$6,862 → ACCEPT the project</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-ex-answer"><strong>Answer:</strong> NPV = +$6,862. Positive NPV means the project
+                        returns more than the 10% required rate. The total undiscounted cash is $75,000, but adjusted
+                        for time and risk, the net gain is $6,862 in today's dollars.</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 6: RETIREMENT PLANNING -->
+            <article class="fin-topic-content" id="fintopic-retirement">
+                <div class="fin-topic-hero">
+                    <h3>Retirement Planning — Savings Goals, Withdrawal Rates &amp; Inflation</h3>
+                    <p class="fin-topic-subtitle">How much do you actually need to retire? The math behind the 4% rule,
+                        required savings, and making your money last.</p>
+                </div>
+
+                <div class="fin-concept-block">
+                    <h4><span class="fin-concept-num">1</span> The 4% Rule (Safe Withdrawal Rate)</h4>
+                    <p>The 4% rule suggests you can withdraw 4% of your portfolio in year 1, then adjust for inflation
+                        each year, and your money should last 30+ years.</p>
+                    <div class="fin-formula-box">
+                        <div class="fin-formula-main">Retirement Nest Egg = Annual Expenses × 25</div>
+                        <div class="fin-formula-break"><span>Based on 4% withdrawal rate (1/0.04 = 25)</span><span>Need
+                                $40K/year → save $1,000,000</span><span>Need $60K/year → save $1,500,000</span></div>
+                    </div>
+                    <div class="fin-insight"><i class="fas fa-lightbulb"></i><span><strong>Why 25×?</strong> The Trinity
+                            Study showed that a 4% initial withdrawal rate, adjusted for inflation, survived 30-year
+                            periods 95% of the time with a 50/50 stock/bond portfolio. It's a starting guideline, not a
+                            guarantee.</span></div>
+                </div>
+
+                <div class="fin-example">
+                    <div class="fin-ex-header"><span class="fin-ex-badge">Worked Example 1</span>
+                        <h5>How Much Do You Need to Retire?</h5>
+                    </div>
+                    <div class="fin-ex-problem"><strong>Problem:</strong> You spend $4,500/month now and expect to need
+                        80% of that in retirement. Inflation averages 3%. You retire in 20 years. What nest egg do you
+                        need (in future dollars)?</div>
+                    <div class="fin-ex-solution">
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 1: Current retirement spending need</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">Annual need = $4,500 × 12 × 0.80 = $43,200</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 2: Adjust for inflation (20 years)</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">Future annual need = $43,200 × (1.03)^20</div>
+                                <div class="fin-math">= $43,200 × 1.8061</div>
+                                <div class="fin-math fin-result">= $78,024/year in future dollars</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 3: Apply 25× rule</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math fin-result">Nest egg = $78,024 × 25 = $1,950,600</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-ex-answer"><strong>Answer:</strong> ~$1.95 million. Without adjusting for inflation,
+                        you'd target only $1.08M — and run out of money because $43,200 won't buy the same goods in 20
+                        years. Always plan in future dollars.</div>
+                </div>
+
+                <div class="fin-concept-block">
+                    <h4><span class="fin-concept-num">2</span> Required Monthly Savings</h4>
+                    <p>Once you know your target nest egg, work backwards to find the monthly savings needed using the
+                        FV annuity formula.</p>
+                    <div class="fin-formula-box">
+                        <div class="fin-formula-main">PMT = FV × r / [(1+r)^n − 1]</div>
+                        <div class="fin-formula-break"><span>FV = retirement target</span><span>r = monthly return
+                                rate</span><span>n = months until retirement</span></div>
+                    </div>
+                </div>
+
+                <div class="fin-example">
+                    <div class="fin-ex-header"><span class="fin-ex-badge">Worked Example 2</span>
+                        <h5>Monthly Savings to Reach Your Goal</h5>
+                    </div>
+                    <div class="fin-ex-problem"><strong>Problem:</strong> You need $1,950,600 in 20 years. You already
+                        have $50,000 saved. Expected return: 8% annually. How much must you save monthly?</div>
+                    <div class="fin-ex-solution">
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 1: Future value of existing savings</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">FV(existing) = $50,000 × (1 + 0.08/12)^240</div>
+                                <div class="fin-math fin-result">= $50,000 × 4.9268 = $246,341</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 2: Remaining gap</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math fin-result">Gap = $1,950,600 − $246,341 = $1,704,259</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 3: Monthly savings needed</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">r = 0.08/12 = 0.00667, n = 240</div>
+                                <div class="fin-math">PMT = 1,704,259 × 0.00667 / [(1.00667)^240 − 1]</div>
+                                <div class="fin-math">= 11,364 / [4.9268 − 1]</div>
+                                <div class="fin-math fin-result">PMT = $2,893/month</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-ex-answer"><strong>Answer:</strong> $2,893/month. Total contributions: $50,000 +
+                        ($2,893 × 240) = $744,320. The remaining $1.2M comes from investment returns — compounding does
+                        most of the work over 20 years.</div>
+                </div>
+
+                <div class="fin-example">
+                    <div class="fin-ex-header"><span class="fin-ex-badge">Worked Example 3</span>
+                        <h5>How Long Will Your Savings Last?</h5>
+                    </div>
+                    <div class="fin-ex-problem"><strong>Problem:</strong> You retire with $800,000 and withdraw
+                        $3,500/month. Your portfolio earns 5% annually. How many years will it last?</div>
+                    <div class="fin-ex-solution">
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 1: Monthly rate</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">r = 0.05/12 = 0.004167</div>
+                            </div>
+                        </div>
+                        <div class="fin-sol-step">
+                            <div class="fin-sol-label">Step 2: Solve for n (months)</div>
+                            <div class="fin-sol-content">
+                                <div class="fin-math">n = −ln(1 − PV×r/PMT) / ln(1+r)</div>
+                                <div class="fin-math">= −ln(1 − 800000×0.004167/3500) / ln(1.004167)</div>
+                                <div class="fin-math">= −ln(1 − 0.9524) / 0.004158</div>
+                                <div class="fin-math">= −ln(0.0476) / 0.004158</div>
+                                <div class="fin-math">= 3.045 / 0.004158</div>
+                                <div class="fin-math fin-result">n ≈ 732 months ≈ 61 years</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fin-ex-answer"><strong>Answer:</strong> ~61 years — well beyond a typical retirement.
+                        The 5% return almost covers the withdrawals ($3,333/month in interest vs $3,500 withdrawn), so
+                        the principal depletes very slowly. If returns drop to 3%, it lasts only 28 years — highlighting
+                        why return assumptions matter enormously.</div>
+                </div>
+            </article>
+
+        </div><!-- end fin-topics-container -->
+    </section><!-- end fin-topics-section -->
+
+
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
@@ -358,6 +1244,7 @@
     <script src="/js/nav.js"></script>
     <script src="/js/script.js"></script>
     <script src="/js/finance.js"></script>
+    <script src="/js/fin-topics.js"></script>
 
     <!-- Google AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"

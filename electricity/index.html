@@ -56,6 +56,7 @@
     <link rel="stylesheet" href="/css/electricity.css">
     <link rel="stylesheet" href="/css/pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/elec-topics.css">
 
     <!-- Structured Data - Breadcrumbs -->
     <script type="application/ld+json">
@@ -118,6 +119,20 @@
       }
     }
     </script>
+
+    <!-- Structured Data - FAQPage (Electricity Topics) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is Ohm's Law and how do you use it?", "acceptedAnswer": { "@type": "Answer", "text": "Ohm's Law states V = I × R (voltage = current × resistance). To find any one variable, you need the other two. It's the foundation of all DC circuit analysis." } },
+        { "@type": "Question", "name": "How do you calculate total resistance in series and parallel circuits?", "acceptedAnswer": { "@type": "Answer", "text": "In series: R_total = R1 + R2 + R3. In parallel: 1/R_total = 1/R1 + 1/R2 + 1/R3. For two parallel resistors: R_total = (R1 × R2)/(R1 + R2)." } },
+        { "@type": "Question", "name": "How do you size an LED resistor?", "acceptedAnswer": { "@type": "Answer", "text": "R = (V_supply - V_LED) / I_LED. For example, a red LED (2V, 20mA) on 5V needs R = (5-2)/0.02 = 150 ohms." } },
+        { "@type": "Question", "name": "What is impedance in AC circuits?", "acceptedAnswer": { "@type": "Answer", "text": "Impedance Z combines resistance R with reactance from capacitors (Xc) and inductors (XL). Z = sqrt(R² + (XL - XC)²). At resonance, XL = XC and Z = R." } }
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -139,16 +154,23 @@
             </button>
 
             <!-- Navigation Menu -->
-            <nav class="main-nav" id="mainNav">
+                        <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="/" class="nav-link">Calculator</a></li>
                     <li><a href="/converters" class="nav-link">Unit Converter</a></li>
-                    <li><a href="/physics" class="nav-link">Physics</a></li>
-                    <li><a href="/chemistry" class="nav-link">Chemistry</a></li>
-                    <li><a href="/electricity" class="nav-link active">Electronics</a></li>
+                    <li class="nav-dropdown">
+                        <button class="nav-link nav-dropdown-toggle active">Sciences <i class="fas fa-chevron-down nav-arrow"></i></button>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a></li>
+                            <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i> Chemistry</a></li>
+                            <li><a href="/electricity" class="nav-dropdown-link active"><i class="fas fa-bolt"></i> Electronics</a></li>
+                            <li><a href="/thermodynamics" class="nav-dropdown-link"><i class="fas fa-fire"></i> Thermodynamics</a></li>
+                            <li><a href="/aerodynamics" class="nav-dropdown-link"><i class="fas fa-plane"></i> Aerodynamics</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/computer-science" class="nav-link">Computer Science</a></li>
                     <li><a href="/finance" class="nav-link">Finance</a></li>
-                    <li><a href="/date-time" class="nav-link">Date & Time</a></li>
+                    <li><a href="/date-time" class="nav-link">Date &amp; Time</a></li>
                 </ul>
             </nav>
         </div>
@@ -168,10 +190,10 @@
                     circuit diagrams, formulas, and practical applications.
                 </p>
                 <p class="intro-text intro-text-extra">
-                    Our electronics calculators cover AC/DC circuits, power electronics, digital systems, and component 
-                    calculations. Whether you're designing circuits, troubleshooting electronics, studying for 
-                    certification exams, or working on DIY projects, CalcREX provides reliable tools with clear 
-                    explanations and practical insights. All calculators work seamlessly on any device and are 
+                    Our electronics calculators cover AC/DC circuits, power electronics, digital systems, and component
+                    calculations. Whether you're designing circuits, troubleshooting electronics, studying for
+                    certification exams, or working on DIY projects, CalcREX provides reliable tools with clear
+                    explanations and practical insights. All calculators work seamlessly on any device and are
                     completely free to use with no registration required.
                 </p>
             </div>
@@ -326,6 +348,1026 @@
         </div>
     </main>
 
+    <!-- ============================================================
+         ELECTRICITY TOPICS - IN-DEPTH EDUCATIONAL CONTENT
+    ============================================================ -->
+    <section class="elec-topics-section" id="electricityTopics">
+        <div class="elec-topics-container">
+
+            <div class="elec-topics-header">
+                <h2>Electricity &amp; Electronics — In-Depth Guides with Worked Examples</h2>
+                <p>Master the essential electrical concepts with clear explanations, circuit diagrams, step-by-step
+                    solved problems, and real-world applications.</p>
+            </div>
+
+            <!-- Topic Navigation Tabs -->
+            <div class="elec-topic-tabs" id="elecTopicTabs">
+                <button class="elec-topic-tab active" data-electopic="ohms-law"><i class="fas fa-bolt"></i><span>Ohm's
+                        Law</span></button>
+                <button class="elec-topic-tab" data-electopic="series-parallel"><i
+                        class="fas fa-project-diagram"></i><span>Series &amp; Parallel</span></button>
+                <button class="elec-topic-tab" data-electopic="power-energy"><i class="fas fa-plug"></i><span>Power
+                        &amp; Energy</span></button>
+                <button class="elec-topic-tab" data-electopic="capacitors"><i
+                        class="fas fa-battery-half"></i><span>Capacitors</span></button>
+                <button class="elec-topic-tab" data-electopic="ac-circuits"><i class="fas fa-wave-square"></i><span>AC
+                        Circuits</span></button>
+                <button class="elec-topic-tab" data-electopic="semiconductors"><i
+                        class="fas fa-microchip"></i><span>Semiconductors</span></button>
+            </div>
+
+            <!-- TOPIC 1: OHM'S LAW & DC FUNDAMENTALS -->
+            <article class="elec-topic-content active" id="electopic-ohms-law">
+                <div class="elec-topic-hero">
+                    <h3>Ohm's Law &amp; DC Circuit Fundamentals</h3>
+                    <p class="elec-topic-subtitle">The foundation of all circuit analysis — the relationship between
+                        voltage, current, and resistance.</p>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">1</span> Ohm's Law</h4>
+                    <p>Georg Ohm discovered that the current through a conductor is directly proportional to the voltage
+                        across it and inversely proportional to its resistance. This is the most fundamental law in
+                        electronics.</p>
+                    <div class="elec-formula-box">
+                        <div class="elec-formula-main">V = I × R</div>
+                        <div class="elec-formula-break"><span>V = voltage (Volts, V)</span><span>I = current (Amperes,
+                                A)</span><span>R = resistance (Ohms, Ω)</span></div>
+                    </div>
+
+                    <div class="elec-diagram">
+                        <div class="elec-svg-wrap">
+                            <svg viewBox="0 0 460 200" class="elec-svg" aria-label="Ohm's Law Triangle">
+                                <text x="230" y="20" text-anchor="middle" font-size="13" font-weight="700"
+                                    fill="#1e293b">Ohm's Law Triangle</text>
+                                <polygon points="230,40 130,170 330,170" fill="none" stroke="#3b82f6"
+                                    stroke-width="3" />
+                                <line x1="130" y1="120" x2="330" y2="120" stroke="#3b82f6" stroke-width="2" />
+                                <text x="230" y="95" text-anchor="middle" font-size="28" font-weight="800"
+                                    fill="#1e40af">V</text>
+                                <text x="180" y="155" text-anchor="middle" font-size="28" font-weight="800"
+                                    fill="#dc2626">I</text>
+                                <text x="280" y="155" text-anchor="middle" font-size="28" font-weight="800"
+                                    fill="#16a34a">R</text>
+                                <text x="180" y="172" text-anchor="middle" font-size="9" fill="#64748b">×</text>
+                                <text x="30" y="100" font-size="10" fill="#475569">Cover what you</text>
+                                <text x="30" y="115" font-size="10" fill="#475569">want to find:</text>
+                                <text x="30" y="135" font-size="10" font-weight="700" fill="#1e40af">V = I × R</text>
+                                <text x="30" y="150" font-size="10" font-weight="700" fill="#dc2626">I = V / R</text>
+                                <text x="30" y="165" font-size="10" font-weight="700" fill="#16a34a">R = V / I</text>
+                            </svg>
+                        </div>
+                        <div class="elec-diagram-caption"><strong>Figure 1:</strong> The Ohm's Law Triangle — cover the
+                            variable you want to find. What's left tells you the formula.</div>
+                    </div>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">2</span> Voltage, Current &amp; Resistance</h4>
+                    <div class="elec-eq-table">
+                        <div class="elec-eq-row">
+                            <div class="elec-eq-cell">Voltage (V)</div>
+                            <div class="elec-eq-note">Electrical "pressure" — pushes charges through the circuit</div>
+                        </div>
+                        <div class="elec-eq-row">
+                            <div class="elec-eq-cell">Current (I)</div>
+                            <div class="elec-eq-note">Flow of charge — measured in Amperes (coulombs/second)</div>
+                        </div>
+                        <div class="elec-eq-row">
+                            <div class="elec-eq-cell">Resistance (R)</div>
+                            <div class="elec-eq-note">Opposition to current — measured in Ohms (Ω)</div>
+                        </div>
+                    </div>
+                    <div class="elec-insight"><i class="fas fa-lightbulb"></i><span><strong>Water analogy:</strong>
+                            Voltage = water pressure, Current = flow rate, Resistance = pipe narrowing. Higher pressure
+                            (V) or wider pipe (lower R) = more water flow (I).</span></div>
+                </div>
+
+                <div class="elec-example">
+                    <div class="elec-ex-header"><span class="elec-ex-badge">Worked Example 1</span>
+                        <h5>Basic Ohm's Law — Finding Current</h5>
+                    </div>
+                    <div class="elec-ex-problem"><strong>Problem:</strong> A 9V battery is connected to a 470 Ω
+                        resistor. What current flows through the circuit?</div>
+                    <div class="elec-ex-solution">
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 1: Identify known values</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">V = 9 V, R = 470 Ω, I = ?</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 2: Apply Ohm's Law</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">I = V / R = 9 / 470</div>
+                                <div class="elec-math elec-result">I = 0.01914 A = 19.14 mA</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elec-ex-answer"><strong>Answer:</strong> 19.14 mA flows through the resistor. In
+                        practice, you'd use the nearest standard value — this is typical for LED current-limiting
+                        resistors with a 9V supply.</div>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">3</span> Kirchhoff's Laws</h4>
+                    <div class="elec-two-col">
+                        <div class="elec-info-col">
+                            <div class="elec-info-title">KCL — Current Law (Junction Rule)</div>
+                            <p>The total current entering a junction equals the total current leaving it.</p>
+                            <div class="elec-math">ΣI<sub>in</sub> = ΣI<sub>out</sub></div>
+                        </div>
+                        <div class="elec-info-col">
+                            <div class="elec-info-title">KVL — Voltage Law (Loop Rule)</div>
+                            <p>The sum of all voltages around any closed loop equals zero.</p>
+                            <div class="elec-math">ΣV = 0 (around loop)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="elec-example">
+                    <div class="elec-ex-header"><span class="elec-ex-badge">Worked Example 2</span>
+                        <h5>KVL — Voltage Drops in a Loop</h5>
+                    </div>
+                    <div class="elec-ex-problem"><strong>Problem:</strong> A 12 V battery is connected in series with R₁
+                        = 200 Ω and R₂ = 100 Ω. Find the current, and the voltage across each resistor.</div>
+                    <div class="elec-ex-solution">
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 1: Total resistance (series)</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">R<sub>T</sub> = R₁ + R₂ = 200 + 100 = 300 Ω</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 2: Current</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">I = V / R<sub>T</sub> = 12 / 300</div>
+                                <div class="elec-math elec-result">I = 0.04 A = 40 mA</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 3: Voltage drops (V = IR)</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">V₁ = 0.04 × 200 = 8 V</div>
+                                <div class="elec-math">V₂ = 0.04 × 100 = 4 V</div>
+                                <div class="elec-math elec-result">Check KVL: 12 − 8 − 4 = 0 ✓</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elec-ex-answer"><strong>Answer:</strong> I = 40 mA, V₁ = 8 V, V₂ = 4 V. The larger
+                        resistor drops more voltage — voltage divides proportionally to resistance in a series circuit.
+                    </div>
+                </div>
+
+                <div class="elec-example">
+                    <div class="elec-ex-header"><span class="elec-ex-badge">Worked Example 3</span>
+                        <h5>Resistance from Color Codes</h5>
+                    </div>
+                    <div class="elec-ex-problem"><strong>Problem:</strong> A resistor has bands: Brown, Black, Red,
+                        Gold. What is its resistance and tolerance?</div>
+                    <div class="elec-ex-solution">
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 1: Decode bands (4-band)</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">Band 1 (Brown) = 1</div>
+                                <div class="elec-math">Band 2 (Black) = 0</div>
+                                <div class="elec-math">Band 3 (Red) = ×10² = ×100</div>
+                                <div class="elec-math">Band 4 (Gold) = ±5% tolerance</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 2: Calculate</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">R = 10 × 100 = 1000 Ω</div>
+                                <div class="elec-math elec-result">R = 1 kΩ ± 5% (950 Ω to 1050 Ω)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elec-ex-answer"><strong>Answer:</strong> 1 kΩ ± 5%. The color code mnemonic:
+                        <strong>B</strong>lack-<strong>B</strong>rown-<strong>R</strong>ed-<strong>O</strong>range-<strong>Y</strong>ellow-<strong>G</strong>reen-<strong>B</strong>lue-<strong>V</strong>iolet-<strong>G</strong>ray-<strong>W</strong>hite
+                        = 0-1-2-3-4-5-6-7-8-9.</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 2: SERIES & PARALLEL CIRCUITS -->
+            <article class="elec-topic-content" id="electopic-series-parallel">
+                <div class="elec-topic-hero">
+                    <h3>Series &amp; Parallel Circuits — Resistor Networks &amp; Voltage Dividers</h3>
+                    <p class="elec-topic-subtitle">The two fundamental ways to connect components — and how to analyze
+                        any combination.</p>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">1</span> Series vs. Parallel — Key Differences</h4>
+                    <div class="elec-compare">
+                        <div class="elec-compare-head">
+                            <div class="elec-compare-cell elec-label-cell">Property</div>
+                            <div class="elec-compare-cell">Series</div>
+                            <div class="elec-compare-cell">Parallel</div>
+                        </div>
+                        <div class="elec-compare-row">
+                            <div class="elec-compare-cell elec-label-cell">Current</div>
+                            <div class="elec-compare-cell">Same through all</div>
+                            <div class="elec-compare-cell">Splits between branches</div>
+                        </div>
+                        <div class="elec-compare-row">
+                            <div class="elec-compare-cell elec-label-cell">Voltage</div>
+                            <div class="elec-compare-cell">Divides across each</div>
+                            <div class="elec-compare-cell">Same across all</div>
+                        </div>
+                        <div class="elec-compare-row">
+                            <div class="elec-compare-cell elec-label-cell">Total R</div>
+                            <div class="elec-compare-cell">R<sub>T</sub> = R₁ + R₂ + R₃</div>
+                            <div class="elec-compare-cell">1/R<sub>T</sub> = 1/R₁ + 1/R₂ + 1/R₃</div>
+                        </div>
+                        <div class="elec-compare-row">
+                            <div class="elec-compare-cell elec-label-cell">R<sub>T</sub> vs parts</div>
+                            <div class="elec-compare-cell">Always larger</div>
+                            <div class="elec-compare-cell">Always smaller than smallest</div>
+                        </div>
+                        <div class="elec-compare-row">
+                            <div class="elec-compare-cell elec-label-cell">If one opens</div>
+                            <div class="elec-compare-cell">Entire circuit breaks</div>
+                            <div class="elec-compare-cell">Other branches continue</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">2</span> Series Resistors</h4>
+                    <div class="elec-formula-box">
+                        <div class="elec-formula-main">R<sub>total</sub> = R₁ + R₂ + R₃ + ...</div>
+                        <div class="elec-formula-break"><span>Same current flows through every
+                                resistor</span><span>Voltage drops add up to source voltage (KVL)</span></div>
+                    </div>
+                    <div class="elec-circuit-box">
+                        <pre>
+    +---[R₁ = 100Ω]---[R₂ = 220Ω]---[R₃ = 330Ω]---+
+    |                                                 |
+   (+) 12V Battery                                   (-)
+    |                                                 |
+    +-------------------------------------------------+
+    R_total = 100 + 220 + 330 = 650 Ω</pre>
+                    </div>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">3</span> Parallel Resistors</h4>
+                    <div class="elec-formula-box">
+                        <div class="elec-formula-main">1/R<sub>T</sub> = 1/R₁ + 1/R₂ + 1/R₃</div>
+                        <div class="elec-formula-break"><span>For 2 resistors: R<sub>T</sub> = (R₁ × R₂)/(R₁ +
+                                R₂)</span><span>Same voltage across every branch</span></div>
+                    </div>
+                    <div class="elec-circuit-box">
+                        <pre>
+          +---[R₁ = 100Ω]---+
+          |                  |
+    (+)---+---[R₂ = 200Ω]---+---(-)
+          |                  |
+          +---[R₃ = 300Ω]---+
+    1/R_T = 1/100 + 1/200 + 1/300 = 0.01833
+    R_T = 54.55 Ω</pre>
+                    </div>
+                </div>
+
+                <div class="elec-example">
+                    <div class="elec-ex-header"><span class="elec-ex-badge">Worked Example 1</span>
+                        <h5>Series-Parallel Combination Circuit</h5>
+                    </div>
+                    <div class="elec-ex-problem"><strong>Problem:</strong> Find the total resistance, total current, and
+                        voltage across each component. V<sub>S</sub> = 24 V, R₁ = 10 Ω (series), R₂ = 30 Ω ∥ R₃ = 60 Ω
+                        (parallel block in series with R₁).</div>
+                    <div class="elec-ex-solution">
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 1: Solve the parallel block</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">R<sub>23</sub> = (R₂ × R₃)/(R₂ + R₃) = (30 × 60)/(30 + 60)</div>
+                                <div class="elec-math elec-result">R<sub>23</sub> = 1800/90 = 20 Ω</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 2: Total resistance</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">R<sub>T</sub> = R₁ + R<sub>23</sub> = 10 + 20</div>
+                                <div class="elec-math elec-result">R<sub>T</sub> = 30 Ω</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 3: Total current</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">I<sub>T</sub> = V<sub>S</sub>/R<sub>T</sub> = 24/30</div>
+                                <div class="elec-math elec-result">I<sub>T</sub> = 0.8 A</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 4: Voltage drops</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">V₁ = I<sub>T</sub> × R₁ = 0.8 × 10 = 8 V</div>
+                                <div class="elec-math">V<sub>23</sub> = I<sub>T</sub> × R<sub>23</sub> = 0.8 × 20 = 16 V
+                                </div>
+                                <div class="elec-math">I₂ = 16/30 = 0.533 A, I₃ = 16/60 = 0.267 A</div>
+                                <div class="elec-math elec-result">Check: 8 + 16 = 24 V ✓ | 0.533 + 0.267 = 0.8 A ✓
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elec-ex-answer"><strong>Answer:</strong> R<sub>T</sub> = 30 Ω, I = 0.8 A, V₁ = 8 V,
+                        V<sub>parallel</sub> = 16 V. The parallel block has lower resistance than either individual
+                        resistor, and current splits inversely proportional to resistance.</div>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">4</span> Voltage Divider</h4>
+                    <p>A voltage divider uses two series resistors to produce a fraction of the input voltage — one of
+                        the most common circuits in electronics.</p>
+                    <div class="elec-formula-box">
+                        <div class="elec-formula-main">V<sub>out</sub> = V<sub>in</sub> × R₂ / (R₁ + R₂)</div>
+                        <div class="elec-formula-break"><span>V<sub>out</sub> is taken across R₂ (bottom
+                                resistor)</span><span>Works only with no/minimal load on output</span></div>
+                    </div>
+                </div>
+
+                <div class="elec-example">
+                    <div class="elec-ex-header"><span class="elec-ex-badge">Worked Example 2</span>
+                        <h5>Voltage Divider Design</h5>
+                    </div>
+                    <div class="elec-ex-problem"><strong>Problem:</strong> Design a voltage divider to get 3.3 V from a
+                        5 V supply using a 1 kΩ resistor for R₂.</div>
+                    <div class="elec-ex-solution">
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 1: Rearrange for R₁</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">V<sub>out</sub>/V<sub>in</sub> = R₂/(R₁ + R₂)</div>
+                                <div class="elec-math">3.3/5 = 1000/(R₁ + 1000)</div>
+                                <div class="elec-math">0.66 × (R₁ + 1000) = 1000</div>
+                                <div class="elec-math">R₁ = (1000/0.66) − 1000</div>
+                                <div class="elec-math elec-result">R₁ = 515 Ω → use 510 Ω standard value</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elec-ex-answer"><strong>Answer:</strong> R₁ = 510 Ω (nearest standard value), R₂ = 1 kΩ.
+                        Actual output: 5 × 1000/1510 = 3.31 V. Voltage dividers are used to level-shift signals (e.g.,
+                        5V Arduino to 3.3V sensor).</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 3: POWER & ENERGY -->
+            <article class="elec-topic-content" id="electopic-power-energy">
+                <div class="elec-topic-hero">
+                    <h3>Electrical Power &amp; Energy — Watts, Kilowatt-Hours &amp; Efficiency</h3>
+                    <p class="elec-topic-subtitle">How to calculate power consumption, energy cost, and thermal
+                        dissipation in circuits.</p>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">1</span> The Power Formulas</h4>
+                    <p>Electrical power is the rate at which energy is transferred. There are three equivalent formulas
+                        — use whichever matches your known values.</p>
+                    <div class="elec-eq-table">
+                        <div class="elec-eq-row">
+                            <div class="elec-eq-cell">P = V × I</div>
+                            <div class="elec-eq-note">When V and I are known</div>
+                        </div>
+                        <div class="elec-eq-row">
+                            <div class="elec-eq-cell">P = I² × R</div>
+                            <div class="elec-eq-note">When I and R are known</div>
+                        </div>
+                        <div class="elec-eq-row">
+                            <div class="elec-eq-cell">P = V² / R</div>
+                            <div class="elec-eq-note">When V and R are known</div>
+                        </div>
+                    </div>
+                    <div class="elec-insight"><i class="fas fa-lightbulb"></i><span><strong>All three are the same
+                                equation!</strong> Just substitute Ohm's Law (V = IR) into P = VI. Knowing any two of V,
+                            I, R lets you find power.</span></div>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">2</span> Energy &amp; Cost</h4>
+                    <div class="elec-formula-box">
+                        <div class="elec-formula-main">E = P × t</div>
+                        <div class="elec-formula-break"><span>E = energy (Joules or Wh)</span><span>P = power
+                                (Watts)</span><span>t = time (seconds or hours)</span><span>1 kWh = 3,600,000 J = 3.6
+                                MJ</span></div>
+                    </div>
+                    <p>Your electricity bill is measured in kilowatt-hours (kWh): power in kilowatts multiplied by time
+                        in hours.</p>
+                </div>
+
+                <div class="elec-example">
+                    <div class="elec-ex-header"><span class="elec-ex-badge">Worked Example 1</span>
+                        <h5>Power Dissipation in a Resistor</h5>
+                    </div>
+                    <div class="elec-ex-problem"><strong>Problem:</strong> A 220 Ω resistor carries 150 mA. (a) How much
+                        power does it dissipate? (b) What minimum wattage rating should the resistor have?</div>
+                    <div class="elec-ex-solution">
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 1: Power</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">P = I² × R = (0.150)² × 220</div>
+                                <div class="elec-math elec-result">P = 4.95 W</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 2: Minimum rating</div>
+                            <div class="elec-sol-content">
+                                <p>Use at least 2× the calculated power for safety margin.</p>
+                                <div class="elec-math elec-result">Minimum rating: 10 W resistor</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elec-ex-answer"><strong>Answer:</strong> 4.95 W dissipated. Use a 10 W (or higher)
+                        resistor. Standard ¼ W resistors would burn out — always check power ratings when designing
+                        circuits!</div>
+                </div>
+
+                <div class="elec-example">
+                    <div class="elec-ex-header"><span class="elec-ex-badge">Worked Example 2</span>
+                        <h5>Electricity Cost Calculation</h5>
+                    </div>
+                    <div class="elec-ex-problem"><strong>Problem:</strong> An air conditioner draws 1,500 W and runs 8
+                        hours/day for 30 days. If electricity costs $0.12/kWh, what is the monthly cost?</div>
+                    <div class="elec-ex-solution">
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 1: Daily energy</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">E<sub>daily</sub> = 1.5 kW × 8 h = 12 kWh</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 2: Monthly energy</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">E<sub>monthly</sub> = 12 × 30 = 360 kWh</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 3: Cost</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">Cost = 360 × $0.12</div>
+                                <div class="elec-math elec-result">Cost = $43.20 per month</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elec-ex-answer"><strong>Answer:</strong> $43.20/month. This is equivalent to 1,296 MJ of
+                        energy — enough to lift a 13-ton truck 10 km into the air.</div>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">3</span> Maximum Power Transfer</h4>
+                    <p>Maximum power is delivered to a load when the load resistance equals the source's internal
+                        resistance.</p>
+                    <div class="elec-formula-box">
+                        <div class="elec-formula-main">P<sub>max</sub> when R<sub>load</sub> = R<sub>source</sub></div>
+                        <div class="elec-formula-break"><span>P<sub>max</sub> = V²/(4 ×
+                                R<sub>source</sub>)</span><span>Efficiency at max power transfer = 50%</span></div>
+                    </div>
+                </div>
+
+                <div class="elec-example">
+                    <div class="elec-ex-header"><span class="elec-ex-badge">Worked Example 3</span>
+                        <h5>Maximum Power Transfer</h5>
+                    </div>
+                    <div class="elec-ex-problem"><strong>Problem:</strong> A battery with EMF = 12 V and internal
+                        resistance r = 2 Ω is connected to a load R<sub>L</sub>. (a) What R<sub>L</sub> gives max power?
+                        (b) What is that max power?</div>
+                    <div class="elec-ex-solution">
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 1: For max power</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math elec-result">R<sub>L</sub> = r = 2 Ω</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 2: Calculate max power</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">I = V/(r + R<sub>L</sub>) = 12/(2 + 2) = 3 A</div>
+                                <div class="elec-math">P<sub>load</sub> = I² × R<sub>L</sub> = 9 × 2</div>
+                                <div class="elec-math elec-result">P<sub>max</sub> = 18 W</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elec-ex-answer"><strong>Answer:</strong> R<sub>L</sub> = 2 Ω delivers max power of 18 W.
+                        But 18 W is also wasted in internal resistance — that's why max power transfer is only 50%
+                        efficient. Audio amplifier output impedance matching uses this principle.</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 4: CAPACITORS & INDUCTORS -->
+            <article class="elec-topic-content" id="electopic-capacitors">
+                <div class="elec-topic-hero">
+                    <h3>Capacitors &amp; Inductors — Energy Storage Components</h3>
+                    <p class="elec-topic-subtitle">How capacitors store charge and inductors store magnetic energy — and
+                        their behavior in DC and AC circuits.</p>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">1</span> Capacitors — Storing Charge</h4>
+                    <p>A capacitor stores energy in an electric field between two conductive plates. Capacitance is
+                        measured in Farads (F).</p>
+                    <div class="elec-formula-box">
+                        <div class="elec-formula-main">C = Q / V → Q = C × V</div>
+                        <div class="elec-formula-break"><span>C = capacitance (Farads, F)</span><span>Q = charge
+                                (Coulombs, C)</span><span>V = voltage (Volts)</span></div>
+                    </div>
+                    <div class="elec-formula-box">
+                        <div class="elec-formula-main">Energy: E = ½CV²</div>
+                        <div class="elec-formula-break"><span>E = energy stored (Joules)</span></div>
+                    </div>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">2</span> Capacitors in Series &amp; Parallel</h4>
+                    <div class="elec-two-col">
+                        <div class="elec-info-col">
+                            <div class="elec-info-title">Parallel (opposite of resistors!)</div>
+                            <div class="elec-math">C<sub>T</sub> = C₁ + C₂ + C₃</div>
+                            <p>Same voltage across each. Total capacitance <strong>increases</strong>.</p>
+                        </div>
+                        <div class="elec-info-col">
+                            <div class="elec-info-title">Series (opposite of resistors!)</div>
+                            <div class="elec-math">1/C<sub>T</sub> = 1/C₁ + 1/C₂ + 1/C₃</div>
+                            <p>Same charge on each. Total capacitance <strong>decreases</strong>.</p>
+                        </div>
+                    </div>
+                    <div class="elec-insight"><i class="fas fa-lightbulb"></i><span><strong>Opposite of
+                                resistors!</strong> Capacitors in parallel add up (like resistors in series). Capacitors
+                            in series use the reciprocal formula (like resistors in parallel).</span></div>
+                </div>
+
+                <div class="elec-example">
+                    <div class="elec-ex-header"><span class="elec-ex-badge">Worked Example 1</span>
+                        <h5>Capacitor Energy Storage</h5>
+                    </div>
+                    <div class="elec-ex-problem"><strong>Problem:</strong> A 470 μF capacitor is charged to 25 V. (a)
+                        How much charge does it store? (b) How much energy?</div>
+                    <div class="elec-ex-solution">
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 1: Charge</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">Q = C × V = 470 × 10⁻⁶ × 25</div>
+                                <div class="elec-math elec-result">Q = 0.01175 C = 11.75 mC</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 2: Energy</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">E = ½CV² = 0.5 × 470 × 10⁻⁶ × 25²</div>
+                                <div class="elec-math elec-result">E = 0.147 J = 147 mJ</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elec-ex-answer"><strong>Answer:</strong> Q = 11.75 mC, E = 147 mJ. Note how energy
+                        depends on V² — doubling the voltage quadruples the stored energy. This is why capacitors in
+                        camera flashes are charged to high voltages.</div>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">3</span> RC Time Constant</h4>
+                    <p>When charging or discharging through a resistor, a capacitor's voltage changes exponentially. The
+                        <strong>time constant τ</strong> defines how fast.</p>
+                    <div class="elec-formula-box">
+                        <div class="elec-formula-main">τ = R × C</div>
+                        <div class="elec-formula-break"><span>τ = time constant (seconds)</span><span>After 1τ: 63.2%
+                                charged (or 36.8% remaining)</span><span>After 5τ: 99.3% charged (effectively
+                                full)</span></div>
+                    </div>
+                </div>
+
+                <div class="elec-example">
+                    <div class="elec-ex-header"><span class="elec-ex-badge">Worked Example 2</span>
+                        <h5>RC Charging Time</h5>
+                    </div>
+                    <div class="elec-ex-problem"><strong>Problem:</strong> A 100 μF capacitor charges through a 47 kΩ
+                        resistor from a 9 V supply. (a) What is τ? (b) How long to fully charge? (c) What is the voltage
+                        at t = τ?</div>
+                    <div class="elec-ex-solution">
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 1: Time constant</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">τ = R × C = 47,000 × 100 × 10⁻⁶</div>
+                                <div class="elec-math elec-result">τ = 4.7 seconds</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 2: Full charge time (5τ)</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">t<sub>full</sub> ≈ 5τ = 5 × 4.7</div>
+                                <div class="elec-math elec-result">t<sub>full</sub> ≈ 23.5 seconds</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 3: Voltage at t = τ</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">V(τ) = V<sub>S</sub> × (1 − e⁻¹) = 9 × 0.632</div>
+                                <div class="elec-math elec-result">V(τ) = 5.69 V</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elec-ex-answer"><strong>Answer:</strong> τ = 4.7 s, full charge ≈ 23.5 s, V(τ) = 5.69 V.
+                        RC circuits are used in timing circuits, debounce filters, and audio tone controls.</div>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">4</span> Inductors — Storing Magnetic Energy</h4>
+                    <p>An inductor stores energy in a magnetic field when current flows through a coil. It opposes
+                        <em>changes</em> in current.</p>
+                    <div class="elec-formula-box">
+                        <div class="elec-formula-main">V<sub>L</sub> = L × (dI/dt) | E = ½LI²</div>
+                        <div class="elec-formula-break"><span>L = inductance (Henrys, H)</span><span>dI/dt = rate of
+                                current change</span><span>RL time constant: τ = L/R</span></div>
+                    </div>
+                </div>
+
+                <div class="elec-example">
+                    <div class="elec-ex-header"><span class="elec-ex-badge">Worked Example 3</span>
+                        <h5>Capacitors in Series and Parallel</h5>
+                    </div>
+                    <div class="elec-ex-problem"><strong>Problem:</strong> Three capacitors: C₁ = 10 μF, C₂ = 22 μF, C₃
+                        = 47 μF. Find the total capacitance when (a) all in parallel, (b) all in series.</div>
+                    <div class="elec-ex-solution">
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">(a) Parallel</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">C<sub>T</sub> = C₁ + C₂ + C₃ = 10 + 22 + 47</div>
+                                <div class="elec-math elec-result">C<sub>T</sub> = 79 μF</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">(b) Series</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">1/C<sub>T</sub> = 1/10 + 1/22 + 1/47</div>
+                                <div class="elec-math">= 0.100 + 0.04545 + 0.02128 = 0.16674</div>
+                                <div class="elec-math elec-result">C<sub>T</sub> = 5.997 μF ≈ 6.0 μF</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elec-ex-answer"><strong>Answer:</strong> Parallel: 79 μF (larger). Series: 6.0 μF
+                        (smaller than the smallest capacitor). This is the opposite pattern from resistors — a common
+                        exam trap!</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 5: AC CIRCUITS -->
+            <article class="elec-topic-content" id="electopic-ac-circuits">
+                <div class="elec-topic-hero">
+                    <h3>AC Circuits — Impedance, Reactance &amp; Resonance</h3>
+                    <p class="elec-topic-subtitle">Alternating current analysis — how capacitors and inductors behave
+                        differently at different frequencies.</p>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">1</span> AC Fundamentals</h4>
+                    <p>Alternating current changes direction periodically. The voltage follows a sine wave described by:
+                    </p>
+                    <div class="elec-formula-box">
+                        <div class="elec-formula-main">v(t) = V<sub>peak</sub> × sin(2πft)</div>
+                        <div class="elec-formula-break"><span>V<sub>RMS</sub> = V<sub>peak</sub> / √2 = 0.707 ×
+                                V<sub>peak</sub></span><span>f = frequency (Hz), T = 1/f (period in seconds)</span>
+                        </div>
+                    </div>
+                    <div class="elec-insight"><i class="fas fa-lightbulb"></i><span><strong>V<sub>RMS</sub></strong>
+                            (Root Mean Square) is what your voltmeter reads and what wall outlets are rated at. A "230V"
+                            outlet actually swings ±325 V peak.</span></div>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">2</span> Reactance — AC "Resistance"</h4>
+                    <p>Capacitors and inductors oppose AC current, but in a frequency-dependent way called
+                        <strong>reactance</strong> (X), measured in Ohms.</p>
+                    <div class="elec-eq-table">
+                        <div class="elec-eq-row">
+                            <div class="elec-eq-cell">X<sub>C</sub> = 1/(2πfC)</div>
+                            <div class="elec-eq-note">Capacitive — decreases with frequency</div>
+                        </div>
+                        <div class="elec-eq-row">
+                            <div class="elec-eq-cell">X<sub>L</sub> = 2πfL</div>
+                            <div class="elec-eq-note">Inductive — increases with frequency</div>
+                        </div>
+                    </div>
+                    <div class="elec-two-col">
+                        <div class="elec-info-col">
+                            <div class="elec-info-title">Capacitor in AC</div>
+                            <p>Passes high frequencies, blocks low frequencies (DC). Current <strong>leads</strong>
+                                voltage by 90°.</p>
+                        </div>
+                        <div class="elec-info-col">
+                            <div class="elec-info-title">Inductor in AC</div>
+                            <p>Passes low frequencies (DC), blocks high frequencies. Current <strong>lags</strong>
+                                voltage by 90°.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">3</span> Impedance</h4>
+                    <p><strong>Impedance</strong> (Z) is the total opposition to AC current, combining resistance and
+                        reactance. It's a complex quantity.</p>
+                    <div class="elec-formula-box">
+                        <div class="elec-formula-main">Z = √(R² + (X<sub>L</sub> − X<sub>C</sub>)²)</div>
+                        <div class="elec-formula-break"><span>For series RLC circuit</span><span>V = I × Z (AC Ohm's
+                                Law)</span></div>
+                    </div>
+                </div>
+
+                <div class="elec-example">
+                    <div class="elec-ex-header"><span class="elec-ex-badge">Worked Example 1</span>
+                        <h5>Capacitive Reactance in an AC Circuit</h5>
+                    </div>
+                    <div class="elec-ex-problem"><strong>Problem:</strong> A 10 μF capacitor is connected to a 230 V, 50
+                        Hz supply. Find (a) the capacitive reactance and (b) the RMS current.</div>
+                    <div class="elec-ex-solution">
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 1: Reactance</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">X<sub>C</sub> = 1/(2πfC) = 1/(2π × 50 × 10 × 10⁻⁶)</div>
+                                <div class="elec-math elec-result">X<sub>C</sub> = 318.3 Ω</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 2: Current</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">I = V/X<sub>C</sub> = 230/318.3</div>
+                                <div class="elec-math elec-result">I = 0.722 A (RMS)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elec-ex-answer"><strong>Answer:</strong> X<sub>C</sub> = 318.3 Ω, I = 722 mA. At 60 Hz,
+                        X<sub>C</sub> would be lower (265 Ω) and current would be higher — capacitors pass more current
+                        at higher frequencies.</div>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">4</span> Resonance</h4>
+                    <p>At the <strong>resonant frequency</strong>, X<sub>L</sub> = X<sub>C</sub> and they cancel out.
+                        The circuit behaves as purely resistive, and impedance is at its minimum (series) or maximum
+                        (parallel).</p>
+                    <div class="elec-formula-box">
+                        <div class="elec-formula-main">f<sub>0</sub> = 1 / (2π√(LC))</div>
+                        <div class="elec-formula-break"><span>At resonance: Z = R (minimum for series
+                                RLC)</span><span>Current is maximum at resonance</span></div>
+                    </div>
+                </div>
+
+                <div class="elec-example">
+                    <div class="elec-ex-header"><span class="elec-ex-badge">Worked Example 2</span>
+                        <h5>Series RLC Impedance</h5>
+                    </div>
+                    <div class="elec-ex-problem"><strong>Problem:</strong> R = 100 Ω, L = 0.5 H, C = 10 μF in series. At
+                        f = 50 Hz, find (a) X<sub>L</sub>, (b) X<sub>C</sub>, (c) impedance Z, (d) resonant frequency.
+                    </div>
+                    <div class="elec-ex-solution">
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 1: Reactances</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">X<sub>L</sub> = 2π × 50 × 0.5 = 157.1 Ω</div>
+                                <div class="elec-math">X<sub>C</sub> = 1/(2π × 50 × 10 × 10⁻⁶) = 318.3 Ω</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 2: Impedance</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">Z = √(100² + (157.1 − 318.3)²)</div>
+                                <div class="elec-math">= √(10000 + 25985) = √35985</div>
+                                <div class="elec-math elec-result">Z = 189.7 Ω</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 3: Resonant frequency</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">f<sub>0</sub> = 1/(2π√(0.5 × 10 × 10⁻⁶))</div>
+                                <div class="elec-math elec-result">f<sub>0</sub> = 71.2 Hz</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elec-ex-answer"><strong>Answer:</strong> X<sub>L</sub> = 157.1 Ω, X<sub>C</sub> = 318.3
+                        Ω, Z = 189.7 Ω, f<sub>0</sub> = 71.2 Hz. At 50 Hz the circuit is capacitive (X<sub>C</sub> >
+                        X<sub>L</sub>). At resonance (71.2 Hz), Z would drop to just 100 Ω (= R).</div>
+                </div>
+
+                <div class="elec-example">
+                    <div class="elec-ex-header"><span class="elec-ex-badge">Worked Example 3</span>
+                        <h5>Power Factor Correction</h5>
+                    </div>
+                    <div class="elec-ex-problem"><strong>Problem:</strong> A motor draws 5 A from a 230 V supply at
+                        power factor 0.65. Find (a) apparent power, (b) real power, (c) reactive power.</div>
+                    <div class="elec-ex-solution">
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 1: Apparent power</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">S = V × I = 230 × 5</div>
+                                <div class="elec-math elec-result">S = 1150 VA</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 2: Real power</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">P = S × cos(φ) = 1150 × 0.65</div>
+                                <div class="elec-math elec-result">P = 747.5 W</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 3: Reactive power</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">Q = S × sin(φ) = 1150 × sin(cos⁻¹(0.65))</div>
+                                <div class="elec-math">Q = 1150 × 0.7599</div>
+                                <div class="elec-math elec-result">Q = 873.9 VAR</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elec-ex-answer"><strong>Answer:</strong> S = 1150 VA, P = 747.5 W, Q = 873.9 VAR. Only
+                        65% of the apparent power does useful work. Power factor correction capacitors can bring PF
+                        closer to 1.0, reducing utility bills for industrial users.</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 6: SEMICONDUCTORS & DIODES -->
+            <article class="elec-topic-content" id="electopic-semiconductors">
+                <div class="elec-topic-hero">
+                    <h3>Semiconductors — Diodes, Transistors &amp; Basic Circuits</h3>
+                    <p class="elec-topic-subtitle">The building blocks of modern electronics — how diodes rectify,
+                        transistors amplify, and LEDs light up.</p>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">1</span> Diodes — One-Way Valves for Current</h4>
+                    <p>A diode allows current to flow in one direction only. In <strong>forward bias</strong> (anode
+                        positive), current flows after overcoming the forward voltage drop. In <strong>reverse
+                            bias</strong>, current is blocked.</p>
+                    <div class="elec-eq-table">
+                        <div class="elec-eq-row">
+                            <div class="elec-eq-cell">Silicon diode V<sub>f</sub></div>
+                            <div class="elec-eq-note">≈ 0.7 V forward drop</div>
+                        </div>
+                        <div class="elec-eq-row">
+                            <div class="elec-eq-cell">Germanium diode V<sub>f</sub></div>
+                            <div class="elec-eq-note">≈ 0.3 V forward drop</div>
+                        </div>
+                        <div class="elec-eq-row">
+                            <div class="elec-eq-cell">LED V<sub>f</sub></div>
+                            <div class="elec-eq-note">1.8–3.3 V (varies by color)</div>
+                        </div>
+                        <div class="elec-eq-row">
+                            <div class="elec-eq-cell">Schottky diode V<sub>f</sub></div>
+                            <div class="elec-eq-note">≈ 0.2–0.3 V (fast switching)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="elec-example">
+                    <div class="elec-ex-header"><span class="elec-ex-badge">Worked Example 1</span>
+                        <h5>LED Current-Limiting Resistor</h5>
+                    </div>
+                    <div class="elec-ex-problem"><strong>Problem:</strong> You want to power a red LED (V<sub>f</sub> =
+                        2.0 V, I<sub>f</sub> = 20 mA) from a 5 V supply. What resistor value is needed?</div>
+                    <div class="elec-ex-solution">
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 1: Voltage across resistor</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">V<sub>R</sub> = V<sub>supply</sub> − V<sub>f</sub> = 5.0 − 2.0 =
+                                    3.0 V</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 2: Ohm's Law for resistor</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">R = V<sub>R</sub>/I = 3.0/0.020</div>
+                                <div class="elec-math elec-result">R = 150 Ω</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 3: Power dissipated</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">P = V<sub>R</sub> × I = 3.0 × 0.020 = 0.06 W</div>
+                                <div class="elec-math elec-result">¼ W resistor is sufficient</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elec-ex-answer"><strong>Answer:</strong> 150 Ω resistor (standard value). This is the
+                        most common beginner electronics calculation — every LED needs a current-limiting resistor to
+                        prevent burnout.</div>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">2</span> Transistors — Switches &amp; Amplifiers</h4>
+                    <p>A transistor uses a small current or voltage to control a larger current. The two main types are
+                        <strong>BJT</strong> (Bipolar Junction Transistor) and <strong>MOSFET</strong>.</p>
+                    <div class="elec-compare">
+                        <div class="elec-compare-head">
+                            <div class="elec-compare-cell elec-label-cell">Property</div>
+                            <div class="elec-compare-cell">BJT (NPN)</div>
+                            <div class="elec-compare-cell">MOSFET (N-channel)</div>
+                        </div>
+                        <div class="elec-compare-row">
+                            <div class="elec-compare-cell elec-label-cell">Controlled by</div>
+                            <div class="elec-compare-cell">Base current (I<sub>B</sub>)</div>
+                            <div class="elec-compare-cell">Gate voltage (V<sub>GS</sub>)</div>
+                        </div>
+                        <div class="elec-compare-row">
+                            <div class="elec-compare-cell elec-label-cell">Key formula</div>
+                            <div class="elec-compare-cell">I<sub>C</sub> = β × I<sub>B</sub></div>
+                            <div class="elec-compare-cell">V<sub>GS</sub> > V<sub>th</sub> to turn ON</div>
+                        </div>
+                        <div class="elec-compare-row">
+                            <div class="elec-compare-cell elec-label-cell">Input impedance</div>
+                            <div class="elec-compare-cell">Low (draws current)</div>
+                            <div class="elec-compare-cell">Very high (voltage only)</div>
+                        </div>
+                        <div class="elec-compare-row">
+                            <div class="elec-compare-cell elec-label-cell">Common use</div>
+                            <div class="elec-compare-cell">Audio amplifiers</div>
+                            <div class="elec-compare-cell">Digital circuits, power switching</div>
+                        </div>
+                    </div>
+                    <div class="elec-formula-box">
+                        <div class="elec-formula-main">BJT: I<sub>C</sub> = β × I<sub>B</sub></div>
+                        <div class="elec-formula-break"><span>I<sub>C</sub> = collector current (the load
+                                current)</span><span>I<sub>B</sub> = base current (the control signal)</span><span>β
+                                (hFE) = current gain (typically 50–300)</span></div>
+                    </div>
+                </div>
+
+                <div class="elec-example">
+                    <div class="elec-ex-header"><span class="elec-ex-badge">Worked Example 2</span>
+                        <h5>BJT as a Switch</h5>
+                    </div>
+                    <div class="elec-ex-problem"><strong>Problem:</strong> A relay coil requires 100 mA to activate.
+                        Using an NPN transistor with β = 100, what base current is needed? If the microcontroller
+                        outputs 3.3 V and V<sub>BE</sub> = 0.7 V, what base resistor value is needed?</div>
+                    <div class="elec-ex-solution">
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 1: Minimum base current</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">I<sub>B</sub> = I<sub>C</sub>/β = 100 mA / 100</div>
+                                <div class="elec-math">I<sub>B(min)</sub> = 1 mA</div>
+                                <p>Use 2× for reliable saturation:</p>
+                                <div class="elec-math elec-result">I<sub>B</sub> = 2 mA</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 2: Base resistor</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">R<sub>B</sub> = (V<sub>out</sub> − V<sub>BE</sub>)/I<sub>B</sub>
+                                    = (3.3 − 0.7)/0.002</div>
+                                <div class="elec-math elec-result">R<sub>B</sub> = 1300 Ω → use 1.2 kΩ standard</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elec-ex-answer"><strong>Answer:</strong> R<sub>B</sub> = 1.2 kΩ. The microcontroller's
+                        3.3 V GPIO pin drives just 2 mA into the base, which controls 100 mA through the relay. That's
+                        50× current amplification — the essence of transistor switching.</div>
+                </div>
+
+                <div class="elec-concept-block">
+                    <h4><span class="elec-concept-num">3</span> Rectification — AC to DC</h4>
+                    <p>Diodes convert AC to DC through <strong>rectification</strong>. A full-bridge rectifier uses 4
+                        diodes to convert both halves of the AC wave.</p>
+                    <div class="elec-formula-box">
+                        <div class="elec-formula-main">V<sub>DC</sub> ≈ V<sub>peak</sub> − 2V<sub>f</sub> (full bridge)
+                        </div>
+                        <div class="elec-formula-break"><span>V<sub>peak</sub> = V<sub>RMS</sub> × √2</span><span>2
+                                diodes conduct at any time → 2 × 0.7 V drop</span></div>
+                    </div>
+                </div>
+
+                <div class="elec-example">
+                    <div class="elec-ex-header"><span class="elec-ex-badge">Worked Example 3</span>
+                        <h5>Full-Bridge Rectifier Output</h5>
+                    </div>
+                    <div class="elec-ex-problem"><strong>Problem:</strong> A 12 V<sub>RMS</sub> transformer feeds a
+                        full-bridge rectifier with silicon diodes. What is the peak DC output voltage (before
+                        filtering)?</div>
+                    <div class="elec-ex-solution">
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 1: Peak voltage</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">V<sub>peak</sub> = V<sub>RMS</sub> × √2 = 12 × 1.414</div>
+                                <div class="elec-math">V<sub>peak</sub> = 16.97 V</div>
+                            </div>
+                        </div>
+                        <div class="elec-sol-step">
+                            <div class="elec-sol-label">Step 2: DC output after diode drops</div>
+                            <div class="elec-sol-content">
+                                <div class="elec-math">V<sub>DC</sub> = V<sub>peak</sub> − 2V<sub>f</sub> = 16.97 −
+                                    2(0.7)</div>
+                                <div class="elec-math elec-result">V<sub>DC</sub> = 15.57 V (peak)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elec-ex-answer"><strong>Answer:</strong> 15.57 V peak output. After adding a smoothing
+                        capacitor, the DC output would be close to this value with ripple. This is why a "12 V"
+                        transformer can feed a 12 V voltage regulator — the peak is higher than RMS.</div>
+                </div>
+            </article>
+
+        </div><!-- end elec-topics-container -->
+    </section><!-- end elec-topics-section -->
+
+
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
@@ -364,6 +1406,7 @@
     <script src="/js/nav.js"></script>
     <script src="/js/script.js"></script>
     <script src="/js/electricity.js"></script>
+    <script src="/js/elec-topics.js"></script>
 
     <!-- Google AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"

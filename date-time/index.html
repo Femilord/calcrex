@@ -8,13 +8,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Primary Meta Tags -->
-    <title>Date & Time Calculators - CalcRex | 8+ Free Date and Time Tools</title>
-    <meta name="title" content="Date & Time Calculators - CalcRex | 8+ Free Date and Time Tools">
+    <title>Date & Time Calculators - CalcREX | 8+ Free Date and Time Tools</title>
+    <meta name="title" content="Date & Time Calculators - CalcREX | 8+ Free Date and Time Tools">
     <meta name="description"
         content="Calculate date differences, age, business days, and time zones with 8+ free date and time calculators. Date duration calculator, age calculator, and more.">
     <meta name="keywords"
-        content="date calculator, time calculator, age calculator, date difference calculator, business days calculator, time zone converter, date duration, CalcRex">
-    <meta name="author" content="CalcRex">
+        content="date calculator, time calculator, age calculator, date difference calculator, business days calculator, time zone converter, date duration, CalcREX">
+    <meta name="author" content="CalcREX">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
 
@@ -31,17 +31,17 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://calcrex.com/date-time/">
-    <meta property="og:title" content="Date & Time Calculators - CalcRex | 8+ Free Date Tools">
+    <meta property="og:title" content="Date & Time Calculators - CalcREX | 8+ Free Date Tools">
     <meta property="og:description"
         content="Calculate date differences, age, business days, and time zones with 8+ free date and time calculators.">
     <meta property="og:image" content="https://calcrex.com/img/calcrex-banner.webp">
-    <meta property="og:site_name" content="CalcRex">
+    <meta property="og:site_name" content="CalcREX">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://calcrex.com/date-time/">
-    <meta name="twitter:title" content="Date & Time Calculators - CalcRex | 8+ Free Date Tools">
+    <meta name="twitter:title" content="Date & Time Calculators - CalcREX | 8+ Free Date Tools">
     <meta name="twitter:description"
         content="Calculate date differences, age, business days, and time zones with free calculators.">
     <meta name="twitter:image" content="https://calcrex.com/img/twitter-datetime.jpg">
@@ -58,6 +58,7 @@
     <link rel="stylesheet" href="/css/date-time.css">
     <link rel="stylesheet" href="/css/pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/dt-topics.css">
 
     <!-- Structured Data - Breadcrumbs -->
     <script type="application/ld+json">
@@ -91,12 +92,25 @@
       "url": "https://calcrex.com/date-time/",
       "publisher": {
         "@type": "Organization",
-        "name": "CalcRex",
+        "name": "CalcREX",
         "logo": {
           "@type": "ImageObject",
           "url": "https://calcrex.com/img/logo.png"
         }
       }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How do you determine if a year is a leap year?", "acceptedAnswer": { "@type": "Answer", "text": "A year is a leap year if divisible by 4, EXCEPT century years (divisible by 100) are NOT leap years, UNLESS also divisible by 400. So 2024 is leap, 1900 is not, 2000 is leap." } },
+        { "@type": "Question", "name": "How do you calculate business days between two dates?", "acceptedAnswer": { "@type": "Answer", "text": "Count total calendar days, divide by 7 for full weeks (each has 5 business days), then check the remaining days individually for weekdays. Subtract any holidays." } },
+        { "@type": "Question", "name": "What is a Unix timestamp?", "acceptedAnswer": { "@type": "Answer", "text": "Unix time counts seconds since January 1, 1970 00:00:00 UTC. It provides an unambiguous way to represent a point in time as a single number, used by all major operating systems and databases." } },
+        { "@type": "Question", "name": "How do you convert time between time zones?", "acceptedAnswer": { "@type": "Answer", "text": "Convert source time to UTC by subtracting its offset, then add the target zone offset. Example: 3PM EST (UTC-5) to Lagos (UTC+1): 3PM + 5 = 8PM UTC, 8PM + 1 = 9PM Lagos." } }
+      ]
     }
     </script>
 </head>
@@ -120,16 +134,23 @@
             </button>
 
             <!-- Navigation Menu -->
-            <nav class="main-nav" id="mainNav">
+                        <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="/" class="nav-link">Calculator</a></li>
                     <li><a href="/converters" class="nav-link">Unit Converter</a></li>
-                    <li><a href="/physics" class="nav-link">Physics</a></li>
-                    <li><a href="/chemistry" class="nav-link">Chemistry</a></li>
-                    <li><a href="/electricity" class="nav-link">Electronics</a></li>
+                    <li class="nav-dropdown">
+                        <button class="nav-link nav-dropdown-toggle">Sciences <i class="fas fa-chevron-down nav-arrow"></i></button>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a></li>
+                            <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i> Chemistry</a></li>
+                            <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i> Electronics</a></li>
+                            <li><a href="/thermodynamics" class="nav-dropdown-link"><i class="fas fa-fire"></i> Thermodynamics</a></li>
+                            <li><a href="/aerodynamics" class="nav-dropdown-link"><i class="fas fa-plane"></i> Aerodynamics</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/computer-science" class="nav-link">Computer Science</a></li>
                     <li><a href="/finance" class="nav-link">Finance</a></li>
-                    <li><a href="/date-time" class="nav-link active">Date & Time</a></li>
+                    <li><a href="/date-time" class="nav-link active">Date &amp; Time</a></li>
                 </ul>
             </nav>
         </div>
@@ -149,9 +170,9 @@
                     calculations. Each calculator includes clear explanations and practical examples.
                 </p>
                 <p class="intro-text intro-text-extra">
-                    Our date & time calculators handle everything from simple age calculations to complex business day 
-                    computations, timezone conversions, and calendar analysis. Perfect for event planning, project 
-                    scheduling, deadline tracking, birthday countdowns, or simply satisfying curiosity about dates and 
+                    Our date & time calculators handle everything from simple age calculations to complex business day
+                    computations, timezone conversions, and calendar analysis. Perfect for event planning, project
+                    scheduling, deadline tracking, birthday countdowns, or simply satisfying curiosity about dates and
                     durations. All tools work seamlessly on any device and are completely free without registration.
                 </p>
             </div>
@@ -299,6 +320,827 @@
         </div>
     </main>
 
+    <!-- ============================================================
+         DATE & TIME TOPICS - IN-DEPTH EDUCATIONAL CONTENT
+    ============================================================ -->
+    <section class="dt-topics-section" id="datetimeTopics">
+        <div class="dt-topics-container">
+
+            <div class="dt-topics-header">
+                <h2>Date &amp; Time — In-Depth Guides with Worked Examples</h2>
+                <p>Master date calculations, time zones, calendar math, and the formulas behind age, duration, and
+                    scheduling calculations.</p>
+            </div>
+
+            <div class="dt-topic-tabs" id="dtTopicTabs">
+                <button class="dt-topic-tab active" data-dttopic="calendar-systems"><i
+                        class="fas fa-calendar-alt"></i><span>Calendars</span></button>
+                <button class="dt-topic-tab" data-dttopic="date-arithmetic"><i class="fas fa-calculator"></i><span>Date
+                        Math</span></button>
+                <button class="dt-topic-tab" data-dttopic="time-zones"><i class="fas fa-globe-americas"></i><span>Time
+                        Zones</span></button>
+                <button class="dt-topic-tab" data-dttopic="unix-timestamps"><i class="fas fa-code"></i><span>Unix
+                        Time</span></button>
+                <button class="dt-topic-tab" data-dttopic="business-days"><i class="fas fa-briefcase"></i><span>Business
+                        Days</span></button>
+                <button class="dt-topic-tab" data-dttopic="age-calculations"><i
+                        class="fas fa-birthday-cake"></i><span>Age &amp; Duration</span></button>
+            </div>
+
+            <!-- TOPIC 1: CALENDAR SYSTEMS -->
+            <article class="dt-topic-content active" id="dttopic-calendar-systems">
+                <div class="dt-topic-hero">
+                    <h3>Calendar Systems — Leap Years, Month Lengths &amp; Day-of-Week</h3>
+                    <p class="dt-topic-subtitle">The rules behind our calendar — why February is short, when leap years
+                        happen, and how to find the day of the week for any date.</p>
+                </div>
+
+                <div class="dt-concept-block">
+                    <h4><span class="dt-concept-num">1</span> The Gregorian Calendar</h4>
+                    <div class="dt-eq-table">
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">Jan=31 Feb=28/29 Mar=31</div>
+                            <div class="dt-eq-note">Q1</div>
+                        </div>
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">Apr=30 May=31 Jun=30</div>
+                            <div class="dt-eq-note">Q2</div>
+                        </div>
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">Jul=31 Aug=31 Sep=30</div>
+                            <div class="dt-eq-note">Q3</div>
+                        </div>
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">Oct=31 Nov=30 Dec=31</div>
+                            <div class="dt-eq-note">Q4</div>
+                        </div>
+                    </div>
+                    <div class="dt-insight"><i class="fas fa-lightbulb"></i><span><strong>Knuckle trick:</strong> Make a
+                            fist. Each knuckle = 31-day month, each valley = 30 (or fewer). Start on left knuckle:
+                            Jan(31), valley(Feb-28), knuckle(Mar-31), valley(Apr-30)... July and August are both
+                            knuckles (both 31).</span></div>
+                </div>
+
+                <div class="dt-concept-block">
+                    <h4><span class="dt-concept-num">2</span> Leap Year Rules</h4>
+                    <div class="dt-formula-box">
+                        <div class="dt-formula-main">Leap Year Test (3 rules)</div>
+                        <div class="dt-formula-break"><span>1. Divisible by 4 → leap year</span><span>2. BUT divisible
+                                by 100 → NOT leap year</span><span>3. BUT divisible by 400 → IS leap year</span></div>
+                    </div>
+                    <div class="dt-code-box">
+                        <pre>2024 ÷ 4 = 606     → Leap year ✓
+1900 ÷ 4 = 475     → Yes, BUT 1900 ÷ 100 = 19 → NOT leap ✗
+2000 ÷ 400 = 5     → Exception: IS leap year ✓
+2100 ÷ 100 = 21    → NOT leap year ✗</pre>
+                    </div>
+                </div>
+
+                <div class="dt-example">
+                    <div class="dt-ex-header"><span class="dt-ex-badge">Worked Example 1</span>
+                        <h5>Counting Leap Years in a Range</h5>
+                    </div>
+                    <div class="dt-ex-problem"><strong>Problem:</strong> How many leap years are there between 2000 and
+                        2100 (inclusive)?</div>
+                    <div class="dt-ex-solution">
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 1: Count years divisible by 4</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">2000, 2004, 2008, ..., 2096, 2100</div>
+                                <div class="dt-math">Count = (2100 − 2000)/4 + 1 = 26</div>
+                            </div>
+                        </div>
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 2: Remove century years (÷100)</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">2100 is divisible by 100 → remove 1</div>
+                            </div>
+                        </div>
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 3: Add back ÷400 years</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">2000 is divisible by 400 → already counted ✓</div>
+                                <div class="dt-math">2100 ÷ 400 ≠ whole number → no add-back</div>
+                                <div class="dt-math dt-result">Leap years = 26 − 1 = 25</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dt-ex-answer"><strong>Answer:</strong> 25 leap years from 2000–2100. The Gregorian
+                        calendar averages 365.2425 days/year (vs the actual 365.2422 solar days) — accurate to 1 day per
+                        3,236 years.</div>
+                </div>
+
+                <div class="dt-concept-block">
+                    <h4><span class="dt-concept-num">3</span> Zeller's Congruence — Day of the Week</h4>
+                    <p>An algorithm to find the day of the week for any Gregorian date without a calendar.</p>
+                    <div class="dt-formula-box">
+                        <div class="dt-formula-main">h = (q + ⌊13(m+1)/5⌋ + K + ⌊K/4⌋ + ⌊J/4⌋ − 2J) mod 7</div>
+                        <div class="dt-formula-break"><span>q = day, m = month (3=Mar...14=Feb), K = year%100, J =
+                                year/100</span><span>h: 0=Sat, 1=Sun, 2=Mon, 3=Tue, 4=Wed, 5=Thu, 6=Fri</span></div>
+                    </div>
+                </div>
+
+                <div class="dt-example">
+                    <div class="dt-ex-header"><span class="dt-ex-badge">Worked Example 2</span>
+                        <h5>What Day Was July 20, 1969? (Moon Landing)</h5>
+                    </div>
+                    <div class="dt-ex-problem"><strong>Problem:</strong> Find the day of the week for July 20, 1969
+                        using Zeller's Congruence.</div>
+                    <div class="dt-ex-solution">
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 1: Set up variables</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">q = 20, m = 7 (July), year = 1969</div>
+                                <div class="dt-math">K = 69, J = 19</div>
+                            </div>
+                        </div>
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 2: Calculate</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">h = (20 + ⌊13×8/5⌋ + 69 + ⌊69/4⌋ + ⌊19/4⌋ − 2×19) mod 7</div>
+                                <div class="dt-math">= (20 + 20 + 69 + 17 + 4 − 38) mod 7</div>
+                                <div class="dt-math">= 92 mod 7</div>
+                                <div class="dt-math dt-result">h = 1 → Sunday</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dt-ex-answer"><strong>Answer:</strong> Sunday, July 20, 1969. Neil Armstrong took
+                        humanity's first steps on the Moon on a Sunday evening (US time).</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 2: DATE ARITHMETIC -->
+            <article class="dt-topic-content" id="dttopic-date-arithmetic">
+                <div class="dt-topic-hero">
+                    <h3>Date Arithmetic — Adding, Subtracting &amp; Finding Differences</h3>
+                    <p class="dt-topic-subtitle">How to calculate the number of days between dates, add weeks to a date,
+                        and handle month-end edge cases.</p>
+                </div>
+
+                <div class="dt-concept-block">
+                    <h4><span class="dt-concept-num">1</span> Days Between Two Dates</h4>
+                    <p>The most common date calculation. The key is to account for varying month lengths and leap years.
+                    </p>
+                    <div class="dt-formula-box">
+                        <div class="dt-formula-main">Method: Convert both dates to day-count, subtract</div>
+                        <div class="dt-formula-break"><span>Julian Day Number or count from a reference
+                                date</span><span>Each full year = 365 (or 366 if leap)</span><span>Add remaining months
+                                and days</span></div>
+                    </div>
+                </div>
+
+                <div class="dt-example">
+                    <div class="dt-ex-header"><span class="dt-ex-badge">Worked Example 1</span>
+                        <h5>Days Between Two Dates</h5>
+                    </div>
+                    <div class="dt-ex-problem"><strong>Problem:</strong> How many days between March 15, 2024 and
+                        September 8, 2024?</div>
+                    <div class="dt-ex-solution">
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 1: Count remaining days in each month</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">March: 31 − 15 = 16 days remaining</div>
+                                <div class="dt-math">April: 30, May: 31, June: 30, July: 31, August: 31</div>
+                                <div class="dt-math">September: 8 days</div>
+                            </div>
+                        </div>
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 2: Sum all days</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">16 + 30 + 31 + 30 + 31 + 31 + 8</div>
+                                <div class="dt-math dt-result">= 177 days</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dt-ex-answer"><strong>Answer:</strong> 177 days (or 25 weeks and 2 days). This is the
+                        method used in project planning, loan interest calculations (actual/actual day count), and
+                        countdown timers.</div>
+                </div>
+
+                <div class="dt-concept-block">
+                    <h4><span class="dt-concept-num">2</span> Adding/Subtracting Months</h4>
+                    <p>Adding months isn't as simple as adding 30 days — you move to the same day number in the target
+                        month, with special handling for month-end.</p>
+                    <div class="dt-eq-table">
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">Jan 31 + 1 month</div>
+                            <div class="dt-eq-note">= Feb 28 (or 29) — capped at month end</div>
+                        </div>
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">Mar 31 + 1 month</div>
+                            <div class="dt-eq-note">= Apr 30 — April only has 30 days</div>
+                        </div>
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">Aug 15 + 6 months</div>
+                            <div class="dt-eq-note">= Feb 15 (next year)</div>
+                        </div>
+                    </div>
+                    <div class="dt-insight"><i class="fas fa-lightbulb"></i><span><strong>Edge case warning:</strong>
+                            "Jan 31 + 1 month" gives Feb 28. But "Feb 28 + 1 month" gives Mar 28, NOT Mar 31. Adding and
+                            subtracting months is NOT reversible — this is a common bug in software.</span></div>
+                </div>
+
+                <div class="dt-example">
+                    <div class="dt-ex-header"><span class="dt-ex-badge">Worked Example 2</span>
+                        <h5>Date After Adding Weeks and Days</h5>
+                    </div>
+                    <div class="dt-ex-problem"><strong>Problem:</strong> A project starts on November 22, 2024. It takes
+                        14 weeks and 3 days. What is the end date?</div>
+                    <div class="dt-ex-solution">
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 1: Convert to total days</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">14 weeks × 7 = 98 days + 3 = 101 days</div>
+                            </div>
+                        </div>
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 2: Count forward from Nov 22</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">Nov: 30 − 22 = 8 days remaining (→ Nov 30)</div>
+                                <div class="dt-math">Dec: 31 days (→ Dec 31, 39 used)</div>
+                                <div class="dt-math">Jan: 31 days (→ Jan 31, 70 used)</div>
+                                <div class="dt-math">Feb: 28 days in 2025 (→ Feb 28, 98 used)</div>
+                                <div class="dt-math">Remaining: 101 − 98 = 3 more days</div>
+                                <div class="dt-math dt-result">End date: March 3, 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dt-ex-answer"><strong>Answer:</strong> March 3, 2025 (a Monday, since Nov 22, 2024 is a
+                        Friday + 101 days = Friday + 14 weeks + 3 days = Monday).</div>
+                </div>
+
+                <div class="dt-example">
+                    <div class="dt-ex-header"><span class="dt-ex-badge">Worked Example 3</span>
+                        <h5>Day-Count Conventions in Finance</h5>
+                    </div>
+                    <div class="dt-ex-problem"><strong>Problem:</strong> Calculate simple interest on $10,000 at 5% from
+                        Jan 15 to Apr 15, 2024 using (a) Actual/365 and (b) 30/360 conventions.</div>
+                    <div class="dt-ex-solution">
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">(a) Actual/365</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">Jan: 16, Feb: 29 (2024 leap), Mar: 31, Apr: 15</div>
+                                <div class="dt-math">Actual days = 16 + 29 + 31 + 15 = 91</div>
+                                <div class="dt-math">Interest = 10000 × 0.05 × 91/365</div>
+                                <div class="dt-math dt-result">= $124.66</div>
+                            </div>
+                        </div>
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">(b) 30/360</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">Each month = 30 days: 3 months × 30 = 90 days</div>
+                                <div class="dt-math">Interest = 10000 × 0.05 × 90/360</div>
+                                <div class="dt-math dt-result">= $125.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dt-ex-answer"><strong>Answer:</strong> Actual/365: $124.66. 30/360: $125.00. The
+                        difference is small here, but on large loans it matters. Bond markets, mortgages, and different
+                        countries use different conventions — always check which applies.</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 3: TIME ZONES -->
+            <article class="dt-topic-content" id="dttopic-time-zones">
+                <div class="dt-topic-hero">
+                    <h3>Time Zones — UTC Offsets, Daylight Saving &amp; International Time</h3>
+                    <p class="dt-topic-subtitle">How the world tells time — converting between zones, handling DST, and
+                        avoiding scheduling mistakes.</p>
+                </div>
+
+                <div class="dt-concept-block">
+                    <h4><span class="dt-concept-num">1</span> UTC and Time Zone Offsets</h4>
+                    <p><strong>UTC</strong> (Coordinated Universal Time) is the global reference. Every time zone is
+                        defined as an offset from UTC.</p>
+                    <div class="dt-eq-table">
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">UTC−8 (PST)</div>
+                            <div class="dt-eq-note">Los Angeles, Vancouver</div>
+                        </div>
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">UTC−5 (EST)</div>
+                            <div class="dt-eq-note">New York, Toronto</div>
+                        </div>
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">UTC+0 (GMT)</div>
+                            <div class="dt-eq-note">London (winter), Accra</div>
+                        </div>
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">UTC+1 (WAT)</div>
+                            <div class="dt-eq-note">Lagos, Kinshasa</div>
+                        </div>
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">UTC+8 (CST)</div>
+                            <div class="dt-eq-note">Beijing, Singapore</div>
+                        </div>
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">UTC+9 (JST)</div>
+                            <div class="dt-eq-note">Tokyo</div>
+                        </div>
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">UTC+5:30 (IST)</div>
+                            <div class="dt-eq-note">India (half-hour offset!)</div>
+                        </div>
+                    </div>
+                    <div class="dt-formula-box">
+                        <div class="dt-formula-main">Target time = Source time − Source offset + Target offset</div>
+                        <div class="dt-formula-break"><span>Or: convert to UTC first, then to target zone</span></div>
+                    </div>
+                </div>
+
+                <div class="dt-example">
+                    <div class="dt-ex-header"><span class="dt-ex-badge">Worked Example 1</span>
+                        <h5>Time Zone Conversion</h5>
+                    </div>
+                    <div class="dt-ex-problem"><strong>Problem:</strong> A meeting is at 3:00 PM EST (UTC−5). What time
+                        is it in (a) Lagos (UTC+1), (b) Tokyo (UTC+9), (c) Los Angeles (PST, UTC−8)?</div>
+                    <div class="dt-ex-solution">
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 1: Convert to UTC</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">3:00 PM EST + 5 hours = 8:00 PM UTC (20:00)</div>
+                            </div>
+                        </div>
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 2: Convert to each target</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">(a) Lagos: 20:00 + 1 = 21:00</div>
+                                <div class="dt-math dt-result">Lagos: 9:00 PM (same day)</div>
+                                <div class="dt-math">(b) Tokyo: 20:00 + 9 = 29:00 → 05:00 next day</div>
+                                <div class="dt-math dt-result">Tokyo: 5:00 AM (next day!)</div>
+                                <div class="dt-math">(c) LA: 20:00 − 8 = 12:00</div>
+                                <div class="dt-math dt-result">Los Angeles: 12:00 PM (noon, same day)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dt-ex-answer"><strong>Answer:</strong> Lagos 9 PM, Tokyo 5 AM next day, LA 12 PM noon.
+                        Tip: The total offset between any two zones = difference in their UTC offsets. EST to Lagos =
+                        5+1 = 6 hours ahead.</div>
+                </div>
+
+                <div class="dt-concept-block">
+                    <h4><span class="dt-concept-num">2</span> Daylight Saving Time (DST)</h4>
+                    <div class="dt-two-col">
+                        <div class="dt-info-col">
+                            <div class="dt-info-title">Spring Forward</div>
+                            <p>Clocks move ahead 1 hour (e.g., 2 AM → 3 AM). Day is 23 hours. US: 2nd Sunday of March.
+                            </p>
+                        </div>
+                        <div class="dt-info-col">
+                            <div class="dt-info-title">Fall Back</div>
+                            <p>Clocks move back 1 hour (e.g., 2 AM → 1 AM). Day is 25 hours. US: 1st Sunday of November.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="dt-insight"><i class="fas fa-lightbulb"></i><span><strong>Not all places observe
+                                DST:</strong> Most of Africa (including Nigeria), most of Asia, and parts of the US
+                            (Arizona, Hawaii) don't use DST. Always check both the zone AND the DST status.</span></div>
+                </div>
+
+                <div class="dt-example">
+                    <div class="dt-ex-header"><span class="dt-ex-badge">Worked Example 2</span>
+                        <h5>Scheduling Across DST Changes</h5>
+                    </div>
+                    <div class="dt-ex-problem"><strong>Problem:</strong> You schedule a weekly call at 2:00 PM New York
+                        time with a colleague in London. In winter, NY is EST (UTC−5) and London is GMT (UTC+0). What
+                        happens when the US springs forward but the UK hasn't yet? (US DST starts ~2 weeks before UK)
+                    </div>
+                    <div class="dt-ex-solution">
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Before DST</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">NY 2:00 PM EST (UTC−5) = London 7:00 PM GMT (UTC+0)</div>
+                                <div class="dt-math">Offset = 5 hours</div>
+                            </div>
+                        </div>
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">During the gap (US springs forward, UK hasn't)</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">NY 2:00 PM EDT (UTC−4) = London 6:00 PM GMT</div>
+                                <div class="dt-math dt-result">Offset shrinks to 4 hours — call is 1 hour earlier for
+                                    London!</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dt-ex-answer"><strong>Answer:</strong> The London colleague sees the meeting shift from
+                        7 PM to 6 PM for ~2 weeks. This "DST gap" causes real-world scheduling chaos every spring. Best
+                        practice: schedule in UTC or use calendar tools that handle time zones automatically.</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 4: UNIX TIMESTAMPS -->
+            <article class="dt-topic-content" id="dttopic-unix-timestamps">
+                <div class="dt-topic-hero">
+                    <h3>Unix Timestamps — Epoch Time, Conversions &amp; the Y2038 Problem</h3>
+                    <p class="dt-topic-subtitle">How computers track time internally — a single number counting seconds
+                        since January 1, 1970.</p>
+                </div>
+
+                <div class="dt-concept-block">
+                    <h4><span class="dt-concept-num">1</span> What Is Unix Time?</h4>
+                    <p>Unix time (or Epoch time) counts the number of seconds since <strong>January 1, 1970, 00:00:00
+                            UTC</strong> — called the Unix Epoch. It's used internally by virtually every computer,
+                        server, and database.</p>
+                    <div class="dt-formula-box">
+                        <div class="dt-formula-main">Unix timestamp = seconds since 1970-01-01 00:00:00 UTC</div>
+                        <div class="dt-formula-break"><span>1,000,000,000 = Sept 9, 2001 01:46:40
+                                UTC</span><span>1,700,000,000 = Nov 14, 2023 22:13:20 UTC</span><span>2,000,000,000 =
+                                May 18, 2033 03:33:20 UTC</span></div>
+                    </div>
+                </div>
+
+                <div class="dt-example">
+                    <div class="dt-ex-header"><span class="dt-ex-badge">Worked Example 1</span>
+                        <h5>Converting a Unix Timestamp to a Date</h5>
+                    </div>
+                    <div class="dt-ex-problem"><strong>Problem:</strong> Convert Unix timestamp 1,720,000,000 to a
+                        human-readable date.</div>
+                    <div class="dt-ex-solution">
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 1: Convert to days</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">1,720,000,000 ÷ 86,400 = 19,907.407 days</div>
+                                <div class="dt-math">= 19,907 full days + 35,200 seconds</div>
+                            </div>
+                        </div>
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 2: Years from epoch</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">19,907 ÷ 365.25 ≈ 54.5 years after 1970</div>
+                                <div class="dt-math">≈ mid-2024</div>
+                            </div>
+                        </div>
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 3: Remaining time</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">35,200 seconds = 9 hours, 46 minutes, 40 seconds</div>
+                                <div class="dt-math dt-result">July 3, 2024, 09:46:40 UTC</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dt-ex-answer"><strong>Answer:</strong> July 3, 2024 at 09:46:40 UTC. In practice, you'd
+                        use a programming function rather than manual math — but understanding the concept helps debug
+                        timestamp issues.</div>
+                </div>
+
+                <div class="dt-concept-block">
+                    <h4><span class="dt-concept-num">2</span> Common Timestamp Operations</h4>
+                    <div class="dt-eq-table">
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">+ 86,400</div>
+                            <div class="dt-eq-note">Add 1 day (24 × 60 × 60)</div>
+                        </div>
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">+ 604,800</div>
+                            <div class="dt-eq-note">Add 1 week</div>
+                        </div>
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">+ 3,600</div>
+                            <div class="dt-eq-note">Add 1 hour</div>
+                        </div>
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">÷ 1000</div>
+                            <div class="dt-eq-note">Milliseconds → seconds (JS uses ms)</div>
+                        </div>
+                    </div>
+                    <div class="dt-code-box">
+                        <pre>// Getting Unix time in different languages:
+JavaScript: Math.floor(Date.now() / 1000)
+Python:     import time; int(time.time())
+PHP:        time()
+SQL:        UNIX_TIMESTAMP()</pre>
+                    </div>
+                </div>
+
+                <div class="dt-concept-block">
+                    <h4><span class="dt-concept-num">3</span> The Y2038 Problem</h4>
+                    <p>Many systems store Unix time as a <strong>signed 32-bit integer</strong>, which maxes out at
+                        2,147,483,647 — January 19, 2038 at 03:14:07 UTC. After that, it overflows to a negative number
+                        (December 13, 1901).</p>
+                    <div class="dt-formula-box">
+                        <div class="dt-formula-main">2³¹ − 1 = 2,147,483,647 → Jan 19, 2038</div>
+                        <div class="dt-formula-break"><span>Fix: use 64-bit timestamps (good for 292 billion
+                                years)</span><span>Most modern OS and languages already use 64-bit</span></div>
+                    </div>
+                    <div class="dt-insight"><i class="fas fa-lightbulb"></i><span><strong>Real impact:</strong> Embedded
+                            systems, IoT devices, legacy databases, and some file formats still use 32-bit timestamps.
+                            This is why the tech industry is actively migrating to 64-bit time.</span></div>
+                </div>
+
+                <div class="dt-example">
+                    <div class="dt-ex-header"><span class="dt-ex-badge">Worked Example 2</span>
+                        <h5>Time Difference Using Timestamps</h5>
+                    </div>
+                    <div class="dt-ex-problem"><strong>Problem:</strong> Event A occurred at timestamp 1,704,067,200.
+                        Event B at 1,706,745,600. How far apart are they in days, hours, and minutes?</div>
+                    <div class="dt-ex-solution">
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 1: Subtract timestamps</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">Diff = 1,706,745,600 − 1,704,067,200 = 2,678,400 seconds</div>
+                            </div>
+                        </div>
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 2: Convert</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">Days: 2,678,400 ÷ 86,400 = 31.0 days</div>
+                                <div class="dt-math">= 744 hours = 44,640 minutes</div>
+                                <div class="dt-math dt-result">Exactly 31 days (Jan 1 → Feb 1, 2024)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dt-ex-answer"><strong>Answer:</strong> Exactly 31 days. Timestamp subtraction always
+                        gives precise results — no ambiguity from month lengths or time zones. This is why databases
+                        store timestamps, not formatted dates.</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 5: BUSINESS DAYS -->
+            <article class="dt-topic-content" id="dttopic-business-days">
+                <div class="dt-topic-hero">
+                    <h3>Business Days — Working Day Calculations &amp; Scheduling</h3>
+                    <p class="dt-topic-subtitle">Counting workdays, excluding weekends and holidays — essential for
+                        project deadlines, shipping estimates, and legal timelines.</p>
+                </div>
+
+                <div class="dt-concept-block">
+                    <h4><span class="dt-concept-num">1</span> Counting Business Days</h4>
+                    <p>A business day is typically Monday–Friday, excluding public holidays. Different countries have
+                        different holiday calendars.</p>
+                    <div class="dt-formula-box">
+                        <div class="dt-formula-main">Business days ≈ Total days × (5/7) − Holidays</div>
+                        <div class="dt-formula-break"><span>Quick estimate: ~21.7 business days per
+                                month</span><span>~260 business days per year (before holidays)</span><span>~250 after
+                                US federal holidays</span></div>
+                    </div>
+                </div>
+
+                <div class="dt-concept-block">
+                    <h4><span class="dt-concept-num">2</span> The Full-Weeks Method</h4>
+                    <p>For exact business day counts: separate full weeks (which always have 5 business days) from the
+                        remaining partial week.</p>
+                    <div class="dt-formula-box">
+                        <div class="dt-formula-main">Business days = (full weeks × 5) + extra weekdays</div>
+                        <div class="dt-formula-break"><span>Full weeks = total days ÷ 7 (integer part)</span><span>Extra
+                                days = total days mod 7 (check each one)</span></div>
+                    </div>
+                </div>
+
+                <div class="dt-example">
+                    <div class="dt-ex-header"><span class="dt-ex-badge">Worked Example 1</span>
+                        <h5>Business Days Between Two Dates</h5>
+                    </div>
+                    <div class="dt-ex-problem"><strong>Problem:</strong> How many business days between Monday, January
+                        6 and Friday, February 14, 2025? (No holidays in this range.)</div>
+                    <div class="dt-ex-solution">
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 1: Total calendar days</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">Jan: 31 − 6 = 25 days remaining</div>
+                                <div class="dt-math">Feb: 14 days</div>
+                                <div class="dt-math">Total = 25 + 14 = 39 calendar days</div>
+                            </div>
+                        </div>
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 2: Full weeks and remainder</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">39 ÷ 7 = 5 full weeks + 4 extra days</div>
+                                <div class="dt-math">Full weeks: 5 × 5 = 25 business days</div>
+                            </div>
+                        </div>
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 3: Check the 4 extra days</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">Start from Monday: Mon, Tue, Wed, Thu</div>
+                                <div class="dt-math">All are weekdays → 4 business days</div>
+                                <div class="dt-math dt-result">Total = 25 + 4 = 29 business days</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dt-ex-answer"><strong>Answer:</strong> 29 business days. The full-weeks method is
+                        reliable and fast — separate the complete weeks (always 5 workdays) and handle the partial week
+                        manually.</div>
+                </div>
+
+                <div class="dt-example">
+                    <div class="dt-ex-header"><span class="dt-ex-badge">Worked Example 2</span>
+                        <h5>Deadline: "10 Business Days From Today"</h5>
+                    </div>
+                    <div class="dt-ex-problem"><strong>Problem:</strong> A document is due in 10 business days from
+                        Wednesday, March 5, 2025. What is the deadline? (No holidays.)</div>
+                    <div class="dt-ex-solution">
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 1: Full weeks in 10 business days</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">10 ÷ 5 = 2 full weeks = 14 calendar days</div>
+                            </div>
+                        </div>
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 2: Add to start date</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">March 5 (Wed) + 14 calendar days</div>
+                                <div class="dt-math dt-result">= March 19, 2025 (Wednesday)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dt-ex-answer"><strong>Answer:</strong> Wednesday, March 19, 2025. When business days
+                        divide evenly by 5, you land on the same weekday. 10 business days = exactly 2 calendar weeks.
+                        If it were 8 business days: 1 week (5 days) + 3 more weekdays = Thu, Fri, Mon → March 17
+                        (Monday).</div>
+                </div>
+
+                <div class="dt-example">
+                    <div class="dt-ex-header"><span class="dt-ex-badge">Worked Example 3</span>
+                        <h5>Project Duration with Holidays</h5>
+                    </div>
+                    <div class="dt-ex-problem"><strong>Problem:</strong> A task needs 15 business days starting Monday,
+                        December 16, 2024. Christmas (Dec 25) and New Year's Day (Jan 1) are holidays. When does it end?
+                    </div>
+                    <div class="dt-ex-solution">
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 1: Count week by week</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">Week 1 (Dec 16–20): 5 business days ✓</div>
+                                <div class="dt-math">Week 2 (Dec 23–27): 4 days (Dec 25 = holiday)</div>
+                                <div class="dt-math">Week 3 (Dec 30–Jan 3): 4 days (Jan 1 = holiday)</div>
+                                <div class="dt-math">Running total: 5 + 4 + 4 = 13 days</div>
+                            </div>
+                        </div>
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 2: Remaining days</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">Need 15 − 13 = 2 more business days</div>
+                                <div class="dt-math">Jan 6 (Mon) and Jan 7 (Tue)</div>
+                                <div class="dt-math dt-result">End date: Tuesday, January 7, 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dt-ex-answer"><strong>Answer:</strong> January 7, 2025 (Tuesday). Without holidays, 15
+                        business days = 3 weeks = Jan 3. The 2 holidays pushed it 2 business days later. Always account
+                        for holidays in project timelines!</div>
+                </div>
+            </article>
+
+
+            <!-- TOPIC 6: AGE & DURATION -->
+            <article class="dt-topic-content" id="dttopic-age-calculations">
+                <div class="dt-topic-hero">
+                    <h3>Age &amp; Duration Calculations — Exact Age, Time Between Events &amp; Milestones</h3>
+                    <p class="dt-topic-subtitle">Precise age calculations in years, months, and days — plus duration
+                        math for events and anniversaries.</p>
+                </div>
+
+                <div class="dt-concept-block">
+                    <h4><span class="dt-concept-num">1</span> Calculating Exact Age</h4>
+                    <p>Age isn't just years — calculating exact age in years, months, and days requires accounting for
+                        varying month lengths and leap years.</p>
+                    <div class="dt-formula-box">
+                        <div class="dt-formula-main">Age = (Today − Birthdate) in Y / M / D</div>
+                        <div class="dt-formula-break"><span>Years: complete years since birth</span><span>Months:
+                                complete months after last birthday</span><span>Days: remaining days after last
+                                month-iversary</span></div>
+                    </div>
+                </div>
+
+                <div class="dt-example">
+                    <div class="dt-ex-header"><span class="dt-ex-badge">Worked Example 1</span>
+                        <h5>Exact Age Calculation</h5>
+                    </div>
+                    <div class="dt-ex-problem"><strong>Problem:</strong> Calculate the exact age on February 12, 2025
+                        for someone born on August 27, 1995.</div>
+                    <div class="dt-ex-solution">
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 1: Years</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">From Aug 27, 1995 to Aug 27, 2024 = 29 full years</div>
+                                <div class="dt-math">Aug 27 to Feb 12 hasn't reached next birthday</div>
+                                <div class="dt-math dt-result">Years = 29</div>
+                            </div>
+                        </div>
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 2: Months after last birthday</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">Aug 27 → Sep 27 → Oct 27 → Nov 27 → Dec 27 → Jan 27</div>
+                                <div class="dt-math dt-result">Months = 5 (Aug 27 to Jan 27)</div>
+                            </div>
+                        </div>
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 3: Remaining days</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">Jan 27 → Feb 12 = 16 days</div>
+                                <div class="dt-math dt-result">Age = 29 years, 5 months, 16 days</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dt-ex-answer"><strong>Answer:</strong> 29 years, 5 months, 16 days. In total days:
+                        approximately 10,761 days alive (29×365 + 7 leap years + 169 remaining days).</div>
+                </div>
+
+                <div class="dt-concept-block">
+                    <h4><span class="dt-concept-num">2</span> Duration Between Events</h4>
+                    <div class="dt-eq-table">
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">1 minute</div>
+                            <div class="dt-eq-note">60 seconds</div>
+                        </div>
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">1 hour</div>
+                            <div class="dt-eq-note">3,600 seconds</div>
+                        </div>
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">1 day</div>
+                            <div class="dt-eq-note">86,400 seconds</div>
+                        </div>
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">1 week</div>
+                            <div class="dt-eq-note">604,800 seconds</div>
+                        </div>
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">1 year (avg)</div>
+                            <div class="dt-eq-note">31,557,600 seconds (365.25 days)</div>
+                        </div>
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">1 million seconds</div>
+                            <div class="dt-eq-note">≈ 11.57 days</div>
+                        </div>
+                        <div class="dt-eq-row">
+                            <div class="dt-eq-cell">1 billion seconds</div>
+                            <div class="dt-eq-note">≈ 31.7 years</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dt-example">
+                    <div class="dt-ex-header"><span class="dt-ex-badge">Worked Example 2</span>
+                        <h5>Countdown to a Future Date</h5>
+                    </div>
+                    <div class="dt-ex-problem"><strong>Problem:</strong> How many days, hours, and minutes until
+                        midnight on December 31, 2025, starting from February 12, 2025 at 10:00 AM?</div>
+                    <div class="dt-ex-solution">
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 1: Days remaining</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">Feb: 28 − 12 = 16 days</div>
+                                <div class="dt-math">Mar: 31, Apr: 30, May: 31, Jun: 30</div>
+                                <div class="dt-math">Jul: 31, Aug: 31, Sep: 30, Oct: 31</div>
+                                <div class="dt-math">Nov: 30, Dec: 31</div>
+                                <div class="dt-math">Total: 16 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31</div>
+                                <div class="dt-math dt-result">= 322 full days + partial day</div>
+                            </div>
+                        </div>
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 2: Hours from 10 AM to midnight</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">First partial day: 14 hours remaining (10 AM → midnight)</div>
+                                <div class="dt-math dt-result">Total: 322 days, 14 hours, 0 minutes</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dt-ex-answer"><strong>Answer:</strong> 322 days, 14 hours, 0 minutes — or 7,748 hours,
+                        or 464,880 minutes. That's approximately 46 weeks and 0.6 days. Countdown calculations are used
+                        in project management, event planning, and space mission timelines.</div>
+                </div>
+
+                <div class="dt-example">
+                    <div class="dt-ex-header"><span class="dt-ex-badge">Worked Example 3</span>
+                        <h5>Milestone: When Will You Turn 1 Billion Seconds Old?</h5>
+                    </div>
+                    <div class="dt-ex-problem"><strong>Problem:</strong> If you were born on March 15, 2000, when will
+                        you turn 1 billion seconds old?</div>
+                    <div class="dt-ex-solution">
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 1: Convert billion seconds to years</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">1,000,000,000 ÷ 31,557,600 (seconds/year)</div>
+                                <div class="dt-math dt-result">≈ 31.688 years</div>
+                            </div>
+                        </div>
+                        <div class="dt-sol-step">
+                            <div class="dt-sol-label">Step 2: Calculate the date</div>
+                            <div class="dt-sol-content">
+                                <div class="dt-math">31 full years: March 15, 2000 → March 15, 2031</div>
+                                <div class="dt-math">0.688 years = 0.688 × 365.25 ≈ 251 days</div>
+                                <div class="dt-math">March 15 + 251 days:</div>
+                                <div class="dt-math">Mar: 16, Apr: 30, May: 31, Jun: 30, Jul: 31, Aug: 31</div>
+                                <div class="dt-math">Sep: 30, Oct: 31, Nov: 21 (= 251)</div>
+                                <div class="dt-math dt-result">≈ November 21, 2031</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dt-ex-answer"><strong>Answer:</strong> Approximately November 21, 2031. Your billionth
+                        second — a fun milestone that most people hit around age 31–32. For comparison, you turned 1
+                        million seconds old at about 11.5 days old!</div>
+                </div>
+            </article>
+
+        </div><!-- end dt-topics-container -->
+    </section><!-- end dt-topics-section -->
+
+
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
@@ -337,6 +1179,7 @@
     <script src="/js/nav.js"></script>
     <script src="/js/script.js"></script>
     <script src="/js/date-time.js"></script>
+    <script src="/js/dt-topics.js"></script>
 
     <!-- Google AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
