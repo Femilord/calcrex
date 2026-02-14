@@ -266,7 +266,7 @@ body {
     padding: 0.6rem 1rem;
     color: #475569;
     text-decoration: none;
-    font-size: 0.8125rem;
+    font-size: 0.9125rem;
     font-weight: 500;
     white-space: nowrap;
     transition: all 0.15s ease;
@@ -929,8 +929,8 @@ body {
 
 @media (min-width: 951px) and (max-width: 1050px) {
     .nav-link {
-        padding: 0.5625rem 0.4375rem;
-        font-size: 0.725rem;
+        padding: 0.5625rem 0.5075rem;
+        font-size: 0.920rem;
     }
 
     .nav-list {
