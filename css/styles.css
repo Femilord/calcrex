@@ -124,6 +124,12 @@ body {
     border-radius: 2px;
 }
 
+.logo img {
+    max-width: 32px;
+    margin-right: 10px;
+}
+
+
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {
     display: none;
