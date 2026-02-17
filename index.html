@@ -58,6 +58,8 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/pages.css">
+    <link rel="stylesheet" href="/css/topics.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -234,20 +236,14 @@
         <div class="header-container">
             <!-- Logo -->
             <div class="logo">
-                <a href="#calculator">
-                    <img src="img/logo.png" alt="CalcREX Logo">
+                <a href="/">
+                    <img src="../img/logo.png" alt="CalcREX Logo">
                     <span class="logo-text">Calc<span class="logo-highlight">REX</span></span>
                 </a>
             </div>
-
-            <!-- Mobile Menu Toggle -->
             <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
+                <span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span>
             </button>
-
-            <!-- Navigation Menu -->
             <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="/" class="nav-link active">Calculator</a></li>
@@ -256,8 +252,8 @@
                         <button class="nav-link nav-dropdown-toggle">Sciences <i
                                 class="fas fa-chevron-down nav-arrow"></i></button>
                         <ul class="nav-dropdown-menu">
-                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i>
-                                    Physics</a></li>
+                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a>
+                            </li>
                             <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i>
                                     Chemistry</a></li>
                             <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i>
@@ -271,6 +267,7 @@
                     <li><a href="/computer-science" class="nav-link">Computer Science</a></li>
                     <li><a href="/finance" class="nav-link">Finance</a></li>
                     <li><a href="/date-time" class="nav-link">Date &amp; Time</a></li>
+                    <li><a href="/topics" class="nav-link">Topics</a></li>
                 </ul>
             </nav>
         </div>
@@ -280,13 +277,13 @@
     <section class="intro-section">
         <div class="intro-container">
             <h1 class="intro-title">Free Online Calculator Suite - 90+ Calculators & Converters</h1>
-
+    
             <div class="intro-content" id="introContent">
                 <p class="intro-text">
-                    Welcome to CalcREX, your complete free online calculator suite featuring over 90 professional-grade
+                    Welcome to CalcRex, your complete free online calculator suite featuring over 90 professional-grade
                     calculators, unit converter, and specialized tools for mathematics, science, finance, and everyday
                     calculations. Whether you're a student tackling complex physics problems, a professional managing
-                    financial calculations, or anyone needing quick and accurate conversions, CalcREX provides instant,
+                    financial calculations, or anyone needing quick and accurate conversions, CalcRex provides instant,
                     reliable results without requiring registration or downloads.
                 </p>
                 <p class="intro-text intro-text-extra">
@@ -296,14 +293,14 @@
                     accuracy, speed, and ease of use, working seamlessly on desktop, tablet, and mobile devices.
                 </p>
             </div>
-
+    
             <button class="read-more-btn" id="readMoreBtn">
                 <span class="btn-text">Read More</span>
                 <span class="btn-icon">▼</span>
             </button>
         </div>
     </section>
-
+    
     <!-- Main Content Wrapper -->
     <main class="main-content">
         <!-- Google AdSense - Left Sidebar -->
@@ -315,7 +312,7 @@
                     data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
             </div>
         </div>
-
+    
         <div class="calculator-container">
             <!-- Mode Selector -->
             <div class="mode-selector">
@@ -323,7 +320,7 @@
                 <button class="mode-btn" data-mode="scientific">Scientific</button>
                 <button class="mode-btn" data-mode="advanced">Advanced</button>
             </div>
-
+    
             <!-- Calculator Display -->
             <div class="calculator">
                 <!-- Quick Access Section (Memory + Conversion) - Now at the very top -->
@@ -339,7 +336,7 @@
                             <button class="btn memory" data-memory="ms">MS</button>
                         </div>
                     </div>
-
+    
                     <!-- Angle Mode Conversion -->
                     <div class="conversion-section">
                         <h3>Angle Mode</h3>
@@ -349,95 +346,95 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <!-- Memory Display -->
                 <div class="memory-display" id="memoryDisplay"></div>
-
+    
                 <div class="display-section">
                     <div class="expression" id="expression"></div>
                     <div class="display" id="display">0</div>
                 </div>
-
+    
                 <!-- Basic Calculator Buttons -->
                 <div class="buttons-container" id="basicButtons">
                     <button class="btn clear" data-action="clear">C</button>
                     <button class="btn clear" data-action="delete">⌫</button>
                     <button class="btn operator" data-value="(">(</button>
                     <button class="btn operator" data-value=")">)</button>
-
+    
                     <button class="btn number" data-value="7">7</button>
                     <button class="btn number" data-value="8">8</button>
                     <button class="btn number" data-value="9">9</button>
                     <button class="btn operator" data-value="/">÷</button>
-
+    
                     <button class="btn number" data-value="4">4</button>
                     <button class="btn number" data-value="5">5</button>
                     <button class="btn number" data-value="6">6</button>
                     <button class="btn operator" data-value="*">×</button>
-
+    
                     <button class="btn number" data-value="1">1</button>
                     <button class="btn number" data-value="2">2</button>
                     <button class="btn number" data-value="3">3</button>
                     <button class="btn operator" data-value="-">−</button>
-
+    
                     <button class="btn number" data-value="0">0</button>
                     <button class="btn number" data-value=".">.</button>
                     <button class="btn operator" data-value="%">%</button>
                     <button class="btn operator" data-value="+">+</button>
-
+    
                     <button class="btn number" data-value="+/-">+/−</button>
                     <button class="btn equals" data-action="equals" style="grid-column: span 3;">=</button>
                 </div>
-
+    
                 <!-- Scientific Calculator Additional Buttons -->
                 <div class="buttons-container scientific-buttons" id="scientificButtons">
                     <button class="btn function" data-function="sin">sin</button>
                     <button class="btn function" data-function="cos">cos</button>
                     <button class="btn function" data-function="tan">tan</button>
                     <button class="btn function" data-function="log">log</button>
-
+    
                     <button class="btn function" data-function="asin">sin⁻¹</button>
                     <button class="btn function" data-function="acos">cos⁻¹</button>
                     <button class="btn function" data-function="atan">tan⁻¹</button>
                     <button class="btn function" data-function="ln">ln</button>
-
+    
                     <button class="btn function" data-function="sqrt">√</button>
                     <button class="btn function" data-function="cbrt">∛</button>
                     <button class="btn function" data-function="pow">x^y</button>
                     <button class="btn function" data-function="exp">e^x</button>
-
+    
                     <button class="btn function" data-value="pi">π</button>
                     <button class="btn function" data-value="e">e</button>
                     <button class="btn function" data-function="factorial">n!</button>
                     <button class="btn function" data-function="abs">|x|</button>
                 </div>
-
+    
                 <!-- Advanced Calculator Additional Buttons -->
                 <div class="buttons-container advanced-buttons" id="advancedButtons">
                     <button class="btn function" data-function="sinh">sinh</button>
                     <button class="btn function" data-function="cosh">cosh</button>
                     <button class="btn function" data-function="tanh">tanh</button>
                     <button class="btn function" data-function="mod">mod</button>
-
+    
                     <button class="btn function" data-function="ceil">⌈x⌉</button>
                     <button class="btn function" data-function="floor">⌊x⌋</button>
                     <button class="btn function" data-function="round">round</button>
                     <button class="btn function" data-function="random">Rand</button>
-
+    
                     <button class="btn function" data-function="gcd">GCD</button>
                     <button class="btn function" data-function="lcm">LCM</button>
                     <button class="btn function" data-function="negate">±</button>
                     <button class="btn clear" id="clearHistory" style="font-size: 0.75rem;">Clear History</button>
                 </div>
             </div>
-
+    
             <!-- History Panel (Advanced Mode) - Now inside calculator -->
             <div class="history-panel" id="historyPanel">
                 <h3>Calculation History</h3>
                 <div class="history-list" id="historyList"></div>
             </div>
         </div>
-
+    
         <!-- Google AdSense - Right Sidebar -->
         <div class="ad-container ad-right">
             <div class="ad-placeholder">
@@ -448,6 +445,31 @@
             </div>
         </div>
     </main>
+    
+    <!-- Featured Science Topic -->
+    <section class="featured-topics">
+        <div class="featured-topics-header">
+            <h2>Explore Science Topics</h2>
+            <p>In-depth guides to the concepts students search for most</p>
+        </div>
+        <div class="featured-grid" style="max-width:700px;margin:0 auto;">
+            <a href="/quantum-mechanics/" class="featured-card" style="grid-column:1/-1;">
+                <div class="featured-card-icon tc-quantum"><i class="fas fa-atom"></i></div>
+                <div class="featured-card-text">
+                    <h3>Quantum Mechanics</h3>
+                    <p>Explore the bizarre world of quantum physics — where particles behave like waves, electrons exist in
+                        superposition, and observation changes reality. From the Schrödinger equation to Heisenberg's
+                        uncertainty principle...</p>
+                    <span class="topic-read-more">Read Full Guide <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="featured-view-all" style="margin-top:1rem;">
+            <a href="/topics/" class="view-all-btn">View All Topics <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+   
 
     <!-- Footer -->
     <footer class="site-footer">

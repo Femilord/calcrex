@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuclear Physics — CalcRex | In-Depth Guide with Worked Examples</title>
+    <meta name="description" content="In-depth guide to nuclear physics: radioactive decay, half-life, nuclear fission and fusion, binding energy, mass defect, and nuclear reactions. With half-life calculator and worked examples.">
+    <meta name="keywords" content="nuclear physics, radioactive decay, half-life, nuclear fission, nuclear fusion, binding energy, mass defect, CalcRex">
+    <meta name="author" content="CalcRex"><meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcrex.com/topics/nuclear-physics/">
+    <meta property="og:type" content="article"><meta property="og:url" content="https://calcrex.com/topics/nuclear-physics/">
+    <meta property="og:title" content="Nuclear Physics — CalcRex"><meta property="og:description" content="In-depth guide to nuclear physics: radioactive decay, half-life, nuclear fission and fusion, binding energy, mass defect, and nuclear reactions. With half-life calculator and worked examples.">
+    <meta property="og:image" content="https://calcrex.com/img/calcrex-banner.webp"><meta property="og:site_name" content="CalcRex">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="/favicon.png"><link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/css/styles.css"><link rel="stylesheet" href="/css/topic-page.css">
+    <link rel="stylesheet" href="/css/topics.css"><link rel="stylesheet" href="/css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="application/ld+json">
+    { "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://calcrex.com/"},
+        {"@type":"ListItem","position":2,"name":"Topics","item":"https://calcrex.com/topics/"},
+        {"@type":"ListItem","position":3,"name":"Nuclear Physics","item":"https://calcrex.com/topics/nuclear-physics/"}
+    ]}
+    </script>
+</head>
+<body>
+    <header class="site-header"><div class="header-container">
+        <div class="logo"><a href="/"><span class="logo-text">Calc<span class="logo-highlight">REX</span></span></a></div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu"><span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span></button>
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="/" class="nav-link">Calculator</a></li>
+                    <li><a href="/converters" class="nav-link">Unit Converter</a></li>
+                    <li class="nav-dropdown">
+                        <button class="nav-link nav-dropdown-toggle">Sciences <i class="fas fa-chevron-down nav-arrow"></i></button>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a></li>
+                            <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i> Chemistry</a></li>
+                            <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i> Electronics</a></li>
+                            <li><a href="/thermodynamics" class="nav-dropdown-link"><i class="fas fa-fire"></i> Thermodynamics</a></li>
+                            <li><a href="/aerodynamics" class="nav-dropdown-link"><i class="fas fa-plane"></i> Aerodynamics</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/computer-science" class="nav-link">Computer Science</a></li>
+                    <li><a href="/finance" class="nav-link">Finance</a></li>
+                    <li><a href="/date-time" class="nav-link">Date &amp; Time</a></li>
+                    <li><a href="/topics" class="nav-link active">Topics</a></li>
+                </ul>
+            </nav>
+    </div></header>
+    <nav class="tp-breadcrumb"><ol class="tp-breadcrumb-list"><li><a href="/">Home</a></li><li class="tp-breadcrumb-sep">›</li><li><a href="/">Topics</a></li><li class="tp-breadcrumb-sep">›</li><li class="tp-breadcrumb-current">Nuclear Physics</li></ol></nav>
+    <section class="tp-hero" style="background:linear-gradient(135deg, #7f1d1d 0%, #ef4444 50%, #fca5a5 100%);"><div class="tp-hero-icon tc-nuclear"><i class="fas fa-radiation"></i></div><h1>Nuclear Physics</h1><p>Radioactive decay, fission, fusion, and binding energy — the physics inside the atomic nucleus.</p></section>
+    <section class="tp-content-section">
+        <a href="/" class="tp-back-link"><i class="fas fa-arrow-left"></i> All Topics</a>
+        <div class="tp-calculator-wrap">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i><h2>Radioactive Decay / Half-Life Calculator</h2></div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula"><div class="tp-calc-formula-label">Formula</div><div class="tp-calc-formula-eq">N(t) = N₀ × (½)^(t/t½)</div></div>
+                <div class="tp-calc-inputs">
+                    <div class="tp-calc-group"><div class="tp-calc-label"><span>N₀</span> Initial Amount</div><div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nuc-n0" placeholder="e.g. 1000"><div class="tp-calc-unit">atoms/g</div></div></div>
+                    <div class="tp-calc-group"><div class="tp-calc-label"><span>t½</span> Half-Life</div><div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nuc-hl" placeholder="e.g. 5730"><div class="tp-calc-unit">years</div></div></div>
+                    <div class="tp-calc-group"><div class="tp-calc-label"><span>t</span> Elapsed Time</div><div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nuc-t" placeholder="e.g. 11460"><div class="tp-calc-unit">years</div></div></div>
+                </div>
+                <button class="tp-calc-btn" id="nuc-calc-btn">Calculate Remaining</button>
+                <div class="tp-calc-result"><div class="tp-calc-result-label">Remaining Amount</div><div class="tp-calc-result-value" id="nuc-result">—</div><div class="tp-calc-result-unit" id="nuc-unit"></div></div>
+            </div>
+        </div>
+
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-nuclear">1</span> Nuclear Structure &amp; Notation</h3>
+            <p>The nucleus contains protons (Z, atomic number) and neutrons (N). Together they are nucleons, with mass number A = Z + N. Isotopes are atoms with the same Z but different N. The notation ²³⁵U means uranium with 92 protons and 143 neutrons (A = 235).</p>
+            <div class="tp-table">
+                <div class="tp-table-row"><div class="tp-table-cell">Proton</div><div class="tp-table-note">charge +1, mass 1.673 × 10⁻²⁷ kg</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">Neutron</div><div class="tp-table-note">charge 0, mass 1.675 × 10⁻²⁷ kg</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">Strong force</div><div class="tp-table-note">holds nucleus together, range ~1 fm</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">Nuclear radius</div><div class="tp-table-note">r ≈ 1.2 × A^(1/3) fm</div></div>
+            </div>
+        </div>
+
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-nuclear">2</span> Radioactive Decay</h3>
+            <p>Unstable nuclei spontaneously transform by emitting radiation. The three main types are alpha (α), beta (β), and gamma (γ) decay. Each changes the nucleus differently.</p>
+            <div class="tp-table">
+                <div class="tp-table-row"><div class="tp-table-cell">α decay</div><div class="tp-table-note">Emits ⁴He nucleus. Z→Z−2, A→A−4</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">β⁻ decay</div><div class="tp-table-note">n→p+e⁻+ν̄. Z→Z+1, A unchanged</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">β⁺ decay</div><div class="tp-table-note">p→n+e⁺+ν. Z→Z−1, A unchanged</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">γ decay</div><div class="tp-table-note">Excited nucleus emits photon. Z,A unchanged</div></div>
+            </div>
+            <div class="tp-formula"><div class="tp-formula-main">N(t) = N₀ × (½)^(t/t½)</div><div class="tp-formula-vars"><span>N₀ = initial number of atoms</span><span>t½ = half-life (time for 50% to decay)</span><span>Activity: A = λN, where λ = ln(2)/t½</span></div></div>
+        </div>
+
+        <div class="tp-example">
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 1</span><h4>Carbon-14 Dating</h4></div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> A wooden artifact has 25% of its original ¹⁴C remaining. The half-life of ¹⁴C is 5,730 years. How old is the artifact?</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step"><div class="tp-sol-label">Solve for t</div><div class="tp-sol-content"><div class="tp-math">N/N₀ = 0.25 = (½)^(t/5730)</div><div class="tp-math">0.25 = (½)² → t/5730 = 2</div><div class="tp-math tp-result">t = 11,460 years (2 half-lives)</div></div></div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> 11,460 years old. After 1 half-life (5,730 yr): 50% remains. After 2: 25%. After 3: 12.5%. Carbon dating works up to ~50,000 years; beyond that, too little ¹⁴C remains to measure.</div>
+        </div>
+
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-nuclear">3</span> Binding Energy &amp; Mass Defect</h3>
+            <p>A nucleus weighs less than the sum of its individual protons and neutrons. This "missing mass" (mass defect) was converted to binding energy when the nucleus formed — the energy holding it together.</p>
+            <div class="tp-formula"><div class="tp-formula-main">BE = Δm × c² = [Zm_p + Nm_n − M_nucleus] × c²</div><div class="tp-formula-vars"><span>Δm = mass defect</span><span>BE per nucleon peaks at Fe-56 (~8.8 MeV/nucleon)</span><span>Lighter nuclei: fusion releases energy</span><span>Heavier nuclei: fission releases energy</span></div></div>
+            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>The iron peak:</strong> Iron-56 has the highest binding energy per nucleon. This is why stars can fuse elements up to iron but not beyond — fusion past iron requires energy input rather than releasing it.</span></div>
+        </div>
+
+        <div class="tp-example">
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 2</span><h4>Binding Energy of Helium-4</h4></div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> Calculate the binding energy of ⁴He. Masses: proton = 1.00728 u, neutron = 1.00866 u, ⁴He = 4.00260 u. (1 u = 931.5 MeV/c²)</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step"><div class="tp-sol-label">Mass defect → binding energy</div><div class="tp-sol-content"><div class="tp-math">Expected mass = 2(1.00728) + 2(1.00866) = 4.03188 u</div><div class="tp-math">Δm = 4.03188 − 4.00260 = 0.02928 u</div><div class="tp-math">BE = 0.02928 × 931.5</div><div class="tp-math tp-result">BE = 28.3 MeV (7.07 MeV per nucleon)</div></div></div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> 28.3 MeV total, 7.07 MeV per nucleon. Helium-4 is exceptionally stable (doubly magic nucleus), which is why alpha decay is so common — the alpha particle is an energetically favorable "package."</div>
+        </div>
+
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-nuclear">4</span> Nuclear Fission</h3>
+            <p>Heavy nuclei (like U-235, Pu-239) split into two smaller fragments when struck by a neutron, releasing enormous energy plus 2-3 additional neutrons — enabling a chain reaction.</p>
+            <div class="tp-formula"><div class="tp-formula-main">²³⁵U + n → ¹⁴¹Ba + ⁹²Kr + 3n + 200 MeV</div><div class="tp-formula-vars"><span>~200 MeV per fission (vs ~4 eV per chemical reaction)</span><span>1 kg U-235 ≈ 82 TJ ≈ 20,000 tons of TNT</span><span>Critical mass: minimum for sustained chain reaction</span></div></div>
+        </div>
+
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-nuclear">5</span> Nuclear Fusion</h3>
+            <p>Light nuclei combine to form heavier nuclei, releasing energy. Fusion powers the Sun and all stars. It requires extreme temperatures (>100 million K) to overcome the Coulomb barrier between positively charged nuclei.</p>
+            <div class="tp-two-col">
+                <div class="tp-col"><div class="tp-col-title">Proton-Proton Chain (Sun)</div><p>4¹H → ⁴He + 2e⁺ + 2ν + 26.7 MeV. The Sun fuses 620 million tonnes of hydrogen per second.</p></div>
+                <div class="tp-col"><div class="tp-col-title">D-T Fusion (Reactors)</div><p>²H + ³H → ⁴He + n + 17.6 MeV. Most promising for Earth-based fusion. ITER target: Q = 10 (10× energy out vs in).</p></div>
+            </div>
+        </div>
+
+        <div class="tp-example">
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 3</span><h4>Fission Energy — Power Plant Output</h4></div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> A nuclear reactor consumes 1 kg of U-235 per day. Each fission releases 200 MeV. How much power does this produce? (1 MeV = 1.602 × 10⁻¹³ J, U-235 mass = 235 u)</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step"><div class="tp-sol-label">Atoms → energy → power</div><div class="tp-sol-content"><div class="tp-math">Atoms = 1000 / (235 × 1.661×10⁻²⁷) = 2.56 × 10²⁴</div><div class="tp-math">Energy = 2.56×10²⁴ × 200 × 1.602×10⁻¹³</div><div class="tp-math">= 8.20 × 10¹³ J = 82.0 TJ</div><div class="tp-math">Power = 82.0×10¹² / 86400</div><div class="tp-math tp-result">P = 949 MW ≈ 950 MW thermal</div></div></div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> ~950 MW thermal power from just 1 kg of uranium per day. A coal plant burns ~10,000 tonnes of coal per day for similar output. Nuclear fuel is ~2 million times more energy-dense than fossil fuels.</div>
+        </div>
+
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-nuclear">6</span> Radiation Dosimetry &amp; Safety</h3>
+            <p>Radiation dose is measured in Grays (Gy, absorbed energy per mass) and Sieverts (Sv, biological effect). Different radiation types have different biological effectiveness.</p>
+            <div class="tp-table">
+                <div class="tp-table-row"><div class="tp-table-cell">Background</div><div class="tp-table-note">~2.4 mSv/year (natural)</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">Chest X-ray</div><div class="tp-table-note">~0.02 mSv per image</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">CT scan</div><div class="tp-table-note">~7 mSv (chest)</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">Annual limit (workers)</div><div class="tp-table-note">50 mSv/year</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">Acute sickness</div><div class="tp-table-note">>1,000 mSv (1 Sv)</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">Lethal (50%)</div><div class="tp-table-note">~4,000 mSv (4 Sv) without treatment</div></div>
+            </div>
+        </div>
+
+        <div class="tp-example">
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 4</span><h4>Activity and Decay Rate</h4></div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> A hospital has a 10 mg sample of Technetium-99m (t½ = 6.0 hours). What is its activity in Becquerels? How much remains after 24 hours?</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step"><div class="tp-sol-label">Activity and decay</div><div class="tp-sol-content"><div class="tp-math">N = 0.010/(99 × 1.661×10⁻²⁷) = 6.08 × 10¹⁹ atoms</div><div class="tp-math">λ = ln(2)/t½ = 0.693/(6×3600) = 3.21×10⁻⁵ s⁻¹</div><div class="tp-math tp-result">A = λN = 1.95 × 10¹⁵ Bq = 1.95 PBq</div><div class="tp-math">After 24h: 24/6 = 4 half-lives</div><div class="tp-math tp-result">Remaining = 10 × (½)⁴ = 0.625 mg</div></div></div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> Activity: 1.95 PBq initially. After 24 hours (4 half-lives): only 0.625 mg remains (6.25% of original). Tc-99m's short half-life makes it ideal for medical imaging — high activity for clear images, rapid decay for patient safety.</div>
+        </div>
+
+        <div class="tp-related"><h3>Related Topics</h3><div class="tp-related-grid">
+            <a href="/quantum-mechanics/" class="tp-related-card"><div class="tp-related-icon tc-quantum"><i class="fas fa-atom"></i></div><span>Quantum Mechanics</span></a>
+            <a href="/relativity/" class="tp-related-card"><div class="tp-related-icon tc-relativity"><i class="fas fa-rocket"></i></div><span>Relativity</span></a>
+            <a href="/astrophysics/" class="tp-related-card"><div class="tp-related-icon tc-astro"><i class="fas fa-star"></i></div><span>Astrophysics</span></a>
+        </div></div>
+    </section>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section"><h3>CalcREX</h3><p>Your complete online calculator suite for every calculation need.</p></div>
+                <div class="footer-section"><h3>Quick Links</h3><ul class="footer-links"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/policy-document">Policy Document</a></li></ul></div>
+                <div class="footer-section"><h3>Feature Categories</h3><ul class="footer-links"><li><a href="/converters">Unit Converter</a></li><li><a href="/physics">Physics</a></li><li><a href="/chemistry">Chemistry</a></li><li><a href="/electricity">Electronics</a></li><li><a href="/computer-science">Computer Science</a></li><li><a href="/finance">Finance</a></li><li><a href="/date-time">Date &amp; Time</a></li><li><a href="/thermodynamics">Thermodynamics</a></li><li><a href="/aerodynamics">Aerodynamics</a></li><li><a href="/topics">Topics</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 CalcREX. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="/js/nav.js"></script><script src="/js/script.js"></script>
+    <script>
+    document.getElementById('nuc-calc-btn').addEventListener('click',function(){
+        const n0=parseFloat(document.getElementById('nuc-n0').value);
+        const hl=parseFloat(document.getElementById('nuc-hl').value);
+        const t=parseFloat(document.getElementById('nuc-t').value);
+        if(isNaN(n0)||isNaN(hl)||isNaN(t)||hl<=0){document.getElementById('nuc-result').textContent='Enter valid values';return;}
+        const N=n0*Math.pow(0.5,t/hl);
+        const pct=(N/n0*100).toFixed(2);
+        document.getElementById('nuc-result').textContent=N.toFixed(4);
+        document.getElementById('nuc-unit').textContent='remaining ('+pct+'% of original, '+(t/hl).toFixed(2)+' half-lives)';
+    });
+    </script>
+</body>
+</html>

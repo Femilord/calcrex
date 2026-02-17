@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electromagnetic Waves — CalcRex | In-Depth Guide with Worked Examples</title>
+    <meta name="description" content="Guide to electromagnetic waves: the EM spectrum, Maxwell's equations, wave properties, interference, diffraction, polarization. With wavelength-frequency calculator and worked examples.">
+    <meta name="keywords" content="electromagnetic waves, EM spectrum, Maxwell equations, interference, diffraction, polarization, wavelength frequency, CalcRex">
+    <meta name="author" content="CalcRex">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcrex.com/topics/electromagnetic-waves/">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://calcrex.com/topics/electromagnetic-waves/">
+    <meta property="og:title" content="Electromagnetic Waves — CalcRex">
+    <meta property="og:description" content="Guide to electromagnetic waves: the EM spectrum, Maxwell's equations, wave properties, interference, diffraction, polarization. With wavelength-frequency calculator and worked examples.">
+    <meta property="og:image" content="https://calcrex.com/img/calcrex-banner.webp">
+    <meta property="og:site_name" content="CalcRex">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/topic-page.css">
+    <link rel="stylesheet" href="/css/topics.css">
+    <link rel="stylesheet" href="/css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcrex.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Topics", "item": "https://calcrex.com/topics/" },
+        { "@type": "ListItem", "position": 3, "name": "Electromagnetic Waves", "item": "https://calcrex.com/topics/electromagnetic-waves/" }
+    ]}
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo"><a href="/"><span class="logo-text">Calc<span class="logo-highlight">REX</span></span></a></div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu"><span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span></button>
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="/" class="nav-link">Calculator</a></li>
+                    <li><a href="/converters" class="nav-link">Unit Converter</a></li>
+                    <li class="nav-dropdown">
+                        <button class="nav-link nav-dropdown-toggle">Sciences <i class="fas fa-chevron-down nav-arrow"></i></button>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a></li>
+                            <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i> Chemistry</a></li>
+                            <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i> Electronics</a></li>
+                            <li><a href="/thermodynamics" class="nav-dropdown-link"><i class="fas fa-fire"></i> Thermodynamics</a></li>
+                            <li><a href="/aerodynamics" class="nav-dropdown-link"><i class="fas fa-plane"></i> Aerodynamics</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/computer-science" class="nav-link">Computer Science</a></li>
+                    <li><a href="/finance" class="nav-link">Finance</a></li>
+                    <li><a href="/date-time" class="nav-link">Date &amp; Time</a></li>
+                    <li><a href="/topics" class="nav-link active">Topics</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <nav class="tp-breadcrumb"><ol class="tp-breadcrumb-list"><li><a href="/">Home</a></li><li class="tp-breadcrumb-sep">›</li><li><a href="/topics/">Topics</a></li><li class="tp-breadcrumb-sep">›</li><li class="tp-breadcrumb-current">Electromagnetic Waves</li></ol></nav>
+    <section class="tp-hero" style="background:linear-gradient(135deg, #78350f 0%, #f59e0b 50%, #fde68a 100%);"><div class="tp-hero-icon tc-emwaves"><i class="fas fa-broadcast-tower"></i></div><h1>Electromagnetic Waves</h1><p>From radio waves to gamma rays — the electromagnetic spectrum and how light behaves as a wave.</p></section>
+    <section class="tp-content-section">
+        <a href="/topics/" class="tp-back-link"><i class="fas fa-arrow-left"></i> All Topics</a>
+        <div class="tp-calculator-wrap">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i><h2>Wavelength ↔ Frequency Calculator</h2></div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula"><div class="tp-calc-formula-label">Formula</div><div class="tp-calc-formula-eq">c = fλ → f = c/λ</div></div>
+                <div class="tp-calc-inputs"><div class="tp-calc-group"><div class="tp-calc-label">Wavelength</div><div class="tp-calc-row"><input type="number" class="tp-calc-input" id="em-em-wavelength-input" placeholder="e.g. 550"><div class="tp-calc-unit">nm</div></div></div>
+</div>
+                <button class="tp-calc-btn" id="em-calc-btn">Calculate</button>
+                <div class="tp-calc-result"><div class="tp-calc-result-label">Result</div><div class="tp-calc-result-value" id="em-result">—</div><div class="tp-calc-result-unit" id="em-unit"></div></div>
+            </div>
+        </div>
+
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-emwaves">1</span> The Electromagnetic Spectrum</h3>
+            <p>All electromagnetic waves travel at c = 3 × 10⁸ m/s in vacuum but differ in wavelength and frequency. From longest to shortest wavelength: radio → microwave → infrared → visible → ultraviolet → X-ray → gamma ray.</p>
+            <div class="tp-table">
+                <div class="tp-table-row"><div class="tp-table-cell">Radio</div><div class="tp-table-note">λ > 1 m, f < 300 MHz</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">Microwave</div><div class="tp-table-note">1 mm – 1 m, WiFi/5G/radar</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">Infrared</div><div class="tp-table-note">700 nm – 1 mm, heat/thermal</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">Visible</div><div class="tp-table-note">400–700 nm (violet→red)</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">Ultraviolet</div><div class="tp-table-note">10–400 nm, sunburn</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">X-ray</div><div class="tp-table-note">0.01–10 nm, medical imaging</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">Gamma</div><div class="tp-table-note">< 0.01 nm, nuclear decay</div></div>
+            </div>
+            <div class="tp-formula"><div class="tp-formula-main">c = fλ</div><div class="tp-formula-vars"><span>c = 3 × 10⁸ m/s, f = frequency (Hz)</span><span>λ = wavelength (m)</span><span>Higher frequency = shorter wavelength = more energy</span></div></div>
+        </div>
+
+        <div class="tp-example">
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 1</span><h4>WiFi Signal Wavelength</h4></div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> Your WiFi router broadcasts at 5.0 GHz. What is the wavelength? What part of the EM spectrum is this?</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step"><div class="tp-sol-label">Apply c = fλ</div><div class="tp-sol-content"><div class="tp-math">λ = c/f = 3×10⁸ / 5.0×10⁹</div><div class="tp-math tp-result">λ = 0.06 m = 6 cm (microwave)</div></div></div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> 6 cm wavelength — microwave range. This is why WiFi can be blocked by walls (wavelength comparable to gaps) and why microwave ovens operate at similar frequencies (2.45 GHz, λ = 12.2 cm).</div>
+        </div>
+
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-emwaves">2</span> Maxwell's Equations — The Complete Theory</h3>
+            <p>James Clerk Maxwell unified electricity, magnetism, and optics into four elegant equations that describe all electromagnetic phenomena. They predict that changing electric fields create magnetic fields and vice versa — together forming self-propagating waves at the speed of light.</p>
+            <div class="tp-table">
+                <div class="tp-table-row"><div class="tp-table-cell">Gauss (E)</div><div class="tp-table-note">∇·E = ρ/ε₀ (charges create E fields)</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">Gauss (B)</div><div class="tp-table-note">∇·B = 0 (no magnetic monopoles)</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">Faraday</div><div class="tp-table-note">∇×E = −∂B/∂t (changing B creates E)</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">Ampère-Maxwell</div><div class="tp-table-note">∇×B = μ₀J + μ₀ε₀∂E/∂t</div></div>
+            </div>
+        </div>
+
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-emwaves">3</span> Wave Properties — Interference &amp; Diffraction</h3>
+            <p>EM waves exhibit interference (constructive when crests align, destructive when crest meets trough) and diffraction (bending around obstacles or through slits). These wave behaviors prove light is a wave — complementing its particle nature (wave-particle duality).</p>
+            <div class="tp-formula"><div class="tp-formula-main">Young's Double Slit: d sin θ = mλ</div><div class="tp-formula-vars"><span>d = slit separation, θ = angle to bright fringe</span><span>m = 0, ±1, ±2... (fringe order)</span><span>Bright fringes where path difference = whole wavelengths</span></div></div>
+        </div>
+
+        <div class="tp-example">
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 2</span><h4>Double Slit Experiment</h4></div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> Light of wavelength 600 nm passes through two slits 0.2 mm apart. A screen is 2 m away. What is the spacing between bright fringes?</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step"><div class="tp-sol-label">Fringe spacing formula</div><div class="tp-sol-content"><div class="tp-math">Δy = λL/d = (600×10⁻⁹ × 2) / (0.2×10⁻³)</div><div class="tp-math tp-result">Δy = 6.0 × 10⁻³ m = 6.0 mm</div></div></div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> 6.0 mm between bright fringes. Longer wavelength → wider spacing. Narrower slits → wider spacing. This experiment was first performed by Thomas Young in 1801, proving light is a wave.</div>
+        </div>
+
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-emwaves">4</span> Polarization</h3>
+            <p>Light is a transverse wave — the electric field oscillates perpendicular to the direction of travel. Unpolarized light has E oscillating in all perpendicular directions. A polarizer transmits only one direction. Two perpendicular polarizers block all light.</p>
+            <div class="tp-formula"><div class="tp-formula-main">Malus's Law: I = I₀ cos²θ</div><div class="tp-formula-vars"><span>I₀ = intensity after first polarizer</span><span>θ = angle between polarizer axes</span><span>At 90°: I = 0 (crossed polarizers)</span></div></div>
+        </div>
+
+        <div class="tp-example">
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 3</span><h4>Malus's Law — Polarizer Angle</h4></div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> Unpolarized light passes through two polarizers. The second is at 30° to the first. What fraction of the original intensity passes through?</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step"><div class="tp-sol-label">Two-stage reduction</div><div class="tp-sol-content"><div class="tp-math">After 1st polarizer: I₁ = I₀/2 (always halves unpolarized)</div><div class="tp-math">After 2nd: I₂ = I₁ cos²(30°) = (I₀/2)(√3/2)² = (I₀/2)(3/4)</div><div class="tp-math tp-result">I₂ = 3I₀/8 = 0.375 I₀ (37.5%)</div></div></div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> 37.5% of original intensity. At 45° it would be 25%, at 60° only 12.5%, at 90° zero. Polarized sunglasses work by blocking horizontally polarized glare from reflective surfaces.</div>
+        </div>
+
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-emwaves">5</span> Electromagnetic Wave Energy</h3>
+            <p>EM waves carry energy described by the Poynting vector. The intensity (power per area) is proportional to the square of the electric field amplitude.</p>
+            <div class="tp-formula"><div class="tp-formula-main">I = P/A = ½cε₀E₀²</div><div class="tp-formula-vars"><span>I = intensity (W/m²)</span><span>E₀ = peak electric field (V/m)</span><span>Sun at Earth: I ≈ 1361 W/m² → E₀ ≈ 1013 V/m</span></div></div>
+        </div>
+
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-emwaves">6</span> Inverse Square Law &amp; Radiation</h3>
+            <p>EM radiation spreads over an expanding sphere. Intensity decreases with the square of distance from the source.</p>
+            <div class="tp-formula"><div class="tp-formula-main">I = P / (4πr²)</div><div class="tp-formula-vars"><span>Double the distance → ¼ the intensity</span><span>Triple the distance → 1/9 the intensity</span></div></div>
+            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>Why stars are dim:</strong> The Sun's luminosity is 3.85 × 10²⁶ W. At Earth (1.5 × 10¹¹ m away): 1,361 W/m². At Pluto: only 0.9 W/m². At the nearest star (4.24 ly): 3 × 10⁻⁸ W/m².</span></div>
+        </div>
+
+        <div class="tp-related"><h3>Related Topics</h3><div class="tp-related-grid">
+            <a href="/quantum-mechanics/" class="tp-related-card"><div class="tp-related-icon tc-quantum"><i class="fas fa-atom"></i></div><span>Quantum Mechanics</span></a>
+            <a href="/nuclear-physics/" class="tp-related-card"><div class="tp-related-icon tc-nuclear"><i class="fas fa-radiation"></i></div><span>Nuclear Physics</span></a>
+            <a href="/relativity/" class="tp-related-card"><div class="tp-related-icon tc-relativity"><i class="fas fa-rocket"></i></div><span>Relativity</span></a>
+        </div></div>
+    </section>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section"><h3>CalcREX</h3><p>Your complete online calculator suite for every calculation need.</p></div>
+                <div class="footer-section"><h3>Quick Links</h3><ul class="footer-links"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/policy-document">Policy Document</a></li></ul></div>
+                <div class="footer-section"><h3>Feature Categories</h3><ul class="footer-links"><li><a href="/converters">Unit Converter</a></li><li><a href="/physics">Physics</a></li><li><a href="/chemistry">Chemistry</a></li><li><a href="/electricity">Electronics</a></li><li><a href="/computer-science">Computer Science</a></li><li><a href="/finance">Finance</a></li><li><a href="/date-time">Date &amp; Time</a></li><li><a href="/thermodynamics">Thermodynamics</a></li><li><a href="/aerodynamics">Aerodynamics</a></li><li><a href="/topics">Topics</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 CalcREX. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="/js/nav.js"></script>
+    <script src="/js/script.js"></script>
+    <script>
+    document.getElementById('em-calc-btn').addEventListener('click',function(){
+        const lam=parseFloat(document.getElementById('em-wavelength-input').value);
+        if(isNaN(lam)||lam<=0){document.getElementById('em-result').textContent='Enter valid wavelength';return;}
+        const c=3e8;const lamM=lam*1e-9;const f=c/lamM;const E=6.626e-34*f/1.602e-19;
+        let band='';if(lam<0.01)band='Gamma ray';else if(lam<10)band='X-ray';else if(lam<400)band='Ultraviolet';else if(lam<=700)band='Visible light';else if(lam<1e6)band='Infrared';else if(lam<1e9)band='Microwave';else band='Radio wave';
+        document.getElementById('em-result').textContent=f.toExponential(3);document.getElementById('em-unit').textContent='Hz ('+band+', E='+E.toFixed(3)+' eV)';
+    });
+    </script>
+</body>
+</html>

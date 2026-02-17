@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrophysics — CalcRex | In-Depth Guide with Worked Examples</title>
+    <meta name="description" content="In-depth guide to astrophysics: Kepler's laws, stellar evolution, black holes, the Hertzsprung-Russell diagram, cosmology, and the Big Bang. With orbital period calculator and worked examples.">
+    <meta name="keywords" content="astrophysics, Kepler laws, stellar evolution, black holes, cosmology, Big Bang, HR diagram, CalcRex">
+    <meta name="author" content="CalcRex"><meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcrex.com/topics/astrophysics/">
+    <meta property="og:type" content="article"><meta property="og:url" content="https://calcrex.com/topics/astrophysics/">
+    <meta property="og:title" content="Astrophysics — CalcRex"><meta property="og:description" content="In-depth guide to astrophysics: Kepler's laws, stellar evolution, black holes, the Hertzsprung-Russell diagram, cosmology, and the Big Bang. With orbital period calculator and worked examples.">
+    <meta property="og:image" content="https://calcrex.com/img/calcrex-banner.webp"><meta property="og:site_name" content="CalcRex">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="/favicon.png"><link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/css/styles.css"><link rel="stylesheet" href="/css/topic-page.css">
+    <link rel="stylesheet" href="/css/topics.css"><link rel="stylesheet" href="/css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="application/ld+json">
+    { "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://calcrex.com/"},
+        {"@type":"ListItem","position":2,"name":"Topics","item":"https://calcrex.com/topics/"},
+        {"@type":"ListItem","position":3,"name":"Astrophysics","item":"https://calcrex.com/topics/astrophysics/"}
+    ]}
+    </script>
+</head>
+<body>
+    <header class="site-header"><div class="header-container">
+        <div class="logo"><a href="/"><span class="logo-text">Calc<span class="logo-highlight">REX</span></span></a></div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu"><span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span></button>
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="/" class="nav-link">Calculator</a></li>
+                    <li><a href="/converters" class="nav-link">Unit Converter</a></li>
+                    <li class="nav-dropdown">
+                        <button class="nav-link nav-dropdown-toggle">Sciences <i class="fas fa-chevron-down nav-arrow"></i></button>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a></li>
+                            <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i> Chemistry</a></li>
+                            <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i> Electronics</a></li>
+                            <li><a href="/thermodynamics" class="nav-dropdown-link"><i class="fas fa-fire"></i> Thermodynamics</a></li>
+                            <li><a href="/aerodynamics" class="nav-dropdown-link"><i class="fas fa-plane"></i> Aerodynamics</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/computer-science" class="nav-link">Computer Science</a></li>
+                    <li><a href="/finance" class="nav-link">Finance</a></li>
+                    <li><a href="/date-time" class="nav-link">Date &amp; Time</a></li>
+                    <li><a href="/topics" class="nav-link active">Topics</a></li>
+                </ul>
+            </nav>
+    </div></header>
+    <nav class="tp-breadcrumb"><ol class="tp-breadcrumb-list"><li><a href="/">Home</a></li><li class="tp-breadcrumb-sep">›</li><li><a href="/">Topics</a></li><li class="tp-breadcrumb-sep">›</li><li class="tp-breadcrumb-current">Astrophysics</li></ol></nav>
+    <section class="tp-hero" style="background:linear-gradient(135deg, #020617 0%, #1e293b 40%, #475569 100%);"><div class="tp-hero-icon tc-astro"><i class="fas fa-star"></i></div><h1>Astrophysics</h1><p>Stars, galaxies, and the cosmos — from Kepler's laws to black holes and the Big Bang.</p></section>
+    <section class="tp-content-section">
+        <a href="/" class="tp-back-link"><i class="fas fa-arrow-left"></i> All Topics</a>
+        <div class="tp-calculator-wrap">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i><h2>Orbital Period Calculator (Kepler's 3rd Law)</h2></div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula"><div class="tp-calc-formula-label">Formula</div><div class="tp-calc-formula-eq">T² = (4π²/GM) × a³</div></div>
+                <div class="tp-calc-inputs">
+                    <div class="tp-calc-group"><div class="tp-calc-label"><span>a</span> Semi-major Axis</div><div class="tp-calc-row"><input type="number" class="tp-calc-input" id="ast-a" placeholder="e.g. 1.0"><div class="tp-calc-unit">AU</div></div></div>
+                    <div class="tp-calc-group"><div class="tp-calc-label"><span>M</span> Central Mass</div><div class="tp-calc-row"><input type="number" class="tp-calc-input" id="ast-m" placeholder="e.g. 1.0"><div class="tp-calc-unit">M☉</div></div></div>
+                </div>
+                <button class="tp-calc-btn" id="ast-calc-btn">Calculate Period</button>
+                <div class="tp-calc-result"><div class="tp-calc-result-label">Orbital Period</div><div class="tp-calc-result-value" id="ast-result">—</div><div class="tp-calc-result-unit" id="ast-unit"></div></div>
+            </div>
+        </div>
+
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-astro">1</span> Kepler's Laws of Planetary Motion</h3>
+            <p>Three laws describing how planets orbit stars, derived empirically by Kepler (1609-1619) and later explained by Newton's gravity.</p>
+            <div class="tp-table">
+                <div class="tp-table-row"><div class="tp-table-cell">1st Law</div><div class="tp-table-note">Orbits are ellipses with the star at one focus</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">2nd Law</div><div class="tp-table-note">Equal areas swept in equal times (faster near star)</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">3rd Law</div><div class="tp-table-note">T² ∝ a³ (period² proportional to distance³)</div></div>
+            </div>
+            <div class="tp-formula"><div class="tp-formula-main">T² = (4π²/GM) × a³</div><div class="tp-formula-vars"><span>For our Solar System: T²(yr) = a³(AU)</span><span>Earth: a=1 AU → T=1 yr (by definition)</span><span>Jupiter: a=5.2 AU → T=11.86 yr</span></div></div>
+        </div>
+
+        <div class="tp-example">
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 1</span><h4>Mars Orbital Period</h4></div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> Mars orbits at 1.524 AU from the Sun. Calculate its orbital period.</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step"><div class="tp-sol-label">Kepler's 3rd Law</div><div class="tp-sol-content"><div class="tp-math">T² = a³ = (1.524)³ = 3.540</div><div class="tp-math tp-result">T = √3.540 = 1.881 years = 687 days</div></div></div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> 687 days (1.88 years). This matches observations perfectly. Launch windows to Mars occur every ~26 months when Earth "catches up" to Mars.</div>
+        </div>
+
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-astro">2</span> Stellar Evolution — The Life Cycle of Stars</h3>
+            <p>Stars are born in nebulae, spend most of their lives on the main sequence fusing hydrogen to helium, then evolve off it when fuel runs out. Their fate depends almost entirely on their initial mass.</p>
+            <div class="tp-table">
+                <div class="tp-table-row"><div class="tp-table-cell">&lt; 0.5 M☉</div><div class="tp-table-note">Red dwarf → white dwarf (trillions of years)</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">0.5–8 M☉</div><div class="tp-table-note">→ Red giant → planetary nebula → white dwarf</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">8–25 M☉</div><div class="tp-table-note">→ Supergiant → supernova → neutron star</div></div>
+                <div class="tp-table-row"><div class="tp-table-cell">&gt; 25 M☉</div><div class="tp-table-note">→ Supergiant → supernova → black hole</div></div>
+            </div>
+            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>Massive stars live fast, die young:</strong> The Sun will live ~10 billion years. A star 10× more massive lives only ~20 million years — it burns fuel 10,000× faster despite having 10× more.</span></div>
+        </div>
+
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-astro">3</span> The Hertzsprung-Russell Diagram</h3>
+            <p>The HR diagram plots stars by luminosity (brightness) vs. temperature (color). Most stars fall on the "main sequence" — a diagonal band from hot/bright (upper-left) to cool/dim (lower-right). Giants and white dwarfs occupy distinct regions.</p>
+            <div class="tp-formula"><div class="tp-formula-main">L = 4πR²σT⁴ (Stefan-Boltzmann)</div><div class="tp-formula-vars"><span>Luminosity depends on radius AND temperature</span><span>Main sequence: L ∝ M^3.5 (mass-luminosity relation)</span><span>Sun: L☉ = 3.85 × 10²⁶ W, T = 5,778 K</span></div></div>
+        </div>
+
+        <div class="tp-example">
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 2</span><h4>Stellar Luminosity — Sirius vs. Sun</h4></div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> Sirius A has T = 9,940 K and R = 1.71 R☉. The Sun has T = 5,778 K. How many times more luminous is Sirius than the Sun?</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step"><div class="tp-sol-label">Luminosity ratio from L ∝ R²T⁴</div><div class="tp-sol-content"><div class="tp-math">L_Sirius/L_Sun = (R_S/R_☉)² × (T_S/T_☉)⁴</div><div class="tp-math">= (1.71)² × (9940/5778)⁴</div><div class="tp-math">= 2.924 × (1.720)⁴ = 2.924 × 8.76</div><div class="tp-math tp-result">= 25.6× the Sun's luminosity</div></div></div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> Sirius is ~25.6× more luminous than the Sun. Most of this comes from its higher temperature (T⁴ contributes 8.76×) rather than its size (R² contributes only 2.9×). Temperature dominates luminosity.</div>
+        </div>
+
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-astro">4</span> Black Holes — When Gravity Wins</h3>
+            <p>When a massive star's core collapses, if the remnant exceeds ~3 M☉ (Tolman-Oppenheimer-Volkoff limit), no force can prevent total gravitational collapse. The result is a black hole — a region where gravity is so strong that nothing, not even light, can escape.</p>
+            <div class="tp-formula"><div class="tp-formula-main">Schwarzschild radius: r_s = 2GM/c²</div><div class="tp-formula-vars"><span>Event horizon: the point of no return</span><span>Sun → r_s = 3 km (if compressed to a black hole)</span><span>Earth → r_s = 8.9 mm</span></div></div>
+        </div>
+
+        <div class="tp-example">
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 3</span><h4>Schwarzschild Radius</h4></div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> Calculate the Schwarzschild radius for a 10 solar-mass black hole. (M☉ = 1.989 × 10³⁰ kg, G = 6.674 × 10⁻¹¹)</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step"><div class="tp-sol-label">r_s = 2GM/c²</div><div class="tp-sol-content"><div class="tp-math">r_s = 2(6.674×10⁻¹¹)(10 × 1.989×10³⁰) / (3×10⁸)²</div><div class="tp-math">= 2.654×10²¹ / 9×10¹⁶</div><div class="tp-math tp-result">r_s = 29,500 m ≈ 29.5 km</div></div></div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> 29.5 km — a sphere roughly the size of a small city containing 10 times the Sun's mass. Sagittarius A* (our galaxy's central black hole) has M ≈ 4 million M☉ and r_s ≈ 12 million km (0.08 AU).</div>
+        </div>
+
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-astro">5</span> Cosmology — The Big Bang &amp; Expanding Universe</h3>
+            <p>The universe began 13.8 billion years ago from an extremely hot, dense state. Evidence: the cosmic microwave background (CMB), Hubble's Law (galaxies are receding), and the abundance of light elements (Big Bang nucleosynthesis).</p>
+            <div class="tp-formula"><div class="tp-formula-main">Hubble's Law: v = H₀d</div><div class="tp-formula-vars"><span>v = recession velocity, d = distance</span><span>H₀ ≈ 70 km/s/Mpc (Hubble constant)</span><span>Age ≈ 1/H₀ ≈ 14 billion years</span></div></div>
+        </div>
+
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-astro">6</span> Gravitational Waves</h3>
+            <p>Ripples in spacetime caused by accelerating massive objects — predicted by Einstein in 1916, first directly detected by LIGO on September 14, 2015. The source was two merging black holes (36 and 29 M☉) 1.3 billion light-years away.</p>
+            <div class="tp-two-col">
+                <div class="tp-col"><div class="tp-col-title">Detection</div><p>LIGO uses laser interferometry over 4 km arms, detecting length changes of ~10⁻¹⁸ m — 1/1000th the width of a proton. This is the most precise measurement ever made by humans.</p></div>
+                <div class="tp-col"><div class="tp-col-title">Sources</div><p>Merging black holes, merging neutron stars, supernovae, and rotating asymmetric neutron stars (pulsars). The 2017 neutron star merger was observed in both gravitational and electromagnetic waves.</p></div>
+            </div>
+        </div>
+
+        <div class="tp-example">
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 4</span><h4>Hubble's Law — Galaxy Recession</h4></div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> A galaxy's spectrum is redshifted such that it appears to be receding at 21,000 km/s. Using H₀ = 70 km/s/Mpc, how far away is it? How long ago did the light we see leave that galaxy?</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step"><div class="tp-sol-label">Hubble's Law</div><div class="tp-sol-content"><div class="tp-math">d = v/H₀ = 21,000/70 = 300 Mpc</div><div class="tp-math">= 300 × 3.26 million light-years</div><div class="tp-math tp-result">d ≈ 978 million light-years ≈ 1 billion ly</div><p>The light left ~1 billion years ago, when Earth was in the Proterozoic Eon and multicellular life was just emerging.</p></div></div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> ~1 billion light-years away. We're seeing this galaxy as it was 1 billion years ago. Telescopes are literal time machines — the further we look in space, the further back in time we see.</div>
+        </div>
+
+        <div class="tp-related"><h3>Related Topics</h3><div class="tp-related-grid">
+            <a href="/relativity/" class="tp-related-card"><div class="tp-related-icon tc-relativity"><i class="fas fa-rocket"></i></div><span>Relativity</span></a>
+            <a href="/nuclear-physics/" class="tp-related-card"><div class="tp-related-icon tc-nuclear"><i class="fas fa-radiation"></i></div><span>Nuclear Physics</span></a>
+            <a href="/quantum-mechanics/" class="tp-related-card"><div class="tp-related-icon tc-quantum"><i class="fas fa-atom"></i></div><span>Quantum Mechanics</span></a>
+        </div></div>
+    </section>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section"><h3>CalcREX</h3><p>Your complete online calculator suite for every calculation need.</p></div>
+                <div class="footer-section"><h3>Quick Links</h3><ul class="footer-links"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/policy-document">Policy Document</a></li></ul></div>
+                <div class="footer-section"><h3>Feature Categories</h3><ul class="footer-links"><li><a href="/converters">Unit Converter</a></li><li><a href="/physics">Physics</a></li><li><a href="/chemistry">Chemistry</a></li><li><a href="/electricity">Electronics</a></li><li><a href="/computer-science">Computer Science</a></li><li><a href="/finance">Finance</a></li><li><a href="/date-time">Date &amp; Time</a></li><li><a href="/thermodynamics">Thermodynamics</a></li><li><a href="/aerodynamics">Aerodynamics</a></li><li><a href="/topics">Topics</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 CalcREX. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="/js/nav.js"></script><script src="/js/script.js"></script>
+    <script>
+    document.getElementById('ast-calc-btn').addEventListener('click',function(){
+        const a=parseFloat(document.getElementById('ast-a').value);
+        const M=parseFloat(document.getElementById('ast-m').value);
+        if(isNaN(a)||isNaN(M)||a<=0||M<=0){document.getElementById('ast-result').textContent='Enter valid values';return;}
+        const T=Math.sqrt(a*a*a/M);
+        document.getElementById('ast-result').textContent=T.toFixed(4);
+        document.getElementById('ast-unit').textContent='years ('+(T*365.25).toFixed(1)+' days)';
+    });
+    </script>
+</body>
+</html>
