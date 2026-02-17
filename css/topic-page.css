@@ -28,7 +28,7 @@
     margin: 0 auto 1rem;
 }
 .tp-hero h1 { font-size: 1.5rem; font-weight: 800; color: white; margin: 0 0 0.5rem 0; position: relative; }
-.tp-hero p { font-size: 0.85rem; line-height: 1.6; color: #94a3b8; max-width: 650px; margin: 0 auto; position: relative; }
+.tp-hero p { font-size: 0.85rem; line-height: 1.6; color: white; max-width: 650px; margin: 0 auto; position: relative; }
 
 /* Breadcrumb */
 .tp-breadcrumb { padding: 0.75rem var(--gap-md); background: #f8fafc; border-bottom: 1px solid #e2e8f0; }
