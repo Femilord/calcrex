@@ -134,6 +134,16 @@
     </script>
 </head>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8EMHZ2B7V3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-8EMHZ2B7V3');
+</script>
+
 <body>
     <header class="site-header">
         <div class="header-container">
@@ -1200,7 +1210,8 @@ A  B │ AND  OR  XOR  NAND  NOR
                             <div class="cs-info-title">Stack — LIFO (Last In, First Out)</div>
                             <p>Like a stack of plates. Last item added is first removed. Operations:
                                 <strong>push</strong> (add), <strong>pop</strong> (remove), <strong>peek</strong> (view
-                                top).</p>
+                                top).
+                            </p>
                             <p>Uses: undo history, function call stack, bracket matching, back button.</p>
                         </div>
                         <div class="cs-info-col">
@@ -1218,7 +1229,8 @@ A  B │ AND  OR  XOR  NAND  NOR
                         <h5>Stack Operations — Bracket Matching</h5>
                     </div>
                     <div class="cs-ex-problem"><strong>Problem:</strong> Use a stack to verify if the brackets in
-                        <code>{[()()]}</code> are balanced.</div>
+                        <code>{[()()]}</code> are balanced.
+                    </div>
                     <div class="cs-ex-solution">
                         <div class="cs-sol-step">
                             <div class="cs-sol-label">Step 1: Process each character</div>
@@ -1239,7 +1251,8 @@ A  B │ AND  OR  XOR  NAND  NOR
                     </div>
                     <div class="cs-ex-answer"><strong>Answer:</strong> Stack is empty at end → brackets are
                         <strong>balanced</strong> ✓. If the stack isn't empty, or if a closing bracket doesn't match the
-                        top, it's unbalanced. This is how IDEs check your code syntax.</div>
+                        top, it's unbalanced. This is how IDEs check your code syntax.
+                    </div>
                 </div>
 
                 <div class="cs-concept-block">

@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relativity — CalcRex | In-Depth Guide with Worked Examples</title>
-    <meta name="description" content="In-depth guide to special and general relativity: time dilation, length contraction, E=mc², mass-energy equivalence, spacetime curvature, and gravitational waves. With worked examples.">
-    <meta name="keywords" content="relativity, special relativity, general relativity, time dilation, E=mc2, length contraction, spacetime, CalcRex">
+    <meta name="description"
+        content="In-depth guide to special and general relativity: time dilation, length contraction, E=mc², mass-energy equivalence, spacetime curvature, and gravitational waves. With worked examples.">
+    <meta name="keywords"
+        content="relativity, special relativity, general relativity, time dilation, E=mc2, length contraction, spacetime, CalcRex">
     <meta name="author" content="CalcRex">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://calcrex.com/topics/relativity/">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://calcrex.com/topics/relativity/">
     <meta property="og:title" content="Relativity — CalcRex">
-    <meta property="og:description" content="In-depth guide to special and general relativity: time dilation, length contraction, E=mc², mass-energy equivalence, spacetime curvature, and gravitational waves. With worked examples.">
+    <meta property="og:description"
+        content="In-depth guide to special and general relativity: time dilation, length contraction, E=mc², mass-energy equivalence, spacetime curvature, and gravitational waves. With worked examples.">
     <meta property="og:image" content="https://calcrex.com/img/calcrex-banner.webp">
     <meta property="og:site_name" content="CalcRex">
     <meta name="twitter:card" content="summary_large_image">
@@ -31,23 +35,42 @@
     ]}
     </script>
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8EMHZ2B7V3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-8EMHZ2B7V3');
+</script>
+
 <body>
     <header class="site-header">
         <div class="header-container">
-            <div class="logo"><a href="/"><span class="logo-text">Calc<span class="logo-highlight">REX</span></span></a></div>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu"><span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span></button>
+            <div class="logo"><a href="/"><span class="logo-text">Calc<span class="logo-highlight">REX</span></span></a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu"><span
+                    class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span></button>
             <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="/" class="nav-link">Calculator</a></li>
                     <li><a href="/converters" class="nav-link">Unit Converter</a></li>
                     <li class="nav-dropdown">
-                        <button class="nav-link nav-dropdown-toggle">Sciences <i class="fas fa-chevron-down nav-arrow"></i></button>
+                        <button class="nav-link nav-dropdown-toggle">Sciences <i
+                                class="fas fa-chevron-down nav-arrow"></i></button>
                         <ul class="nav-dropdown-menu">
-                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a></li>
-                            <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i> Chemistry</a></li>
-                            <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i> Electronics</a></li>
-                            <li><a href="/thermodynamics" class="nav-dropdown-link"><i class="fas fa-fire"></i> Thermodynamics</a></li>
-                            <li><a href="/aerodynamics" class="nav-dropdown-link"><i class="fas fa-plane"></i> Aerodynamics</a></li>
+                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a>
+                            </li>
+                            <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i>
+                                    Chemistry</a></li>
+                            <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i>
+                                    Electronics</a></li>
+                            <li><a href="/thermodynamics" class="nav-dropdown-link"><i class="fas fa-fire"></i>
+                                    Thermodynamics</a></li>
+                            <li><a href="/aerodynamics" class="nav-dropdown-link"><i class="fas fa-plane"></i>
+                                    Aerodynamics</a></li>
                         </ul>
                     </li>
                     <li><a href="/computer-science" class="nav-link">Computer Science</a></li>
@@ -58,130 +81,304 @@
             </nav>
         </div>
     </header>
-    <nav class="tp-breadcrumb"><ol class="tp-breadcrumb-list"><li><a href="/">Home</a></li><li class="tp-breadcrumb-sep">›</li><li><a href="/topics/">Topics</a></li><li class="tp-breadcrumb-sep">›</li><li class="tp-breadcrumb-current">Relativity</li></ol></nav>
-    <section class="tp-hero" style="background:linear-gradient(135deg, #0c4a6e 0%, #0ea5e9 50%, #7dd3fc 100%);"><div class="tp-hero-icon tc-relativity"><i class="fas fa-rocket"></i></div><h1>Relativity</h1><p>Einstein's revolutionary theories — time dilation, E = mc², and the curvature of spacetime.</p></section>
+    <nav class="tp-breadcrumb">
+        <ol class="tp-breadcrumb-list">
+            <li><a href="/">Home</a></li>
+            <li class="tp-breadcrumb-sep">›</li>
+            <li><a href="/topics/">Topics</a></li>
+            <li class="tp-breadcrumb-sep">›</li>
+            <li class="tp-breadcrumb-current">Relativity</li>
+        </ol>
+    </nav>
+    <section class="tp-hero" style="background:linear-gradient(135deg, #0c4a6e 0%, #0ea5e9 50%, #7dd3fc 100%);">
+        <div class="tp-hero-icon tc-relativity"><i class="fas fa-rocket"></i></div>
+        <h1>Relativity</h1>
+        <p>Einstein's revolutionary theories — time dilation, E = mc², and the curvature of spacetime.</p>
+    </section>
     <section class="tp-content-section">
         <a href="/topics/" class="tp-back-link"><i class="fas fa-arrow-left"></i> All Topics</a>
         <div class="tp-calculator-wrap">
-            <div class="tp-calc-header"><i class="fas fa-calculator"></i><h2>Time Dilation Calculator</h2></div>
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>Time Dilation Calculator</h2>
+            </div>
             <div class="tp-calc-body">
-                <div class="tp-calc-formula"><div class="tp-calc-formula-label">Formula</div><div class="tp-calc-formula-eq">Δt' = Δt / √(1 − v²/c²)</div></div>
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Formula</div>
+                    <div class="tp-calc-formula-eq">Δt' = Δt / √(1 − v²/c²)</div>
+                </div>
                 <div class="tp-calc-inputs">
-                    <div class="tp-calc-group"><div class="tp-calc-label"><span>Δt</span> Proper Time</div><div class="tp-calc-row"><input type="number" class="tp-calc-input" id="rel-time" placeholder="e.g. 1"><div class="tp-calc-unit">years</div></div></div>
-                    <div class="tp-calc-group"><div class="tp-calc-label"><span>v</span> Speed (fraction of c)</div><div class="tp-calc-row"><input type="number" class="tp-calc-input" id="rel-v" step="0.01" placeholder="e.g. 0.9"><div class="tp-calc-unit">× c</div></div></div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>Δt</span> Proper Time</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="rel-time"
+                                placeholder="e.g. 1">
+                            <div class="tp-calc-unit">years</div>
+                        </div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>v</span> Speed (fraction of c)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="rel-v" step="0.01"
+                                placeholder="e.g. 0.9">
+                            <div class="tp-calc-unit">× c</div>
+                        </div>
+                    </div>
                 </div>
                 <button class="tp-calc-btn" id="rel-calc-btn">Calculate Dilated Time</button>
-                <div class="tp-calc-result"><div class="tp-calc-result-label">Observed Time (stationary frame)</div><div class="tp-calc-result-value" id="rel-result">—</div><div class="tp-calc-result-unit" id="rel-unit"></div></div>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">Observed Time (stationary frame)</div>
+                    <div class="tp-calc-result-value" id="rel-result">—</div>
+                    <div class="tp-calc-result-unit" id="rel-unit"></div>
+                </div>
             </div>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-relativity">1</span> Special Relativity — Postulates</h3>
-            <p>Einstein's 1905 theory rests on just two postulates: (1) The laws of physics are the same in all inertial reference frames. (2) The speed of light in vacuum (c = 299,792,458 m/s) is the same for all observers. From these two simple statements, revolutionary consequences follow — time slows down, lengths contract, and mass becomes energy.</p>
-            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>Why c is special:</strong> It's not just the speed of light — it's the speed of causality itself. Nothing carrying information can exceed c. Even gravity propagates at c.</span></div>
+            <p>Einstein's 1905 theory rests on just two postulates: (1) The laws of physics are the same in all inertial
+                reference frames. (2) The speed of light in vacuum (c = 299,792,458 m/s) is the same for all observers.
+                From these two simple statements, revolutionary consequences follow — time slows down, lengths contract,
+                and mass becomes energy.</p>
+            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>Why c is special:</strong> It's not
+                    just the speed of light — it's the speed of causality itself. Nothing carrying information can
+                    exceed c. Even gravity propagates at c.</span></div>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-relativity">2</span> Time Dilation</h3>
-            <p>A moving clock ticks slower relative to a stationary observer. This isn't an illusion — it's a real physical effect confirmed by muon decay experiments and GPS satellite corrections.</p>
-            <div class="tp-formula"><div class="tp-formula-main">Δt' = γΔt = Δt / √(1 − v²/c²)</div><div class="tp-formula-vars"><span>Δt = proper time (in the moving frame)</span><span>Δt' = dilated time (observed from stationary frame)</span><span>γ = Lorentz factor (always ≥ 1)</span></div></div>
+            <p>A moving clock ticks slower relative to a stationary observer. This isn't an illusion — it's a real
+                physical effect confirmed by muon decay experiments and GPS satellite corrections.</p>
+            <div class="tp-formula">
+                <div class="tp-formula-main">Δt' = γΔt = Δt / √(1 − v²/c²)</div>
+                <div class="tp-formula-vars"><span>Δt = proper time (in the moving frame)</span><span>Δt' = dilated time
+                        (observed from stationary frame)</span><span>γ = Lorentz factor (always ≥ 1)</span></div>
+            </div>
         </div>
 
         <div class="tp-example">
-            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 1</span><h4>Muon Decay — Time Dilation in Action</h4></div>
-            <div class="tp-ex-problem"><strong>Problem:</strong> Muons created in the upper atmosphere travel at 0.998c. Their rest-frame half-life is 1.56 μs. Without time dilation, how far would they travel? With time dilation, how far?</div>
-            <div class="tp-ex-solution">
-                <div class="tp-sol-step"><div class="tp-sol-label">Without relativity</div><div class="tp-sol-content"><div class="tp-math">d = v × t = 0.998 × 3×10⁸ × 1.56×10⁻⁶</div><div class="tp-math tp-result">d = 467 m (wouldn't reach ground from ~15 km)</div></div></div>
-                <div class="tp-sol-step"><div class="tp-sol-label">With time dilation</div><div class="tp-sol-content"><div class="tp-math">γ = 1/√(1 − 0.998²) = 1/√(0.004) = 15.8</div><div class="tp-math">t' = γ × 1.56 μs = 24.7 μs</div><div class="tp-math">d' = 0.998c × 24.7 μs</div><div class="tp-math tp-result">d' = 7,390 m ≈ 7.4 km (reaches ground!)</div></div></div>
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 1</span>
+                <h4>Muon Decay — Time Dilation in Action</h4>
             </div>
-            <div class="tp-ex-answer"><strong>Answer:</strong> Time dilation extends the muon's observed lifetime from 1.56 μs to 24.7 μs, allowing it to travel 7.4 km instead of 467 m. We detect muons at sea level — direct proof of time dilation.</div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> Muons created in the upper atmosphere travel at 0.998c.
+                Their rest-frame half-life is 1.56 μs. Without time dilation, how far would they travel? With time
+                dilation, how far?</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">Without relativity</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">d = v × t = 0.998 × 3×10⁸ × 1.56×10⁻⁶</div>
+                        <div class="tp-math tp-result">d = 467 m (wouldn't reach ground from ~15 km)</div>
+                    </div>
+                </div>
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">With time dilation</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">γ = 1/√(1 − 0.998²) = 1/√(0.004) = 15.8</div>
+                        <div class="tp-math">t' = γ × 1.56 μs = 24.7 μs</div>
+                        <div class="tp-math">d' = 0.998c × 24.7 μs</div>
+                        <div class="tp-math tp-result">d' = 7,390 m ≈ 7.4 km (reaches ground!)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> Time dilation extends the muon's observed lifetime from
+                1.56 μs to 24.7 μs, allowing it to travel 7.4 km instead of 467 m. We detect muons at sea level — direct
+                proof of time dilation.</div>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-relativity">3</span> Length Contraction</h3>
-            <p>Objects moving at relativistic speeds appear shorter along the direction of motion to a stationary observer.</p>
-            <div class="tp-formula"><div class="tp-formula-main">L = L₀ / γ = L₀√(1 − v²/c²)</div><div class="tp-formula-vars"><span>L₀ = proper length (measured in the object's rest frame)</span><span>L = contracted length (measured by moving observer)</span></div></div>
+            <p>Objects moving at relativistic speeds appear shorter along the direction of motion to a stationary
+                observer.</p>
+            <div class="tp-formula">
+                <div class="tp-formula-main">L = L₀ / γ = L₀√(1 − v²/c²)</div>
+                <div class="tp-formula-vars"><span>L₀ = proper length (measured in the object's rest
+                        frame)</span><span>L = contracted length (measured by moving observer)</span></div>
+            </div>
         </div>
 
         <div class="tp-example">
-            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 2</span><h4>Length Contraction — Spacecraft</h4></div>
-            <div class="tp-ex-problem"><strong>Problem:</strong> A 100 m spacecraft travels at 0.8c. How long does it appear to a stationary observer?</div>
-            <div class="tp-ex-solution">
-                <div class="tp-sol-step"><div class="tp-sol-label">Apply contraction</div><div class="tp-sol-content"><div class="tp-math">γ = 1/√(1−0.64) = 1/0.6 = 1.667</div><div class="tp-math">L = 100/1.667</div><div class="tp-math tp-result">L = 60 m (40% shorter!)</div></div></div>
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 2</span>
+                <h4>Length Contraction — Spacecraft</h4>
             </div>
-            <div class="tp-ex-answer"><strong>Answer:</strong> 60 m. The ship is physically 100 m in its own frame but measures 60 m to an outside observer. Width and height are unaffected — only the direction of motion contracts.</div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> A 100 m spacecraft travels at 0.8c. How long does it
+                appear to a stationary observer?</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">Apply contraction</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">γ = 1/√(1−0.64) = 1/0.6 = 1.667</div>
+                        <div class="tp-math">L = 100/1.667</div>
+                        <div class="tp-math tp-result">L = 60 m (40% shorter!)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> 60 m. The ship is physically 100 m in its own frame but
+                measures 60 m to an outside observer. Width and height are unaffected — only the direction of motion
+                contracts.</div>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-relativity">4</span> Mass-Energy Equivalence</h3>
             <p>Einstein's most famous equation reveals that mass and energy are interchangeable.</p>
-            <div class="tp-formula"><div class="tp-formula-main">E = mc²</div><div class="tp-formula-vars"><span>E = energy (J), m = mass (kg)</span><span>c² = 9 × 10¹⁶ m²/s²</span><span>1 kg of mass = 9 × 10¹⁶ J = 21.5 megatons TNT</span></div></div>
+            <div class="tp-formula">
+                <div class="tp-formula-main">E = mc²</div>
+                <div class="tp-formula-vars"><span>E = energy (J), m = mass (kg)</span><span>c² = 9 × 10¹⁶
+                        m²/s²</span><span>1 kg of mass = 9 × 10¹⁶ J = 21.5 megatons TNT</span></div>
+            </div>
         </div>
 
         <div class="tp-example">
-            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 3</span><h4>Energy from Mass — Nuclear Fusion</h4></div>
-            <div class="tp-ex-problem"><strong>Problem:</strong> In the Sun, 4 hydrogen nuclei fuse into 1 helium nucleus. The mass difference is 0.0287 atomic mass units (u). How much energy is released per fusion? (1 u = 1.661 × 10⁻²⁷ kg)</div>
-            <div class="tp-ex-solution">
-                <div class="tp-sol-step"><div class="tp-sol-label">E = Δmc²</div><div class="tp-sol-content"><div class="tp-math">Δm = 0.0287 × 1.661×10⁻²⁷ = 4.77 × 10⁻²⁹ kg</div><div class="tp-math">E = 4.77×10⁻²⁹ × (3×10⁸)² = 4.77×10⁻²⁹ × 9×10¹⁶</div><div class="tp-math tp-result">E = 4.29 × 10⁻¹² J = 26.7 MeV</div></div></div>
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 3</span>
+                <h4>Energy from Mass — Nuclear Fusion</h4>
             </div>
-            <div class="tp-ex-answer"><strong>Answer:</strong> 26.7 MeV per fusion reaction. The Sun performs ~3.8 × 10³⁸ fusions per second, converting 4 million tonnes of mass to energy every second — and has enough hydrogen for another 5 billion years.</div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> In the Sun, 4 hydrogen nuclei fuse into 1 helium
+                nucleus. The mass difference is 0.0287 atomic mass units (u). How much energy is released per fusion? (1
+                u = 1.661 × 10⁻²⁷ kg)</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">E = Δmc²</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">Δm = 0.0287 × 1.661×10⁻²⁷ = 4.77 × 10⁻²⁹ kg</div>
+                        <div class="tp-math">E = 4.77×10⁻²⁹ × (3×10⁸)² = 4.77×10⁻²⁹ × 9×10¹⁶</div>
+                        <div class="tp-math tp-result">E = 4.29 × 10⁻¹² J = 26.7 MeV</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> 26.7 MeV per fusion reaction. The Sun performs ~3.8 ×
+                10³⁸ fusions per second, converting 4 million tonnes of mass to energy every second — and has enough
+                hydrogen for another 5 billion years.</div>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-relativity">5</span> General Relativity — Gravity as Geometry</h3>
-            <p>General relativity (1915) extends special relativity to include gravity. Mass and energy curve spacetime, and objects follow the straightest possible paths (geodesics) through curved spacetime — this is what we experience as gravity.</p>
-            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>Predictions confirmed:</strong> Gravitational lensing, gravitational redshift, frame-dragging, gravitational time dilation (GPS satellites lose 45 μs/day without correction), and gravitational waves (detected by LIGO in 2015).</span></div>
+            <p>General relativity (1915) extends special relativity to include gravity. Mass and energy curve spacetime,
+                and objects follow the straightest possible paths (geodesics) through curved spacetime — this is what we
+                experience as gravity.</p>
+            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>Predictions confirmed:</strong>
+                    Gravitational lensing, gravitational redshift, frame-dragging, gravitational time dilation (GPS
+                    satellites lose 45 μs/day without correction), and gravitational waves (detected by LIGO in
+                    2015).</span></div>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-relativity">6</span> Relativistic Energy &amp; Momentum</h3>
             <p>At relativistic speeds, the classical formulas for kinetic energy and momentum break down.</p>
-            <div class="tp-formula"><div class="tp-formula-main">E² = (pc)² + (mc²)²</div><div class="tp-formula-vars"><span>Total energy: E = γmc²</span><span>Relativistic momentum: p = γmv</span><span>Kinetic energy: KE = (γ−1)mc²</span></div></div>
+            <div class="tp-formula">
+                <div class="tp-formula-main">E² = (pc)² + (mc²)²</div>
+                <div class="tp-formula-vars"><span>Total energy: E = γmc²</span><span>Relativistic momentum: p =
+                        γmv</span><span>Kinetic energy: KE = (γ−1)mc²</span></div>
+            </div>
             <div class="tp-table">
-                <div class="tp-table-row"><div class="tp-table-cell">v = 0.1c</div><div class="tp-table-note">γ = 1.005, KE ≈ ½mv² (classical OK)</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">v = 0.5c</div><div class="tp-table-note">γ = 1.155, 15.5% heavier</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">v = 0.9c</div><div class="tp-table-note">γ = 2.294, mass more than doubles</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">v = 0.99c</div><div class="tp-table-note">γ = 7.089, 7× rest mass</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">v = 0.999c</div><div class="tp-table-note">γ = 22.37</div></div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">v = 0.1c</div>
+                    <div class="tp-table-note">γ = 1.005, KE ≈ ½mv² (classical OK)</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">v = 0.5c</div>
+                    <div class="tp-table-note">γ = 1.155, 15.5% heavier</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">v = 0.9c</div>
+                    <div class="tp-table-note">γ = 2.294, mass more than doubles</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">v = 0.99c</div>
+                    <div class="tp-table-note">γ = 7.089, 7× rest mass</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">v = 0.999c</div>
+                    <div class="tp-table-note">γ = 22.37</div>
+                </div>
             </div>
         </div>
 
         <div class="tp-example">
-            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 4</span><h4>Relativistic Kinetic Energy</h4></div>
-            <div class="tp-ex-problem"><strong>Problem:</strong> A proton (m = 1.673 × 10⁻²⁷ kg) travels at 0.9c. Compare its relativistic KE to the classical (½mv²) value.</div>
-            <div class="tp-ex-solution">
-                <div class="tp-sol-step"><div class="tp-sol-label">Classical vs relativistic</div><div class="tp-sol-content"><div class="tp-math">Classical: KE = ½mv² = ½(1.673×10⁻²⁷)(0.9×3×10⁸)²</div><div class="tp-math">= 6.09 × 10⁻¹¹ J</div><div class="tp-math">Relativistic: γ = 1/√(1−0.81) = 2.294</div><div class="tp-math">KE = (γ−1)mc² = 1.294 × 1.673×10⁻²⁷ × 9×10¹⁶</div><div class="tp-math tp-result">KE_rel = 1.95 × 10⁻¹⁰ J (3.2× the classical value!)</div></div></div>
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 4</span>
+                <h4>Relativistic Kinetic Energy</h4>
             </div>
-            <div class="tp-ex-answer"><strong>Answer:</strong> Relativistic KE = 1.95 × 10⁻¹⁰ J vs classical 6.09 × 10⁻¹¹ J. Classical physics underestimates by 3.2×. At the LHC, protons reach γ ≈ 7,000 — classical mechanics is hopelessly wrong at such speeds.</div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> A proton (m = 1.673 × 10⁻²⁷ kg) travels at 0.9c.
+                Compare its relativistic KE to the classical (½mv²) value.</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">Classical vs relativistic</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">Classical: KE = ½mv² = ½(1.673×10⁻²⁷)(0.9×3×10⁸)²</div>
+                        <div class="tp-math">= 6.09 × 10⁻¹¹ J</div>
+                        <div class="tp-math">Relativistic: γ = 1/√(1−0.81) = 2.294</div>
+                        <div class="tp-math">KE = (γ−1)mc² = 1.294 × 1.673×10⁻²⁷ × 9×10¹⁶</div>
+                        <div class="tp-math tp-result">KE_rel = 1.95 × 10⁻¹⁰ J (3.2× the classical value!)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> Relativistic KE = 1.95 × 10⁻¹⁰ J vs classical 6.09 ×
+                10⁻¹¹ J. Classical physics underestimates by 3.2×. At the LHC, protons reach γ ≈ 7,000 — classical
+                mechanics is hopelessly wrong at such speeds.</div>
         </div>
 
-        <div class="tp-related"><h3>Related Topics</h3><div class="tp-related-grid">
-            <a href="/quantum-mechanics/" class="tp-related-card"><div class="tp-related-icon tc-quantum"><i class="fas fa-atom"></i></div><span>Quantum Mechanics</span></a>
-            <a href="/nuclear-physics/" class="tp-related-card"><div class="tp-related-icon tc-nuclear"><i class="fas fa-radiation"></i></div><span>Nuclear Physics</span></a>
-            <a href="/astrophysics/" class="tp-related-card"><div class="tp-related-icon tc-astro"><i class="fas fa-star"></i></div><span>Astrophysics</span></a>
-        </div></div>
+        <div class="tp-related">
+            <h3>Related Topics</h3>
+            <div class="tp-related-grid">
+                <a href="/quantum-mechanics/" class="tp-related-card">
+                    <div class="tp-related-icon tc-quantum"><i class="fas fa-atom"></i></div><span>Quantum
+                        Mechanics</span>
+                </a>
+                <a href="/nuclear-physics/" class="tp-related-card">
+                    <div class="tp-related-icon tc-nuclear"><i class="fas fa-radiation"></i></div><span>Nuclear
+                        Physics</span>
+                </a>
+                <a href="/astrophysics/" class="tp-related-card">
+                    <div class="tp-related-icon tc-astro"><i class="fas fa-star"></i></div><span>Astrophysics</span>
+                </a>
+            </div>
+        </div>
     </section>
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-content">
-                <div class="footer-section"><h3>CalcREX</h3><p>Your complete online calculator suite for every calculation need.</p></div>
-                <div class="footer-section"><h3>Quick Links</h3><ul class="footer-links"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/policy-document">Policy Document</a></li></ul></div>
-                <div class="footer-section"><h3>Feature Categories</h3><ul class="footer-links"><li><a href="/converters">Unit Converter</a></li><li><a href="/physics">Physics</a></li><li><a href="/chemistry">Chemistry</a></li><li><a href="/electricity">Electronics</a></li><li><a href="/computer-science">Computer Science</a></li><li><a href="/finance">Finance</a></li><li><a href="/date-time">Date &amp; Time</a></li><li><a href="/thermodynamics">Thermodynamics</a></li><li><a href="/aerodynamics">Aerodynamics</a></li><li><a href="/topics">Topics</a></li></ul></div>
+                <div class="footer-section">
+                    <h3>CalcREX</h3>
+                    <p>Your complete online calculator suite for every calculation need.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/policy-document">Policy Document</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Feature Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="/converters">Unit Converter</a></li>
+                        <li><a href="/physics">Physics</a></li>
+                        <li><a href="/chemistry">Chemistry</a></li>
+                        <li><a href="/electricity">Electronics</a></li>
+                        <li><a href="/computer-science">Computer Science</a></li>
+                        <li><a href="/finance">Finance</a></li>
+                        <li><a href="/date-time">Date &amp; Time</a></li>
+                        <li><a href="/thermodynamics">Thermodynamics</a></li>
+                        <li><a href="/aerodynamics">Aerodynamics</a></li>
+                        <li><a href="/topics">Topics</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2024 CalcREX. All rights reserved.</p></div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CalcREX. All rights reserved.</p>
+            </div>
         </div>
     </footer>
     <script src="/js/nav.js"></script>
     <script src="/js/script.js"></script>
     <script>
-    document.getElementById('rel-calc-btn').addEventListener('click',function(){
-        const t=parseFloat(document.getElementById('rel-time').value);
-        const v=parseFloat(document.getElementById('rel-v').value);
-        if(isNaN(t)||isNaN(v)||v>=1||v<0){document.getElementById('rel-result').textContent='Enter valid values (v<c)';return;}
-        const gamma=1/Math.sqrt(1-v*v);
-        document.getElementById('rel-result').textContent=(t*gamma).toFixed(4);
-        document.getElementById('rel-unit').textContent='years (γ = '+gamma.toFixed(4)+')';
-    });
+        document.getElementById('rel-calc-btn').addEventListener('click', function () {
+            const t = parseFloat(document.getElementById('rel-time').value);
+            const v = parseFloat(document.getElementById('rel-v').value);
+            if (isNaN(t) || isNaN(v) || v >= 1 || v < 0) { document.getElementById('rel-result').textContent = 'Enter valid values (v<c)'; return; }
+            const gamma = 1 / Math.sqrt(1 - v * v);
+            document.getElementById('rel-result').textContent = (t * gamma).toFixed(4);
+            document.getElementById('rel-unit').textContent = 'years (γ = ' + gamma.toFixed(4) + ')';
+        });
     </script>
 </body>
+
 </html>

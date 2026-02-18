@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thermodynamic Cycles — CalcRex | In-Depth Guide with Worked Examples</title>
-    <meta name="description" content="Complete guide to thermodynamic cycles: Carnot, Otto, Diesel, Rankine, and refrigeration cycles. PV diagrams, thermal efficiency, and real-world applications. With efficiency calculator and worked examples."><meta name="keywords" content="thermodynamic cycles, Carnot cycle, Otto cycle, Diesel cycle, Rankine cycle, refrigeration, thermal efficiency, CalcRex">
-    <meta name="author" content="CalcRex"><meta name="robots" content="index, follow">
+    <meta name="description"
+        content="Complete guide to thermodynamic cycles: Carnot, Otto, Diesel, Rankine, and refrigeration cycles. PV diagrams, thermal efficiency, and real-world applications. With efficiency calculator and worked examples.">
+    <meta name="keywords"
+        content="thermodynamic cycles, Carnot cycle, Otto cycle, Diesel cycle, Rankine cycle, refrigeration, thermal efficiency, CalcRex">
+    <meta name="author" content="CalcRex">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://calcrex.com/topics/thermodynamic-cycles/">
-    <meta property="og:type" content="article"><meta property="og:url" content="https://calcrex.com/topics/thermodynamic-cycles/">
-    <meta property="og:title" content="Thermodynamic Cycles — CalcRex"><meta property="og:description" content="Complete guide to thermodynamic cycles: Carnot, Otto, Diesel, Rankine, and refrigeration cycles. PV diagrams, thermal efficiency, and real-world applications. With efficiency calculator and worked examples.">
-    <meta property="og:image" content="https://calcrex.com/img/calcrex-banner.webp"><meta property="og:site_name" content="CalcRex">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://calcrex.com/topics/thermodynamic-cycles/">
+    <meta property="og:title" content="Thermodynamic Cycles — CalcRex">
+    <meta property="og:description"
+        content="Complete guide to thermodynamic cycles: Carnot, Otto, Diesel, Rankine, and refrigeration cycles. PV diagrams, thermal efficiency, and real-world applications. With efficiency calculator and worked examples.">
+    <meta property="og:image" content="https://calcrex.com/img/calcrex-banner.webp">
+    <meta property="og:site_name" content="CalcRex">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" type="image/png" href="/favicon.png"><link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" href="/css/styles.css"><link rel="stylesheet" href="/css/topic-page.css">
-    <link rel="stylesheet" href="/css/topics.css"><link rel="stylesheet" href="/css/pages.css">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/topic-page.css">
+    <link rel="stylesheet" href="/css/topics.css">
+    <link rel="stylesheet" href="/css/pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script type="application/ld+json">
     { "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -22,22 +35,42 @@
     ]}
     </script>
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8EMHZ2B7V3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-8EMHZ2B7V3');
+</script>
+
 <body>
-    <header class="site-header"><div class="header-container">
-        <div class="logo"><a href="/"><span class="logo-text">Calc<span class="logo-highlight">REX</span></span></a></div>
-        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu"><span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span></button>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo"><a href="/"><span class="logo-text">Calc<span class="logo-highlight">REX</span></span></a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu"><span
+                    class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span></button>
             <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="/" class="nav-link">Calculator</a></li>
                     <li><a href="/converters" class="nav-link">Unit Converter</a></li>
                     <li class="nav-dropdown">
-                        <button class="nav-link nav-dropdown-toggle">Sciences <i class="fas fa-chevron-down nav-arrow"></i></button>
+                        <button class="nav-link nav-dropdown-toggle">Sciences <i
+                                class="fas fa-chevron-down nav-arrow"></i></button>
                         <ul class="nav-dropdown-menu">
-                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a></li>
-                            <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i> Chemistry</a></li>
-                            <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i> Electronics</a></li>
-                            <li><a href="/thermodynamics" class="nav-dropdown-link"><i class="fas fa-fire"></i> Thermodynamics</a></li>
-                            <li><a href="/aerodynamics" class="nav-dropdown-link"><i class="fas fa-plane"></i> Aerodynamics</a></li>
+                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a>
+                            </li>
+                            <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i>
+                                    Chemistry</a></li>
+                            <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i>
+                                    Electronics</a></li>
+                            <li><a href="/thermodynamics" class="nav-dropdown-link"><i class="fas fa-fire"></i>
+                                    Thermodynamics</a></li>
+                            <li><a href="/aerodynamics" class="nav-dropdown-link"><i class="fas fa-plane"></i>
+                                    Aerodynamics</a></li>
                         </ul>
                     </li>
                     <li><a href="/computer-science" class="nav-link">Computer Science</a></li>
@@ -46,120 +79,308 @@
                     <li><a href="/topics" class="nav-link active">Topics</a></li>
                 </ul>
             </nav>
-    </div></header>
-    <nav class="tp-breadcrumb"><ol class="tp-breadcrumb-list"><li><a href="/">Home</a></li><li class="tp-breadcrumb-sep">›</li><li><a href="/">Topics</a></li><li class="tp-breadcrumb-sep">›</li><li class="tp-breadcrumb-current">Thermodynamic Cycles</li></ol></nav>
-    <section class="tp-hero" style="background:linear-gradient(135deg, #881337 0%, #e11d48 50%, #fda4af 100%);"><div class="tp-hero-icon tc-thermocycles"><i class="fas fa-cogs"></i></div><h1>Thermodynamic Cycles</h1><p>Carnot, Otto, Diesel, and Rankine — the engine cycles that power civilization.</p></section>
+        </div>
+    </header>
+    <nav class="tp-breadcrumb">
+        <ol class="tp-breadcrumb-list">
+            <li><a href="/">Home</a></li>
+            <li class="tp-breadcrumb-sep">›</li>
+            <li><a href="/">Topics</a></li>
+            <li class="tp-breadcrumb-sep">›</li>
+            <li class="tp-breadcrumb-current">Thermodynamic Cycles</li>
+        </ol>
+    </nav>
+    <section class="tp-hero" style="background:linear-gradient(135deg, #881337 0%, #e11d48 50%, #fda4af 100%);">
+        <div class="tp-hero-icon tc-thermocycles"><i class="fas fa-cogs"></i></div>
+        <h1>Thermodynamic Cycles</h1>
+        <p>Carnot, Otto, Diesel, and Rankine — the engine cycles that power civilization.</p>
+    </section>
     <section class="tp-content-section">
         <a href="/" class="tp-back-link"><i class="fas fa-arrow-left"></i> All Topics</a>
         <div class="tp-calculator-wrap">
-            <div class="tp-calc-header"><i class="fas fa-calculator"></i><h2>Thermal Efficiency Calculator</h2></div>
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>Thermal Efficiency Calculator</h2>
+            </div>
             <div class="tp-calc-body">
-                <div class="tp-calc-formula"><div class="tp-calc-formula-label">Formula</div><div class="tp-calc-formula-eq">η = 1 − (T_cold / T_hot) [Carnot maximum]</div></div>
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Formula</div>
+                    <div class="tp-calc-formula-eq">η = 1 − (T_cold / T_hot) [Carnot maximum]</div>
+                </div>
                 <div class="tp-calc-inputs">
-                    <div class="tp-calc-group"><div class="tp-calc-label"><span>T_H</span> Hot Temperature</div><div class="tp-calc-row"><input type="number" class="tp-calc-input" id="tc-th" placeholder="e.g. 500"><div class="tp-calc-unit">°C</div></div></div>
-                    <div class="tp-calc-group"><div class="tp-calc-label"><span>T_C</span> Cold Temperature</div><div class="tp-calc-row"><input type="number" class="tp-calc-input" id="tc-tc" placeholder="e.g. 25"><div class="tp-calc-unit">°C</div></div></div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>T_H</span> Hot Temperature</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="tc-th"
+                                placeholder="e.g. 500">
+                            <div class="tp-calc-unit">°C</div>
+                        </div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>T_C</span> Cold Temperature</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="tc-tc"
+                                placeholder="e.g. 25">
+                            <div class="tp-calc-unit">°C</div>
+                        </div>
+                    </div>
                 </div>
                 <button class="tp-calc-btn" id="tc-calc-btn">Calculate Carnot Efficiency</button>
-                <div class="tp-calc-result"><div class="tp-calc-result-label">Maximum Efficiency</div><div class="tp-calc-result-value" id="tc-result">—</div><div class="tp-calc-result-unit" id="tc-unit"></div></div>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">Maximum Efficiency</div>
+                    <div class="tp-calc-result-value" id="tc-result">—</div>
+                    <div class="tp-calc-result-unit" id="tc-unit"></div>
+                </div>
             </div>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-thermocycles">1</span> The Carnot Cycle — The Theoretical Maximum</h3>
-            <p>The Carnot cycle is the most efficient heat engine possible operating between two temperatures. No real engine can exceed its efficiency — it's a fundamental limit set by the second law of thermodynamics.</p>
-            <div class="tp-formula"><div class="tp-formula-main">η_Carnot = 1 − T_C/T_H</div><div class="tp-formula-vars"><span>T must be in Kelvin (add 273.15 to °C)</span><span>η depends ONLY on temperature ratio</span><span>Higher T_H or lower T_C → higher efficiency</span></div></div>
-            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>Why 100% is impossible:</strong> For η = 100%, you'd need T_C = 0 K (absolute zero), which is physically unreachable. Real engines achieve 30-60% of Carnot efficiency due to friction, irreversibilities, and practical constraints.</span></div>
+            <p>The Carnot cycle is the most efficient heat engine possible operating between two temperatures. No real
+                engine can exceed its efficiency — it's a fundamental limit set by the second law of thermodynamics.</p>
+            <div class="tp-formula">
+                <div class="tp-formula-main">η_Carnot = 1 − T_C/T_H</div>
+                <div class="tp-formula-vars"><span>T must be in Kelvin (add 273.15 to °C)</span><span>η depends ONLY on
+                        temperature ratio</span><span>Higher T_H or lower T_C → higher efficiency</span></div>
+            </div>
+            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>Why 100% is impossible:</strong> For η
+                    = 100%, you'd need T_C = 0 K (absolute zero), which is physically unreachable. Real engines achieve
+                    30-60% of Carnot efficiency due to friction, irreversibilities, and practical constraints.</span>
+            </div>
         </div>
 
         <div class="tp-example">
-            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 1</span><h4>Carnot Efficiency — Coal Power Plant</h4></div>
-            <div class="tp-ex-problem"><strong>Problem:</strong> A coal plant operates with steam at 540°C and condenser at 30°C. What is the maximum theoretical efficiency? If the actual efficiency is 38%, what fraction of the Carnot limit is achieved?</div>
-            <div class="tp-ex-solution">
-                <div class="tp-sol-step"><div class="tp-sol-label">Carnot efficiency</div><div class="tp-sol-content"><div class="tp-math">T_H = 540 + 273 = 813 K, T_C = 30 + 273 = 303 K</div><div class="tp-math">η = 1 − 303/813 = 1 − 0.373</div><div class="tp-math tp-result">η_Carnot = 62.7%</div><div class="tp-math">Actual/Carnot = 38/62.7</div><div class="tp-math tp-result">= 60.6% of theoretical maximum</div></div></div>
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 1</span>
+                <h4>Carnot Efficiency — Coal Power Plant</h4>
             </div>
-            <div class="tp-ex-answer"><strong>Answer:</strong> Carnot: 62.7%, actual: 38% (61% of Carnot). The remaining 39% of Carnot efficiency is lost to friction, heat leaks, pumping losses, and incomplete combustion.</div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> A coal plant operates with steam at 540°C and condenser
+                at 30°C. What is the maximum theoretical efficiency? If the actual efficiency is 38%, what fraction of
+                the Carnot limit is achieved?</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">Carnot efficiency</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">T_H = 540 + 273 = 813 K, T_C = 30 + 273 = 303 K</div>
+                        <div class="tp-math">η = 1 − 303/813 = 1 − 0.373</div>
+                        <div class="tp-math tp-result">η_Carnot = 62.7%</div>
+                        <div class="tp-math">Actual/Carnot = 38/62.7</div>
+                        <div class="tp-math tp-result">= 60.6% of theoretical maximum</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> Carnot: 62.7%, actual: 38% (61% of Carnot). The remaining
+                39% of Carnot efficiency is lost to friction, heat leaks, pumping losses, and incomplete combustion.
+            </div>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-thermocycles">2</span> The Otto Cycle — Gasoline Engines</h3>
-            <p>The cycle behind every gasoline car engine. Four strokes: intake, compression, power (combustion), exhaust. Efficiency depends on the compression ratio r.</p>
-            <div class="tp-formula"><div class="tp-formula-main">η_Otto = 1 − 1/r^(γ−1)</div><div class="tp-formula-vars"><span>r = V_max/V_min (compression ratio, typically 8-12)</span><span>γ = 1.4 for air (ratio of specific heats)</span><span>r = 10 → η = 60.2% (theoretical)</span></div></div>
+            <p>The cycle behind every gasoline car engine. Four strokes: intake, compression, power (combustion),
+                exhaust. Efficiency depends on the compression ratio r.</p>
+            <div class="tp-formula">
+                <div class="tp-formula-main">η_Otto = 1 − 1/r^(γ−1)</div>
+                <div class="tp-formula-vars"><span>r = V_max/V_min (compression ratio, typically 8-12)</span><span>γ =
+                        1.4 for air (ratio of specific heats)</span><span>r = 10 → η = 60.2% (theoretical)</span></div>
+            </div>
         </div>
 
         <div class="tp-example">
-            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 2</span><h4>Otto Cycle — Car Engine Efficiency</h4></div>
-            <div class="tp-ex-problem"><strong>Problem:</strong> A gasoline engine has compression ratio r = 9.5. Calculate the theoretical Otto efficiency. If the engine produces 150 kW, how much fuel energy is consumed per second?</div>
-            <div class="tp-ex-solution">
-                <div class="tp-sol-step"><div class="tp-sol-label">Otto efficiency</div><div class="tp-sol-content"><div class="tp-math">η = 1 − 1/9.5^(0.4) = 1 − 1/9.5^0.4</div><div class="tp-math">9.5^0.4 = e^(0.4×ln9.5) = e^(0.4×2.251) = e^0.900 = 2.460</div><div class="tp-math tp-result">η = 1 − 1/2.460 = 59.3%</div><div class="tp-math">In practice ~30% (friction, heat loss). Fuel power = 150/0.30</div><div class="tp-math tp-result">= 500 kW input (350 kW wasted as heat)</div></div></div>
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 2</span>
+                <h4>Otto Cycle — Car Engine Efficiency</h4>
             </div>
-            <div class="tp-ex-answer"><strong>Answer:</strong> Theoretical: 59.3%, practical: ~30%. The engine consumes 500 kW of fuel energy to produce 150 kW of useful work — the rest heats the engine block, exhaust, and radiator.</div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> A gasoline engine has compression ratio r = 9.5.
+                Calculate the theoretical Otto efficiency. If the engine produces 150 kW, how much fuel energy is
+                consumed per second?</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">Otto efficiency</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">η = 1 − 1/9.5^(0.4) = 1 − 1/9.5^0.4</div>
+                        <div class="tp-math">9.5^0.4 = e^(0.4×ln9.5) = e^(0.4×2.251) = e^0.900 = 2.460</div>
+                        <div class="tp-math tp-result">η = 1 − 1/2.460 = 59.3%</div>
+                        <div class="tp-math">In practice ~30% (friction, heat loss). Fuel power = 150/0.30</div>
+                        <div class="tp-math tp-result">= 500 kW input (350 kW wasted as heat)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> Theoretical: 59.3%, practical: ~30%. The engine consumes
+                500 kW of fuel energy to produce 150 kW of useful work — the rest heats the engine block, exhaust, and
+                radiator.</div>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-thermocycles">3</span> The Diesel Cycle</h3>
-            <p>Similar to Otto but fuel is injected into pre-compressed hot air (no spark plug needed). Higher compression ratios (14-25) give better efficiency than Otto, but the cycle itself is less thermodynamically ideal.</p>
-            <div class="tp-formula"><div class="tp-formula-main">η_Diesel = 1 − (1/r^(γ−1)) × (r_c^γ − 1)/(γ(r_c − 1))</div><div class="tp-formula-vars"><span>r = compression ratio (14-25)</span><span>r_c = cutoff ratio (volume after/before combustion)</span><span>Higher r → higher η, but also heavier engine</span></div></div>
+            <p>Similar to Otto but fuel is injected into pre-compressed hot air (no spark plug needed). Higher
+                compression ratios (14-25) give better efficiency than Otto, but the cycle itself is less
+                thermodynamically ideal.</p>
+            <div class="tp-formula">
+                <div class="tp-formula-main">η_Diesel = 1 − (1/r^(γ−1)) × (r_c^γ − 1)/(γ(r_c − 1))</div>
+                <div class="tp-formula-vars"><span>r = compression ratio (14-25)</span><span>r_c = cutoff ratio (volume
+                        after/before combustion)</span><span>Higher r → higher η, but also heavier engine</span></div>
+            </div>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-thermocycles">4</span> The Rankine Cycle — Steam Power Plants</h3>
-            <p>The cycle used in 80% of the world's electricity generation (coal, nuclear, solar thermal, geothermal). Water is boiled to steam, expanded through a turbine, condensed, and pumped back.</p>
+            <p>The cycle used in 80% of the world's electricity generation (coal, nuclear, solar thermal, geothermal).
+                Water is boiled to steam, expanded through a turbine, condensed, and pumped back.</p>
             <div class="tp-table">
-                <div class="tp-table-row"><div class="tp-table-cell">1 → 2</div><div class="tp-table-note">Pump: liquid water pressurized (small work in)</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">2 → 3</div><div class="tp-table-note">Boiler: water → superheated steam (heat in)</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">3 → 4</div><div class="tp-table-note">Turbine: steam expands, drives generator (work out)</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">4 → 1</div><div class="tp-table-note">Condenser: steam → liquid water (heat rejected)</div></div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">1 → 2</div>
+                    <div class="tp-table-note">Pump: liquid water pressurized (small work in)</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">2 → 3</div>
+                    <div class="tp-table-note">Boiler: water → superheated steam (heat in)</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">3 → 4</div>
+                    <div class="tp-table-note">Turbine: steam expands, drives generator (work out)</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">4 → 1</div>
+                    <div class="tp-table-note">Condenser: steam → liquid water (heat rejected)</div>
+                </div>
             </div>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-thermocycles">5</span> Refrigeration &amp; Heat Pumps</h3>
-            <p>Refrigerators and heat pumps run heat engine cycles in reverse — they use work input to move heat from cold to hot. Performance is measured by COP (Coefficient of Performance) rather than efficiency.</p>
-            <div class="tp-formula"><div class="tp-formula-main">COP_cooling = T_C / (T_H − T_C)</div><div class="tp-formula-vars"><span>COP_heating = T_H / (T_H − T_C) = COP_cooling + 1</span><span>Typical fridge: COP ≈ 3-5 (moves 3-5× more heat than work input)</span><span>Heat pump: COP ≈ 3-4 (300-400% "efficient")</span></div></div>
+            <p>Refrigerators and heat pumps run heat engine cycles in reverse — they use work input to move heat from
+                cold to hot. Performance is measured by COP (Coefficient of Performance) rather than efficiency.</p>
+            <div class="tp-formula">
+                <div class="tp-formula-main">COP_cooling = T_C / (T_H − T_C)</div>
+                <div class="tp-formula-vars"><span>COP_heating = T_H / (T_H − T_C) = COP_cooling + 1</span><span>Typical
+                        fridge: COP ≈ 3-5 (moves 3-5× more heat than work input)</span><span>Heat pump: COP ≈ 3-4
+                        (300-400% "efficient")</span></div>
+            </div>
         </div>
 
         <div class="tp-example">
-            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 3</span><h4>Heat Pump vs. Electric Heater</h4></div>
-            <div class="tp-ex-problem"><strong>Problem:</strong> Compare heating a house with a 5 kW electric heater vs. a heat pump (COP = 3.5) using the same 5 kW of electricity. Outside: 5°C, inside: 20°C.</div>
-            <div class="tp-ex-solution">
-                <div class="tp-sol-step"><div class="tp-sol-label">Compare heat delivered</div><div class="tp-sol-content"><div class="tp-math">Electric heater: Q = W = 5 kW (100% conversion)</div><div class="tp-math">Heat pump: Q = COP × W = 3.5 × 5</div><div class="tp-math tp-result">Q_HP = 17.5 kW of heating (3.5× more!)</div><p>The heat pump delivers 17.5 kW of heat using only 5 kW of electricity by extracting 12.5 kW from the cold outside air.</p></div></div>
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 3</span>
+                <h4>Heat Pump vs. Electric Heater</h4>
             </div>
-            <div class="tp-ex-answer"><strong>Answer:</strong> Heat pump delivers 17.5 kW vs electric heater's 5 kW — 3.5× more heating per watt. This is why heat pumps are replacing gas boilers globally. They appear to be ">100% efficient" because they move heat rather than creating it.</div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> Compare heating a house with a 5 kW electric heater vs.
+                a heat pump (COP = 3.5) using the same 5 kW of electricity. Outside: 5°C, inside: 20°C.</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">Compare heat delivered</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">Electric heater: Q = W = 5 kW (100% conversion)</div>
+                        <div class="tp-math">Heat pump: Q = COP × W = 3.5 × 5</div>
+                        <div class="tp-math tp-result">Q_HP = 17.5 kW of heating (3.5× more!)</div>
+                        <p>The heat pump delivers 17.5 kW of heat using only 5 kW of electricity by extracting 12.5 kW
+                            from the cold outside air.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> Heat pump delivers 17.5 kW vs electric heater's 5 kW —
+                3.5× more heating per watt. This is why heat pumps are replacing gas boilers globally. They appear to be
+                ">100% efficient" because they move heat rather than creating it.</div>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-thermocycles">6</span> PV Diagrams &amp; Real-World Efficiencies</h3>
-            <p>Pressure-Volume (PV) diagrams show thermodynamic cycles visually. The enclosed area equals the net work done. Real engines always fall short of theoretical due to friction, irreversibilities, and heat losses.</p>
+            <p>Pressure-Volume (PV) diagrams show thermodynamic cycles visually. The enclosed area equals the net work
+                done. Real engines always fall short of theoretical due to friction, irreversibilities, and heat losses.
+            </p>
             <div class="tp-table">
-                <div class="tp-table-row"><div class="tp-table-cell">Car engine (Otto)</div><div class="tp-table-note">25-35% actual efficiency</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">Diesel truck</div><div class="tp-table-note">35-45%</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">Coal power plant</div><div class="tp-table-note">33-40%</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">Gas turbine (combined)</div><div class="tp-table-note">55-62% (most efficient heat engine)</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">Nuclear plant</div><div class="tp-table-note">33-37%</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">Large ship diesel</div><div class="tp-table-note">45-55% (largest, slowest = most efficient)</div></div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Car engine (Otto)</div>
+                    <div class="tp-table-note">25-35% actual efficiency</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Diesel truck</div>
+                    <div class="tp-table-note">35-45%</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Coal power plant</div>
+                    <div class="tp-table-note">33-40%</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Gas turbine (combined)</div>
+                    <div class="tp-table-note">55-62% (most efficient heat engine)</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Nuclear plant</div>
+                    <div class="tp-table-note">33-37%</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Large ship diesel</div>
+                    <div class="tp-table-note">45-55% (largest, slowest = most efficient)</div>
+                </div>
             </div>
-            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>Combined cycle gas turbines (CCGT):</strong> Burn gas in a turbine (~40%), then use exhaust heat to make steam for a second turbine (~20% more). Total: ~60% — the highest thermal efficiency of any heat engine. This is why natural gas is displacing coal in electricity generation.</span></div>
+            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>Combined cycle gas turbines
+                        (CCGT):</strong> Burn gas in a turbine (~40%), then use exhaust heat to make steam for a second
+                    turbine (~20% more). Total: ~60% — the highest thermal efficiency of any heat engine. This is why
+                    natural gas is displacing coal in electricity generation.</span></div>
         </div>
 
-        <div class="tp-related"><h3>Related Topics</h3><div class="tp-related-grid">
-            <a href="/fluid-mechanics/" class="tp-related-card"><div class="tp-related-icon tc-fluids"><i class="fas fa-water"></i></div><span>Fluid Mechanics</span></a>
-            <a href="/nuclear-physics/" class="tp-related-card"><div class="tp-related-icon tc-nuclear"><i class="fas fa-radiation"></i></div><span>Nuclear Physics</span></a>
-            <a href="/calculus/" class="tp-related-card"><div class="tp-related-icon tc-calculus"><i class="fas fa-infinity"></i></div><span>Calculus</span></a>
-        </div></div>
+        <div class="tp-related">
+            <h3>Related Topics</h3>
+            <div class="tp-related-grid">
+                <a href="/fluid-mechanics/" class="tp-related-card">
+                    <div class="tp-related-icon tc-fluids"><i class="fas fa-water"></i></div><span>Fluid
+                        Mechanics</span>
+                </a>
+                <a href="/nuclear-physics/" class="tp-related-card">
+                    <div class="tp-related-icon tc-nuclear"><i class="fas fa-radiation"></i></div><span>Nuclear
+                        Physics</span>
+                </a>
+                <a href="/calculus/" class="tp-related-card">
+                    <div class="tp-related-icon tc-calculus"><i class="fas fa-infinity"></i></div><span>Calculus</span>
+                </a>
+            </div>
+        </div>
     </section>
-    <footer class="site-footer"><div class="footer-container"><div class="footer-content"><div class="footer-section"><h3>CalcREX</h3><p>Your complete online calculator suite for every calculation need.</p></div><div class="footer-section"><h3>Quick Links</h3><ul class="footer-links"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/policy-document">Policy Document</a></li></ul></div><div class="footer-section"><h3>Feature Categories</h3><ul class="footer-links"><li><a href="/converters">Unit Converter</a></li><li><a href="/physics">Physics</a></li><li><a href="/chemistry">Chemistry</a></li><li><a href="/electricity">Electronics</a></li><li><a href="/computer-science">Computer Science</a></li><li><a href="/finance">Finance</a></li><li><a href="/date-time">Date &amp; Time</a></li><li><a href="/thermodynamics">Thermodynamics</a></li><li><a href="/aerodynamics">Aerodynamics</a></li><li><a href="/topics">Topics</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2024 CalcREX. All rights reserved.</p></div></div></footer>
-    <script src="/js/nav.js"></script><script src="/js/script.js"></script>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CalcREX</h3>
+                    <p>Your complete online calculator suite for every calculation need.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/policy-document">Policy Document</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Feature Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="/converters">Unit Converter</a></li>
+                        <li><a href="/physics">Physics</a></li>
+                        <li><a href="/chemistry">Chemistry</a></li>
+                        <li><a href="/electricity">Electronics</a></li>
+                        <li><a href="/computer-science">Computer Science</a></li>
+                        <li><a href="/finance">Finance</a></li>
+                        <li><a href="/date-time">Date &amp; Time</a></li>
+                        <li><a href="/thermodynamics">Thermodynamics</a></li>
+                        <li><a href="/aerodynamics">Aerodynamics</a></li>
+                        <li><a href="/topics">Topics</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CalcREX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="/js/nav.js"></script>
+    <script src="/js/script.js"></script>
     <script>
-    document.getElementById('tc-calc-btn').addEventListener('click',function(){
-        const th=parseFloat(document.getElementById('tc-th').value);
-        const tc=parseFloat(document.getElementById('tc-tc').value);
-        if(isNaN(th)||isNaN(tc)){document.getElementById('tc-result').textContent='Enter valid values';return;}
-        const TH=th+273.15; const TC=tc+273.15;
-        if(TH<=TC){document.getElementById('tc-result').textContent='T_hot must > T_cold';return;}
-        const eff=(1-TC/TH)*100;
-        document.getElementById('tc-result').textContent=eff.toFixed(2)+'%';
-        document.getElementById('tc-unit').textContent='Carnot max (T_H='+TH.toFixed(0)+'K, T_C='+TC.toFixed(0)+'K)';
-    });
+        document.getElementById('tc-calc-btn').addEventListener('click', function () {
+            const th = parseFloat(document.getElementById('tc-th').value);
+            const tc = parseFloat(document.getElementById('tc-tc').value);
+            if (isNaN(th) || isNaN(tc)) { document.getElementById('tc-result').textContent = 'Enter valid values'; return; }
+            const TH = th + 273.15; const TC = tc + 273.15;
+            if (TH <= TC) { document.getElementById('tc-result').textContent = 'T_hot must > T_cold'; return; }
+            const eff = (1 - TC / TH) * 100;
+            document.getElementById('tc-result').textContent = eff.toFixed(2) + '%';
+            document.getElementById('tc-unit').textContent = 'Carnot max (T_H=' + TH.toFixed(0) + 'K, T_C=' + TC.toFixed(0) + 'K)';
+        });
     </script>
 </body>
+
 </html>

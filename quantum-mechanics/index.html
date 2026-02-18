@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quantum Mechanics — CalcRex | In-Depth Guide with Worked Examples</title>
-    <meta name="description" content="In-depth guide to quantum mechanics: wave-particle duality, Schrödinger equation, uncertainty principle, quantum tunneling, spin, and entanglement. With worked examples and an interactive calculator.">
-    <meta name="keywords" content="quantum mechanics, Schrödinger equation, uncertainty principle, wave-particle duality, quantum tunneling, Planck constant, CalcRex">
+    <meta name="description"
+        content="In-depth guide to quantum mechanics: wave-particle duality, Schrödinger equation, uncertainty principle, quantum tunneling, spin, and entanglement. With worked examples and an interactive calculator.">
+    <meta name="keywords"
+        content="quantum mechanics, Schrödinger equation, uncertainty principle, wave-particle duality, quantum tunneling, Planck constant, CalcRex">
     <meta name="author" content="CalcRex">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://calcrex.com/topics/quantum-mechanics/">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://calcrex.com/topics/quantum-mechanics/">
     <meta property="og:title" content="Quantum Mechanics — CalcRex">
-    <meta property="og:description" content="In-depth guide to quantum mechanics: wave-particle duality, Schrödinger equation, uncertainty principle, quantum tunneling, spin, and entanglement. With worked examples and an interactive calculator.">
+    <meta property="og:description"
+        content="In-depth guide to quantum mechanics: wave-particle duality, Schrödinger equation, uncertainty principle, quantum tunneling, spin, and entanglement. With worked examples and an interactive calculator.">
     <meta property="og:image" content="https://calcrex.com/img/calcrex-banner.webp">
     <meta property="og:site_name" content="CalcRex">
     <meta name="twitter:card" content="summary_large_image">
@@ -31,10 +35,22 @@
     ]}
     </script>
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8EMHZ2B7V3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-8EMHZ2B7V3');
+</script>
+
 <body>
     <header class="site-header">
         <div class="header-container">
-            <div class="logo"><a href="/"><span class="logo-text">Calc<span class="logo-highlight">REX</span></span></a></div>
+            <div class="logo"><a href="/"><span class="logo-text">Calc<span class="logo-highlight">REX</span></span></a>
+            </div>
             <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
                 <span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span>
             </button>
@@ -43,13 +59,19 @@
                     <li><a href="/" class="nav-link">Calculator</a></li>
                     <li><a href="/converters" class="nav-link">Unit Converter</a></li>
                     <li class="nav-dropdown">
-                        <button class="nav-link nav-dropdown-toggle">Sciences <i class="fas fa-chevron-down nav-arrow"></i></button>
+                        <button class="nav-link nav-dropdown-toggle">Sciences <i
+                                class="fas fa-chevron-down nav-arrow"></i></button>
                         <ul class="nav-dropdown-menu">
-                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a></li>
-                            <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i> Chemistry</a></li>
-                            <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i> Electronics</a></li>
-                            <li><a href="/thermodynamics" class="nav-dropdown-link"><i class="fas fa-fire"></i> Thermodynamics</a></li>
-                            <li><a href="/aerodynamics" class="nav-dropdown-link"><i class="fas fa-plane"></i> Aerodynamics</a></li>
+                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a>
+                            </li>
+                            <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i>
+                                    Chemistry</a></li>
+                            <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i>
+                                    Electronics</a></li>
+                            <li><a href="/thermodynamics" class="nav-dropdown-link"><i class="fas fa-fire"></i>
+                                    Thermodynamics</a></li>
+                            <li><a href="/aerodynamics" class="nav-dropdown-link"><i class="fas fa-plane"></i>
+                                    Aerodynamics</a></li>
                         </ul>
                     </li>
                     <li><a href="/computer-science" class="nav-link">Computer Science</a></li>
@@ -63,8 +85,10 @@
 
     <nav class="tp-breadcrumb">
         <ol class="tp-breadcrumb-list">
-            <li><a href="/">Home</a></li><li class="tp-breadcrumb-sep">›</li>
-            <li><a href="/topics/">Topics</a></li><li class="tp-breadcrumb-sep">›</li>
+            <li><a href="/">Home</a></li>
+            <li class="tp-breadcrumb-sep">›</li>
+            <li><a href="/topics/">Topics</a></li>
+            <li class="tp-breadcrumb-sep">›</li>
             <li class="tp-breadcrumb-current">Quantum Mechanics</li>
         </ol>
     </nav>
@@ -72,120 +96,262 @@
     <section class="tp-hero" style="background:linear-gradient(135deg, #2e1065 0%, #7c3aed 50%, #a78bfa 100%);">
         <div class="tp-hero-icon tc-quantum"><i class="fas fa-atom"></i></div>
         <h1>Quantum Mechanics</h1>
-        <p>Wave-particle duality, the Schrödinger equation, and the uncertainty principle — the rules that govern the subatomic world.</p>
+        <p>Wave-particle duality, the Schrödinger equation, and the uncertainty principle — the rules that govern the
+            subatomic world.</p>
     </section>
 
     <section class="tp-content-section">
         <a href="/topics/" class="tp-back-link"><i class="fas fa-arrow-left"></i> All Topics</a>
 
         <div class="tp-calculator-wrap">
-            <div class="tp-calc-header"><i class="fas fa-calculator"></i><h2>Photon Energy Calculator</h2></div>
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>Photon Energy Calculator</h2>
+            </div>
             <div class="tp-calc-body">
-                <div class="tp-calc-formula"><div class="tp-calc-formula-label">Formula</div><div class="tp-calc-formula-eq">E = hf = hc/λ</div></div>
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Formula</div>
+                    <div class="tp-calc-formula-eq">E = hf = hc/λ</div>
+                </div>
                 <div class="tp-calc-inputs">
-                    <div class="tp-calc-group"><div class="tp-calc-label"><span>λ</span> Wavelength</div><div class="tp-calc-row"><input type="number" class="tp-calc-input" id="qm-wavelength" placeholder="e.g. 550"><div class="tp-calc-unit">nm</div></div></div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>λ</span> Wavelength</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="qm-wavelength"
+                                placeholder="e.g. 550">
+                            <div class="tp-calc-unit">nm</div>
+                        </div>
+                    </div>
                 </div>
                 <button class="tp-calc-btn" id="qm-calc-btn">Calculate Energy</button>
-                <div class="tp-calc-result"><div class="tp-calc-result-label">Photon Energy</div><div class="tp-calc-result-value" id="qm-result">—</div><div class="tp-calc-result-unit" id="qm-unit"></div></div>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">Photon Energy</div>
+                    <div class="tp-calc-result-value" id="qm-result">—</div>
+                    <div class="tp-calc-result-unit" id="qm-unit"></div>
+                </div>
             </div>
         </div>
 
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-quantum">1</span> Wave-Particle Duality</h3>
-            <p>Light and matter exhibit both wave and particle properties. Light behaves as a wave (interference, diffraction) but also as particles called photons (photoelectric effect). Electrons behave as particles (tracks in detectors) but also as waves (electron diffraction). This duality is fundamental — not a limitation of our measurement, but the true nature of reality.</p>
-            <div class="tp-formula"><div class="tp-formula-main">E = hf = hc/λ</div><div class="tp-formula-vars"><span>h = 6.626 × 10⁻³⁴ J·s (Planck's constant)</span><span>f = frequency (Hz), λ = wavelength (m)</span><span>c = 3 × 10⁸ m/s (speed of light)</span></div></div>
-            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>De Broglie wavelength:</strong> λ = h/p = h/(mv). Every moving object has a wavelength, but for macroscopic objects it's undetectably small. A baseball at 40 m/s has λ ≈ 10⁻³⁴ m — far smaller than an atom.</span></div>
+            <p>Light and matter exhibit both wave and particle properties. Light behaves as a wave (interference,
+                diffraction) but also as particles called photons (photoelectric effect). Electrons behave as particles
+                (tracks in detectors) but also as waves (electron diffraction). This duality is fundamental — not a
+                limitation of our measurement, but the true nature of reality.</p>
+            <div class="tp-formula">
+                <div class="tp-formula-main">E = hf = hc/λ</div>
+                <div class="tp-formula-vars"><span>h = 6.626 × 10⁻³⁴ J·s (Planck's constant)</span><span>f = frequency
+                        (Hz), λ = wavelength (m)</span><span>c = 3 × 10⁸ m/s (speed of light)</span></div>
+            </div>
+            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>De Broglie wavelength:</strong> λ =
+                    h/p = h/(mv). Every moving object has a wavelength, but for macroscopic objects it's undetectably
+                    small. A baseball at 40 m/s has λ ≈ 10⁻³⁴ m — far smaller than an atom.</span></div>
         </div>
 
         <div class="tp-example">
-            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 1</span><h4>Photon Energy of Green Light</h4></div>
-            <div class="tp-ex-problem"><strong>Problem:</strong> Green light has a wavelength of 550 nm. Calculate the energy of one photon in both Joules and electron volts.</div>
-            <div class="tp-ex-solution">
-                <div class="tp-sol-step"><div class="tp-sol-label">Apply E = hc/λ</div><div class="tp-sol-content"><div class="tp-math">λ = 550 nm = 550 × 10⁻⁹ m</div><div class="tp-math">E = (6.626 × 10⁻³⁴)(3 × 10⁸) / (550 × 10⁻⁹)</div><div class="tp-math">E = 1.988 × 10⁻²⁵ / 5.5 × 10⁻⁷</div><div class="tp-math tp-result">E = 3.61 × 10⁻¹⁹ J = 2.25 eV</div></div></div>
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 1</span>
+                <h4>Photon Energy of Green Light</h4>
             </div>
-            <div class="tp-ex-answer"><strong>Answer:</strong> 3.61 × 10⁻¹⁹ J (2.25 eV). Visible light photons range from ~1.65 eV (red, 750 nm) to ~3.1 eV (violet, 400 nm). UV photons carry even more energy, which is why they cause sunburn.</div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> Green light has a wavelength of 550 nm. Calculate the
+                energy of one photon in both Joules and electron volts.</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">Apply E = hc/λ</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">λ = 550 nm = 550 × 10⁻⁹ m</div>
+                        <div class="tp-math">E = (6.626 × 10⁻³⁴)(3 × 10⁸) / (550 × 10⁻⁹)</div>
+                        <div class="tp-math">E = 1.988 × 10⁻²⁵ / 5.5 × 10⁻⁷</div>
+                        <div class="tp-math tp-result">E = 3.61 × 10⁻¹⁹ J = 2.25 eV</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> 3.61 × 10⁻¹⁹ J (2.25 eV). Visible light photons range
+                from ~1.65 eV (red, 750 nm) to ~3.1 eV (violet, 400 nm). UV photons carry even more energy, which is why
+                they cause sunburn.</div>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-quantum">2</span> The Uncertainty Principle</h3>
-            <p>Heisenberg's uncertainty principle states that certain pairs of properties cannot both be known precisely at the same time. The more precisely you know a particle's position, the less precisely you can know its momentum, and vice versa.</p>
-            <div class="tp-formula"><div class="tp-formula-main">Δx · Δp ≥ ħ/2</div><div class="tp-formula-vars"><span>Δx = uncertainty in position (m)</span><span>Δp = uncertainty in momentum (kg·m/s)</span><span>ħ = h/(2π) = 1.055 × 10⁻³⁴ J·s</span></div></div>
-            <p>This isn't about measurement error — it's a fundamental property of nature. A particle genuinely does not have a precise position and momentum simultaneously.</p>
+            <p>Heisenberg's uncertainty principle states that certain pairs of properties cannot both be known precisely
+                at the same time. The more precisely you know a particle's position, the less precisely you can know its
+                momentum, and vice versa.</p>
+            <div class="tp-formula">
+                <div class="tp-formula-main">Δx · Δp ≥ ħ/2</div>
+                <div class="tp-formula-vars"><span>Δx = uncertainty in position (m)</span><span>Δp = uncertainty in
+                        momentum (kg·m/s)</span><span>ħ = h/(2π) = 1.055 × 10⁻³⁴ J·s</span></div>
+            </div>
+            <p>This isn't about measurement error — it's a fundamental property of nature. A particle genuinely does not
+                have a precise position and momentum simultaneously.</p>
         </div>
 
         <div class="tp-example">
-            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 2</span><h4>Uncertainty Principle — Electron in an Atom</h4></div>
-            <div class="tp-ex-problem"><strong>Problem:</strong> An electron is confined to a region of Δx = 1.0 × 10⁻¹⁰ m (roughly the size of an atom). What is the minimum uncertainty in its velocity?</div>
-            <div class="tp-ex-solution">
-                <div class="tp-sol-step"><div class="tp-sol-label">Apply Heisenberg's principle</div><div class="tp-sol-content"><div class="tp-math">Δp ≥ ħ/(2Δx) = (1.055 × 10⁻³⁴)/(2 × 1.0 × 10⁻¹⁰)</div><div class="tp-math tp-result">Δp ≥ 5.28 × 10⁻²⁵ kg·m/s</div><div class="tp-math">Δv = Δp/m = 5.28 × 10⁻²⁵ / 9.109 × 10⁻³¹</div><div class="tp-math tp-result">Δv ≥ 5.79 × 10⁵ m/s ≈ 580 km/s</div></div></div>
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 2</span>
+                <h4>Uncertainty Principle — Electron in an Atom</h4>
             </div>
-            <div class="tp-ex-answer"><strong>Answer:</strong> At least 580 km/s uncertainty. That's ~0.2% the speed of light! Electrons in atoms are inherently "fuzzy" — they don't orbit like planets but exist as probability clouds.</div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> An electron is confined to a region of Δx = 1.0 × 10⁻¹⁰
+                m (roughly the size of an atom). What is the minimum uncertainty in its velocity?</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">Apply Heisenberg's principle</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">Δp ≥ ħ/(2Δx) = (1.055 × 10⁻³⁴)/(2 × 1.0 × 10⁻¹⁰)</div>
+                        <div class="tp-math tp-result">Δp ≥ 5.28 × 10⁻²⁵ kg·m/s</div>
+                        <div class="tp-math">Δv = Δp/m = 5.28 × 10⁻²⁵ / 9.109 × 10⁻³¹</div>
+                        <div class="tp-math tp-result">Δv ≥ 5.79 × 10⁵ m/s ≈ 580 km/s</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> At least 580 km/s uncertainty. That's ~0.2% the speed of
+                light! Electrons in atoms are inherently "fuzzy" — they don't orbit like planets but exist as
+                probability clouds.</div>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-quantum">3</span> The Schrödinger Equation</h3>
-            <p>The Schrödinger equation is the fundamental equation of quantum mechanics — it describes how the quantum state (wave function ψ) of a system evolves over time.</p>
-            <div class="tp-formula"><div class="tp-formula-main">iħ ∂ψ/∂t = Ĥψ</div><div class="tp-formula-vars"><span>ψ = wave function (complex-valued)</span><span>Ĥ = Hamiltonian operator (total energy)</span><span>|ψ|² = probability density</span></div></div>
+            <p>The Schrödinger equation is the fundamental equation of quantum mechanics — it describes how the quantum
+                state (wave function ψ) of a system evolves over time.</p>
+            <div class="tp-formula">
+                <div class="tp-formula-main">iħ ∂ψ/∂t = Ĥψ</div>
+                <div class="tp-formula-vars"><span>ψ = wave function (complex-valued)</span><span>Ĥ = Hamiltonian
+                        operator (total energy)</span><span>|ψ|² = probability density</span></div>
+            </div>
             <div class="tp-two-col">
-                <div class="tp-col"><div class="tp-col-title">Time-dependent</div><p>Describes how ψ evolves: iħ ∂ψ/∂t = Ĥψ. Used for non-stationary states.</p></div>
-                <div class="tp-col"><div class="tp-col-title">Time-independent</div><p>For stationary states: Ĥψ = Eψ. Solving this gives allowed energy levels (eigenvalues).</p></div>
+                <div class="tp-col">
+                    <div class="tp-col-title">Time-dependent</div>
+                    <p>Describes how ψ evolves: iħ ∂ψ/∂t = Ĥψ. Used for non-stationary states.</p>
+                </div>
+                <div class="tp-col">
+                    <div class="tp-col-title">Time-independent</div>
+                    <p>For stationary states: Ĥψ = Eψ. Solving this gives allowed energy levels (eigenvalues).</p>
+                </div>
             </div>
         </div>
 
         <div class="tp-example">
-            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 3</span><h4>Particle in a Box — Energy Levels</h4></div>
-            <div class="tp-ex-problem"><strong>Problem:</strong> An electron is confined to a 1D box of width L = 0.5 nm. Calculate the first three energy levels.</div>
-            <div class="tp-ex-solution">
-                <div class="tp-sol-step"><div class="tp-sol-label">Energy levels for particle in a box</div><div class="tp-sol-content"><div class="tp-math">E_n = n²π²ħ² / (2mL²) = n²h² / (8mL²)</div><div class="tp-math">E₁ = (1)²(6.626×10⁻³⁴)² / (8 × 9.109×10⁻³¹ × (0.5×10⁻⁹)²)</div><div class="tp-math tp-result">E₁ = 2.41 × 10⁻¹⁹ J = 1.50 eV</div><div class="tp-math tp-result">E₂ = 4 × 1.50 = 6.02 eV</div><div class="tp-math tp-result">E₃ = 9 × 1.50 = 13.5 eV</div></div></div>
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 3</span>
+                <h4>Particle in a Box — Energy Levels</h4>
             </div>
-            <div class="tp-ex-answer"><strong>Answer:</strong> E₁ = 1.50 eV, E₂ = 6.02 eV, E₃ = 13.5 eV. Energy levels scale as n² — the gaps between levels grow with n. This quantization of energy is what makes quantum mechanics "quantum."</div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> An electron is confined to a 1D box of width L = 0.5
+                nm. Calculate the first three energy levels.</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">Energy levels for particle in a box</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">E_n = n²π²ħ² / (2mL²) = n²h² / (8mL²)</div>
+                        <div class="tp-math">E₁ = (1)²(6.626×10⁻³⁴)² / (8 × 9.109×10⁻³¹ × (0.5×10⁻⁹)²)</div>
+                        <div class="tp-math tp-result">E₁ = 2.41 × 10⁻¹⁹ J = 1.50 eV</div>
+                        <div class="tp-math tp-result">E₂ = 4 × 1.50 = 6.02 eV</div>
+                        <div class="tp-math tp-result">E₃ = 9 × 1.50 = 13.5 eV</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> E₁ = 1.50 eV, E₂ = 6.02 eV, E₃ = 13.5 eV. Energy levels
+                scale as n² — the gaps between levels grow with n. This quantization of energy is what makes quantum
+                mechanics "quantum."</div>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-quantum">4</span> Quantum Tunneling</h3>
-            <p>In classical physics, a ball can't pass through a wall. In quantum mechanics, a particle has a non-zero probability of passing through a potential energy barrier that it classically shouldn't be able to cross. The probability decreases exponentially with barrier width and height.</p>
-            <div class="tp-formula"><div class="tp-formula-main">T ≈ e^(−2κL)</div><div class="tp-formula-vars"><span>T = tunneling probability</span><span>κ = √(2m(V₀−E)/ħ²)</span><span>L = barrier width, V₀ = barrier height</span></div></div>
-            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>Real applications:</strong> Tunnel diodes, flash memory, scanning tunneling microscopes (STM), and nuclear fusion in the Sun all rely on quantum tunneling. Without it, the Sun wouldn't shine — protons don't have enough energy to classically overcome their mutual repulsion.</span></div>
+            <p>In classical physics, a ball can't pass through a wall. In quantum mechanics, a particle has a non-zero
+                probability of passing through a potential energy barrier that it classically shouldn't be able to
+                cross. The probability decreases exponentially with barrier width and height.</p>
+            <div class="tp-formula">
+                <div class="tp-formula-main">T ≈ e^(−2κL)</div>
+                <div class="tp-formula-vars"><span>T = tunneling probability</span><span>κ =
+                        √(2m(V₀−E)/ħ²)</span><span>L = barrier width, V₀ = barrier height</span></div>
+            </div>
+            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>Real applications:</strong> Tunnel
+                    diodes, flash memory, scanning tunneling microscopes (STM), and nuclear fusion in the Sun all rely
+                    on quantum tunneling. Without it, the Sun wouldn't shine — protons don't have enough energy to
+                    classically overcome their mutual repulsion.</span></div>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-quantum">5</span> Quantum Spin &amp; Pauli Exclusion</h3>
-            <p>Quantum spin is an intrinsic angular momentum that particles possess — it's not actual spinning but a fundamental quantum property. Electrons have spin ±½. The Pauli exclusion principle states that no two identical fermions can occupy the same quantum state simultaneously.</p>
+            <p>Quantum spin is an intrinsic angular momentum that particles possess — it's not actual spinning but a
+                fundamental quantum property. Electrons have spin ±½. The Pauli exclusion principle states that no two
+                identical fermions can occupy the same quantum state simultaneously.</p>
             <div class="tp-table">
-                <div class="tp-table-row"><div class="tp-table-cell">Electron spin</div><div class="tp-table-note">s = ½, m_s = +½ or −½</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">Photon spin</div><div class="tp-table-note">s = 1 (boson, no exclusion)</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">Proton/Neutron</div><div class="tp-table-note">s = ½ (fermion, exclusion applies)</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">Higgs boson</div><div class="tp-table-note">s = 0</div></div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Electron spin</div>
+                    <div class="tp-table-note">s = ½, m_s = +½ or −½</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Photon spin</div>
+                    <div class="tp-table-note">s = 1 (boson, no exclusion)</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Proton/Neutron</div>
+                    <div class="tp-table-note">s = ½ (fermion, exclusion applies)</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Higgs boson</div>
+                    <div class="tp-table-note">s = 0</div>
+                </div>
             </div>
-            <p>The Pauli exclusion principle is why the periodic table exists — electrons must fill different orbitals rather than all collapsing to the lowest energy state. It's also why matter is solid rather than collapsing.</p>
+            <p>The Pauli exclusion principle is why the periodic table exists — electrons must fill different orbitals
+                rather than all collapsing to the lowest energy state. It's also why matter is solid rather than
+                collapsing.</p>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-quantum">6</span> Quantum Entanglement</h3>
-            <p>When two particles become entangled, measuring the state of one instantly determines the state of the other, regardless of the distance between them. Einstein called this "spooky action at a distance." It's been experimentally verified and is the basis of quantum computing and quantum cryptography.</p>
+            <p>When two particles become entangled, measuring the state of one instantly determines the state of the
+                other, regardless of the distance between them. Einstein called this "spooky action at a distance." It's
+                been experimentally verified and is the basis of quantum computing and quantum cryptography.</p>
             <div class="tp-two-col">
-                <div class="tp-col"><div class="tp-col-title">EPR Paradox</div><p>Einstein, Podolsky, and Rosen argued entanglement implied quantum mechanics was incomplete. Bell's theorem (1964) showed local hidden variables can't explain it — quantum mechanics is genuinely non-local.</p></div>
-                <div class="tp-col"><div class="tp-col-title">Applications</div><p>Quantum teleportation, quantum key distribution (QKD), quantum computing (qubits). China's Micius satellite demonstrated entanglement over 1,200 km in 2017.</p></div>
+                <div class="tp-col">
+                    <div class="tp-col-title">EPR Paradox</div>
+                    <p>Einstein, Podolsky, and Rosen argued entanglement implied quantum mechanics was incomplete.
+                        Bell's theorem (1964) showed local hidden variables can't explain it — quantum mechanics is
+                        genuinely non-local.</p>
+                </div>
+                <div class="tp-col">
+                    <div class="tp-col-title">Applications</div>
+                    <p>Quantum teleportation, quantum key distribution (QKD), quantum computing (qubits). China's Micius
+                        satellite demonstrated entanglement over 1,200 km in 2017.</p>
+                </div>
             </div>
         </div>
 
         <div class="tp-example">
-            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 4</span><h4>De Broglie Wavelength of an Electron</h4></div>
-            <div class="tp-ex-problem"><strong>Problem:</strong> An electron is accelerated through a potential difference of 100 V. What is its de Broglie wavelength? Would it show diffraction through a crystal lattice (spacing ~0.3 nm)?</div>
-            <div class="tp-ex-solution">
-                <div class="tp-sol-step"><div class="tp-sol-label">Find velocity, then wavelength</div><div class="tp-sol-content"><div class="tp-math">KE = eV = 1.602×10⁻¹⁹ × 100 = 1.602×10⁻¹⁷ J</div><div class="tp-math">v = √(2KE/m) = √(2 × 1.602×10⁻¹⁷ / 9.109×10⁻³¹)</div><div class="tp-math">v = 5.93 × 10⁶ m/s</div><div class="tp-math">λ = h/(mv) = 6.626×10⁻³⁴ / (9.109×10⁻³¹ × 5.93×10⁶)</div><div class="tp-math tp-result">λ = 0.123 nm = 1.23 Å</div></div></div>
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 4</span>
+                <h4>De Broglie Wavelength of an Electron</h4>
             </div>
-            <div class="tp-ex-answer"><strong>Answer:</strong> 0.123 nm — comparable to crystal lattice spacing (~0.3 nm), so yes, electron diffraction occurs! This was first demonstrated by Davisson and Germer in 1927, confirming de Broglie's hypothesis and earning them the Nobel Prize.</div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> An electron is accelerated through a potential
+                difference of 100 V. What is its de Broglie wavelength? Would it show diffraction through a crystal
+                lattice (spacing ~0.3 nm)?</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">Find velocity, then wavelength</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">KE = eV = 1.602×10⁻¹⁹ × 100 = 1.602×10⁻¹⁷ J</div>
+                        <div class="tp-math">v = √(2KE/m) = √(2 × 1.602×10⁻¹⁷ / 9.109×10⁻³¹)</div>
+                        <div class="tp-math">v = 5.93 × 10⁶ m/s</div>
+                        <div class="tp-math">λ = h/(mv) = 6.626×10⁻³⁴ / (9.109×10⁻³¹ × 5.93×10⁶)</div>
+                        <div class="tp-math tp-result">λ = 0.123 nm = 1.23 Å</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> 0.123 nm — comparable to crystal lattice spacing (~0.3
+                nm), so yes, electron diffraction occurs! This was first demonstrated by Davisson and Germer in 1927,
+                confirming de Broglie's hypothesis and earning them the Nobel Prize.</div>
         </div>
 
 
         <div class="tp-related">
             <h3>Related Topics</h3>
             <div class="tp-related-grid">
-            <a href="/relativity/" class="tp-related-card"><div class="tp-related-icon tc-relativity"><i class="fas fa-rocket"></i></div><span>Relativity</span></a>
-            <a href="/nuclear-physics/" class="tp-related-card"><div class="tp-related-icon tc-nuclear"><i class="fas fa-radiation"></i></div><span>Nuclear Physics</span></a>
-            <a href="/astrophysics/" class="tp-related-card"><div class="tp-related-icon tc-astro"><i class="fas fa-star"></i></div><span>Astrophysics</span></a>
+                <a href="/relativity/" class="tp-related-card">
+                    <div class="tp-related-icon tc-relativity"><i class="fas fa-rocket"></i></div>
+                    <span>Relativity</span>
+                </a>
+                <a href="/nuclear-physics/" class="tp-related-card">
+                    <div class="tp-related-icon tc-nuclear"><i class="fas fa-radiation"></i></div><span>Nuclear
+                        Physics</span>
+                </a>
+                <a href="/astrophysics/" class="tp-related-card">
+                    <div class="tp-related-icon tc-astro"><i class="fas fa-star"></i></div><span>Astrophysics</span>
+                </a>
 
             </div>
         </div>
@@ -194,38 +360,54 @@
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-content">
-                <div class="footer-section"><h3>CalcREX</h3><p>Your complete online calculator suite for every calculation need.</p></div>
+                <div class="footer-section">
+                    <h3>CalcREX</h3>
+                    <p>Your complete online calculator suite for every calculation need.</p>
+                </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
-                    <ul class="footer-links"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/policy-document">Policy Document</a></li></ul>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/policy-document">Policy Document</a></li>
+                    </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Feature Categories</h3>
                     <ul class="footer-links">
-                        <li><a href="/converters">Unit Converter</a></li><li><a href="/physics">Physics</a></li>
-                        <li><a href="/chemistry">Chemistry</a></li><li><a href="/electricity">Electronics</a></li>
-                        <li><a href="/computer-science">Computer Science</a></li><li><a href="/finance">Finance</a></li>
-                        <li><a href="/date-time">Date &amp; Time</a></li><li><a href="/thermodynamics">Thermodynamics</a></li>
-                        <li><a href="/aerodynamics">Aerodynamics</a></li><li><a href="/topics">Topics</a></li>
+                        <li><a href="/converters">Unit Converter</a></li>
+                        <li><a href="/physics">Physics</a></li>
+                        <li><a href="/chemistry">Chemistry</a></li>
+                        <li><a href="/electricity">Electronics</a></li>
+                        <li><a href="/computer-science">Computer Science</a></li>
+                        <li><a href="/finance">Finance</a></li>
+                        <li><a href="/date-time">Date &amp; Time</a></li>
+                        <li><a href="/thermodynamics">Thermodynamics</a></li>
+                        <li><a href="/aerodynamics">Aerodynamics</a></li>
+                        <li><a href="/topics">Topics</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2024 CalcREX. All rights reserved.</p></div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CalcREX. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
     <script src="/js/nav.js"></script>
     <script src="/js/script.js"></script>
     <script>
-    document.getElementById('qm-calc-btn').addEventListener('click', function(){
-        const lam = parseFloat(document.getElementById('qm-wavelength').value);
-        if(isNaN(lam)||lam<=0){document.getElementById('qm-result').textContent='Enter valid wavelength';return;}
-        const h=6.626e-34, c=3e8, eV=1.602e-19;
-        const lamM=lam*1e-9;
-        const E=h*c/lamM;
-        document.getElementById('qm-result').textContent=(E/eV).toFixed(4);
-        document.getElementById('qm-unit').textContent='eV ('+E.toExponential(3)+' J)';
-    });
+        document.getElementById('qm-calc-btn').addEventListener('click', function () {
+            const lam = parseFloat(document.getElementById('qm-wavelength').value);
+            if (isNaN(lam) || lam <= 0) { document.getElementById('qm-result').textContent = 'Enter valid wavelength'; return; }
+            const h = 6.626e-34, c = 3e8, eV = 1.602e-19;
+            const lamM = lam * 1e-9;
+            const E = h * c / lamM;
+            document.getElementById('qm-result').textContent = (E / eV).toFixed(4);
+            document.getElementById('qm-unit').textContent = 'eV (' + E.toExponential(3) + ' J)';
+        });
     </script>
 </body>
+
 </html>

@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Probability &amp; Statistics — CalcRex | In-Depth Guide with Worked Examples</title>
-    <meta name="description" content="Complete guide to probability and statistics: probability distributions, Bayes theorem, hypothesis testing, confidence intervals, regression analysis, and central limit theorem. With worked examples."><meta name="keywords" content="probability, statistics, Bayes theorem, hypothesis testing, normal distribution, confidence interval, regression, CalcRex">
-    <meta name="author" content="CalcRex"><meta name="robots" content="index, follow">
+    <meta name="description"
+        content="Complete guide to probability and statistics: probability distributions, Bayes theorem, hypothesis testing, confidence intervals, regression analysis, and central limit theorem. With worked examples.">
+    <meta name="keywords"
+        content="probability, statistics, Bayes theorem, hypothesis testing, normal distribution, confidence interval, regression, CalcRex">
+    <meta name="author" content="CalcRex">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://calcrex.com/topics/probability-statistics/">
-    <meta property="og:type" content="article"><meta property="og:url" content="https://calcrex.com/topics/probability-statistics/">
-    <meta property="og:title" content="Probability &amp; Statistics — CalcRex"><meta property="og:description" content="Complete guide to probability and statistics: probability distributions, Bayes theorem, hypothesis testing, confidence intervals, regression analysis, and central limit theorem. With worked examples.">
-    <meta property="og:image" content="https://calcrex.com/img/calcrex-banner.webp"><meta property="og:site_name" content="CalcRex">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://calcrex.com/topics/probability-statistics/">
+    <meta property="og:title" content="Probability &amp; Statistics — CalcRex">
+    <meta property="og:description"
+        content="Complete guide to probability and statistics: probability distributions, Bayes theorem, hypothesis testing, confidence intervals, regression analysis, and central limit theorem. With worked examples.">
+    <meta property="og:image" content="https://calcrex.com/img/calcrex-banner.webp">
+    <meta property="og:site_name" content="CalcRex">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" type="image/png" href="/favicon.png"><link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" href="/css/styles.css"><link rel="stylesheet" href="/css/topic-page.css">
-    <link rel="stylesheet" href="/css/topics.css"><link rel="stylesheet" href="/css/pages.css">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/topic-page.css">
+    <link rel="stylesheet" href="/css/topics.css">
+    <link rel="stylesheet" href="/css/pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script type="application/ld+json">
     { "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -22,22 +35,42 @@
     ]}
     </script>
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8EMHZ2B7V3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-8EMHZ2B7V3');
+</script>
+
 <body>
-    <header class="site-header"><div class="header-container">
-        <div class="logo"><a href="/"><span class="logo-text">Calc<span class="logo-highlight">REX</span></span></a></div>
-        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu"><span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span></button>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo"><a href="/"><span class="logo-text">Calc<span class="logo-highlight">REX</span></span></a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu"><span
+                    class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span></button>
             <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="/" class="nav-link">Calculator</a></li>
                     <li><a href="/converters" class="nav-link">Unit Converter</a></li>
                     <li class="nav-dropdown">
-                        <button class="nav-link nav-dropdown-toggle">Sciences <i class="fas fa-chevron-down nav-arrow"></i></button>
+                        <button class="nav-link nav-dropdown-toggle">Sciences <i
+                                class="fas fa-chevron-down nav-arrow"></i></button>
                         <ul class="nav-dropdown-menu">
-                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a></li>
-                            <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i> Chemistry</a></li>
-                            <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i> Electronics</a></li>
-                            <li><a href="/thermodynamics" class="nav-dropdown-link"><i class="fas fa-fire"></i> Thermodynamics</a></li>
-                            <li><a href="/aerodynamics" class="nav-dropdown-link"><i class="fas fa-plane"></i> Aerodynamics</a></li>
+                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a>
+                            </li>
+                            <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i>
+                                    Chemistry</a></li>
+                            <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i>
+                                    Electronics</a></li>
+                            <li><a href="/thermodynamics" class="nav-dropdown-link"><i class="fas fa-fire"></i>
+                                    Thermodynamics</a></li>
+                            <li><a href="/aerodynamics" class="nav-dropdown-link"><i class="fas fa-plane"></i>
+                                    Aerodynamics</a></li>
                         </ul>
                     </li>
                     <li><a href="/computer-science" class="nav-link">Computer Science</a></li>
@@ -46,118 +79,294 @@
                     <li><a href="/topics" class="nav-link active">Topics</a></li>
                 </ul>
             </nav>
-    </div></header>
-    <nav class="tp-breadcrumb"><ol class="tp-breadcrumb-list"><li><a href="/">Home</a></li><li class="tp-breadcrumb-sep">›</li><li><a href="/">Topics</a></li><li class="tp-breadcrumb-sep">›</li><li class="tp-breadcrumb-current">Probability &amp; Statistics</li></ol></nav>
-    <section class="tp-hero" style="background:linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fdba74 100%);"><div class="tp-hero-icon tc-stats"><i class="fas fa-chart-bar"></i></div><h1>Probability &amp; Statistics</h1><p>Probability distributions, Bayes' theorem, hypothesis testing, and regression — the science of uncertainty.</p></section>
+        </div>
+    </header>
+    <nav class="tp-breadcrumb">
+        <ol class="tp-breadcrumb-list">
+            <li><a href="/">Home</a></li>
+            <li class="tp-breadcrumb-sep">›</li>
+            <li><a href="/">Topics</a></li>
+            <li class="tp-breadcrumb-sep">›</li>
+            <li class="tp-breadcrumb-current">Probability &amp; Statistics</li>
+        </ol>
+    </nav>
+    <section class="tp-hero" style="background:linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fdba74 100%);">
+        <div class="tp-hero-icon tc-stats"><i class="fas fa-chart-bar"></i></div>
+        <h1>Probability &amp; Statistics</h1>
+        <p>Probability distributions, Bayes' theorem, hypothesis testing, and regression — the science of uncertainty.
+        </p>
+    </section>
     <section class="tp-content-section">
         <a href="/" class="tp-back-link"><i class="fas fa-arrow-left"></i> All Topics</a>
         <div class="tp-calculator-wrap">
-            <div class="tp-calc-header"><i class="fas fa-calculator"></i><h2>Normal Distribution Z-Score Calculator</h2></div>
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>Normal Distribution Z-Score Calculator</h2>
+            </div>
             <div class="tp-calc-body">
-                <div class="tp-calc-formula"><div class="tp-calc-formula-label">Formula</div><div class="tp-calc-formula-eq">z = (x − μ) / σ</div></div>
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Formula</div>
+                    <div class="tp-calc-formula-eq">z = (x − μ) / σ</div>
+                </div>
                 <div class="tp-calc-inputs">
-                    <div class="tp-calc-group"><div class="tp-calc-label"><span>x</span> Value</div><div class="tp-calc-row"><input type="number" class="tp-calc-input" id="st-x" placeholder="e.g. 85"><div class="tp-calc-unit"></div></div></div>
-                    <div class="tp-calc-group"><div class="tp-calc-label"><span>μ</span> Mean</div><div class="tp-calc-row"><input type="number" class="tp-calc-input" id="st-mu" placeholder="e.g. 70"><div class="tp-calc-unit"></div></div></div>
-                    <div class="tp-calc-group"><div class="tp-calc-label"><span>σ</span> Std Deviation</div><div class="tp-calc-row"><input type="number" class="tp-calc-input" id="st-sig" placeholder="e.g. 10"><div class="tp-calc-unit"></div></div></div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>x</span> Value</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="st-x"
+                                placeholder="e.g. 85">
+                            <div class="tp-calc-unit"></div>
+                        </div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>μ</span> Mean</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="st-mu"
+                                placeholder="e.g. 70">
+                            <div class="tp-calc-unit"></div>
+                        </div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>σ</span> Std Deviation</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="st-sig"
+                                placeholder="e.g. 10">
+                            <div class="tp-calc-unit"></div>
+                        </div>
+                    </div>
                 </div>
                 <button class="tp-calc-btn" id="st-calc-btn">Calculate Z-Score</button>
-                <div class="tp-calc-result"><div class="tp-calc-result-label">Z-Score</div><div class="tp-calc-result-value" id="st-result">—</div><div class="tp-calc-result-unit" id="st-unit"></div></div>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">Z-Score</div>
+                    <div class="tp-calc-result-value" id="st-result">—</div>
+                    <div class="tp-calc-result-unit" id="st-unit"></div>
+                </div>
             </div>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-stats">1</span> Probability Fundamentals</h3>
-            <p>Probability measures the likelihood of an event: P(A) ranges from 0 (impossible) to 1 (certain). Core rules govern how probabilities combine.</p>
+            <p>Probability measures the likelihood of an event: P(A) ranges from 0 (impossible) to 1 (certain). Core
+                rules govern how probabilities combine.</p>
             <div class="tp-table">
-                <div class="tp-table-row"><div class="tp-table-cell">P(A or B)</div><div class="tp-table-note">P(A) + P(B) − P(A and B)</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">P(A and B)</div><div class="tp-table-note">P(A) × P(B|A)</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">Independent</div><div class="tp-table-note">P(A and B) = P(A) × P(B)</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">Complement</div><div class="tp-table-note">P(not A) = 1 − P(A)</div></div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">P(A or B)</div>
+                    <div class="tp-table-note">P(A) + P(B) − P(A and B)</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">P(A and B)</div>
+                    <div class="tp-table-note">P(A) × P(B|A)</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Independent</div>
+                    <div class="tp-table-note">P(A and B) = P(A) × P(B)</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Complement</div>
+                    <div class="tp-table-note">P(not A) = 1 − P(A)</div>
+                </div>
             </div>
         </div>
 
         <div class="tp-example">
-            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 1</span><h4>Combined Probability — Medical Test</h4></div>
-            <div class="tp-ex-problem"><strong>Problem:</strong> Two independent tests for a disease each have 95% sensitivity. If both are used, what is the probability of detecting the disease (at least one positive)?</div>
-            <div class="tp-ex-solution">
-                <div class="tp-sol-step"><div class="tp-sol-label">Complement method</div><div class="tp-sol-content"><div class="tp-math">P(both miss) = 0.05 × 0.05 = 0.0025</div><div class="tp-math tp-result">P(at least one detects) = 1 − 0.0025 = 0.9975 = 99.75%</div></div></div>
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 1</span>
+                <h4>Combined Probability — Medical Test</h4>
             </div>
-            <div class="tp-ex-answer"><strong>Answer:</strong> 99.75%. Two independent 95% tests combined give 99.75% sensitivity. This is why critical diagnoses use multiple independent tests.</div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> Two independent tests for a disease each have 95%
+                sensitivity. If both are used, what is the probability of detecting the disease (at least one positive)?
+            </div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">Complement method</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">P(both miss) = 0.05 × 0.05 = 0.0025</div>
+                        <div class="tp-math tp-result">P(at least one detects) = 1 − 0.0025 = 0.9975 = 99.75%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> 99.75%. Two independent 95% tests combined give 99.75%
+                sensitivity. This is why critical diagnoses use multiple independent tests.</div>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-stats">2</span> Bayes' Theorem</h3>
-            <p>Bayes' theorem updates our beliefs when new evidence arrives. It answers: "Given that we observed B, what is the probability of A?"</p>
-            <div class="tp-formula"><div class="tp-formula-main">P(A|B) = P(B|A) × P(A) / P(B)</div><div class="tp-formula-vars"><span>P(A|B) = posterior (updated belief)</span><span>P(A) = prior (initial belief)</span><span>P(B|A) = likelihood (how likely is evidence if A is true)</span></div></div>
+            <p>Bayes' theorem updates our beliefs when new evidence arrives. It answers: "Given that we observed B, what
+                is the probability of A?"</p>
+            <div class="tp-formula">
+                <div class="tp-formula-main">P(A|B) = P(B|A) × P(A) / P(B)</div>
+                <div class="tp-formula-vars"><span>P(A|B) = posterior (updated belief)</span><span>P(A) = prior (initial
+                        belief)</span><span>P(B|A) = likelihood (how likely is evidence if A is true)</span></div>
+            </div>
         </div>
 
         <div class="tp-example">
-            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 2</span><h4>Bayes' Theorem — False Positives</h4></div>
-            <div class="tp-ex-problem"><strong>Problem:</strong> A disease affects 1% of the population. A test is 99% sensitive (positive when disease present) and 95% specific (negative when disease absent). If you test positive, what is the actual probability you have the disease?</div>
-            <div class="tp-ex-solution">
-                <div class="tp-sol-step"><div class="tp-sol-label">Apply Bayes</div><div class="tp-sol-content"><div class="tp-math">P(D) = 0.01, P(+|D) = 0.99, P(+|no D) = 0.05</div><div class="tp-math">P(+) = P(+|D)P(D) + P(+|no D)P(no D)</div><div class="tp-math">= 0.99(0.01) + 0.05(0.99) = 0.0099 + 0.0495 = 0.0594</div><div class="tp-math">P(D|+) = 0.0099 / 0.0594</div><div class="tp-math tp-result">P(D|+) = 0.167 = 16.7%</div></div></div>
+            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 2</span>
+                <h4>Bayes' Theorem — False Positives</h4>
             </div>
-            <div class="tp-ex-answer"><strong>Answer:</strong> Only 16.7%! Despite a "99% accurate" test, most positives are false when the disease is rare. This counterintuitive result is called the base rate fallacy — the low prevalence (1%) means false positives overwhelm true positives.</div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> A disease affects 1% of the population. A test is 99%
+                sensitive (positive when disease present) and 95% specific (negative when disease absent). If you test
+                positive, what is the actual probability you have the disease?</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">Apply Bayes</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">P(D) = 0.01, P(+|D) = 0.99, P(+|no D) = 0.05</div>
+                        <div class="tp-math">P(+) = P(+|D)P(D) + P(+|no D)P(no D)</div>
+                        <div class="tp-math">= 0.99(0.01) + 0.05(0.99) = 0.0099 + 0.0495 = 0.0594</div>
+                        <div class="tp-math">P(D|+) = 0.0099 / 0.0594</div>
+                        <div class="tp-math tp-result">P(D|+) = 0.167 = 16.7%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> Only 16.7%! Despite a "99% accurate" test, most positives
+                are false when the disease is rare. This counterintuitive result is called the base rate fallacy — the
+                low prevalence (1%) means false positives overwhelm true positives.</div>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-stats">3</span> The Normal Distribution</h3>
-            <p>The bell curve — the most important distribution in statistics. Many natural phenomena follow it: heights, test scores, measurement errors. Characterized by mean (μ) and standard deviation (σ).</p>
-            <div class="tp-formula"><div class="tp-formula-main">68-95-99.7 Rule</div><div class="tp-formula-vars"><span>68% of data within μ ± 1σ</span><span>95% within μ ± 2σ</span><span>99.7% within μ ± 3σ</span></div></div>
+            <p>The bell curve — the most important distribution in statistics. Many natural phenomena follow it:
+                heights, test scores, measurement errors. Characterized by mean (μ) and standard deviation (σ).</p>
+            <div class="tp-formula">
+                <div class="tp-formula-main">68-95-99.7 Rule</div>
+                <div class="tp-formula-vars"><span>68% of data within μ ± 1σ</span><span>95% within μ ±
+                        2σ</span><span>99.7% within μ ± 3σ</span></div>
+            </div>
         </div>
 
         <div class="tp-concept">
             <h3><span class="tp-concept-num tc-stats">4</span> Hypothesis Testing</h3>
-            <p>A structured framework for making decisions from data. You start with a null hypothesis (H₀, usually "no effect"), collect data, and determine whether the evidence is strong enough to reject H₀.</p>
+            <p>A structured framework for making decisions from data. You start with a null hypothesis (H₀, usually "no
+                effect"), collect data, and determine whether the evidence is strong enough to reject H₀.</p>
             <div class="tp-table">
-                <div class="tp-table-row"><div class="tp-table-cell">H₀</div><div class="tp-table-note">Null hypothesis (no effect/difference)</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">H₁</div><div class="tp-table-note">Alternative hypothesis (there IS an effect)</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">p-value</div><div class="tp-table-note">Probability of data (or more extreme) if H₀ true</div></div>
-                <div class="tp-table-row"><div class="tp-table-cell">α = 0.05</div><div class="tp-table-note">Common significance level (reject if p < α)</div></div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">H₀</div>
+                    <div class="tp-table-note">Null hypothesis (no effect/difference)</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">H₁</div>
+                    <div class="tp-table-note">Alternative hypothesis (there IS an effect)</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">p-value</div>
+                    <div class="tp-table-note">Probability of data (or more extreme) if H₀ true</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">α = 0.05</div>
+                    <div class="tp-table-note">Common significance level (reject if p < α)</div>
+                    </div>
+                </div>
+                <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>Common mistake:</strong> A p-value
+                        of 0.03 does NOT mean "3% chance H₀ is true." It means: "If H₀ were true, there's a 3% chance of
+                        seeing data this extreme." The distinction matters!</span></div>
             </div>
-            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>Common mistake:</strong> A p-value of 0.03 does NOT mean "3% chance H₀ is true." It means: "If H₀ were true, there's a 3% chance of seeing data this extreme." The distinction matters!</span></div>
-        </div>
 
-        <div class="tp-concept">
-            <h3><span class="tp-concept-num tc-stats">5</span> Confidence Intervals</h3>
-            <p>A confidence interval gives a range of plausible values for a parameter. A 95% CI means: if we repeated the study 100 times, about 95 of those intervals would contain the true parameter.</p>
-            <div class="tp-formula"><div class="tp-formula-main">CI = x̄ ± z* × (σ/√n)</div><div class="tp-formula-vars"><span>x̄ = sample mean, σ = std deviation</span><span>n = sample size, z* = critical value</span><span>95% CI: z* = 1.96, 99% CI: z* = 2.576</span></div></div>
-        </div>
-
-        <div class="tp-example">
-            <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 3</span><h4>Confidence Interval — Survey</h4></div>
-            <div class="tp-ex-problem"><strong>Problem:</strong> A survey of 400 students finds average study time = 4.2 hours/day with σ = 1.5 hours. Construct a 95% confidence interval for the population mean.</div>
-            <div class="tp-ex-solution">
-                <div class="tp-sol-step"><div class="tp-sol-label">95% CI</div><div class="tp-sol-content"><div class="tp-math">Margin = 1.96 × (1.5/√400) = 1.96 × 0.075 = 0.147</div><div class="tp-math tp-result">CI = 4.2 ± 0.147 = [4.053, 4.347] hours</div></div></div>
+            <div class="tp-concept">
+                <h3><span class="tp-concept-num tc-stats">5</span> Confidence Intervals</h3>
+                <p>A confidence interval gives a range of plausible values for a parameter. A 95% CI means: if we
+                    repeated the study 100 times, about 95 of those intervals would contain the true parameter.</p>
+                <div class="tp-formula">
+                    <div class="tp-formula-main">CI = x̄ ± z* × (σ/√n)</div>
+                    <div class="tp-formula-vars"><span>x̄ = sample mean, σ = std deviation</span><span>n = sample size,
+                            z* = critical value</span><span>95% CI: z* = 1.96, 99% CI: z* = 2.576</span></div>
+                </div>
             </div>
-            <div class="tp-ex-answer"><strong>Answer:</strong> We are 95% confident the true average is between 4.05 and 4.35 hours/day. Quadrupling the sample size (1600) would halve the margin to ±0.074 — precision improves with √n.</div>
-        </div>
 
-        <div class="tp-concept">
-            <h3><span class="tp-concept-num tc-stats">6</span> Linear Regression</h3>
-            <p>Regression finds the line of best fit through data points, allowing prediction and quantifying relationships between variables.</p>
-            <div class="tp-formula"><div class="tp-formula-main">ŷ = a + bx, where b = Σ(xᵢ−x̄)(yᵢ−ȳ) / Σ(xᵢ−x̄)²</div><div class="tp-formula-vars"><span>b = slope, a = ȳ − bx̄ (intercept)</span><span>R² = fraction of variance explained (0 to 1)</span><span>R² = 0.85 means model explains 85% of variation</span></div></div>
-        </div>
+            <div class="tp-example">
+                <div class="tp-ex-header"><span class="tp-ex-badge">Worked Example 3</span>
+                    <h4>Confidence Interval — Survey</h4>
+                </div>
+                <div class="tp-ex-problem"><strong>Problem:</strong> A survey of 400 students finds average study time =
+                    4.2 hours/day with σ = 1.5 hours. Construct a 95% confidence interval for the population mean.</div>
+                <div class="tp-ex-solution">
+                    <div class="tp-sol-step">
+                        <div class="tp-sol-label">95% CI</div>
+                        <div class="tp-sol-content">
+                            <div class="tp-math">Margin = 1.96 × (1.5/√400) = 1.96 × 0.075 = 0.147</div>
+                            <div class="tp-math tp-result">CI = 4.2 ± 0.147 = [4.053, 4.347] hours</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tp-ex-answer"><strong>Answer:</strong> We are 95% confident the true average is between 4.05
+                    and 4.35 hours/day. Quadrupling the sample size (1600) would halve the margin to ±0.074 — precision
+                    improves with √n.</div>
+            </div>
 
-        <div class="tp-related"><h3>Related Topics</h3><div class="tp-related-grid">
-            <a href="/calculus/" class="tp-related-card"><div class="tp-related-icon tc-calculus"><i class="fas fa-infinity"></i></div><span>Calculus</span></a>
-            <a href="/quantum-mechanics/" class="tp-related-card"><div class="tp-related-icon tc-quantum"><i class="fas fa-atom"></i></div><span>Quantum Mechanics</span></a>
-            <a href="/astrophysics/" class="tp-related-card"><div class="tp-related-icon tc-astro"><i class="fas fa-star"></i></div><span>Astrophysics</span></a>
-        </div></div>
+            <div class="tp-concept">
+                <h3><span class="tp-concept-num tc-stats">6</span> Linear Regression</h3>
+                <p>Regression finds the line of best fit through data points, allowing prediction and quantifying
+                    relationships between variables.</p>
+                <div class="tp-formula">
+                    <div class="tp-formula-main">ŷ = a + bx, where b = Σ(xᵢ−x̄)(yᵢ−ȳ) / Σ(xᵢ−x̄)²</div>
+                    <div class="tp-formula-vars"><span>b = slope, a = ȳ − bx̄ (intercept)</span><span>R² = fraction of
+                            variance explained (0 to 1)</span><span>R² = 0.85 means model explains 85% of
+                            variation</span></div>
+                </div>
+            </div>
+
+            <div class="tp-related">
+                <h3>Related Topics</h3>
+                <div class="tp-related-grid">
+                    <a href="/calculus/" class="tp-related-card">
+                        <div class="tp-related-icon tc-calculus"><i class="fas fa-infinity"></i></div>
+                        <span>Calculus</span>
+                    </a>
+                    <a href="/quantum-mechanics/" class="tp-related-card">
+                        <div class="tp-related-icon tc-quantum"><i class="fas fa-atom"></i></div><span>Quantum
+                            Mechanics</span>
+                    </a>
+                    <a href="/astrophysics/" class="tp-related-card">
+                        <div class="tp-related-icon tc-astro"><i class="fas fa-star"></i></div><span>Astrophysics</span>
+                    </a>
+                </div>
+            </div>
     </section>
-    <footer class="site-footer"><div class="footer-container"><div class="footer-content"><div class="footer-section"><h3>CalcREX</h3><p>Your complete online calculator suite for every calculation need.</p></div><div class="footer-section"><h3>Quick Links</h3><ul class="footer-links"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/policy-document">Policy Document</a></li></ul></div><div class="footer-section"><h3>Feature Categories</h3><ul class="footer-links"><li><a href="/converters">Unit Converter</a></li><li><a href="/physics">Physics</a></li><li><a href="/chemistry">Chemistry</a></li><li><a href="/electricity">Electronics</a></li><li><a href="/computer-science">Computer Science</a></li><li><a href="/finance">Finance</a></li><li><a href="/date-time">Date &amp; Time</a></li><li><a href="/thermodynamics">Thermodynamics</a></li><li><a href="/aerodynamics">Aerodynamics</a></li><li><a href="/topics">Topics</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2024 CalcREX. All rights reserved.</p></div></div></footer>
-    <script src="/js/nav.js"></script><script src="/js/script.js"></script>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CalcREX</h3>
+                    <p>Your complete online calculator suite for every calculation need.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/policy-document">Policy Document</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Feature Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="/converters">Unit Converter</a></li>
+                        <li><a href="/physics">Physics</a></li>
+                        <li><a href="/chemistry">Chemistry</a></li>
+                        <li><a href="/electricity">Electronics</a></li>
+                        <li><a href="/computer-science">Computer Science</a></li>
+                        <li><a href="/finance">Finance</a></li>
+                        <li><a href="/date-time">Date &amp; Time</a></li>
+                        <li><a href="/thermodynamics">Thermodynamics</a></li>
+                        <li><a href="/aerodynamics">Aerodynamics</a></li>
+                        <li><a href="/topics">Topics</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CalcREX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="/js/nav.js"></script>
+    <script src="/js/script.js"></script>
     <script>
-    document.getElementById('st-calc-btn').addEventListener('click',function(){
-        const x=parseFloat(document.getElementById('st-x').value);
-        const mu=parseFloat(document.getElementById('st-mu').value);
-        const sig=parseFloat(document.getElementById('st-sig').value);
-        if(isNaN(x)||isNaN(mu)||isNaN(sig)||sig<=0){document.getElementById('st-result').textContent='Enter valid values';return;}
-        const z=(x-mu)/sig;
-        const p=0.5*(1+((z>0?1:-1)*(1-Math.exp(-Math.abs(z)*(1.2732+0.1408*z*z)/(1+0.1408*z*z))**0.5)));
-        document.getElementById('st-result').textContent=z.toFixed(4);
-        document.getElementById('st-unit').textContent='≈ '+(p*100).toFixed(2)+'th percentile';
-    });
+        document.getElementById('st-calc-btn').addEventListener('click', function () {
+            const x = parseFloat(document.getElementById('st-x').value);
+            const mu = parseFloat(document.getElementById('st-mu').value);
+            const sig = parseFloat(document.getElementById('st-sig').value);
+            if (isNaN(x) || isNaN(mu) || isNaN(sig) || sig <= 0) { document.getElementById('st-result').textContent = 'Enter valid values'; return; }
+            const z = (x - mu) / sig;
+            const p = 0.5 * (1 + ((z > 0 ? 1 : -1) * (1 - Math.exp(-Math.abs(z) * (1.2732 + 0.1408 * z * z) / (1 + 0.1408 * z * z)) ** 0.5)));
+            document.getElementById('st-result').textContent = z.toFixed(4);
+            document.getElementById('st-unit').textContent = '≈ ' + (p * 100).toFixed(2) + 'th percentile';
+        });
     </script>
 </body>
+
 </html>
