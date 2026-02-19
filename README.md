@@ -296,4 +296,4 @@ CalcREX is a private project. For bug reports, feature requests, or feedback, us
 
 ## License
 
-© 2024 CalcREX. All rights reserved. See `/policy-document/` for full terms.
+© 2026 CalcREX. All rights reserved. See `/policy-document/` for full terms.
