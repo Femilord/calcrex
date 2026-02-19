@@ -1,0 +1,134 @@
+# CalcREX — Complete Topic Links Reference
+# 48 Calculator Tab Topics + 10 Standalone Topic Pages + Supporting Pages
+# Total: 58 topic links + 12 page links = 70 unique URLs
+
+================================================================================
+
+STANDALONE TOPIC PAGES (10)
+──────────────────────────────────────────────────
+
+  Quantum Mechanics              https://calcrex.com/quantum-mechanics/
+  Relativity                     https://calcrex.com/relativity/
+  Organic Chemistry              https://calcrex.com/organic-chemistry/
+  Electromagnetic Waves          https://calcrex.com/electromagnetic-waves/
+  Nuclear Physics                https://calcrex.com/nuclear-physics/
+  Fluid Mechanics                https://calcrex.com/fluid-mechanics/
+  Astrophysics                   https://calcrex.com/astrophysics/
+  Calculus Fundamentals          https://calcrex.com/calculus/
+  Probability & Statistics       https://calcrex.com/probability-statistics/
+  Thermodynamic Cycles           https://calcrex.com/thermodynamic-cycles/
+
+================================================================================
+
+CALCULATOR TAB TOPICS (48)
+──────────────────────────────────────────────────
+
+  PHYSICS
+  Base: https://calcrex.com/physics/
+
+    Newton's Laws             https://calcrex.com/physics/#topic-newtons-laws
+    Kinematics                https://calcrex.com/physics/#topic-kinematics
+    Energy & Momentum         https://calcrex.com/physics/#topic-energy-momentum
+    Waves                     https://calcrex.com/physics/#topic-waves
+    Electricity               https://calcrex.com/physics/#topic-electricity
+    Thermodynamics            https://calcrex.com/physics/#topic-thermodynamics
+
+  CHEMISTRY
+  Base: https://calcrex.com/chemistry/
+
+    Stoichiometry             https://calcrex.com/chemistry/#chemtopic-stoichiometry
+    Solutions                 https://calcrex.com/chemistry/#chemtopic-solutions
+    Acids & Bases             https://calcrex.com/chemistry/#chemtopic-acids-bases
+    Gas Laws                  https://calcrex.com/chemistry/#chemtopic-gas-laws
+    Thermochemistry           https://calcrex.com/chemistry/#chemtopic-thermochemistry
+    Atomic Structure          https://calcrex.com/chemistry/#chemtopic-atomic-structure
+
+  ELECTRONICS
+  Base: https://calcrex.com/electricity/
+
+    Ohm's Law                 https://calcrex.com/electricity/#electopic-ohms-law
+    Series & Parallel         https://calcrex.com/electricity/#electopic-series-parallel
+    Power & Energy            https://calcrex.com/electricity/#electopic-power-energy
+    Capacitors                https://calcrex.com/electricity/#electopic-capacitors
+    AC Circuits               https://calcrex.com/electricity/#electopic-ac-circuits
+    Semiconductors            https://calcrex.com/electricity/#electopic-semiconductors
+
+  COMPUTER SCIENCE
+  Base: https://calcrex.com/computer-science/
+
+    Number Systems            https://calcrex.com/computer-science/#cstopic-number-systems
+    Boolean Logic             https://calcrex.com/computer-science/#cstopic-boolean-logic
+    Data & Storage            https://calcrex.com/computer-science/#cstopic-data-representation
+    Algorithms                https://calcrex.com/computer-science/#cstopic-algorithms
+    Networking                https://calcrex.com/computer-science/#cstopic-networking
+    Data Structures           https://calcrex.com/computer-science/#cstopic-data-structures
+
+  FINANCE
+  Base: https://calcrex.com/finance/
+
+    Compound Interest         https://calcrex.com/finance/#fintopic-compound-interest
+    Loans & Mortgages         https://calcrex.com/finance/#fintopic-loans
+    Investments               https://calcrex.com/finance/#fintopic-investments
+    Time Value of Money       https://calcrex.com/finance/#fintopic-tvm
+    Business Finance          https://calcrex.com/finance/#fintopic-business
+    Retirement                https://calcrex.com/finance/#fintopic-retirement
+
+  DATE & TIME
+  Base: https://calcrex.com/date-time/
+
+    Calendars                 https://calcrex.com/date-time/#dttopic-calendar-systems
+    Date Math                 https://calcrex.com/date-time/#dttopic-date-arithmetic
+    Time Zones                https://calcrex.com/date-time/#dttopic-time-zones
+    Unix Timestamps           https://calcrex.com/date-time/#dttopic-unix-timestamps
+    Business Days             https://calcrex.com/date-time/#dttopic-business-days
+    Age & Duration            https://calcrex.com/date-time/#dttopic-age-calculations
+
+  AERODYNAMICS
+  Base: https://calcrex.com/aerodynamics/
+
+    Lift & Drag               https://calcrex.com/aerodynamics/#aetopic-lift-drag
+    Bernoulli                 https://calcrex.com/aerodynamics/#aetopic-bernoulli
+    Reynolds Number           https://calcrex.com/aerodynamics/#aetopic-reynolds
+    Mach & Shock              https://calcrex.com/aerodynamics/#aetopic-compressible
+    Airfoils                  https://calcrex.com/aerodynamics/#aetopic-airfoils
+    Wind Loads                https://calcrex.com/aerodynamics/#aetopic-wind-engineering
+
+  THERMODYNAMICS
+  Base: https://calcrex.com/thermodynamics/
+
+    Laws of Thermo            https://calcrex.com/thermodynamics/#thtopic-laws
+    Heat Transfer             https://calcrex.com/thermodynamics/#thtopic-heat-transfer
+    Gas Laws                  https://calcrex.com/thermodynamics/#thtopic-gas-laws
+    Heat Engines              https://calcrex.com/thermodynamics/#thtopic-cycles
+    Entropy                   https://calcrex.com/thermodynamics/#thtopic-entropy
+    Phase Changes             https://calcrex.com/thermodynamics/#thtopic-phase-changes
+
+================================================================================
+
+SITE PAGES (12)
+──────────────────────────────────────────────────
+
+  Homepage (Calculator)          https://calcrex.com/
+  Unit Converter                 https://calcrex.com/converters/
+  Physics Calculators            https://calcrex.com/physics/
+  Chemistry Calculators          https://calcrex.com/chemistry/
+  Electronics Calculators        https://calcrex.com/electricity/
+  Computer Science Calcs         https://calcrex.com/computer-science/
+  Finance Calculators            https://calcrex.com/finance/
+  Date & Time Calculators        https://calcrex.com/date-time/
+  Thermodynamics Calcs           https://calcrex.com/thermodynamics/
+  Aerodynamics Calcs             https://calcrex.com/aerodynamics/
+  Topics Index                   https://calcrex.com/topics/
+  About                          https://calcrex.com/about/
+  Contact                        https://calcrex.com/contact/
+  Policy Document                https://calcrex.com/policy-document/
+
+================================================================================
+
+TOTALS
+──────────────────────────────────────────────────
+  Standalone topic pages:     10
+  Calculator tab topics:      48
+  Site pages:                 14
+  ─────────────────────────────
+  Total unique URLs:          72

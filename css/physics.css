@@ -46,6 +46,7 @@
 
 .category-btn:hover {
     background: var(--btn-hover);
+    color: #bae6fd;
     transform: translateY(-1px);
 }
 

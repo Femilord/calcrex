@@ -30,7 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
         return true;
     }
 
-    // Tab click → update hash
+    function handleHash() {
+        const hash = window.location.hash.slice(1);
+        if (hash && hash.startsWith('electopic-')) {
+            const topicId = hash.replace('electopic-', '');
+            activateTab(topicId, true);
+        }
+    }
+
+    // Tab button click → update hash + activate
     tabs.forEach(tab => {
         tab.addEventListener('click', (e) => {
             e.preventDefault();
@@ -42,18 +50,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Deep link: activate tab from URL hash on page load
-    const hash = window.location.hash.slice(1);
-    if (hash && hash.startsWith('electopic-')) {
-        const topicId = hash.replace('electopic-', '');
-        setTimeout(() => activateTab(topicId, true), 100);
-    }
+    // Intercept anchor link clicks (e.g. <a href="#electopic-kinematics">)
+    document.querySelectorAll('a[href^="#electopic-"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const hash = link.getAttribute('href').slice(1);
+            const topicId = hash.replace('electopic-', '');
+            activateTab(topicId, true);
+            history.replaceState(null, '', '#' + hash);
+        });
+    });
+
+    // Handle hash on page load (cross-page navigation)
+    handleHash();
 
     // Handle browser back/forward
-    window.addEventListener('hashchange', () => {
-        const h = window.location.hash.slice(1);
-        if (h && h.startsWith('electopic-')) {
-            activateTab(h.replace('electopic-', ''), true);
-        }
-    });
+    window.addEventListener('hashchange', handleHash);
 });
