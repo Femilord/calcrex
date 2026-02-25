@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acoustics & Soundproofing — CalcREX | RT60, SPL, Room Modes & More</title>
+    <meta name="description" content="Complete acoustics reference: RT60 reverberation, SPL, room modes, transmission loss, NRC, noise criteria — with interactive calculators for architectural and studio acoustics.">
+    <meta name="keywords" content="acoustics calculator, RT60 calculator, reverberation time, soundproofing, STC rating, room modes, sound transmission loss, NRC, noise criteria, architectural acoustics, calcrex">
+    <meta name="author" content="CalcREX">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcrex.com/acoustics/">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://calcrex.com/acoustics/">
+    <meta property="og:title" content="Acoustics & Soundproofing — CalcREX | RT60, SPL, Room Modes & More">
+    <meta property="og:description" content="Complete acoustics reference with interactive calculators: reverberation time, SPL, room modes, mass law TL, NRC, and noise criteria for studios, offices, and auditoriums.">
+    <meta property="og:image" content="https://calcrex.com/img/calcrex-banner.webp">
+    <meta property="og:site_name" content="CalcREX">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/topic-page.css">
+    <link rel="stylesheet" href="/css/topics.css">
+    <link rel="stylesheet" href="/css/pages.css">
+    <link rel="stylesheet" href="/css/cookie-consent.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://calcrex.com/"},
+        {"@type":"ListItem","position":2,"name":"Topics","item":"https://calcrex.com/topics/"},
+        {"@type":"ListItem","position":3,"name":"Acoustics & Soundproofing","item":"https://calcrex.com/acoustics/"}
+    ]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"What is a good RT60 for a recording studio?","acceptedAnswer":{"@type":"Answer","text":"For a recording studio control room, RT60 should be between 0.2–0.4 seconds. Live recording rooms typically target 0.3–0.5s. Overly long reverberation (>0.8s) muddies recordings; too short (<0.2s) creates an unpleasant dead sound."}},
+        {"@type":"Question","name":"What STC rating do I need for an apartment wall?","acceptedAnswer":{"@type":"Answer","text":"Residential building codes typically require STC 50 for party walls between apartments. STC 45 is the minimum for speech privacy; STC 55+ provides significant speech isolation; STC 60+ means loud speech is barely audible through the wall."}},
+        {"@type":"Question","name":"How do room modes affect sound quality?","acceptedAnswer":{"@type":"Answer","text":"Room modes are resonant frequencies determined by room dimensions. At modal frequencies, bass buildup causes uneven frequency response — some seats hear too much bass, others too little. Avoiding simple dimension ratios (like square rooms) and adding bass traps helps control modal problems."}}
+    ]}
+    </script>
+</head>
+
+<body>
+    <script src="/js/cookie-consent.js"></script>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/">
+                    <img src="../img/logo.png" alt="CalcREX Logo">
+                    <span class="logo-text">Calc<span class="logo-highlight">REX</span></span>
+                </a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span>
+            </button>
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="/" class="nav-link">Calculator</a></li>
+                    <li><a href="/converters" class="nav-link">Unit Converter</a></li>
+                    <li class="nav-dropdown">
+                        <button class="nav-link nav-dropdown-toggle">Sciences <i class="fas fa-chevron-down nav-arrow"></i></button>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a></li>
+                            <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i> Chemistry</a></li>
+                            <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i> Electronics</a></li>
+                            <li><a href="/thermodynamics" class="nav-dropdown-link"><i class="fas fa-fire"></i> Thermodynamics</a></li>
+                            <li><a href="/aerodynamics" class="nav-dropdown-link"><i class="fas fa-plane"></i> Aerodynamics</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/computer-science" class="nav-link">Computer Science</a></li>
+                    <li><a href="/finance" class="nav-link">Finance</a></li>
+                    <li><a href="/date-time" class="nav-link">Date &amp; Time</a></li>
+                    <li><a href="/topics" class="nav-link active">Topics</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="tp-breadcrumb">
+        <ol class="tp-breadcrumb-list">
+            <li><a href="/">Home</a></li>
+            <li class="tp-breadcrumb-sep">›</li>
+            <li><a href="/topics/">Topics</a></li>
+            <li class="tp-breadcrumb-sep">›</li>
+            <li class="tp-breadcrumb-current">Acoustics &amp; Soundproofing</li>
+        </ol>
+    </nav>
+
+    <section class="tp-hero" style="background:linear-gradient(135deg, #0c1445 0%, #1e3a5f 45%, #0e7490 100%);">
+        <div class="tp-hero-icon tc-acoustics"><i class="fas fa-volume-up"></i></div>
+        <h1>Acoustics &amp; Soundproofing</h1>
+        <p>From reverberation time and room modes to transmission loss and noise criteria — the complete engineering reference for architectural acoustics, studio design, and soundproofing.</p>
+    </section>
+
+    <section class="tp-content-section">
+        <a href="/topics/" class="tp-back-link"><i class="fas fa-arrow-left"></i> All Topics</a>
+
+        <!-- ====================================================
+             CALCULATOR 1: RT60 — Sabine & Eyring
+        ==================================================== -->
+        <div class="tp-calculator-wrap">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>Reverberation Time Calculator — RT60 (Sabine &amp; Eyring)</h2>
+            </div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Formulas</div>
+                    <div class="tp-calc-formula-eq">Sabine: RT60 = 0.161·V / A &nbsp;|&nbsp; Eyring: RT60 = 0.161·V / [−S·ln(1−αm)]</div>
+                </div>
+                <div class="tp-calc-inputs">
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>V</span> Room Volume (m³)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="rt-v" placeholder="e.g. 150"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>A</span> Total Absorption (sabins, m²)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="rt-a" placeholder="e.g. 40"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>S</span> Total Surface Area (m²) — for Eyring</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="rt-s" placeholder="e.g. 200"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>αm</span> Mean Absorption Coeff. (0–1) — for Eyring</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="rt-am" placeholder="e.g. 0.20" min="0.01" max="0.99" step="0.01"></div>
+                    </div>
+                </div>
+                <button class="tp-calc-btn" id="rt-btn">Calculate RT60</button>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">RT60</div>
+                    <div class="tp-calc-result-value" id="rt-result">—</div>
+                    <div class="tp-calc-result-unit" id="rt-unit"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====================================================
+             CALCULATOR 2: SPL / Sound Power Level
+        ==================================================== -->
+        <div class="tp-calculator-wrap">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>Sound Pressure &amp; Power Level Calculator</h2>
+            </div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Formulas</div>
+                    <div class="tp-calc-formula-eq">Lp = 20·log(p / 20μPa) &nbsp;|&nbsp; Lw = 10·log(W / 10⁻¹² W)</div>
+                </div>
+                <div class="tp-calc-inputs">
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>p</span> Sound Pressure (Pa)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="spl-p" placeholder="e.g. 0.02"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>W</span> Sound Power (W)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="spl-w" placeholder="e.g. 0.001"></div>
+                    </div>
+                </div>
+                <button class="tp-calc-btn" id="spl-btn">Calculate Levels</button>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">Sound Levels</div>
+                    <div class="tp-calc-result-value" id="spl-result">—</div>
+                    <div class="tp-calc-result-unit" id="spl-unit"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====================================================
+             CALCULATOR 3: Room Modes
+        ==================================================== -->
+        <div class="tp-calculator-wrap">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>Room Mode Frequency Calculator (Axial, Tangential, Oblique)</h2>
+            </div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Formula</div>
+                    <div class="tp-calc-formula-eq">f = (c/2) × √[(nx/Lx)² + (ny/Ly)² + (nz/Lz)²]  &nbsp; c = 343 m/s</div>
+                </div>
+                <div class="tp-calc-inputs">
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>Lx</span> Room Length (m)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="rm-lx" placeholder="e.g. 6.0"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>Ly</span> Room Width (m)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="rm-ly" placeholder="e.g. 4.5"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>Lz</span> Room Height (m)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="rm-lz" placeholder="e.g. 2.8"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label">Mode orders (nx, ny, nz) — comma separated</div>
+                        <div class="tp-calc-row"><input type="text" class="tp-calc-input" id="rm-modes" placeholder="e.g. 1,0,0" value="1,0,0"></div>
+                    </div>
+                </div>
+                <button class="tp-calc-btn" id="rm-btn">Calculate Mode Frequency</button>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">Modal Frequency</div>
+                    <div class="tp-calc-result-value" id="rm-result">—</div>
+                    <div class="tp-calc-result-unit" id="rm-unit"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====================================================
+             CALCULATOR 4: Transmission Loss (Mass Law)
+        ==================================================== -->
+        <div class="tp-calculator-wrap">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>Transmission Loss Calculator (Mass Law)</h2>
+            </div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Formula (Field Incidence Mass Law)</div>
+                    <div class="tp-calc-formula-eq">TL ≈ 20·log(m·f) − 47.5 &nbsp;(dB)</div>
+                </div>
+                <div class="tp-calc-inputs">
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>m</span> Surface mass density (kg/m²)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="tl-m" placeholder="e.g. 25 (12mm plasterboard ≈ 10)"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>f</span> Frequency (Hz)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="tl-f" placeholder="e.g. 500"></div>
+                    </div>
+                </div>
+                <button class="tp-calc-btn" id="tl-btn">Calculate TL</button>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">Transmission Loss</div>
+                    <div class="tp-calc-result-value" id="tl-result">—</div>
+                    <div class="tp-calc-result-unit" id="tl-unit"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====================================================
+             CALCULATOR 5: NRC from Octave Band α values
+        ==================================================== -->
+        <div class="tp-calculator-wrap">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>NRC / SAA Calculator (from Octave Band Absorption Coefficients)</h2>
+            </div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Formula</div>
+                    <div class="tp-calc-formula-eq">NRC = (α250 + α500 + α1k + α2k) / 4</div>
+                </div>
+                <div class="tp-calc-inputs">
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>α</span> at 125 Hz</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nrc-125" placeholder="0–1.0" min="0" max="1" step="0.01"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>α</span> at 250 Hz</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nrc-250" placeholder="0–1.0" min="0" max="1" step="0.01"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>α</span> at 500 Hz</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nrc-500" placeholder="0–1.0" min="0" max="1" step="0.01"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>α</span> at 1000 Hz</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nrc-1k" placeholder="0–1.0" min="0" max="1" step="0.01"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>α</span> at 2000 Hz</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nrc-2k" placeholder="0–1.0" min="0" max="1" step="0.01"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>α</span> at 4000 Hz</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nrc-4k" placeholder="0–1.0" min="0" max="1" step="0.01"></div>
+                    </div>
+                </div>
+                <button class="tp-calc-btn" id="nrc-btn">Calculate NRC &amp; SAA</button>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">NRC / SAA</div>
+                    <div class="tp-calc-result-value" id="nrc-result">—</div>
+                    <div class="tp-calc-result-unit" id="nrc-unit"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====================================================
+             CALCULATOR 6: Noise Criterion (NC) Octave Band
+        ==================================================== -->
+        <div class="tp-calculator-wrap">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>Noise Criterion (NC) Estimator — Octave Band SPL</h2>
+            </div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Method (ASHRAE / ANSI S12.2)</div>
+                    <div class="tp-calc-formula-eq">NC = lowest NC curve not exceeded in any octave band (63–8000 Hz)</div>
+                </div>
+                <div class="tp-calc-inputs">
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label">SPL at 63 Hz (dB)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nc-63" placeholder="e.g. 55"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label">SPL at 125 Hz (dB)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nc-125" placeholder="e.g. 45"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label">SPL at 250 Hz (dB)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nc-250" placeholder="e.g. 38"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label">SPL at 500 Hz (dB)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nc-500" placeholder="e.g. 33"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label">SPL at 1000 Hz (dB)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nc-1k" placeholder="e.g. 30"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label">SPL at 2000 Hz (dB)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nc-2k" placeholder="e.g. 28"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label">SPL at 4000 Hz (dB)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nc-4k" placeholder="e.g. 26"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label">SPL at 8000 Hz (dB)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nc-8k" placeholder="e.g. 24"></div>
+                    </div>
+                </div>
+                <button class="tp-calc-btn" id="nc-btn">Estimate NC Rating</button>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">Estimated NC Rating</div>
+                    <div class="tp-calc-result-value" id="nc-result">—</div>
+                    <div class="tp-calc-result-unit" id="nc-unit"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====================================================
+             CONCEPT 1: SOUNDPROOFING METRICS
+        ==================================================== -->
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-acoustics">1</span> Soundproofing &amp; Isolation Metrics</h3>
+            <p>Soundproofing performance is measured by standardised ratings that quantify how much airborne or impact sound a construction assembly attenuates. The most widely used in the English-speaking world are STC (airborne) and IIC (impact), while ISO countries use Rw and Ln,w respectively. Understanding these ratings is essential for specifying walls, floors, and ceilings in residential, commercial, and studio construction.</p>
+            <p><strong>Sound Transmission Class (STC)</strong> is a single-number rating of an assembly's ability to reduce airborne sound. It is derived from laboratory measurements across 16 one-third octave bands from 125 Hz to 4000 Hz, plotted against a reference contour. The STC number is the value of the reference contour at 500 Hz after fitting. Higher STC means better isolation. STC 25 means normal speech is easily understood through a partition; STC 45 means loud speech is heard but barely intelligible; STC 60 means even a loud shout is barely audible.</p>
+            <p><strong>Impact Insulation Class (IIC)</strong> measures floor/ceiling resistance to structure-borne impact noise — footsteps, dropped objects, chair scraping. A bare concrete slab may achieve IIC 28; add carpet and pad and it rises to IIC 65+. Building codes typically require IIC 50 minimum for multi-family residential floors.</p>
+            <div class="tp-diagram" style="margin:1rem 0;">
+                <div class="tp-svg-wrap">
+                    <svg viewBox="0 0 480 160" class="tp-svg" aria-label="STC rating scale diagram">
+                        <text x="240" y="16" text-anchor="middle" font-size="12" font-weight="700" fill="#1e293b">STC Rating Scale — What You Hear Through the Wall</text>
+                        <!-- Scale bar -->
+                        <defs>
+                            <linearGradient id="stc-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#fca5a5"/>
+                                <stop offset="40%" style="stop-color:#fde68a"/>
+                                <stop offset="70%" style="stop-color:#86efac"/>
+                                <stop offset="100%" style="stop-color:#22d3ee"/>
+                            </linearGradient>
+                        </defs>
+                        <rect x="30" y="28" width="420" height="30" rx="5" fill="url(#stc-grad)"/>
+                        <!-- Tick marks and labels -->
+                        <line x1="30" y1="58" x2="30" y2="65" stroke="#475569" stroke-width="1.5"/>
+                        <text x="30" y="76" text-anchor="middle" font-size="9" fill="#475569">25</text>
+                        <text x="30" y="87" text-anchor="middle" font-size="8" fill="#94a3b8">Loud speech</text>
+                        <text x="30" y="97" text-anchor="middle" font-size="8" fill="#94a3b8">understood</text>
+
+                        <line x1="135" y1="58" x2="135" y2="65" stroke="#475569" stroke-width="1.5"/>
+                        <text x="135" y="76" text-anchor="middle" font-size="9" fill="#475569">35</text>
+                        <text x="135" y="87" text-anchor="middle" font-size="8" fill="#94a3b8">Loud speech</text>
+                        <text x="135" y="97" text-anchor="middle" font-size="8" fill="#94a3b8">audible</text>
+
+                        <line x1="240" y1="58" x2="240" y2="65" stroke="#475569" stroke-width="1.5"/>
+                        <text x="240" y="76" text-anchor="middle" font-size="9" fill="#475569">45</text>
+                        <text x="240" y="87" text-anchor="middle" font-size="8" fill="#94a3b8">Loud speech</text>
+                        <text x="240" y="97" text-anchor="middle" font-size="8" fill="#94a3b8">barely audible</text>
+
+                        <line x1="345" y1="58" x2="345" y2="65" stroke="#475569" stroke-width="1.5"/>
+                        <text x="345" y="76" text-anchor="middle" font-size="9" fill="#475569">55</text>
+                        <text x="345" y="87" text-anchor="middle" font-size="8" fill="#94a3b8">Good speech</text>
+                        <text x="345" y="97" text-anchor="middle" font-size="8" fill="#94a3b8">privacy</text>
+
+                        <line x1="450" y1="58" x2="450" y2="65" stroke="#475569" stroke-width="1.5"/>
+                        <text x="450" y="76" text-anchor="middle" font-size="9" fill="#475569">65</text>
+                        <text x="450" y="87" text-anchor="middle" font-size="8" fill="#94a3b8">Near-total</text>
+                        <text x="450" y="97" text-anchor="middle" font-size="8" fill="#94a3b8">isolation</text>
+
+                        <!-- Code requirement marker -->
+                        <line x1="240" y1="26" x2="240" y2="20" stroke="#dc2626" stroke-width="2"/>
+                        <text x="240" y="18" text-anchor="middle" font-size="8" font-weight="700" fill="#dc2626">Code min (STC 50 apt.)</text>
+
+                        <!-- Applications row -->
+                        <text x="30" y="115" font-size="9" font-weight="700" fill="#475569">Typical assemblies:</text>
+                        <text x="30" y="128" font-size="8" fill="#64748b">Single drywall (STC 33) | Double drywall (STC 43) | Staggered stud wall (STC 55) | Double leaf + mass loaded vinyl (STC 65+)</text>
+                    </svg>
+                </div>
+                <div class="tp-diagram-caption"><strong>Figure 1:</strong> STC scale with subjective descriptions and typical assembly ratings. Note that field measurements (FSTC) are typically 3–5 points lower than lab values due to flanking transmission through connected structures.</div>
+            </div>
+            <div class="tp-table">
+                <div class="tp-table-row">
+                    <div class="tp-calc-label" style="font-size:0.75rem;font-weight:700;color:#6366f1;padding:0;">Metric</div>
+                    <div class="tp-calc-label" style="font-size:0.75rem;font-weight:700;color:#6366f1;text-align:right;padding:0;">Standard &amp; Target</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">STC / IIC</div>
+                    <div class="tp-table-note">ASTM E413 / E989 — STC 50+, IIC 50+ (residential)</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Rw / Ln,w</div>
+                    <div class="tp-table-note">ISO 717-1 / 717-2 — metric equivalent of STC/IIC</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">FSTC / FIIC</div>
+                    <div class="tp-table-note">Field versions — typically 3–5 lower due to flanking</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">CAC</div>
+                    <div class="tp-table-note">Ceiling Attenuation Class — CAC 35+ open-plan offices</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">OITC</div>
+                    <div class="tp-table-note">Outdoor-Indoor TC — lower frequencies (traffic, aircraft)</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">ΔIIC</div>
+                    <div class="tp-table-note">Floor treatment improvement — carpet, floating floor</div>
+                </div>
+            </div>
+            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>Flanking is the enemy of field performance.</strong> Even a perfectly isolated wall achieves nothing if sound travels through the floor slab, ceiling plenum, or shared ductwork. Real-world FSTC values are consistently 3–8 points lower than lab STC. Addressing flanking paths — resilient channels, acoustic isolation clips, floating floors — is often more important than the wall assembly itself.</span></div>
+        </div>
+
+        <!-- ====================================================
+             CONCEPT 2: REVERBERATION TIME
+        ==================================================== -->
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-acoustics">2</span> Reverberation Time — RT60, EDT &amp; the Sabine/Eyring Equations</h3>
+            <p>Reverberation time (RT60) is the time it takes for a sound to decay 60 dB after the source stops. It is the single most important parameter in room acoustics, governing speech intelligibility, music clarity, and the overall character of a space. A cathedral may have RT60 of 8–10 seconds; a recording studio control room targets 0.2–0.4 seconds; a classroom should sit between 0.4–0.6 seconds for good speech intelligibility.</p>
+            <p><strong>Sabine's formula</strong> (1900) — RT60 = 0.161·V/A — works well for rooms with relatively low average absorption (αm &lt; 0.3). The total absorption A is the sum of each surface area multiplied by its absorption coefficient at the frequency of interest: A = Σ(Si·αi). The 0.161 constant is derived from the speed of sound (343 m/s at 20°C) and assumes a perfectly diffuse field.</p>
+            <p><strong>Eyring's formula</strong> is more accurate at higher absorption levels and avoids predicting negative RT60: RT60 = 0.161·V / [−S·ln(1−αm)]. For αm &lt; 0.2, both formulas give nearly identical results. For αm &gt; 0.5 (heavily treated rooms), Sabine significantly over-predicts RT60 and Eyring should be used.</p>
+            <div class="tp-formula">
+                <div class="tp-formula-main">RT60 = 0.161 × V / A</div>
+                <div class="tp-formula-vars">
+                    <span>V = room volume (m³) | A = Σ(Si·αi) = total absorption (sabins/m²)</span>
+                    <span>αi = absorption coefficient of surface i (0–1 per octave band)</span>
+                    <span>Eyring: RT60 = 0.161·V / [−S·ln(1−αm)]  for heavily treated rooms</span>
+                </div>
+            </div>
+            <div class="tp-table">
+                <div class="tp-table-row">
+                    <div class="tp-calc-label" style="font-size:0.75rem;font-weight:700;color:#6366f1;padding:0;">Space Type</div>
+                    <div class="tp-calc-label" style="font-size:0.75rem;font-weight:700;color:#6366f1;text-align:right;padding:0;">Target RT60 (mid-freq.)</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Recording studio (control room)</div>
+                    <div class="tp-table-note">0.2 – 0.4 s</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Broadcast / podcast studio</div>
+                    <div class="tp-table-note">0.2 – 0.35 s</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Classroom / conference room</div>
+                    <div class="tp-table-note">0.4 – 0.6 s</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Open-plan office</div>
+                    <div class="tp-table-note">0.5 – 0.8 s</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Concert hall (orchestral)</div>
+                    <div class="tp-table-note">1.8 – 2.2 s</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Cathedral / large church</div>
+                    <div class="tp-table-note">4 – 10 s</div>
+                </div>
+            </div>
+            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>Early Decay Time (EDT)</strong> is often more perceptually relevant than RT60. It is derived from the initial 10 dB decay and is more sensitive to early reflections and room treatment near the listener. In a well-designed concert hall, EDT ≈ RT60. When EDT &lt; RT60, the room feels drier and more intimate. ISO 3382 standardises measurement of both.</span></div>
+        </div>
+
+        <!-- WORKED EXAMPLE 1 -->
+        <div class="tp-example">
+            <div class="tp-ex-header">
+                <span class="tp-ex-badge">Worked Example 1</span>
+                <h4>RT60 of a Recording Studio Live Room</h4>
+            </div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> A live recording room measures 8 m × 5 m × 3 m (L×W×H). The surfaces have the following mid-frequency (500 Hz) absorption: concrete floor (α=0.02, 40 m²), gypsum walls (α=0.06, 78 m²), acoustic panels covering 30% of wall area (α=0.85 replacing 0.06, 23.4 m²), acoustic ceiling (α=0.75, 40 m²). Calculate RT60 using Sabine's formula.</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">Step 1 — Total surface area &amp; absorption contributions</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">V = 8 × 5 × 3 = 120 m³</div>
+                        <div class="tp-math">Floor: A = 40 × 0.02 = 0.80 sabins</div>
+                        <div class="tp-math">Untreated walls: A = (78 − 23.4) × 0.06 = 54.6 × 0.06 = 3.28 sabins</div>
+                        <div class="tp-math">Acoustic panels: A = 23.4 × 0.85 = 19.89 sabins</div>
+                        <div class="tp-math">Acoustic ceiling: A = 40 × 0.75 = 30.0 sabins</div>
+                        <div class="tp-math">Total A = 0.80 + 3.28 + 19.89 + 30.0 = 53.97 sabins</div>
+                    </div>
+                </div>
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">Step 2 — Apply Sabine's formula</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">RT60 = 0.161 × V / A = 0.161 × 120 / 53.97</div>
+                        <div class="tp-math tp-result">RT60 = 19.32 / 53.97 ≈ 0.36 s</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> 0.36 s — comfortably within the 0.3–0.5 s target for a live recording room. The ceiling treatment dominates, contributing 55% of total absorption. Note: this is a mid-frequency estimate; bass frequencies (125–250 Hz) will have considerably longer RT60 in this room and may require dedicated bass traps.</div>
+        </div>
+
+        <!-- ====================================================
+             CONCEPT 3: ROOM MODES
+        ==================================================== -->
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-acoustics">3</span> Room Modes — Resonance, Bass Buildup &amp; Control</h3>
+            <p>When sound waves reflect between parallel surfaces, they create standing waves at discrete frequencies called room modes. At these frequencies, the acoustic pressure distribution is uneven — some positions in the room have excessive bass (pressure maxima) while others have very little (pressure nulls). This is why you can walk around a room and hear the bass completely disappear in certain spots.</p>
+            <p>Room modes are categorised by the number of room dimensions involved. <strong>Axial modes</strong> involve one dimension only (e.g., 1,0,0 — length only) and are the strongest and most problematic. <strong>Tangential modes</strong> involve two dimensions and are 3 dB weaker. <strong>Oblique modes</strong> involve all three dimensions and are 6 dB weaker still. In a typical small room (studio, home theatre), the axial modes dominate below about 300 Hz.</p>
+            <div class="tp-formula">
+                <div class="tp-formula-main">f(nx,ny,nz) = (c/2) × √[(nx/Lx)² + (ny/Ly)² + (nz/Lz)²]</div>
+                <div class="tp-formula-vars">
+                    <span>c = 343 m/s (speed of sound at 20°C) | nx, ny, nz = integer mode orders (0,1,2,...)</span>
+                    <span>Axial (1,0,0): f = c/(2·Lx) = 343/(2L) | First mode = half wavelength fits in dimension</span>
+                    <span>Schroeder frequency: f_s ≈ 2000√(RT60/V) — above this, modal response is smooth</span>
+                </div>
+            </div>
+            <div class="tp-diagram" style="margin:1rem 0;">
+                <div class="tp-svg-wrap">
+                    <svg viewBox="0 0 460 170" class="tp-svg" aria-label="Room mode standing wave diagram">
+                        <text x="230" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="#1e293b">Axial Room Mode — 1st Order (Half-Wavelength Standing Wave)</text>
+                        <!-- Room walls -->
+                        <rect x="30" y="30" width="400" height="100" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+                        <!-- Pressure distribution (cosine) -->
+                        <path d="M30,80 Q80,30 130,80 Q180,130 230,80 Q280,30 330,80 Q380,130 430,80" fill="none" stroke="#6366f1" stroke-width="0" opacity="0"/>
+                        <!-- Positive half -->
+                        <path d="M30,80 Q115,25 230,80" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+                        <!-- Negative half -->
+                        <path d="M230,80 Q345,135 430,80" fill="#fce7f3" stroke="#9333ea" stroke-width="2"/>
+                        <!-- Pressure node -->
+                        <line x1="230" y1="30" x2="230" y2="130" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+                        <text x="230" y="148" text-anchor="middle" font-size="9" fill="#dc2626">Pressure node</text>
+                        <!-- Pressure antinodes -->
+                        <text x="30" y="148" text-anchor="middle" font-size="9" fill="#2563eb">Max pressure</text>
+                        <text x="430" y="148" text-anchor="middle" font-size="9" fill="#9333ea">Max pressure</text>
+                        <!-- Wavelength arrow -->
+                        <line x1="30" y1="20" x2="430" y2="20" stroke="#16a34a" stroke-width="1.5" marker-start="url(#mode-arr-l)" marker-end="url(#mode-arr-r)"/>
+                        <defs>
+                            <marker id="mode-arr-r" markerWidth="5" markerHeight="5" refX="5" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="#16a34a"/></marker>
+                            <marker id="mode-arr-l" markerWidth="5" markerHeight="5" refX="0" refY="2.5" orient="auto-start-reverse"><path d="M0,0 L5,2.5 L0,5 Z" fill="#16a34a"/></marker>
+                        </defs>
+                        <text x="230" y="14" text-anchor="middle" font-size="8" fill="#16a34a">L = λ/2 → f = c/(2L)</text>
+                    </svg>
+                </div>
+                <div class="tp-diagram-caption"><strong>Figure 2:</strong> First-order axial mode. One half-wavelength fits between the walls. Pressure maxima sit at the walls (antinodes); a pressure null (node) sits at the room centre. A subwoofer placed at the wall excites this mode maximally; a listener at the centre hears very little bass at this frequency.</div>
+            </div>
+            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>Avoid cube rooms and simple integer ratios.</strong> A 4m × 4m × 4m room is the worst possible shape — all three axial modes coincide at 42.9 Hz, 85.7 Hz, etc., creating massive bass buildup. Recommended ratios (Bolt, EBU): 1 : 1.25 : 1.6 or 1 : 1.4 : 2.1. Acoustic treatment with bass traps at corners (where all modal pressure maxima meet) is the most effective remedy.</span></div>
+        </div>
+
+        <!-- WORKED EXAMPLE 2 -->
+        <div class="tp-example">
+            <div class="tp-ex-header">
+                <span class="tp-ex-badge">Worked Example 2</span>
+                <h4>First Three Axial Modes of a Home Studio</h4>
+            </div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> A home studio is 5.2 m long × 3.6 m wide × 2.6 m high. Calculate the first axial mode in each dimension and identify any problematic coincidences.</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">First axial modes — f = c / (2L)</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">Length (5.2 m): f = 343 / (2 × 5.2) = 343 / 10.4 = <span class="tp-result" style="display:inline">33.0 Hz</span></div>
+                        <div class="tp-math">Width (3.6 m): f = 343 / (2 × 3.6) = 343 / 7.2 = <span class="tp-result" style="display:inline">47.6 Hz</span></div>
+                        <div class="tp-math">Height (2.6 m): f = 343 / (2 × 2.6) = 343 / 5.2 = <span class="tp-result" style="display:inline">65.9 Hz</span></div>
+                    </div>
+                </div>
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">Check for coincidences (modes within 5 Hz of each other)</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">2nd length mode: 2 × 33.0 = 66.0 Hz ← coincides with height mode at 65.9 Hz!</div>
+                        <div class="tp-math">Gap = 0.1 Hz — this modal coincidence will cause strong bass buildup ~66 Hz.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> Length (33 Hz), Width (47.6 Hz), Height (65.9 Hz). The 2nd-order length mode (66 Hz) nearly perfectly coincides with the 1st-order height mode (65.9 Hz) — this will create a significant bass problem near 66 Hz. Bass traps in all four vertical corners (where both modes have pressure maxima) are strongly recommended. The Schroeder frequency for this room (assuming RT60 ≈ 0.4s) is approximately 2000 × √(0.4/48.7) ≈ 181 Hz — modal treatment is needed below this frequency.</div>
+        </div>
+
+        <!-- ====================================================
+             CONCEPT 4: TRANSMISSION LOSS & MASS LAW
+        ==================================================== -->
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-acoustics">4</span> Transmission Loss, Mass Law &amp; Partition Design</h3>
+            <p>Transmission Loss (TL) is the ratio, in decibels, of the sound power incident on one face of a partition to the power transmitted through it. Unlike STC (which is a single-number rating), TL is measured and specified at individual frequencies. Designing for TL requires understanding the mass law, the coincidence dip, and the effects of decoupling and air gaps.</p>
+            <p>The <strong>mass law</strong> states that for a single solid partition, TL increases by approximately 6 dB for every doubling of surface mass density, and by 6 dB per octave increase in frequency. A 12 mm plasterboard sheet (≈10 kg/m²) achieves roughly TL 30 dB at 500 Hz. Doubling the sheet gives ≈10 kg/m² more, adding ≈6 dB. This is why sheer mass — concrete, brick, dense board — is the simplest path to isolation.</p>
+            <p>The <strong>coincidence effect</strong> creates a dip in TL at the coincidence frequency, where the bending wavelength in the partition matches the acoustic wavelength. For standard 12 mm gypsum board, this occurs near 2,500 Hz. Above the coincidence frequency, TL improves at 10 dB/octave (better than mass law). Below it, mass law applies at 6 dB/octave.</p>
+            <div class="tp-formula">
+                <div class="tp-formula-main">TL ≈ 20·log(m·f) − 47.5 &nbsp;(dB)</div>
+                <div class="tp-formula-vars">
+                    <span>m = surface mass density (kg/m²) | f = frequency (Hz)</span>
+                    <span>Normal incidence: TL = 20·log(m·f) − 42.5 (3 dB higher than field incidence)</span>
+                    <span>Double-leaf: add ~10–15 dB with decoupled leaves and cavity absorption</span>
+                </div>
+            </div>
+            <div class="tp-two-col">
+                <div class="tp-col">
+                    <div class="tp-col-title">Single-Leaf Assemblies</div>
+                    <p>Performance governed purely by mass. Resilient mounts add no benefit because there is no air gap. Practical limit around STC 40–45 for typical construction. Examples: single brick wall, 2× concrete block, single sheet heavy drywall.</p>
+                </div>
+                <div class="tp-col">
+                    <div class="tp-col-title">Double-Leaf &amp; Decoupled</div>
+                    <p>Two independent leaves separated by an air gap. The gap acts as a spring-mass resonator, boosting performance dramatically above the resonant frequency. Cavity absorption (mineral wool) adds 3–8 dB. Resilient channels, staggered studs, and double stud walls exploit this principle.</p>
+                </div>
+            </div>
+            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>Mass-Air-Mass resonance is the Achilles heel of double walls.</strong> Two panels separated by an air gap have a resonant frequency f₀ = (c/2π)·√(1/m₁ + 1/m₂)/d, where d is the gap width in metres. Below f₀, the double wall actually performs worse than mass law. To push f₀ below the frequency range of interest, increase gap width and/or panel mass. A 100 mm cavity between two 15 mm drywall sheets gives f₀ ≈ 58 Hz.</span></div>
+        </div>
+
+        <!-- ====================================================
+             CONCEPT 5: ABSORPTION & NRC
+        ==================================================== -->
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-acoustics">5</span> Acoustic Absorption — Coefficients, NRC &amp; Material Selection</h3>
+            <p>Acoustic absorption converts sound energy into heat through friction in porous materials, or through panel and membrane resonance. The absorption coefficient α represents the fraction of incident sound energy absorbed by a surface at a given frequency. α = 0 means perfect reflection; α = 1 means total absorption (an open window). Real materials fall between these extremes, and α varies significantly with frequency.</p>
+            <p>The <strong>Noise Reduction Coefficient (NRC)</strong> is a single-number average of α at 250, 500, 1000, and 2000 Hz. It is the most commonly cited spec for acoustic foam, ceiling tiles, and panels. NRC 0.90 means the material absorbs 90% of sound energy at mid-frequencies. The <strong>Sound Absorption Average (SAA)</strong> extends this to 12 one-third octave bands from 200–2500 Hz and is preferred in ASTM E1374.</p>
+            <div class="tp-table">
+                <div class="tp-table-row">
+                    <div class="tp-calc-label" style="font-size:0.75rem;font-weight:700;color:#6366f1;padding:0;">Material</div>
+                    <div class="tp-calc-label" style="font-size:0.75rem;font-weight:700;color:#6366f1;text-align:right;padding:0;">NRC (approx.)</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Bare concrete</div>
+                    <div class="tp-table-note">0.02 – 0.05</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Gypsum board (drywall)</div>
+                    <div class="tp-table-note">0.05 – 0.10</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Carpet on concrete</div>
+                    <div class="tp-table-note">0.25 – 0.40</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Open-cell acoustic foam (25mm)</div>
+                    <div class="tp-table-note">0.50 – 0.70</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Mineral wool board (50mm)</div>
+                    <div class="tp-table-note">0.70 – 0.95</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Suspended acoustic ceiling tiles</div>
+                    <div class="tp-table-note">0.55 – 0.85</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Bass trap (corner-mounted 100mm rockwool)</div>
+                    <div class="tp-table-note">0.85 – 1.0 at mid/high; 0.3–0.6 at bass</div>
+                </div>
+            </div>
+            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>Porous absorbers work at high frequencies; panel absorbers work at low frequencies.</strong> Acoustic foam and mineral wool are efficient mid/high-frequency absorbers — thin materials (25–50mm) offer little bass absorption. For low-frequency control (63–250 Hz), use thick mineral wool bass traps (&gt;100mm) in room corners, membrane/panel absorbers, or Helmholtz resonators tuned to specific problem frequencies. A well-treated room needs both types working together.</span></div>
+        </div>
+
+        <!-- WORKED EXAMPLE 3 -->
+        <div class="tp-example">
+            <div class="tp-ex-header">
+                <span class="tp-ex-badge">Worked Example 3</span>
+                <h4>NRC and Total Room Absorption for an Open-Plan Office</h4>
+            </div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> An open-plan office is 20 m × 15 m × 3 m (V = 900 m³). The ceiling (300 m²) has suspended acoustic tiles with α values: 250Hz=0.55, 500Hz=0.75, 1kHz=0.80, 2kHz=0.80, and the walls (210 m²) are gypsum with α = 0.06 across all bands. Calculate (a) the ceiling NRC, (b) total absorption at 500 Hz, and (c) predicted RT60 at 500 Hz.</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">(a) Ceiling NRC</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">NRC = (α250 + α500 + α1k + α2k) / 4 = (0.55 + 0.75 + 0.80 + 0.80) / 4</div>
+                        <div class="tp-math tp-result">NRC = 2.90 / 4 = 0.73</div>
+                    </div>
+                </div>
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">(b) Total absorption at 500 Hz</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">Ceiling: A = 300 × 0.75 = 225 sabins</div>
+                        <div class="tp-math">Concrete floor: A = 300 × 0.02 = 6 sabins</div>
+                        <div class="tp-math">Walls: A = 210 × 0.06 = 12.6 sabins</div>
+                        <div class="tp-math">Total A = 225 + 6 + 12.6 = <span class="tp-result" style="display:inline">243.6 sabins</span></div>
+                    </div>
+                </div>
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">(c) RT60 using Sabine</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math">RT60 = 0.161 × 900 / 243.6 = 144.9 / 243.6</div>
+                        <div class="tp-math tp-result">RT60 = 0.59 s</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> Ceiling NRC = 0.73, Total A = 243.6 sabins, RT60 = 0.59 s. This is within the typical 0.5–0.8 s target for open-plan offices. However, at lower frequencies (250 Hz, where ceiling α drops to 0.55) RT60 will rise to approximately 0.78 s — still acceptable. The ceiling tiles contribute 92% of all absorption, illustrating how dominant ceiling treatment is in typical offices.</div>
+        </div>
+
+        <!-- ====================================================
+             CONCEPT 6: NOISE CRITERIA
+        ==================================================== -->
+        <div class="tp-concept">
+            <h3><span class="tp-concept-num tc-acoustics">6</span> Noise Criteria — NC, NR &amp; RC Curves</h3>
+            <p>Background noise in buildings comes from HVAC systems, external traffic, mechanical plant, and occupants. Noise Criteria (NC) curves are the most widely used method for specifying and evaluating HVAC background noise in occupied spaces. Each NC curve represents a permissible spectrum of octave-band sound pressure levels from 63 Hz to 8000 Hz. A space "achieves" a given NC rating if its measured spectrum does not exceed the corresponding curve in any band.</p>
+            <p>The NC method was developed by Beranek (1957) and is widely referenced in ASHRAE and architectural standards. <strong>NR (Noise Rating)</strong> curves are the European equivalent, defined by ISO and used in the UK and Europe. Numerically they are similar but not identical. <strong>RC (Room Criteria)</strong> curves add a quality assessment — N (neutral), L (low-frequency rumble), H (high-frequency hiss) — making them more diagnostic for HVAC noise problems.</p>
+            <div class="tp-formula">
+                <div class="tp-formula-main">NC = lowest NC curve not exceeded at any octave band</div>
+                <div class="tp-formula-vars">
+                    <span>Studio / recording booth: NC-15 to NC-20 | Bedroom / hotel: NC-25 to NC-35</span>
+                    <span>Office (open plan): NC-35 to NC-40 | Restaurant / retail: NC-40 to NC-50</span>
+                    <span>Mechanical / plant room: NC-55 to NC-65</span>
+                </div>
+            </div>
+            <div class="tp-table">
+                <div class="tp-table-row">
+                    <div class="tp-calc-label" style="font-size:0.75rem;font-weight:700;color:#6366f1;padding:0;">Space</div>
+                    <div class="tp-calc-label" style="font-size:0.75rem;font-weight:700;color:#6366f1;text-align:right;padding:0;">Recommended NC</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Recording / broadcast studio</div>
+                    <div class="tp-table-note">NC-15 to NC-20</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Concert hall / opera house</div>
+                    <div class="tp-table-note">NC-15 to NC-20</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Classroom / conference room</div>
+                    <div class="tp-table-note">NC-25 to NC-30</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Private office</div>
+                    <div class="tp-table-note">NC-30 to NC-35</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Open-plan office</div>
+                    <div class="tp-table-note">NC-35 to NC-40</div>
+                </div>
+                <div class="tp-table-row">
+                    <div class="tp-table-cell">Restaurant / lobby</div>
+                    <div class="tp-table-note">NC-40 to NC-50</div>
+                </div>
+            </div>
+            <div class="tp-insight"><i class="fas fa-lightbulb"></i><span><strong>NC ratings below NC-20 demand extraordinary HVAC design.</strong> At NC-15 (the practical limit for critical listening rooms), air velocity in supply diffusers must stay below 1 m/s, and ductwork must be heavily lined and vibration-isolated. Even a single unlined elbow near the diffuser can push a studio from NC-15 to NC-30. Equipment noise, compressor vibration, and building structure-borne noise must all be addressed systematically.</span></div>
+        </div>
+
+        <!-- WORKED EXAMPLE 4 -->
+        <div class="tp-example">
+            <div class="tp-ex-header">
+                <span class="tp-ex-badge">Worked Example 4</span>
+                <h4>NC Rating of a Boardroom HVAC System</h4>
+            </div>
+            <div class="tp-ex-problem"><strong>Problem:</strong> Measured octave-band SPL in a boardroom (target NC-35): 63Hz=58, 125Hz=48, 250Hz=40, 500Hz=35, 1kHz=31, 2kHz=28, 4kHz=24, 8kHz=20 dB. What NC rating does this achieve, and which band is the limiting band?</div>
+            <div class="tp-ex-solution">
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">Compare measured levels against NC curve limits</div>
+                    <div class="tp-sol-content">
+                        <p style="font-size:0.8rem;color:#475569;">NC curve reference values (approximate, from ASHRAE Fundamentals):</p>
+                        <div class="tp-math">NC-35: 63Hz=71 | 125Hz=55 | 250Hz=44 | 500Hz=36 | 1kHz=33 | 2kHz=31 | 4kHz=29 | 8kHz=28</div>
+                        <div class="tp-math">NC-30: 63Hz=68 | 125Hz=51 | 250Hz=40 | 500Hz=32 | 1kHz=29 | 2kHz=27 | 4kHz=25 | 8kHz=24</div>
+                        <div class="tp-math">Measured vs NC-30 limits:</div>
+                        <div class="tp-math">250Hz: measured 40 = NC-30 limit 40 ✓ (just touches)</div>
+                        <div class="tp-math">500Hz: measured 35 &gt; NC-30 limit 32 ✗ (exceeds by 3 dB)</div>
+                        <div class="tp-math">All bands vs NC-35: measured 35 (500Hz) &lt; NC-35 limit 36 ✓ — all bands pass</div>
+                    </div>
+                </div>
+                <div class="tp-sol-step">
+                    <div class="tp-sol-label">Determine NC rating</div>
+                    <div class="tp-sol-content">
+                        <div class="tp-math tp-result">NC rating = NC-35 (500 Hz is the limiting band at 35 dB)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-ex-answer"><strong>Answer:</strong> NC-35. The 500 Hz band (35 dB) is the limiting factor — it exceeds the NC-30 curve by 3 dB but stays within NC-35. The boardroom meets the target NC-35 specification but is right at the boundary. To achieve NC-30, the 500 Hz content (typically from supply ductwork turbulence) would need to be reduced by at least 4 dB — achievable with a lined duct extension or lower diffuser velocity.</div>
+        </div>
+
+        <!-- Related topics -->
+        <div class="tp-related">
+            <h3>Related Topics</h3>
+            <div class="tp-related-grid">
+                <a href="/fluid-mechanics/" class="tp-related-card">
+                    <div class="tp-related-icon tc-fluids"><i class="fas fa-water"></i></div>
+                    <span>Fluid Mechanics</span>
+                </a>
+                <a href="/electromagnetic-waves/" class="tp-related-card">
+                    <div class="tp-related-icon tc-emwaves"><i class="fas fa-broadcast-tower"></i></div>
+                    <span>Electromagnetic Waves</span>
+                </a>
+                <a href="/physics/" class="tp-related-card">
+                    <div class="tp-related-icon tc-quantum" style="background:linear-gradient(135deg,#6366f1,#4f46e5);"><i class="fas fa-atom"></i></div>
+                    <span>Physics Calculators</span>
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CalcREX</h3>
+                    <p>Your complete online calculator suite for every calculation need.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/policy-document">Policy Document</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Feature Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="/converters">Unit Converter</a></li>
+                        <li><a href="/physics">Physics</a></li>
+                        <li><a href="/chemistry">Chemistry</a></li>
+                        <li><a href="/electricity">Electronics</a></li>
+                        <li><a href="/computer-science">Computer Science</a></li>
+                        <li><a href="/finance">Finance</a></li>
+                        <li><a href="/date-time">Date &amp; Time</a></li>
+                        <li><a href="/thermodynamics">Thermodynamics</a></li>
+                        <li><a href="/aerodynamics">Aerodynamics</a></li>
+                        <li><a href="/topics">Topics</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CalcREX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/nav.js"></script>
+    <script src="/js/script.js"></script>
+    <script>
+        // ── RT60 Calculator (Sabine + Eyring) ──
+        document.getElementById('rt-btn').addEventListener('click', function () {
+            const V = parseFloat(document.getElementById('rt-v').value);
+            const A = parseFloat(document.getElementById('rt-a').value);
+            const S = parseFloat(document.getElementById('rt-s').value);
+            const am = parseFloat(document.getElementById('rt-am').value);
+
+            if (isNaN(V) || V <= 0) { document.getElementById('rt-result').textContent = 'Enter valid volume'; return; }
+            let out = '';
+
+            if (!isNaN(A) && A > 0) {
+                const sabine = 0.161 * V / A;
+                out += 'Sabine: ' + sabine.toFixed(3) + ' s';
+            }
+            if (!isNaN(S) && S > 0 && !isNaN(am) && am > 0 && am < 1) {
+                const eyring = 0.161 * V / (-S * Math.log(1 - am));
+                out += (out ? '   |   ' : '') + 'Eyring: ' + eyring.toFixed(3) + ' s';
+            }
+            if (!out) { document.getElementById('rt-result').textContent = 'Enter A (Sabine) or S+αm (Eyring)'; return; }
+            document.getElementById('rt-result').textContent = out;
+            document.getElementById('rt-unit').textContent = 'seconds';
+        });
+
+        // ── SPL / Lw Calculator ──
+        document.getElementById('spl-btn').addEventListener('click', function () {
+            const p = parseFloat(document.getElementById('spl-p').value);
+            const W = parseFloat(document.getElementById('spl-w').value);
+            let parts = [];
+            if (!isNaN(p) && p > 0) {
+                const Lp = 20 * Math.log10(p / 20e-6);
+                parts.push('Lp = ' + Lp.toFixed(2) + ' dB SPL');
+            }
+            if (!isNaN(W) && W > 0) {
+                const Lw = 10 * Math.log10(W / 1e-12);
+                parts.push('Lw = ' + Lw.toFixed(2) + ' dB SWL');
+            }
+            if (!parts.length) { document.getElementById('spl-result').textContent = 'Enter p and/or W'; return; }
+            document.getElementById('spl-result').textContent = parts.join('   |   ');
+            document.getElementById('spl-unit').textContent = 'ref: 20μPa (SPL) / 10⁻¹²W (SWL)';
+        });
+
+        // ── Room Modes Calculator ──
+        document.getElementById('rm-btn').addEventListener('click', function () {
+            const Lx = parseFloat(document.getElementById('rm-lx').value);
+            const Ly = parseFloat(document.getElementById('rm-ly').value);
+            const Lz = parseFloat(document.getElementById('rm-lz').value);
+            const modeStr = document.getElementById('rm-modes').value.trim();
+            if ([Lx, Ly, Lz].some(v => isNaN(v) || v <= 0)) { document.getElementById('rm-result').textContent = 'Enter valid dimensions'; return; }
+            const parts = modeStr.split(',').map(s => parseInt(s.trim()));
+            if (parts.length !== 3 || parts.some(isNaN)) { document.getElementById('rm-result').textContent = 'Enter mode orders as nx,ny,nz'; return; }
+            const [nx, ny, nz] = parts;
+            const c = 343;
+            const f = (c / 2) * Math.sqrt((nx / Lx) ** 2 + (ny / Ly) ** 2 + (nz / Lz) ** 2);
+            let type = 'Oblique';
+            const zeros = [nx, ny, nz].filter(v => v === 0).length;
+            if (zeros === 2) type = 'Axial';
+            else if (zeros === 1) type = 'Tangential';
+            document.getElementById('rm-result').textContent = f.toFixed(2);
+            document.getElementById('rm-unit').textContent = 'Hz  (' + type + ' mode ' + nx + ',' + ny + ',' + nz + ')  λ = ' + (c / f).toFixed(2) + ' m';
+        });
+
+        // ── Transmission Loss (Mass Law) ──
+        document.getElementById('tl-btn').addEventListener('click', function () {
+            const m = parseFloat(document.getElementById('tl-m').value);
+            const f = parseFloat(document.getElementById('tl-f').value);
+            if (isNaN(m) || isNaN(f) || m <= 0 || f <= 0) { document.getElementById('tl-result').textContent = 'Enter valid values'; return; }
+            const TL = 20 * Math.log10(m * f) - 47.5;
+            const TL_normal = 20 * Math.log10(m * f) - 42.5;
+            document.getElementById('tl-result').textContent = Math.max(0, TL).toFixed(1);
+            document.getElementById('tl-unit').textContent = 'dB  (field incidence) | Normal incidence: ' + TL_normal.toFixed(1) + ' dB';
+        });
+
+        // ── NRC / SAA Calculator ──
+        document.getElementById('nrc-btn').addEventListener('click', function () {
+            const a125 = parseFloat(document.getElementById('nrc-125').value) || 0;
+            const a250 = parseFloat(document.getElementById('nrc-250').value);
+            const a500 = parseFloat(document.getElementById('nrc-500').value);
+            const a1k  = parseFloat(document.getElementById('nrc-1k').value);
+            const a2k  = parseFloat(document.getElementById('nrc-2k').value);
+            const a4k  = parseFloat(document.getElementById('nrc-4k').value) || 0;
+            if ([a250, a500, a1k, a2k].some(v => isNaN(v))) { document.getElementById('nrc-result').textContent = 'Enter at least 250–2000 Hz values'; return; }
+            const NRC = (a250 + a500 + a1k + a2k) / 4;
+            const NRC_r = Math.round(NRC * 20) / 20; // round to nearest 0.05
+            let rating = NRC >= 0.8 ? 'Excellent absorber' : NRC >= 0.6 ? 'Good absorber' : NRC >= 0.4 ? 'Moderate absorber' : NRC >= 0.2 ? 'Low absorption' : 'Reflective surface';
+            document.getElementById('nrc-result').textContent = NRC.toFixed(2);
+            document.getElementById('nrc-unit').textContent = '(rounded: ' + NRC_r.toFixed(2) + ')  →  ' + rating;
+        });
+
+        // ── NC Estimator ──
+        document.getElementById('nc-btn').addEventListener('click', function () {
+            // NC curve limits (approximate from ASHRAE/Beranek) at octave bands 63,125,250,500,1k,2k,4k,8k
+            const ncCurves = {
+                15: [47, 36, 29, 22, 17, 14, 12, 11],
+                20: [51, 40, 33, 26, 22, 19, 17, 16],
+                25: [54, 44, 37, 31, 27, 24, 22, 21],
+                30: [57, 48, 41, 35, 31, 29, 27, 26],
+                35: [60, 52, 45, 40, 36, 34, 33, 32],
+                40: [64, 56, 50, 45, 41, 39, 38, 37],
+                45: [67, 60, 54, 50, 46, 44, 43, 42],
+                50: [71, 64, 58, 54, 51, 49, 48, 47],
+                55: [74, 67, 62, 58, 56, 54, 53, 52],
+                60: [77, 71, 67, 63, 61, 59, 58, 57],
+                65: [80, 75, 71, 68, 66, 64, 63, 62],
+            };
+            const ids = ['nc-63','nc-125','nc-250','nc-500','nc-1k','nc-2k','nc-4k','nc-8k'];
+            const measured = ids.map(id => parseFloat(document.getElementById(id).value));
+            if (measured.some(v => isNaN(v))) { document.getElementById('nc-result').textContent = 'Enter all 8 octave band values'; return; }
+
+            let ncRating = null;
+            let limitingBand = null;
+            let limitingExcess = null;
+            const bandNames = ['63Hz','125Hz','250Hz','500Hz','1kHz','2kHz','4kHz','8kHz'];
+
+            for (const [nc, limits] of Object.entries(ncCurves).map(([k,v])=>[parseInt(k),v]).sort((a,b)=>a[0]-b[0])) {
+                let allPass = true;
+                for (let i = 0; i < 8; i++) {
+                    if (measured[i] > limits[i]) { allPass = false; break; }
+                }
+                if (allPass) {
+                    ncRating = nc;
+                    // Find limiting band (closest to exceeding)
+                    let maxExcess = -Infinity;
+                    for (let i = 0; i < 8; i++) {
+                        const excess = measured[i] - limits[i];
+                        if (excess > maxExcess) { maxExcess = excess; limitingBand = bandNames[i]; limitingExcess = excess; }
+                    }
+                    break;
+                }
+            }
+            if (ncRating === null) {
+                document.getElementById('nc-result').textContent = '> NC-65';
+                document.getElementById('nc-unit').textContent = 'Exceeds NC-65 — investigate noise source immediately';
+                return;
+            }
+            document.getElementById('nc-result').textContent = 'NC-' + ncRating;
+            document.getElementById('nc-unit').textContent = 'Limiting band: ' + limitingBand + ' (' + (limitingExcess >= 0 ? '+' : '') + limitingExcess.toFixed(1) + ' dB margin to curve)';
+        });
+    </script>
+</body>
+
+</html>

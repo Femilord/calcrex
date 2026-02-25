@@ -252,6 +252,7 @@
 .tc-calculus { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
 .tc-stats { background: linear-gradient(135deg, #f97316, #ea580c); }
 .tc-thermocycles { background: linear-gradient(135deg, #e11d48, #be123c); }
+.tc-acoustics { background: linear-gradient(135deg, #0e7490, #0891b2); }
 
 @media (min-width: 576px) {
     .topics-grid { grid-template-columns: repeat(2, 1fr); }
