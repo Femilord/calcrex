@@ -349,6 +349,94 @@
                 medical imaging — high activity for clear images, rapid decay for patient safety.</div>
         </div>
 
+        <!-- SVG: Decay chain diagram -->
+        <div class="tp-diagram-wrap" style="margin:1.5rem 0;">
+            <svg viewBox="0 0 460 130" style="width:100%;max-width:460px;display:block;margin:0 auto;" aria-label="Radioactive decay modes diagram">
+                <text x="230" y="16" text-anchor="middle" font-size="12" font-weight="700" fill="#1e293b">Radioactive Decay Modes</text>
+                <!-- Alpha -->
+                <rect x="10" y="28" width="120" height="60" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+                <text x="70" y="48" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">α Decay</text>
+                <text x="70" y="63" text-anchor="middle" font-size="9" fill="#64748b">Emits ⁴He nucleus</text>
+                <text x="70" y="76" text-anchor="middle" font-size="9" fill="#64748b">A−4, Z−2</text>
+                <text x="70" y="88" text-anchor="middle" font-size="8" fill="#94a3b8">Range: ~5 cm in air</text>
+                <!-- Beta minus -->
+                <rect x="170" y="28" width="120" height="60" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+                <text x="230" y="48" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">β⁻ Decay</text>
+                <text x="230" y="63" text-anchor="middle" font-size="9" fill="#64748b">n → p + e⁻ + ν̄</text>
+                <text x="230" y="76" text-anchor="middle" font-size="9" fill="#64748b">A same, Z+1</text>
+                <text x="230" y="88" text-anchor="middle" font-size="8" fill="#94a3b8">Range: ~1 m in air</text>
+                <!-- Gamma -->
+                <rect x="330" y="28" width="120" height="60" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+                <text x="390" y="48" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">γ Decay</text>
+                <text x="390" y="63" text-anchor="middle" font-size="9" fill="#64748b">High-energy photon</text>
+                <text x="390" y="76" text-anchor="middle" font-size="9" fill="#64748b">A same, Z same</text>
+                <text x="390" y="88" text-anchor="middle" font-size="8" fill="#94a3b8">Penetrates concrete</text>
+            </svg>
+            <p style="font-size:0.78rem;color:#64748b;text-align:center;margin:0.4rem 0 0;">The three primary decay modes — alpha, beta-minus, and gamma — differ in penetrating power and mass/charge effects.</p>
+        </div>
+
+        <!-- Extra Calculator: Binding energy per nucleon -->
+        <div class="tp-calculator-wrap" style="margin-top:2rem;">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>Nuclear Binding Energy Calculator</h2>
+            </div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Formula</div>
+                    <div class="tp-calc-formula-eq">BE = Δm · c²  (Δm = mass defect)</div>
+                </div>
+                <div class="tp-calc-inputs">
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>Z</span> Proton number</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nuc-be-z" placeholder="e.g. 6" min="1" step="1"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>N</span> Neutron number</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nuc-be-n" placeholder="e.g. 6" min="0" step="1"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>M</span> Atomic mass (u)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nuc-be-m" placeholder="e.g. 12.000"></div>
+                    </div>
+                </div>
+                <button class="tp-calc-btn" id="nuc-be-btn">Calculate Binding Energy</button>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">Binding Energy / nucleon</div>
+                    <div class="tp-calc-result-value" id="nuc-be-result">—</div>
+                    <div class="tp-calc-result-unit" id="nuc-be-unit"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Extra Calculator: Activity from mass -->
+        <div class="tp-calculator-wrap" style="margin-top:2rem;">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>Radioactive Activity Calculator</h2>
+            </div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Formula</div>
+                    <div class="tp-calc-formula-eq">A = λN = (ln2 / t½) · N</div>
+                </div>
+                <div class="tp-calc-inputs">
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>N₀</span> Number of atoms (initial)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nuc-act-n" placeholder="e.g. 1e20"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>t½</span> Half-life (seconds)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="nuc-act-hl" placeholder="e.g. 21600"></div>
+                    </div>
+                </div>
+                <button class="tp-calc-btn" id="nuc-act-btn">Calculate Activity</button>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">Activity</div>
+                    <div class="tp-calc-result-value" id="nuc-act-result">—</div>
+                    <div class="tp-calc-result-unit" id="nuc-act-unit"></div>
+                </div>
+            </div>
+        </div>
+
         <div class="tp-related">
             <h3>Related Topics</h3>
             <div class="tp-related-grid">
@@ -415,6 +503,28 @@
             const pct = (N / n0 * 100).toFixed(2);
             document.getElementById('nuc-result').textContent = N.toFixed(4);
             document.getElementById('nuc-unit').textContent = 'remaining (' + pct + '% of original, ' + (t / hl).toFixed(2) + ' half-lives)';
+        });
+        document.getElementById('nuc-be-btn').addEventListener('click', function () {
+            const Z = parseInt(document.getElementById('nuc-be-z').value);
+            const N = parseInt(document.getElementById('nuc-be-n').value);
+            const M = parseFloat(document.getElementById('nuc-be-m').value);
+            if (isNaN(Z)||isNaN(N)||isNaN(M)||Z<1||N<0) { document.getElementById('nuc-be-result').textContent='Enter valid values'; return; }
+            const mp=1.007276, mn=1.008665, u_to_MeV=931.494;
+            const dm = Z*mp + N*mn - M;
+            const BE_total = dm * u_to_MeV;
+            const A = Z + N;
+            const BE_per = BE_total / A;
+            document.getElementById('nuc-be-result').textContent = BE_per.toFixed(4);
+            document.getElementById('nuc-be-unit').textContent = 'MeV/nucleon  (total BE = ' + BE_total.toFixed(2) + ' MeV)';
+        });
+        document.getElementById('nuc-act-btn').addEventListener('click', function () {
+            const N = parseFloat(document.getElementById('nuc-act-n').value);
+            const hl = parseFloat(document.getElementById('nuc-act-hl').value);
+            if (isNaN(N)||isNaN(hl)||hl<=0) { document.getElementById('nuc-act-result').textContent='Enter valid values'; return; }
+            const lam = Math.LN2 / hl;
+            const A = lam * N;
+            document.getElementById('nuc-act-result').textContent = A.toExponential(4);
+            document.getElementById('nuc-act-unit').textContent = 'Bq  (= ' + (A/3.7e10).toExponential(3) + ' Ci)';
         });
     </script>
 </body>

@@ -289,6 +289,89 @@
                 </div>
             </div>
 
+        <!-- SVG: Normal distribution bell curve -->
+        <div class="tp-diagram-wrap" style="margin:1.5rem 0;">
+            <svg viewBox="0 0 420 160" style="width:100%;max-width:420px;display:block;margin:0 auto;" aria-label="Normal distribution bell curve">
+                <text x="210" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="#1e293b">Normal (Gaussian) Distribution</text>
+                <line x1="30" y1="130" x2="400" y2="130" stroke="#94a3b8" stroke-width="1.5"/>
+                <line x1="215" y1="25" x2="215" y2="135" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
+                <path d="M40,128 C80,128 120,120 160,90 C185,72 200,30 215,28 C230,30 245,72 270,90 C310,120 350,128 390,128" fill="#ddd6fe" stroke="#7c3aed" stroke-width="2.5"/>
+                <line x1="165" y1="90" x2="265" y2="90" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <text x="215" y="85" text-anchor="middle" font-size="9" fill="#16a34a">68% (±1σ)</text>
+                <line x1="120" y1="112" x2="310" y2="112" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <text x="215" y="108" text-anchor="middle" font-size="9" fill="#0284c7">95% (±2σ)</text>
+                <text x="215" y="144" text-anchor="middle" font-size="9" fill="#64748b">μ</text>
+                <text x="165" y="144" text-anchor="middle" font-size="9" fill="#64748b">μ−σ</text>
+                <text x="265" y="144" text-anchor="middle" font-size="9" fill="#64748b">μ+σ</text>
+            </svg>
+        </div>
+
+        <!-- Extra Calculator: Bayes theorem -->
+        <div class="tp-calculator-wrap" style="margin-top:2rem;">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>Bayes' Theorem Calculator</h2>
+            </div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Formula</div>
+                    <div class="tp-calc-formula-eq">P(A|B) = P(B|A)·P(A) / P(B)</div>
+                </div>
+                <div class="tp-calc-inputs">
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label">P(A) — Prior probability</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="st-ba-pa" placeholder="e.g. 0.01"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label">P(B|A) — Likelihood</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="st-ba-pba" placeholder="e.g. 0.95"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label">P(B) — Marginal probability</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="st-ba-pb" placeholder="e.g. 0.05"></div>
+                    </div>
+                </div>
+                <button class="tp-calc-btn" id="st-ba-btn">Calculate P(A|B)</button>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">Posterior Probability</div>
+                    <div class="tp-calc-result-value" id="st-ba-result">—</div>
+                    <div class="tp-calc-result-unit" id="st-ba-unit"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Extra Calculator: Binomial probability -->
+        <div class="tp-calculator-wrap" style="margin-top:2rem;">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>Binomial Probability Calculator</h2>
+            </div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Formula</div>
+                    <div class="tp-calc-formula-eq">P(X=k) = C(n,k) · pᵏ · (1−p)ⁿ⁻ᵏ</div>
+                </div>
+                <div class="tp-calc-inputs">
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>n</span> Number of trials</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="st-bn-n" placeholder="e.g. 10" min="1" step="1"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>k</span> Successes</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="st-bn-k" placeholder="e.g. 3" min="0" step="1"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>p</span> Success probability</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="st-bn-p" placeholder="e.g. 0.5"></div>
+                    </div>
+                </div>
+                <button class="tp-calc-btn" id="st-bn-btn">Calculate P(X=k)</button>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">Probability</div>
+                    <div class="tp-calc-result-value" id="st-bn-result">—</div>
+                    <div class="tp-calc-result-unit" id="st-bn-unit"></div>
+                </div>
+            </div>
+        </div>
+
             <div class="tp-related">
                 <h3>Related Topics</h3>
                 <div class="tp-related-grid">
@@ -352,9 +435,28 @@
             const sig = parseFloat(document.getElementById('st-sig').value);
             if (isNaN(x) || isNaN(mu) || isNaN(sig) || sig <= 0) { document.getElementById('st-result').textContent = 'Enter valid values'; return; }
             const z = (x - mu) / sig;
-            const p = 0.5 * (1 + ((z > 0 ? 1 : -1) * (1 - Math.exp(-Math.abs(z) * (1.2732 + 0.1408 * z * z) / (1 + 0.1408 * z * z)) ** 0.5)));
+            const p = 0.5 * (1 + ((z > 0 ? 1 : -1) * (1 - Math.exp(-Math.abs(z) * (1.2732 + 0.1408 * z * z) / (1 + 0.1408 * z * z))) ** 0.5));
             document.getElementById('st-result').textContent = z.toFixed(4);
             document.getElementById('st-unit').textContent = '≈ ' + (p * 100).toFixed(2) + 'th percentile';
+        });
+        document.getElementById('st-ba-btn').addEventListener('click', function () {
+            const pa = parseFloat(document.getElementById('st-ba-pa').value);
+            const pba = parseFloat(document.getElementById('st-ba-pba').value);
+            const pb = parseFloat(document.getElementById('st-ba-pb').value);
+            if ([pa,pba,pb].some(x=>isNaN(x)||x<=0||x>1)) { document.getElementById('st-ba-result').textContent='Enter values between 0 and 1'; return; }
+            const result = (pba*pa)/pb;
+            document.getElementById('st-ba-result').textContent = result.toFixed(6);
+            document.getElementById('st-ba-unit').textContent = '(' + (result*100).toFixed(2) + '%)';
+        });
+        document.getElementById('st-bn-btn').addEventListener('click', function () {
+            const n = parseInt(document.getElementById('st-bn-n').value);
+            const k = parseInt(document.getElementById('st-bn-k').value);
+            const p = parseFloat(document.getElementById('st-bn-p').value);
+            if (isNaN(n)||isNaN(k)||isNaN(p)||k>n||k<0||p<0||p>1) { document.getElementById('st-bn-result').textContent='Enter valid values'; return; }
+            const comb = (n,k) => { let r=1; for(let i=0;i<k;i++) r=r*(n-i)/(i+1); return r; };
+            const prob = comb(n,k)*Math.pow(p,k)*Math.pow(1-p,n-k);
+            document.getElementById('st-bn-result').textContent = prob.toFixed(6);
+            document.getElementById('st-bn-unit').textContent = '(' + (prob*100).toFixed(3) + '%)  mean='+( n*p).toFixed(2)+', σ='+Math.sqrt(n*p*(1-p)).toFixed(3);
         });
     </script>
 </body>

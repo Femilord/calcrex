@@ -128,6 +128,41 @@
                 diffraction) but also as particles called photons (photoelectric effect). Electrons behave as particles
                 (tracks in detectors) but also as waves (electron diffraction). This duality is fundamental — not a
                 limitation of our measurement, but the true nature of reality.</p>
+            <p>The double-slit experiment is the clearest demonstration of duality. When electrons are fired one at a time through two slits, they still build up an interference pattern on a detector screen — as if each electron passes through both slits simultaneously. The moment you try to detect which slit an electron used, the interference pattern disappears and you get two bands, as if the electron were a classical particle. Observation itself collapses the quantum superposition.</p>
+            <div class="tp-diagram-wrap" style="margin:1rem 0;">
+                <svg viewBox="0 0 480 220" style="width:100%;max-width:480px;display:block;margin:0 auto;" aria-label="Double-slit experiment diagram">
+                    <!-- Source -->
+                    <rect x="10" y="90" width="40" height="40" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+                    <text x="30" y="108" text-anchor="middle" font-size="9" font-weight="700" fill="#7c3aed">e⁻</text>
+                    <text x="30" y="120" text-anchor="middle" font-size="8" fill="#7c3aed">source</text>
+                    <!-- Beam lines -->
+                    <line x1="50" y1="110" x2="160" y2="110" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="4,3"/>
+                    <!-- Barrier -->
+                    <rect x="160" y="10" width="12" height="82" rx="2" fill="#475569"/>
+                    <rect x="160" y="128" width="12" height="82" rx="2" fill="#475569"/>
+                    <!-- Slits labels -->
+                    <text x="166" y="100" text-anchor="middle" font-size="9" fill="#6366f1">slit 1</text>
+                    <text x="166" y="120" text-anchor="middle" font-size="9" fill="#6366f1">slit 2</text>
+                    <!-- Wave spread -->
+                    <path d="M172,95 Q220,60 300,30" fill="none" stroke="#7c3aed" stroke-width="1.2" stroke-dasharray="3,2" opacity="0.7"/>
+                    <path d="M172,95 Q220,90 300,85" fill="none" stroke="#7c3aed" stroke-width="1.2" stroke-dasharray="3,2" opacity="0.7"/>
+                    <path d="M172,125 Q220,130 300,125" fill="none" stroke="#c026d3" stroke-width="1.2" stroke-dasharray="3,2" opacity="0.7"/>
+                    <path d="M172,125 Q220,160 300,185" fill="none" stroke="#c026d3" stroke-width="1.2" stroke-dasharray="3,2" opacity="0.7"/>
+                    <!-- Interference bands on screen -->
+                    <rect x="300" y="10" width="10" height="200" rx="2" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+                    <rect x="300" y="28" width="10" height="14" rx="1" fill="#7c3aed" opacity="0.9"/>
+                    <rect x="300" y="58" width="10" height="10" rx="1" fill="#7c3aed" opacity="0.6"/>
+                    <rect x="300" y="80" width="10" height="18" rx="1" fill="#7c3aed" opacity="0.85"/>
+                    <rect x="300" y="110" width="10" height="22" rx="1" fill="#7c3aed" opacity="1"/>
+                    <rect x="300" y="144" width="10" height="18" rx="1" fill="#7c3aed" opacity="0.85"/>
+                    <rect x="300" y="167" width="10" height="10" rx="1" fill="#7c3aed" opacity="0.6"/>
+                    <rect x="300" y="187" width="10" height="12" rx="1" fill="#7c3aed" opacity="0.9"/>
+                    <text x="315" y="114" font-size="9" fill="#475569">interference</text>
+                    <text x="315" y="124" font-size="9" fill="#475569">pattern</text>
+                    <text x="165" y="8" font-size="8" fill="#475569" text-anchor="middle">barrier</text>
+                </svg>
+                <p style="font-size:0.78rem;color:#64748b;text-align:center;margin:0.4rem 0 0;">Double-slit experiment: electrons fired one at a time still create an interference pattern, revealing their wave nature.</p>
+            </div>
             <div class="tp-formula">
                 <div class="tp-formula-main">E = hf = hc/λ</div>
                 <div class="tp-formula-vars"><span>h = 6.626 × 10⁻³⁴ J·s (Planck's constant)</span><span>f = frequency
@@ -329,6 +364,64 @@
         </div>
 
 
+        <!-- Extra Calculator 1: De Broglie wavelength -->
+        <div class="tp-calculator-wrap" style="margin-top:2rem;">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>De Broglie Wavelength Calculator</h2>
+            </div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Formula</div>
+                    <div class="tp-calc-formula-eq">λ = h / (mv)</div>
+                </div>
+                <div class="tp-calc-inputs">
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>m</span> Mass (kg)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="qm-db-mass" placeholder="e.g. 9.109e-31"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>v</span> Velocity (m/s)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="qm-db-vel" placeholder="e.g. 1e6"></div>
+                    </div>
+                </div>
+                <button class="tp-calc-btn" id="qm-db-btn">Calculate Wavelength</button>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">De Broglie Wavelength</div>
+                    <div class="tp-calc-result-value" id="qm-db-result">—</div>
+                    <div class="tp-calc-result-unit" id="qm-db-unit"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Extra Calculator 2: Heisenberg uncertainty -->
+        <div class="tp-calculator-wrap" style="margin-top:2rem;">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>Heisenberg Uncertainty Calculator</h2>
+            </div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Formula</div>
+                    <div class="tp-calc-formula-eq">Δp ≥ ħ / (2·Δx)</div>
+                </div>
+                <div class="tp-calc-inputs">
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>Δx</span> Position uncertainty (m)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="qm-hup-dx" placeholder="e.g. 1e-10"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>m</span> Particle mass (kg)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="qm-hup-mass" placeholder="e.g. 9.109e-31"></div>
+                    </div>
+                </div>
+                <button class="tp-calc-btn" id="qm-hup-btn">Calculate Min. Δv</button>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">Minimum velocity uncertainty (Δv)</div>
+                    <div class="tp-calc-result-value" id="qm-hup-result">—</div>
+                    <div class="tp-calc-result-unit" id="qm-hup-unit"></div>
+                </div>
+            </div>
+        </div>
+
         <div class="tp-related">
             <h3>Related Topics</h3>
             <div class="tp-related-grid">
@@ -397,6 +490,25 @@
             const E = h * c / lamM;
             document.getElementById('qm-result').textContent = (E / eV).toFixed(4);
             document.getElementById('qm-unit').textContent = 'eV (' + E.toExponential(3) + ' J)';
+        });
+        document.getElementById('qm-db-btn').addEventListener('click', function () {
+            const m = parseFloat(document.getElementById('qm-db-mass').value);
+            const v = parseFloat(document.getElementById('qm-db-vel').value);
+            if (isNaN(m) || isNaN(v) || m <= 0 || v <= 0) { document.getElementById('qm-db-result').textContent = 'Enter valid values'; return; }
+            const h = 6.626e-34;
+            const lam = h / (m * v);
+            document.getElementById('qm-db-result').textContent = lam.toExponential(4);
+            document.getElementById('qm-db-unit').textContent = 'm  (' + (lam * 1e9).toExponential(3) + ' nm)';
+        });
+        document.getElementById('qm-hup-btn').addEventListener('click', function () {
+            const dx = parseFloat(document.getElementById('qm-hup-dx').value);
+            const m = parseFloat(document.getElementById('qm-hup-mass').value);
+            if (isNaN(dx) || isNaN(m) || dx <= 0 || m <= 0) { document.getElementById('qm-hup-result').textContent = 'Enter valid values'; return; }
+            const hbar = 1.0546e-34;
+            const dp = hbar / (2 * dx);
+            const dv = dp / m;
+            document.getElementById('qm-hup-result').textContent = dv.toExponential(4);
+            document.getElementById('qm-hup-unit').textContent = 'm/s';
         });
     </script>
 </body>

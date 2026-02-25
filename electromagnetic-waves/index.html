@@ -297,6 +297,100 @@
                             only 0.9 W/m². At the nearest star (4.24 ly): 3 × 10⁻⁸ W/m².</span></div>
                 </div>
 
+        <!-- SVG: EM Spectrum diagram -->
+        <div class="tp-diagram-wrap" style="margin:1.5rem 0;">
+            <svg viewBox="0 0 460 100" style="width:100%;max-width:460px;display:block;margin:0 auto;" aria-label="Electromagnetic spectrum">
+                <text x="230" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="#1e293b">The Electromagnetic Spectrum</text>
+                <!-- Spectrum bar -->
+                <defs>
+                    <linearGradient id="em-spectrum" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#7c3aed"/>
+                        <stop offset="15%" style="stop-color:#2563eb"/>
+                        <stop offset="30%" style="stop-color:#0891b2"/>
+                        <stop offset="45%" style="stop-color:#16a34a"/>
+                        <stop offset="55%" style="stop-color:#ca8a04"/>
+                        <stop offset="70%" style="stop-color:#ea580c"/>
+                        <stop offset="85%" style="stop-color:#dc2626"/>
+                        <stop offset="100%" style="stop-color:#9f1239"/>
+                    </linearGradient>
+                </defs>
+                <rect x="10" y="28" width="440" height="28" rx="4" fill="url(#em-spectrum)"/>
+                <!-- Wavelength labels below -->
+                <text x="20" y="70" font-size="7.5" fill="#475569">γ-rays</text>
+                <text x="65" y="70" font-size="7.5" fill="#475569">X-rays</text>
+                <text x="115" y="70" font-size="7.5" fill="#475569">UV</text>
+                <text x="165" y="70" font-size="7.5" fill="#475569" font-weight="700">Visible</text>
+                <text x="228" y="70" font-size="7.5" fill="#475569">IR</text>
+                <text x="290" y="70" font-size="7.5" fill="#475569">Microwave</text>
+                <text x="385" y="70" font-size="7.5" fill="#475569">Radio</text>
+                <!-- Frequency arrow -->
+                <line x1="10" y1="84" x2="440" y2="84" stroke="#64748b" stroke-width="1" marker-start="url(#em-left)" marker-end="url(#em-right)"/>
+                <defs>
+                    <marker id="em-right" markerWidth="5" markerHeight="5" refX="5" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="#64748b"/></marker>
+                    <marker id="em-left" markerWidth="5" markerHeight="5" refX="0" refY="2.5" orient="auto-start-reverse"><path d="M0,0 L5,2.5 L0,5 Z" fill="#64748b"/></marker>
+                </defs>
+                <text x="100" y="94" font-size="7.5" fill="#64748b">← higher frequency, higher energy, shorter wavelength</text>
+            </svg>
+        </div>
+
+        <!-- Extra Calculator: EM wave energy & period -->
+        <div class="tp-calculator-wrap" style="margin-top:2rem;">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>Wave Speed / Period Calculator</h2>
+            </div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Formulas</div>
+                    <div class="tp-calc-formula-eq">c = fλ  |  T = 1/f</div>
+                </div>
+                <div class="tp-calc-inputs">
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>f</span> Frequency (Hz)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="em-f-input" placeholder="e.g. 6e14"></div>
+                    </div>
+                </div>
+                <button class="tp-calc-btn" id="em-f-btn">Calculate λ and T</button>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">Wavelength | Period</div>
+                    <div class="tp-calc-result-value" id="em-f-result">—</div>
+                    <div class="tp-calc-result-unit" id="em-f-unit"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Extra Calculator: Snell's Law refraction -->
+        <div class="tp-calculator-wrap" style="margin-top:2rem;">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>Snell's Law Calculator</h2>
+            </div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Formula</div>
+                    <div class="tp-calc-formula-eq">n₁ sin θ₁ = n₂ sin θ₂</div>
+                </div>
+                <div class="tp-calc-inputs">
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>n₁</span> Refractive index medium 1</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="em-sn-n1" placeholder="e.g. 1.0 (air)"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>θ₁</span> Angle of incidence (°)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="em-sn-t1" placeholder="e.g. 30"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>n₂</span> Refractive index medium 2</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="em-sn-n2" placeholder="e.g. 1.5 (glass)"></div>
+                    </div>
+                </div>
+                <button class="tp-calc-btn" id="em-sn-btn">Calculate θ₂</button>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">Angle of Refraction (θ₂)</div>
+                    <div class="tp-calc-result-value" id="em-sn-result">—</div>
+                    <div class="tp-calc-result-unit" id="em-sn-unit"></div>
+                </div>
+            </div>
+        </div>
+
                 <div class="tp-related">
                     <h3>Related Topics</h3>
                     <div class="tp-related-grid">
@@ -361,6 +455,24 @@
             const c = 3e8; const lamM = lam * 1e-9; const f = c / lamM; const E = 6.626e-34 * f / 1.602e-19;
             let band = ''; if (lam < 0.01) band = 'Gamma ray'; else if (lam < 10) band = 'X-ray'; else if (lam < 400) band = 'Ultraviolet'; else if (lam <= 700) band = 'Visible light'; else if (lam < 1e6) band = 'Infrared'; else if (lam < 1e9) band = 'Microwave'; else band = 'Radio wave';
             document.getElementById('em-result').textContent = f.toExponential(3); document.getElementById('em-unit').textContent = 'Hz (' + band + ', E=' + E.toFixed(3) + ' eV)';
+        });
+        document.getElementById('em-f-btn').addEventListener('click', function () {
+            const f = parseFloat(document.getElementById('em-f-input').value);
+            if (isNaN(f)||f<=0) { document.getElementById('em-f-result').textContent='Enter valid frequency'; return; }
+            const lam = 3e8/f; const T = 1/f;
+            document.getElementById('em-f-result').textContent = lam.toExponential(4) + ' m  |  T = ' + T.toExponential(4) + ' s';
+            document.getElementById('em-f-unit').textContent = '(λ = ' + (lam*1e9).toExponential(3) + ' nm)';
+        });
+        document.getElementById('em-sn-btn').addEventListener('click', function () {
+            const n1 = parseFloat(document.getElementById('em-sn-n1').value);
+            const t1 = parseFloat(document.getElementById('em-sn-t1').value);
+            const n2 = parseFloat(document.getElementById('em-sn-n2').value);
+            if ([n1,t1,n2].some(x=>isNaN(x)||x<=0)||t1>=90) { document.getElementById('em-sn-result').textContent='Enter valid values'; return; }
+            const sinT2 = n1*Math.sin(t1*Math.PI/180)/n2;
+            if (Math.abs(sinT2)>1) { document.getElementById('em-sn-result').textContent='Total internal reflection!'; document.getElementById('em-sn-unit').textContent='No refracted ray — light reflects back'; return; }
+            const t2 = Math.asin(sinT2)*180/Math.PI;
+            document.getElementById('em-sn-result').textContent = t2.toFixed(2);
+            document.getElementById('em-sn-unit').textContent = '°';
         });
     </script>
 </body>

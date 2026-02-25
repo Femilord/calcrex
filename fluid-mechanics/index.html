@@ -290,6 +290,108 @@
                     Richard Feynman called it "the most important unsolved problem of classical physics."</span></div>
         </div>
 
+        <!-- SVG: Bernoulli pipe diagram -->
+        <div class="tp-diagram-wrap" style="margin:1.5rem 0;">
+            <svg viewBox="0 0 460 140" style="width:100%;max-width:460px;display:block;margin:0 auto;" aria-label="Bernoulli pipe flow diagram">
+                <text x="230" y="16" text-anchor="middle" font-size="12" font-weight="700" fill="#1e293b">Bernoulli's Principle — Pipe Flow</text>
+                <!-- Wide pipe left -->
+                <rect x="20" y="45" width="130" height="50" rx="0" fill="none" stroke="#0284c7" stroke-width="2"/>
+                <rect x="20" y="45" width="130" height="50" rx="0" fill="#e0f2fe" opacity="0.5"/>
+                <!-- Narrow section -->
+                <polygon points="150,45 230,60 230,80 150,95" fill="#e0f2fe" opacity="0.5" stroke="#0284c7" stroke-width="2"/>
+                <!-- Narrow pipe right -->
+                <rect x="230" y="60" width="130" height="20" rx="0" fill="#bfdbfe" opacity="0.6" stroke="#0284c7" stroke-width="2"/>
+                <!-- Wide pipe right -->
+                <polygon points="360,60 440,45 440,95 360,80" fill="#e0f2fe" opacity="0.5" stroke="#0284c7" stroke-width="2"/>
+                <!-- Flow arrows left -->
+                <line x1="35" y1="70" x2="95" y2="70" stroke="#0284c7" stroke-width="2" marker-end="url(#fl-arrow)"/>
+                <defs><marker id="fl-arrow" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0284c7"/></marker></defs>
+                <!-- Flow arrows centre (faster) -->
+                <line x1="240" y1="70" x2="310" y2="70" stroke="#1d4ed8" stroke-width="2.5" marker-end="url(#fl-arrow)"/>
+                <line x1="250" y1="70" x2="300" y2="70" stroke="#1d4ed8" stroke-width="2.5"/>
+                <!-- Labels -->
+                <text x="85" y="36" text-anchor="middle" font-size="10" fill="#0284c7">v₁ (slow)</text>
+                <text x="85" y="108" text-anchor="middle" font-size="10" fill="#16a34a">P₁ (high)</text>
+                <text x="275" y="52" text-anchor="middle" font-size="10" fill="#1d4ed8">v₂ (fast)</text>
+                <text x="275" y="96" text-anchor="middle" font-size="10" fill="#dc2626">P₂ (low)</text>
+                <text x="230" y="132" text-anchor="middle" font-size="9" fill="#64748b">P₁ + ½ρv₁² + ρgh₁ = P₂ + ½ρv₂² + ρgh₂  (constant along streamline)</text>
+            </svg>
+        </div>
+
+        <!-- Extra Calculator: Reynolds number -->
+        <div class="tp-calculator-wrap" style="margin-top:2rem;">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>Reynolds Number Calculator</h2>
+            </div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Formula</div>
+                    <div class="tp-calc-formula-eq">Re = ρvD / μ</div>
+                </div>
+                <div class="tp-calc-inputs">
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>ρ</span> Fluid density (kg/m³)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="fl-re-rho" placeholder="e.g. 1000 (water)"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>v</span> Flow velocity (m/s)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="fl-re-v" placeholder="e.g. 0.5"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>D</span> Pipe diameter (m)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="fl-re-d" placeholder="e.g. 0.05"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>μ</span> Dynamic viscosity (Pa·s)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="fl-re-mu" placeholder="e.g. 0.001 (water)"></div>
+                    </div>
+                </div>
+                <button class="tp-calc-btn" id="fl-re-btn">Calculate Re</button>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">Reynolds Number</div>
+                    <div class="tp-calc-result-value" id="fl-re-result">—</div>
+                    <div class="tp-calc-result-unit" id="fl-re-unit"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Extra Calculator: Bernoulli pressure -->
+        <div class="tp-calculator-wrap" style="margin-top:2rem;">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>Bernoulli Pressure Calculator</h2>
+            </div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Formula</div>
+                    <div class="tp-calc-formula-eq">P₂ = P₁ + ½ρ(v₁² − v₂²)</div>
+                </div>
+                <div class="tp-calc-inputs">
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>P₁</span> Upstream pressure (Pa)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="fl-bp-p1" placeholder="e.g. 101325"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>ρ</span> Fluid density (kg/m³)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="fl-bp-rho" placeholder="e.g. 1000"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>v₁</span> Upstream velocity (m/s)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="fl-bp-v1" placeholder="e.g. 2"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label"><span>v₂</span> Downstream velocity (m/s)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="fl-bp-v2" placeholder="e.g. 5"></div>
+                    </div>
+                </div>
+                <button class="tp-calc-btn" id="fl-bp-btn">Calculate P₂</button>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">Downstream Pressure P₂</div>
+                    <div class="tp-calc-result-value" id="fl-bp-result">—</div>
+                    <div class="tp-calc-result-unit" id="fl-bp-unit"></div>
+                </div>
+            </div>
+        </div>
+
         <div class="tp-related">
             <h3>Related Topics</h3>
             <div class="tp-related-grid">
@@ -356,6 +458,27 @@
             const Q = Math.PI * Math.pow(r, 4) * dp / (8 * mu * L);
             document.getElementById('fl-result').textContent = Q.toExponential(4);
             document.getElementById('fl-unit').textContent = 'm³/s (' + (Q * 1000).toFixed(4) + ' L/s)';
+        });
+        document.getElementById('fl-re-btn').addEventListener('click', function () {
+            const rho = parseFloat(document.getElementById('fl-re-rho').value);
+            const v = parseFloat(document.getElementById('fl-re-v').value);
+            const D = parseFloat(document.getElementById('fl-re-d').value);
+            const mu = parseFloat(document.getElementById('fl-re-mu').value);
+            if ([rho,v,D,mu].some(x=>isNaN(x)||x<=0)) { document.getElementById('fl-re-result').textContent='Enter valid values'; return; }
+            const Re = rho*v*D/mu;
+            let flow = Re < 2300 ? 'Laminar flow' : Re < 4000 ? 'Transitional flow' : 'Turbulent flow';
+            document.getElementById('fl-re-result').textContent = Re.toFixed(0);
+            document.getElementById('fl-re-unit').textContent = '→ ' + flow + ' (laminar <2300, turbulent >4000)';
+        });
+        document.getElementById('fl-bp-btn').addEventListener('click', function () {
+            const P1 = parseFloat(document.getElementById('fl-bp-p1').value);
+            const rho = parseFloat(document.getElementById('fl-bp-rho').value);
+            const v1 = parseFloat(document.getElementById('fl-bp-v1').value);
+            const v2 = parseFloat(document.getElementById('fl-bp-v2').value);
+            if ([P1,rho,v1,v2].some(x=>isNaN(x))) { document.getElementById('fl-bp-result').textContent='Enter valid values'; return; }
+            const P2 = P1 + 0.5*rho*(v1*v1 - v2*v2);
+            document.getElementById('fl-bp-result').textContent = P2.toFixed(2);
+            document.getElementById('fl-bp-unit').textContent = 'Pa  (ΔP = ' + (P2-P1).toFixed(2) + ' Pa)';
         });
     </script>
 </body>

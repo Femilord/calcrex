@@ -297,6 +297,114 @@
                 analysis (NMR, IR, mass spec).</div>
         </div>
 
+                identical molecular weights! This is why mass alone can't identify a compound; you need structural
+                analysis (NMR, IR, mass spec).</div>
+        </div>
+
+        <!-- SVG: Functional groups diagram -->
+        <div class="tp-diagram-wrap" style="margin:1.5rem 0;">
+            <svg viewBox="0 0 460 110" style="width:100%;max-width:460px;display:block;margin:0 auto;" aria-label="Common functional groups in organic chemistry">
+                <text x="230" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="#1e293b">Key Functional Groups</text>
+                <!-- Alcohol -->
+                <rect x="10" y="24" width="80" height="50" rx="5" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+                <text x="50" y="42" text-anchor="middle" font-size="10" font-weight="700" fill="#16a34a">Alcohol</text>
+                <text x="50" y="56" text-anchor="middle" font-size="11" fill="#374151">—OH</text>
+                <text x="50" y="68" text-anchor="middle" font-size="8" fill="#64748b">hydroxyl</text>
+                <!-- Aldehyde -->
+                <rect x="100" y="24" width="80" height="50" rx="5" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+                <text x="140" y="42" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">Aldehyde</text>
+                <text x="140" y="56" text-anchor="middle" font-size="11" fill="#374151">—CHO</text>
+                <text x="140" y="68" text-anchor="middle" font-size="8" fill="#64748b">carbonyl at end</text>
+                <!-- Ketone -->
+                <rect x="190" y="24" width="80" height="50" rx="5" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+                <text x="230" y="42" text-anchor="middle" font-size="10" font-weight="700" fill="#ea580c">Ketone</text>
+                <text x="230" y="56" text-anchor="middle" font-size="11" fill="#374151">C=O</text>
+                <text x="230" y="68" text-anchor="middle" font-size="8" fill="#64748b">carbonyl internal</text>
+                <!-- Carboxylic acid -->
+                <rect x="280" y="24" width="85" height="50" rx="5" fill="#fdf4ff" stroke="#9333ea" stroke-width="1.5"/>
+                <text x="323" y="42" text-anchor="middle" font-size="10" font-weight="700" fill="#9333ea">Carboxylic</text>
+                <text x="323" y="54" text-anchor="middle" font-size="11" fill="#374151">—COOH</text>
+                <text x="323" y="66" text-anchor="middle" font-size="8" fill="#64748b">acid</text>
+                <!-- Amine -->
+                <rect x="375" y="24" width="75" height="50" rx="5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+                <text x="412" y="42" text-anchor="middle" font-size="10" font-weight="700" fill="#dc2626">Amine</text>
+                <text x="412" y="56" text-anchor="middle" font-size="11" fill="#374151">—NH₂</text>
+                <text x="412" y="68" text-anchor="middle" font-size="8" fill="#64748b">basic N</text>
+                <!-- Legend -->
+                <text x="230" y="97" text-anchor="middle" font-size="8" fill="#64748b">Each functional group confers distinct reactivity, boiling point, and solubility to the molecule.</text>
+            </svg>
+        </div>
+
+        <!-- Extra Calculator: Degree of unsaturation -->
+        <div class="tp-calculator-wrap" style="margin-top:2rem;">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>Degree of Unsaturation (DBE) Calculator</h2>
+            </div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Formula</div>
+                    <div class="tp-calc-formula-eq">DBE = (2C + 2 + N − H − X) / 2</div>
+                </div>
+                <div class="tp-calc-inputs">
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label">C — Carbon atoms</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="oc-dbe-c" placeholder="e.g. 6" min="0" step="1"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label">H — Hydrogen atoms</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="oc-dbe-h" placeholder="e.g. 6" min="0" step="1"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label">N — Nitrogen atoms</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="oc-dbe-n" placeholder="e.g. 0" min="0" step="1" value="0"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label">X — Halogens (F,Cl,Br,I)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="oc-dbe-x" placeholder="e.g. 0" min="0" step="1" value="0"></div>
+                    </div>
+                </div>
+                <button class="tp-calc-btn" id="oc-dbe-btn">Calculate DBE</button>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">Degrees of Unsaturation</div>
+                    <div class="tp-calc-result-value" id="oc-dbe-result">—</div>
+                    <div class="tp-calc-result-unit" id="oc-dbe-unit"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Extra Calculator: Empirical formula from percentages -->
+        <div class="tp-calculator-wrap" style="margin-top:2rem;">
+            <div class="tp-calc-header"><i class="fas fa-calculator"></i>
+                <h2>C/H/O Empirical Formula Finder</h2>
+            </div>
+            <div class="tp-calc-body">
+                <div class="tp-calc-formula">
+                    <div class="tp-calc-formula-label">Method</div>
+                    <div class="tp-calc-formula-eq">Divide %/molar mass, find integer ratio</div>
+                </div>
+                <div class="tp-calc-inputs">
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label">%C by mass</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="oc-ef-c" placeholder="e.g. 40.0"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label">%H by mass</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="oc-ef-h" placeholder="e.g. 6.67"></div>
+                    </div>
+                    <div class="tp-calc-group">
+                        <div class="tp-calc-label">%O by mass (or 0)</div>
+                        <div class="tp-calc-row"><input type="number" class="tp-calc-input" id="oc-ef-o" placeholder="e.g. 53.33"></div>
+                    </div>
+                </div>
+                <button class="tp-calc-btn" id="oc-ef-btn">Find Empirical Formula</button>
+                <div class="tp-calc-result">
+                    <div class="tp-calc-result-label">Empirical Formula</div>
+                    <div class="tp-calc-result-value" id="oc-ef-result">—</div>
+                    <div class="tp-calc-result-unit" id="oc-ef-unit"></div>
+                </div>
+            </div>
+        </div>
+
         <div class="tp-related">
             <h3>Related Topics</h3>
             <div class="tp-related-grid">
@@ -360,6 +468,34 @@
             let mw = 0; const re = /([A-Z][a-z]?)(\d*)/g; let m;
             while ((m = re.exec(f)) !== null) { const el = m[1]; const n = m[2] ? parseInt(m[2]) : 1; if (formulas[el]) mw += formulas[el] * n; else { document.getElementById('mw-result').textContent = 'Unknown: ' + el; return; } }
             document.getElementById('mw-result').textContent = mw.toFixed(3); document.getElementById('mw-unit').textContent = 'g/mol';
+        });
+        document.getElementById('oc-dbe-btn').addEventListener('click', function () {
+            const C = parseInt(document.getElementById('oc-dbe-c').value)||0;
+            const H = parseInt(document.getElementById('oc-dbe-h').value)||0;
+            const N = parseInt(document.getElementById('oc-dbe-n').value)||0;
+            const X = parseInt(document.getElementById('oc-dbe-x').value)||0;
+            const dbe = (2*C + 2 + N - H - X) / 2;
+            let desc = '';
+            if (dbe===0) desc='Saturated (no rings or double bonds)';
+            else if (dbe===1) desc='1 double bond or ring';
+            else if (dbe===2) desc='2 double bonds/rings (e.g. alkadiene)';
+            else if (dbe===4) desc='Benzene ring (aromatic, 4 DBE)';
+            else desc=dbe + ' degrees';
+            document.getElementById('oc-dbe-result').textContent = dbe.toFixed(1);
+            document.getElementById('oc-dbe-unit').textContent = desc;
+        });
+        document.getElementById('oc-ef-btn').addEventListener('click', function () {
+            const C = parseFloat(document.getElementById('oc-ef-c').value)/12.011;
+            const H = parseFloat(document.getElementById('oc-ef-h').value)/1.008;
+            const O = parseFloat(document.getElementById('oc-ef-o').value)/15.999;
+            if (isNaN(C)||isNaN(H)) { document.getElementById('oc-ef-result').textContent='Enter at least C and H'; return; }
+            const min = Math.min(C, H||Infinity, O>0?O:Infinity);
+            const rc = C/min, rh = H/min, ro = O>0?O/min:0;
+            const round = x => Math.round(x*2)/2;
+            let formula = 'C' + (round(rc)===1?'':round(rc)) + 'H' + (round(rh)===1?'':round(rh));
+            if (O>0) formula += 'O' + (round(ro)===1?'':round(ro));
+            document.getElementById('oc-ef-result').textContent = formula;
+            document.getElementById('oc-ef-unit').textContent = '(C:'+rc.toFixed(2)+' H:'+rh.toFixed(2)+(O>0?' O:'+ro.toFixed(2):'')+')';
         });
     </script>
 </body>
