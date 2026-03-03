@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>AP Calculus AB FRQ Worksheets | CalcREX - Free Practice</title>
+    <meta name="title" content="AP Calculus AB FRQ Worksheets | CalcREX - Free Response Practice">
+    <meta name="description"
+        content="Practice AP Calculus AB free response questions with guided solutions. Covers all FRQ types: analysis, integration, differential equations, and more.">
+    <meta name="keywords"
+        content="AP Calculus AB FRQ, free response practice, AP exam prep, calculus worksheets, FRQ solutions, CalcREX">
+    <meta name="author" content="CalcREX">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+
+    <link rel="canonical" href="https://calcrex.com/ap-calculus-ab-frq/">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcrex.com/ap-calculus-ab-frq/">
+    <meta property="og:title" content="AP Calculus AB FRQ Worksheets | CalcREX">
+    <meta property="og:description" content="Practice AP Calculus AB free response questions with guided solutions.">
+    <meta property="og:image" content="https://calcrex.com/img/calcrex-banner.webp">
+    <meta property="og:site_name" content="CalcREX">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="facebook-domain-verification" content="5znhyiodkfhz6bkee02khmlcmfbs51" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://calcrex.com/ap-calculus-ab-frq/">
+    <meta name="twitter:title" content="AP Calculus AB FRQ Worksheets | CalcREX">
+    <meta name="twitter:description" content="Practice AP Calculus AB free response questions with guided solutions.">
+    <meta name="twitter:image" content="https://calcrex.com/img/calcrex-banner.webp">
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/pages.css">
+    <link rel="stylesheet" href="/css/cookie-consent.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "CalcREX",
+      "url": "https://calcrex.com/"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcrex.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Practice Tests", "item": "https://calcrex.com/ap-calculus-ab-mcq/" },
+        { "@type": "ListItem", "position": 3, "name": "AP Calculus AB FRQ Worksheets", "item": "https://calcrex.com/ap-calculus-ab-frq/" }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "AP Calculus AB FRQ Worksheets",
+      "description": "Free response practice worksheets for the AP Calculus AB exam with guided step-by-step solutions.",
+      "url": "https://calcrex.com/ap-calculus-ab-frq/",
+      "educationalLevel": "High School / AP",
+      "about": { "@type": "Thing", "name": "AP Calculus AB" },
+      "publisher": { "@type": "Organization", "name": "CalcREX", "logo": { "@type": "ImageObject", "url": "https://calcrex.com/img/logo.png" } }
+    }
+    </script>
+
+    <style>
+        .apfrq-wrapper {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 1rem 3rem;
+        }
+
+        /* === CROSS-NAV TABS (right-aligned) === */
+        .ap-cross-nav {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin-bottom: 1.5rem;
+            padding-top: 1.5rem;
+            animation: apfrqFadeUp 0.4s ease;
+        }
+
+        .ap-cross-tab {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid #e2e8f0;
+            background: white;
+            color: #64748b;
+            transition: all 0.25s;
+            cursor: pointer;
+        }
+
+        .ap-cross-tab:first-child {
+            border-radius: 8px 0 0 8px;
+        }
+
+        .ap-cross-tab:last-child {
+            border-radius: 0 8px 8px 0;
+            border-left: none;
+        }
+
+        .ap-cross-tab:hover {
+            color: var(--primary-color);
+            background: rgba(37,99,235,0.04);
+        }
+
+        .ap-cross-tab.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        .ap-cross-tab i { font-size: 0.75rem; }
+
+        /* === HERO === */
+        .apfrq-hero {
+            text-align: center;
+            padding: 2.5rem 1rem 2rem;
+            animation: apfrqFadeUp 0.5s ease;
+        }
+
+        .apfrq-hero h1 {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 800;
+            color: #9ea4ae;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+        }
+
+        .apfrq-hero h1 span { color: var(--primary-color); }
+
+        .apfrq-hero p {
+            color: #9ea4ae;
+            font-size: 1rem;
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* === EXAM INFO === */
+        .apfrq-info-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            animation: apfrqFadeUp 0.5s ease 0.1s both;
+        }
+
+        .apfrq-info-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+            transition: border-color 0.3s, transform 0.3s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .apfrq-info-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .apfrq-info-card .ic-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1.2px; color: #64748b; font-weight: 600; margin-bottom: 4px; }
+        .apfrq-info-card .ic-value { font-size: 1.5rem; font-weight: 800; color: var(--primary-color); }
+        .apfrq-info-card .ic-detail { font-size: 0.75rem; color: #64748b; margin-top: 2px; }
+
+        /* === SECTION TITLE === */
+        .apfrq-section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #9ea4ae;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .apfrq-section-title .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary-color); }
+
+        /* === FRQ CARD === */
+        .apfrq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            animation: apfrqFadeUp 0.5s ease 0.2s both;
+        }
+
+        .apfrq-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            transition: border-color 0.3s;
+        }
+
+        .apfrq-card:hover { border-color: var(--primary-color); }
+
+        .apfrq-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            user-select: none;
+            gap: 12px;
+        }
+
+        .apfrq-card-header-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .apfrq-qnum {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.85rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .apfrq-card-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #1e293b;
+        }
+
+        .apfrq-card-sub {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 2px;
+        }
+
+        .apfrq-card-badges {
+            display: flex;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        .apfrq-badge {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        .apfrq-badge.calc { color: #10b981; background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2); }
+        .apfrq-badge.nocalc { color: #94a3b8; background: #f1f5f9; border: 1px solid #e2e8f0; }
+        .apfrq-badge.pts { color: var(--primary-color); background: rgba(37,99,235,0.06); border: 1px solid rgba(37,99,235,0.15); }
+
+        .apfrq-expand-icon {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        .apfrq-card.open .apfrq-expand-icon { transform: rotate(180deg); }
+
+        /* FRQ Body */
+        .apfrq-card-body {
+            display: none;
+            padding: 0 1.5rem 1.5rem;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .apfrq-card.open .apfrq-card-body { display: block; animation: apfrqFadeUp 0.3s ease; }
+
+        .apfrq-prompt {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #334155;
+            margin: 1rem 0;
+        }
+
+        .apfrq-math {
+            font-family: 'Courier New', Courier, monospace;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px 18px;
+            margin: 12px 0;
+            font-size: 0.95rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            overflow-x: auto;
+        }
+
+        .apfrq-part-label {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            margin: 1.25rem 0 0.5rem;
+        }
+
+        .apfrq-part-text {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #475569;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Solution toggle */
+        .apfrq-solution-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #64748b;
+            cursor: pointer;
+            margin-top: 0.75rem;
+            transition: all 0.2s;
+        }
+
+        .apfrq-solution-toggle:hover { border-color: var(--primary-color); color: var(--primary-color); }
+
+        .apfrq-solution {
+            display: none;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #10b981;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-top: 0.75rem;
+        }
+
+        .apfrq-solution.visible { display: block; animation: apfrqFadeUp 0.3s ease; }
+
+        .apfrq-solution-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #10b981;
+            margin-bottom: 8px;
+        }
+
+        .apfrq-solution p {
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: #64748b;
+        }
+
+        .apfrq-sol-step {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 6px 12px;
+            border-radius: 6px;
+            margin: 4px 0;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        /* === TIPS === */
+        .apfrq-tips {
+            margin-top: 2.5rem;
+            animation: apfrqFadeUp 0.5s ease 0.3s both;
+        }
+
+        .apfrq-tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .apfrq-tip-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .apfrq-tip-card .tip-icon { font-size: 1.3rem; margin-bottom: 8px; }
+        .apfrq-tip-card .tip-title { font-weight: 700; font-size: 0.875rem; color: #1e293b; margin-bottom: 4px; }
+        .apfrq-tip-card .tip-text { font-size: 0.8rem; color: #64748b; line-height: 1.6; }
+
+        @keyframes apfrqFadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .ap-cross-nav { justify-content: center; }
+            .ap-cross-tab { padding: 8px 14px; font-size: 0.78rem; }
+            .apfrq-card-header { flex-wrap: wrap; }
+            .apfrq-card-badges { margin-top: 6px; }
+            .apfrq-card-body { padding: 0 1rem 1rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <script src="/js/cookie-consent.js"></script>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/">
+                    <img src="/img/logo.png" alt="CalcREX Logo">
+                    <span class="logo-text">Calc<span class="logo-highlight">REX</span></span>
+                </a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span>
+            </button>
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="/" class="nav-link">Calculator</a></li>
+                    <li><a href="/converters" class="nav-link">Unit Converter</a></li>
+                    <li class="nav-dropdown">
+                        <button class="nav-link nav-dropdown-toggle">Sciences <i
+                                class="fas fa-chevron-down nav-arrow"></i></button>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="/physics" class="nav-dropdown-link"><i class="fas fa-atom"></i> Physics</a></li>
+                            <li><a href="/chemistry" class="nav-dropdown-link"><i class="fas fa-flask"></i> Chemistry</a></li>
+                            <li><a href="/electricity" class="nav-dropdown-link"><i class="fas fa-bolt"></i> Electronics</a></li>
+                            <li><a href="/thermodynamics" class="nav-dropdown-link"><i class="fas fa-fire"></i> Thermodynamics</a></li>
+                            <li><a href="/aerodynamics" class="nav-dropdown-link"><i class="fas fa-plane"></i> Aerodynamics</a></li>
+                            <li><a href="/computer-science" class="nav-dropdown-link"><i class="fas fa-laptop-code"></i> Computer Science</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/ap-calculus-ab-mcq" class="nav-link active">Practice Tests</a></li>
+                    <li><a href="/finance" class="nav-link">Finance</a></li>
+                    <li><a href="/date-time" class="nav-link">Date &amp; Time</a></li>
+                    <li><a href="/topics" class="nav-link">Topics</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="intro-section">
+        <div class="intro-container">
+            <h1 class="intro-title">AP Calculus AB — Free Response Question Worksheets</h1>
+            <div class="intro-content" id="introContent">
+                <p class="intro-text">Practice AP Calculus AB free response questions with CalcREX's guided worksheets.
+                    Each FRQ includes multi-part problems with expandable step-by-step solutions — just like the real
+                    exam.</p>
+                <p class="intro-text intro-text-extra">The FRQ section counts for 50% of your AP Calculus AB score. It
+                    consists of 6 questions in 90 minutes: Part A (2 questions, 30 minutes, calculator) and Part B (4
+                    questions, 60 minutes, no calculator). Questions test your ability to set up problems, show work,
+                    justify answers, and communicate mathematical reasoning.</p>
+            </div>
+            <button class="read-more-btn" id="readMoreBtn"><span class="btn-text">Read More</span><span
+                    class="btn-icon">▼</span></button>
+        </div>
+    </section>
+
+    <main style="flex:1;padding:0;">
+        <div class="apfrq-wrapper">
+
+            <!-- Cross-nav tabs (right-aligned) -->
+            <div class="ap-cross-nav">
+                <a href="/ap-calculus-ab-mcq" class="ap-cross-tab"><i class="fas fa-list-check"></i> MCQ Practice</a>
+                <a href="/ap-calculus-ab-frq" class="ap-cross-tab active"><i class="fas fa-pencil-alt"></i> FRQ Worksheets</a>
+            </div>
+
+            <div class="apfrq-hero">
+                <h1>AP Calculus AB<br><span>FRQ Worksheets</span></h1>
+                <p>Work through exam-style free response problems with multi-part questions and guided solutions you can reveal when ready.</p>
+            </div>
+
+            <div class="apfrq-info-row">
+                <div class="apfrq-info-card">
+                    <div class="ic-label">Part A</div>
+                    <div class="ic-value">2 FRQs</div>
+                    <div class="ic-detail">30 min · Calculator</div>
+                </div>
+                <div class="apfrq-info-card">
+                    <div class="ic-label">Part B</div>
+                    <div class="ic-value">4 FRQs</div>
+                    <div class="ic-detail">60 min · No Calculator</div>
+                </div>
+                <div class="apfrq-info-card">
+                    <div class="ic-label">FRQ Weight</div>
+                    <div class="ic-value">50%</div>
+                    <div class="ic-detail">of total exam score</div>
+                </div>
+            </div>
+
+            <!-- ===== PART A: CALCULATOR ===== -->
+            <div class="apfrq-section-title"><div class="dot"></div> Part A — Calculator Permitted</div>
+            <div class="apfrq-list" id="partAList"></div>
+
+            <!-- ===== PART B: NO CALCULATOR ===== -->
+            <div class="apfrq-section-title"><div class="dot"></div> Part B — No Calculator</div>
+            <div class="apfrq-list" id="partBList"></div>
+
+            <!-- TIPS -->
+            <div class="apfrq-tips">
+                <div class="apfrq-section-title"><div class="dot"></div> FRQ Strategies</div>
+                <div class="apfrq-tips-grid">
+                    <div class="apfrq-tip-card">
+                        <div class="tip-icon">✍️</div>
+                        <div class="tip-title">Show All Work</div>
+                        <div class="tip-text">Graders award partial credit for correct setup and reasoning even if the final answer is wrong. Never skip steps.</div>
+                    </div>
+                    <div class="apfrq-tip-card">
+                        <div class="tip-icon">📝</div>
+                        <div class="tip-title">Justify Answers</div>
+                        <div class="tip-text">When asked to justify, reference specific theorems (MVT, IVT, FTC) and connect conditions to conclusions explicitly.</div>
+                    </div>
+                    <div class="apfrq-tip-card">
+                        <div class="tip-icon">🔗</div>
+                        <div class="tip-title">Answer Every Part</div>
+                        <div class="tip-text">Each sub-part (a, b, c, d) is scored independently. Even if you can't do part (a), attempt parts (b)–(d).</div>
+                    </div>
+                    <div class="apfrq-tip-card">
+                        <div class="tip-icon">📐</div>
+                        <div class="tip-title">Units & Context</div>
+                        <div class="tip-text">Include units in applied problems and interpret results in context. "The rate of change is 5 gallons/min" beats just "5".</div>
+                    </div>
+                    <div class="apfrq-tip-card">
+                        <div class="tip-icon">⏱️</div>
+                        <div class="tip-title">Time Management</div>
+                        <div class="tip-text">~15 min per question in Part A, ~15 min per question in Part B. If stuck, move on and come back.</div>
+                    </div>
+                    <div class="apfrq-tip-card">
+                        <div class="tip-icon">🧮</div>
+                        <div class="tip-title">Calculator Setup</div>
+                        <div class="tip-text">In Part A, show the integral/equation you're computing, then state the calculator result. Never just write a number.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CalcREX</h3>
+                    <p>Your complete online calculator suite for every calculation need.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/policy-document">Policy Document</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Feature Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="/converters">Unit Converter</a></li>
+                        <li><a href="/physics">Physics</a></li>
+                        <li><a href="/chemistry">Chemistry</a></li>
+                        <li><a href="/electricity">Electronics</a></li>
+                        <li><a href="/computer-science">Computer Science</a></li>
+                        <li><a href="/finance">Finance</a></li>
+                        <li><a href="/date-time">Date & Time</a></li>
+                        <li><a href="/thermodynamics">Thermodynamics</a></li>
+                        <li><a href="/aerodynamics">Aerodynamics</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CalcREX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/nav.js"></script>
+
+    <script>
+    // ===== FRQ QUESTION BANK =====
+    const frqBank = {
+      partA: [
+        {
+          num: 1,
+          color: "#2563eb",
+          title: "Rate of Water Flow",
+          topics: "Integration, Accumulation, FTC",
+          pts: 9,
+          prompt: "Water flows into a tank at a rate modeled by W(t) = 20e^(−0.05t) gallons per minute for 0 ≤ t ≤ 60 minutes. At time t = 0, the tank contains 150 gallons of water. Water leaks from the tank at a constant rate of 4 gallons per minute.",
+          math: "W(t) = 20e^(−0.05t)",
+          parts: [
+            {
+              label: "(a)",
+              text: "How many gallons of water flow into the tank during the first 30 minutes? Use your calculator and round to the nearest gallon.",
+              solution: "Evaluate ∫₀³⁰ 20e^(−0.05t) dt using your calculator.",
+              steps: ["∫₀³⁰ 20e^(−0.05t) dt", "= 20 · [−20e^(−0.05t)]₀³⁰", "= −400[e^(−1.5) − e⁰]", "= −400[0.2231 − 1] = −400(−0.7769)", "≈ 311 gallons"]
+            },
+            {
+              label: "(b)",
+              text: "Is the amount of water in the tank increasing or decreasing at time t = 20 minutes? Justify your answer.",
+              solution: "Compare the inflow rate to the leak rate at t = 20.",
+              steps: ["W(20) = 20e^(−1) ≈ 7.358 gal/min (inflow)", "Leak rate = 4 gal/min", "Net rate = 7.358 − 4 = 3.358 > 0", "The amount of water is increasing at t = 20."]
+            },
+            {
+              label: "(c)",
+              text: "At what time t does the amount of water in the tank reach its maximum? Justify your answer.",
+              solution: "Set the net rate equal to zero and solve.",
+              steps: ["Net rate = W(t) − 4 = 20e^(−0.05t) − 4 = 0", "20e^(−0.05t) = 4", "e^(−0.05t) = 0.2", "−0.05t = ln(0.2)", "t = −ln(0.2)/0.05 ≈ 32.189 min", "Net rate changes from + to − here → maximum."]
+            },
+            {
+              label: "(d)",
+              text: "How many gallons of water are in the tank at time t = 60? Use your calculator.",
+              solution: "Start with 150 gallons, add inflow, subtract leakage over 60 minutes.",
+              steps: ["Total = 150 + ∫₀⁶⁰ 20e^(−0.05t) dt − 4(60)", "∫₀⁶⁰ 20e^(−0.05t) dt ≈ 380.44", "Total = 150 + 380.44 − 240 ≈ 290 gallons"]
+            }
+          ]
+        },
+        {
+          num: 2,
+          color: "#10b981",
+          title: "Particle Motion on a Line",
+          topics: "Velocity, Position, Distance",
+          pts: 9,
+          prompt: "A particle moves along the x-axis. The velocity of the particle at time t is given by v(t) = t²sin(2t) for 0 ≤ t ≤ 4. At time t = 0, the particle is at position x = 3.",
+          math: "v(t) = t²sin(2t)",
+          parts: [
+            {
+              label: "(a)",
+              text: "Find the acceleration of the particle at time t = 1.5. Is the speed of the particle increasing or decreasing at t = 1.5? Justify.",
+              solution: "Find a(1.5) = v'(1.5) using your calculator, then check signs of v and a.",
+              steps: ["a(t) = v'(t) = 2t·sin(2t) + t²·2cos(2t)", "a(1.5) = 2(1.5)sin(3) + (1.5)²·2cos(3)", "= 3(0.1411) + 4.5(−0.9900)", "≈ 0.4234 − 4.4550 ≈ −4.032", "v(1.5) = (1.5)²sin(3) ≈ 2.25(0.1411) ≈ 0.317", "v > 0 and a < 0 → speed is decreasing"]
+            },
+            {
+              label: "(b)",
+              text: "Find the total distance traveled by the particle from t = 0 to t = 4. Use your calculator.",
+              solution: "Compute ∫₀⁴ |v(t)| dt.",
+              steps: ["Total distance = ∫₀⁴ |t²sin(2t)| dt", "Use calculator: fnInt(abs(t²sin(2t)), t, 0, 4)", "≈ 11.816"]
+            },
+            {
+              label: "(c)",
+              text: "Find the position of the particle at time t = 4.",
+              solution: "Use x(4) = x(0) + ∫₀⁴ v(t) dt.",
+              steps: ["x(4) = 3 + ∫₀⁴ t²sin(2t) dt", "Use calculator: fnInt(t²sin(2t), t, 0, 4) ≈ −4.653", "x(4) = 3 + (−4.653) ≈ −1.653"]
+            },
+            {
+              label: "(d)",
+              text: "Find all times t in the interval (0, 4) when the particle changes direction. Use your calculator.",
+              solution: "Find where v(t) = 0 and v changes sign.",
+              steps: ["v(t) = t²sin(2t) = 0 when sin(2t) = 0 (since t > 0)", "2t = π, 2π, 3π → t = π/2, π, 3π/2", "t ≈ 1.571, 3.142 (3π/2 ≈ 4.712 > 4, so excluded)", "Check sign changes at each → particle changes direction at t ≈ 1.571 and t ≈ 3.142"]
+            }
+          ]
+        }
+      ],
+      partB: [
+        {
+          num: 3,
+          color: "#f59e0b",
+          title: "Function Analysis from Graph of f'",
+          topics: "Derivatives, Extrema, Concavity, FTC",
+          pts: 9,
+          prompt: "The graph of f', the derivative of a continuous function f, is shown for −2 ≤ x ≤ 6. The graph of f' has horizontal tangent lines at x = 1 and x = 4. The areas of the regions between the graph of f' and the x-axis are labeled in the figure: Region A (below x-axis, from −2 to 0) has area 8, Region B (above x-axis, from 0 to 3) has area 15, and Region C (below x-axis, from 3 to 6) has area 10. It is known that f(0) = 3.",
+          math: "f(0) = 3, Area A = 8, Area B = 15, Area C = 10",
+          parts: [
+            {
+              label: "(a)",
+              text: "Find f(−2) and f(6).",
+              solution: "Use the FTC: f(b) = f(a) + ∫ₐᵇ f'(x) dx.",
+              steps: ["f(−2) = f(0) − ∫₋₂⁰ f'(x) dx", "∫₋₂⁰ f'(x) dx = −8 (below x-axis)", "f(−2) = 3 − (−8) = 11", "f(6) = f(0) + ∫₀⁶ f'(x) dx", "∫₀⁶ f'(x) dx = 15 + (−10) = 5", "f(6) = 3 + 5 = 8"]
+            },
+            {
+              label: "(b)",
+              text: "On what intervals is f increasing? Justify your answer.",
+              solution: "f is increasing where f'(x) > 0.",
+              steps: ["From the graph, f'(x) > 0 on (0, 3)", "f is increasing on [0, 3]"]
+            },
+            {
+              label: "(c)",
+              text: "Find all x-values where f has a relative maximum. Justify.",
+              solution: "Relative max where f' changes from positive to negative.",
+              steps: ["f'(x) changes from + to − at x = 3", "f has a relative maximum at x = 3"]
+            },
+            {
+              label: "(d)",
+              text: "On what intervals is f concave up? Justify your answer.",
+              solution: "f is concave up where f'' > 0, i.e., where f' is increasing.",
+              steps: ["f' is increasing on (−2, 1) and (4, 6)", "f is concave up on (−2, 1) and (4, 6)"]
+            }
+          ]
+        },
+        {
+          num: 4,
+          color: "#ef4444",
+          title: "Differential Equation",
+          topics: "Separation of Variables, Slope Fields",
+          pts: 9,
+          prompt: "Consider the differential equation below.",
+          math: "dy/dx = (2x − 1)(y + 3)",
+          parts: [
+            {
+              label: "(a)",
+              text: "On the axes provided, sketch a slope field for the given differential equation at the twelve points indicated. (Points at x = −1, 0, 1 and y = −3, −1, 0, 1)",
+              solution: "Evaluate dy/dx at each (x, y) pair.",
+              steps: ["At y = −3: dy/dx = 0 for all x (horizontal segments)", "At (0, 0): dy/dx = (−1)(3) = −3", "At (1, 0): dy/dx = (1)(3) = 3", "At (−1, 1): dy/dx = (−3)(4) = −12", "At (1, 1): dy/dx = (1)(4) = 4", "Draw short line segments with these slopes at each point"]
+            },
+            {
+              label: "(b)",
+              text: "Find the particular solution y = f(x) to the differential equation with the initial condition f(0) = −1.",
+              solution: "Separate variables and integrate.",
+              steps: ["dy/(y + 3) = (2x − 1) dx", "∫ dy/(y+3) = ∫ (2x − 1) dx", "ln|y + 3| = x² − x + C", "f(0) = −1: ln|−1+3| = 0 − 0 + C → C = ln(2)", "ln|y+3| = x² − x + ln(2)", "y + 3 = 2e^(x²−x)", "y = 2e^(x²−x) − 3"]
+            },
+            {
+              label: "(c)",
+              text: "For the particular solution found in part (b), find the value of f''(0). Does f have a relative minimum, relative maximum, or neither at x = 0? Justify.",
+              solution: "Find f'(0) and f''(0), then apply the second derivative test.",
+              steps: ["f'(0) = (2(0)−1)(−1+3) = (−1)(2) = −2", "f''(x) = d/dx[(2x−1)(y+3)]", "= 2(y+3) + (2x−1)·y'", "= 2(y+3) + (2x−1)²(y+3)", "f''(0) = 2(2) + (−1)²(2) = 4 + 2 = 6", "f'(0) = −2 ≠ 0, so x = 0 is not a critical point", "f has neither a relative min nor max at x = 0"]
+            }
+          ]
+        },
+        {
+          num: 5,
+          color: "#8b5cf6",
+          title: "Table-Based Integration",
+          topics: "Riemann Sums, Average Value, FTC",
+          pts: 9,
+          prompt: "The rate at which people enter an amusement park on a given day is modeled by the function E(t). E(t) is measured in people per hour, and t is measured in hours after the park opens at 9 AM. Selected values of E(t) are given in the table below.",
+          math: "t:    0    2    4    6    8\nE(t): 0  520  890  760  400",
+          parts: [
+            {
+              label: "(a)",
+              text: "Using a trapezoidal sum with the four subintervals indicated by the table, approximate ∫₀⁸ E(t) dt. Indicate units.",
+              solution: "Apply the trapezoidal rule with Δt = 2 for each subinterval.",
+              steps: ["T₄ = (Δt/2)[E(0) + 2E(2) + 2E(4) + 2E(6) + E(8)]", "= (2/2)[0 + 2(520) + 2(890) + 2(760) + 400]", "= 1[0 + 1040 + 1780 + 1520 + 400]", "= 4740 people"]
+            },
+            {
+              label: "(b)",
+              text: "Using the result from part (a), approximate the average number of people entering the park per hour from t = 0 to t = 8.",
+              solution: "Average value = (1/(b−a)) · ∫₀⁸ E(t) dt.",
+              steps: ["Average ≈ (1/8)(4740)", "= 592.5 people per hour"]
+            },
+            {
+              label: "(c)",
+              text: "Is there a time t, 0 < t < 8, at which E'(t) = 0? Justify your answer.",
+              solution: "Use the behavior of E(t) from the table.",
+              steps: ["E increases from t=0 to some point between t=2 and t=4 (E goes from 520 to 890)", "E then decreases from t=4 to t=8 (890 → 760 → 400)", "Since E is continuous and increases then decreases,", "by the Extreme Value Theorem, E has a maximum", "By Fermat's Theorem, E'(t) = 0 at the max, which is on (0, 8)"]
+            },
+            {
+              label: "(d)",
+              text: "At t = 6, there are 3200 people in the park. People leave the park at a rate of L(t) = 250 + 50sin(πt/8) people per hour. Is the number of people in the park increasing or decreasing at t = 6?",
+              solution: "Compare E(6) to L(6).",
+              steps: ["E(6) = 760 people/hour (entering)", "L(6) = 250 + 50sin(6π/8) = 250 + 50sin(3π/4)", "= 250 + 50(√2/2) ≈ 250 + 35.36 ≈ 285.36 people/hour (leaving)", "Net rate = 760 − 285.36 = 474.64 > 0", "The number of people is increasing at t = 6."]
+            }
+          ]
+        },
+        {
+          num: 6,
+          color: "#3b82f6",
+          title: "Area and Accumulation",
+          topics: "Area Between Curves, Volume",
+          pts: 9,
+          prompt: "Let R be the region bounded by the graphs of y = 4 − x² and y = x + 2.",
+          math: "y = 4 − x² and y = x + 2",
+          parts: [
+            {
+              label: "(a)",
+              text: "Find the area of region R. Show the setup of your integral.",
+              solution: "Find intersection points, then integrate top − bottom.",
+              steps: ["4 − x² = x + 2 → x² + x − 2 = 0 → (x+2)(x−1) = 0", "x = −2 and x = 1", "On [−2, 1]: (4−x²) ≥ (x+2)", "Area = ∫₋₂¹ [(4−x²) − (x+2)] dx", "= ∫₋₂¹ (2 − x − x²) dx", "= [2x − x²/2 − x³/3]₋₂¹", "= (2 − 1/2 − 1/3) − (−4 − 2 + 8/3)", "= (7/6) − (−10/3) = 7/6 + 10/3 = 27/6 = 9/2"]
+            },
+            {
+              label: "(b)",
+              text: "Write, but do not evaluate, an expression for the volume of the solid generated when R is revolved about the line y = −1.",
+              solution: "Use the washer method with outer and inner radii measured from y = −1.",
+              steps: ["Outer radius: R(x) = (4 − x²) − (−1) = 5 − x²", "Inner radius: r(x) = (x + 2) − (−1) = x + 3", "V = π ∫₋₂¹ [(5 − x²)² − (x + 3)²] dx"]
+            },
+            {
+              label: "(c)",
+              text: "Region R is the base of a solid. For this solid, each cross-section perpendicular to the x-axis is a square. Write, but do not evaluate, an expression for the volume of the solid.",
+              solution: "The side length of each square cross-section equals the distance between the curves.",
+              steps: ["Side length s(x) = (4 − x²) − (x + 2) = 2 − x − x²", "Area of square = [s(x)]²", "V = ∫₋₂¹ (2 − x − x²)² dx"]
+            }
+          ]
+        }
+      ]
+    };
+
+    // ===== RENDER FRQ CARDS =====
+    function renderFRQs() {
+      renderPart('partA', document.getElementById('partAList'));
+      renderPart('partB', document.getElementById('partBList'));
+    }
+
+    function renderPart(partKey, container) {
+      const questions = frqBank[partKey];
+      container.innerHTML = '';
+
+      questions.forEach((frq, qi) => {
+        const card = document.createElement('div');
+        card.className = 'apfrq-card';
+        card.id = `frq-${partKey}-${qi}`;
+
+        const isCalc = partKey === 'partA';
+
+        card.innerHTML = `
+          <div class="apfrq-card-header" onclick="toggleFRQ('${partKey}', ${qi})">
+            <div class="apfrq-card-header-left">
+              <div class="apfrq-qnum" style="background:${frq.color}">Q${frq.num}</div>
+              <div>
+                <div class="apfrq-card-title">${frq.title}</div>
+                <div class="apfrq-card-sub">${frq.topics}</div>
+              </div>
+            </div>
+            <div class="apfrq-card-badges">
+              <span class="apfrq-badge pts">${frq.pts} pts</span>
+              <span class="apfrq-badge ${isCalc ? 'calc' : 'nocalc'}">
+                <i class="fas fa-${isCalc ? 'calculator' : 'ban'}" style="font-size:0.55rem"></i>
+                ${isCalc ? 'Calc' : 'No Calc'}
+              </span>
+            </div>
+            <i class="fas fa-chevron-down apfrq-expand-icon"></i>
+          </div>
+          <div class="apfrq-card-body">
+            <div class="apfrq-prompt">${frq.prompt}</div>
+            ${frq.math ? `<div class="apfrq-math">${frq.math}</div>` : ''}
+            ${frq.parts.map((p, pi) => `
+              <div class="apfrq-part-label">${p.label}</div>
+              <div class="apfrq-part-text">${p.text}</div>
+              <button class="apfrq-solution-toggle" onclick="event.stopPropagation(); toggleSolution('${partKey}-${qi}-${pi}')">
+                <i class="fas fa-eye"></i> Show Solution
+              </button>
+              <div class="apfrq-solution" id="sol-${partKey}-${qi}-${pi}">
+                <div class="apfrq-solution-label">Solution</div>
+                <p>${p.solution}</p>
+                ${p.steps.map(s => `<div class="apfrq-sol-step">${s}</div>`).join('')}
+              </div>
+            `).join('')}
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function toggleFRQ(partKey, qi) {
+      const card = document.getElementById(`frq-${partKey}-${qi}`);
+      card.classList.toggle('open');
+    }
+
+    function toggleSolution(id) {
+      const sol = document.getElementById(`sol-${id}`);
+      const btn = sol.previousElementSibling;
+      sol.classList.toggle('visible');
+      if (sol.classList.contains('visible')) {
+        btn.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Solution';
+      } else {
+        btn.innerHTML = '<i class="fas fa-eye"></i> Show Solution';
+      }
+    }
+
+    // Init
+    renderFRQs();
+    </script>
+</body>
+
+</html>
