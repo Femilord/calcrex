@@ -32,13 +32,19 @@
 .topics-hero p {
     font-size: 0.9rem;
     line-height: 1.6;
-    color: #94a3b8;
+    color: #ffffff;
     max-width: 600px;
     margin: 0 auto;
     position: relative;
 }
 
 .topics-grid-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem var(--gap-md) 3rem;
+}
+
+.topics-grid-section-two {
     max-width: 1100px;
     margin: 0 auto;
     padding: 2rem var(--gap-md) 3rem;
