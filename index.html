@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google" content="notranslate">
 
     <!-- Primary Meta Tags -->
     <title>CalcREX - Free Online Calculator Suite | Computational Tools</title>
@@ -65,13 +66,14 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
 
-    <!-- Structured Data - Website -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "CalcREX",
-      "alternateName": "CalcREX Calculator Suite",
+      "alternateName": ["CalcREX Calculator Suite", "calcrex.com"],
       "url": "https://calcrex.com/",
       "description": "Free online calculator suite with 300+ professional calculators for math, science, finance, and more.",
       "potentialAction": {
@@ -79,13 +81,8 @@
         "target": "https://calcrex.com/?s={search_term_string}",
         "query-input": "required name=search_term_string"
       }
-    }
-    </script>
-
-    <!-- Structured Data - Organization -->
-    <script type="application/ld+json">
+    },
     {
-      "@context": "https://schema.org",
       "@type": "Organization",
       "name": "CalcREX",
       "url": "https://calcrex.com/",
@@ -95,19 +92,14 @@
         "https://twitter.com/CalcREX",
         "https://facebook.com/CalcREX"
       ]
-    }
-    </script>
-
-    <!-- Structured Data - BreadcrumbList -->
-    <script type="application/ld+json">
+    },
     {
-      "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "Home",
+          "name": "CalcREX",
           "item": "https://calcrex.com/"
         },
         {
@@ -153,13 +145,8 @@
           "item": "https://calcrex.com/date-time/"
         }
       ]
-    }
-    </script>
-
-    <!-- Structured Data - FAQPage (Sample) -->
-    <script type="application/ld+json">
+    },
     {
-      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -196,7 +183,9 @@
         }
       ]
     }
-    </script>
+  ]
+}
+</script>
 
     <!-- Performance Hints -->
     <link rel="prefetch" href="/js/script.js">
@@ -241,7 +230,8 @@
                                     Thermodynamics</a></li>
                             <li><a href="/aerodynamics/" class="nav-dropdown-link"><i class="fas fa-plane"></i>
                                     Aerodynamics</a></li>
-                            <li><a href="/computer-science/" class="nav-dropdown-link"><i class="fas fa-laptop-code"></i>
+                            <li><a href="/computer-science/" class="nav-dropdown-link"><i
+                                        class="fas fa-laptop-code"></i>
                                     Computer Science</a></li>
                         </ul>
                     </li>
